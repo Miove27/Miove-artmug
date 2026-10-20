@@ -77,21 +77,24 @@
 /* 리깅 디테일 */
 #mv .mv-group{margin-top:34px;}
 #mv .mv-group:first-of-type{margin-top:8px;}
-#mv .mv-group-t{text-align:center;margin-bottom:6px;}
+#mv .mv-group-t{text-align:center;margin-bottom:14px;}
 #mv .mv-group-t .mv-chip{font-size:16px;padding:8px 26px;color:#fff;text-shadow:0 1px 3px rgba(45,90,140,.55);}
-#mv .mv-sublb{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:800;color:var(--sky-d);margin:20px 0 10px;}
-#mv .mv-sublb::before{content:"";width:4px;height:16px;border-radius:4px;background:var(--yel-d);}
-#mv .mv-gif{position:relative;border-radius:18px;overflow:hidden;background:var(--sky-l);border:1px solid var(--line);aspect-ratio:1/1.08;}
-#mv .mv-gif img{width:100%;height:100%;object-fit:cover;display:block;}
-#mv .mv-gif.tall{aspect-ratio:2/3;}
-#mv .mv-gif .tag{position:absolute;left:8px;bottom:8px;background:rgba(39,56,77,.75);color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;}
-#mv .mv-gif.empty::before{content:"GIF";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--sky-d);font-weight:900;font-size:20px;letter-spacing:2px;}
+#mv .mv-subbox{border:1.5px solid var(--line);border-radius:24px;background:#fff;margin-bottom:16px;overflow:hidden;}
+#mv .mv-subbox .mv-sublb{margin:0;padding:16px 22px;border-bottom:1.5px dashed var(--line);font-size:19px;color:var(--ink);}
+#mv .mv-subbox .mv-slider{padding:18px 18px 16px;}
+#mv .mv-gif{position:relative;}
+#mv .mv-gif img{display:block;width:100%;aspect-ratio:1/1.08;object-fit:cover;border:1px solid var(--line);border-radius:16px;background:var(--sky-ll);}
+#mv .mv-gif.tall img{aspect-ratio:2/3;}
+#mv .mv-gif .tag{display:block;text-align:center;margin-top:9px;font-size:14px;font-weight:800;color:var(--ink);}
+#mv .mv-gif.empty::before{content:"GIF";display:flex;align-items:center;justify-content:center;aspect-ratio:1/1.08;border:1px dashed var(--sky);border-radius:16px;background:var(--sky-ll);color:var(--sky-d);font-weight:900;font-size:20px;letter-spacing:2px;}
+#mv .mv-gif.tall.empty::before{aspect-ratio:2/3;}
 #mv .mv-credit{font-size:12px;color:var(--mute);text-align:right;margin-top:14px;}
 
 /* 가로 슬라이더 (리깅 디테일) */
 #mv .mv-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:2px;}
 #mv .mv-track::-webkit-scrollbar{display:none;}
-#mv .mv-track>.mv-gif{flex:0 0 200px;scroll-snap-align:start;}
+#mv .mv-track{gap:14px;}
+#mv .mv-track>.mv-gif{flex:0 0 calc((100% - 28px) / 3);scroll-snap-align:start;}
 #mv .mv-ctrl{display:flex;align-items:center;gap:10px;margin-top:10px;}
 #mv .mv-ctrl button,#mv .mv-vctrl button{flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line);background:#fff;color:var(--sky-d);font-size:16px;line-height:1;cursor:pointer;transition:.15s;}
 #mv .mv-ctrl button:hover,#mv .mv-vctrl button:hover{background:var(--sky);color:var(--ink);}
@@ -257,7 +260,9 @@
   #mv-nav.open .box{display:block;}
 }
 @media (max-width:760px){
-  #mv .mv-track>.mv-gif{flex-basis:160px;}
+  #mv .mv-track>.mv-gif{flex-basis:calc((100% - 14px) / 2);}
+  #mv .mv-subbox .mv-slider{padding:14px 12px;}
+  #mv .mv-subbox .mv-sublb{padding:13px 16px;font-size:17px;}
   #mv{padding:24px 12px 60px;}
   #mv .mv-card{padding:26px 18px;border-radius:22px;}
   #mv .mv-collab,#mv .mv-form,#mv .mv-f2{grid-template-columns:1fr;}
@@ -334,69 +339,82 @@
   <!-- ============ 리깅 디테일 ============ -->
   <section class="mv-card" id="mv-detail">
     <h2 class="mv-h">리깅 디테일</h2>
-    <p class="mv-desc">*옆으로 밀어서 보기</p>
+    <p class="mv-desc">*칸이 넘치는 줄은 옆으로 밀어서 보기</p>
     <div class="mv-group">
       <div class="mv-group-t"><span class="mv-chip">얼굴 디테일</span></div>
-      <div class="mv-sublb">각도</div>
-      <div class="mv-slider">
-        <div class="mv-track">
-          <div class="mv-gif"><img src="face_x.gif" alt="X축"><span class="tag">X축</span></div>
-          <div class="mv-gif"><img src="face_y.gif" alt="Y축"><span class="tag">Y축</span></div>
-          <div class="mv-gif"><img src="face_all.gif" alt="전체"><span class="tag">전체</span></div>
+      <div class="mv-subbox">
+        <div class="mv-sublb">각도</div>
+        <div class="mv-slider">
+          <div class="mv-track">
+          <div class="mv-gif"><img src="face_x.gif" alt="X축" loading="lazy"><span class="tag">X축</span></div>
+          <div class="mv-gif"><img src="face_y.gif" alt="Y축" loading="lazy"><span class="tag">Y축</span></div>
+          <div class="mv-gif"><img src="face_all.gif" alt="전체" loading="lazy"><span class="tag">전체</span></div>
+          </div>
+          <div class="mv-ctrl"><button type="button" class="pv" aria-label="이전">‹</button><div class="mv-bar"><i></i></div><button type="button" class="nx" aria-label="다음">›</button></div>
         </div>
-        <div class="mv-ctrl"><button type="button" class="pv" aria-label="이전">‹</button><div class="mv-bar"><i></i></div><button type="button" class="nx" aria-label="다음">›</button></div>
       </div>
-      <div class="mv-sublb">표정</div>
-      <div class="mv-slider">
-        <div class="mv-track">
-          <div class="mv-gif"><img src="expr_heart.gif" alt="하트눈"><span class="tag">하트눈</span></div>
-          <div class="mv-gif"><img src="expr_serious.gif" alt="정색"><span class="tag">정색</span></div>
-          <div class="mv-gif"><img src="expr_surprise.gif" alt="놀람(동물 귀 연동)"><span class="tag">놀람(동물 귀 연동)</span></div>
-          <div class="mv-gif"><img src="expr_sad.gif" alt="슬픔(동물 귀 연동)"><span class="tag">슬픔(동물 귀 연동)</span></div>
-          <div class="mv-gif"><img src="expr_shy.gif" alt="부끄러움"><span class="tag">부끄러움</span></div>
+      <div class="mv-subbox">
+        <div class="mv-sublb">표정</div>
+        <div class="mv-slider">
+          <div class="mv-track">
+          <div class="mv-gif"><img src="expr_heart.gif" alt="하트눈" loading="lazy"><span class="tag">하트눈</span></div>
+          <div class="mv-gif"><img src="expr_serious.gif" alt="정색" loading="lazy"><span class="tag">정색</span></div>
+          <div class="mv-gif"><img src="expr_surprise.gif" alt="놀람(동물 귀 연동)" loading="lazy"><span class="tag">놀람(동물 귀 연동)</span></div>
+          <div class="mv-gif"><img src="expr_sad.gif" alt="슬픔(동물 귀 연동)" loading="lazy"><span class="tag">슬픔(동물 귀 연동)</span></div>
+          <div class="mv-gif"><img src="expr_shy.gif" alt="부끄러움" loading="lazy"><span class="tag">부끄러움</span></div>
+          </div>
+          <div class="mv-ctrl"><button type="button" class="pv" aria-label="이전">‹</button><div class="mv-bar"><i></i></div><button type="button" class="nx" aria-label="다음">›</button></div>
         </div>
-        <div class="mv-ctrl"><button type="button" class="pv" aria-label="이전">‹</button><div class="mv-bar"><i></i></div><button type="button" class="nx" aria-label="다음">›</button></div>
       </div>
-      <div class="mv-sublb">VBridger</div>
-      <div class="mv-slider">
-        <div class="mv-track">
-          <div class="mv-gif"><img src="vb_cheek.gif" alt="볼 빵빵"><span class="tag">볼 빵빵</span></div>
-          <div class="mv-gif"><img src="vb_mouth.gif" alt="입 오물오물"><span class="tag">입 오물오물</span></div>
-          <div class="mv-gif"><img src="vb_tongue.gif" alt="혀 내밀기"><span class="tag">혀 내밀기</span></div>
-          <div class="mv-gif"><img src="vb_lip.gif" alt="입술 오므리기"><span class="tag">입술 오므리기</span></div>
+      <div class="mv-subbox">
+        <div class="mv-sublb">VBridger</div>
+        <div class="mv-slider">
+          <div class="mv-track">
+          <div class="mv-gif"><img src="vb_cheek.gif" alt="볼 빵빵" loading="lazy"><span class="tag">볼 빵빵</span></div>
+          <div class="mv-gif"><img src="vb_mouth.gif" alt="입 오물오물" loading="lazy"><span class="tag">입 오물오물</span></div>
+          <div class="mv-gif"><img src="vb_tongue.gif" alt="혀 내밀기" loading="lazy"><span class="tag">혀 내밀기</span></div>
+          <div class="mv-gif"><img src="vb_lip.gif" alt="입술 오므리기" loading="lazy"><span class="tag">입술 오므리기</span></div>
+          </div>
+          <div class="mv-ctrl"><button type="button" class="pv" aria-label="이전">‹</button><div class="mv-bar"><i></i></div><button type="button" class="nx" aria-label="다음">›</button></div>
         </div>
-        <div class="mv-ctrl"><button type="button" class="pv" aria-label="이전">‹</button><div class="mv-bar"><i></i></div><button type="button" class="nx" aria-label="다음">›</button></div>
       </div>
     </div>
     <div class="mv-group">
       <div class="mv-group-t"><span class="mv-chip">전신</span></div>
-      <div class="mv-sublb">각도</div>
-      <div class="mv-slider">
-        <div class="mv-track">
-          <div class="mv-gif tall"><img src="body_x.gif" alt="X축"><span class="tag">X축</span></div>
-          <div class="mv-gif tall"><img src="body_y.gif" alt="Y축"><span class="tag">Y축</span></div>
-          <div class="mv-gif tall"><img src="body_z.gif" alt="Z축"><span class="tag">Z축</span></div>
+      <div class="mv-subbox">
+        <div class="mv-sublb">각도</div>
+        <div class="mv-slider">
+          <div class="mv-track">
+          <div class="mv-gif tall"><img src="body_x.gif" alt="X축" loading="lazy"><span class="tag">X축</span></div>
+          <div class="mv-gif tall"><img src="body_y.gif" alt="Y축" loading="lazy"><span class="tag">Y축</span></div>
+          <div class="mv-gif tall"><img src="body_z.gif" alt="Z축" loading="lazy"><span class="tag">Z축</span></div>
+          </div>
+          <div class="mv-ctrl"><button type="button" class="pv" aria-label="이전">‹</button><div class="mv-bar"><i></i></div><button type="button" class="nx" aria-label="다음">›</button></div>
         </div>
-        <div class="mv-ctrl"><button type="button" class="pv" aria-label="이전">‹</button><div class="mv-bar"><i></i></div><button type="button" class="nx" aria-label="다음">›</button></div>
       </div>
-      <div class="mv-sublb">추가 포즈</div>
-      <div class="mv-slider">
-        <div class="mv-track">
-          <div class="mv-gif tall"><img src="pose_foot.gif" alt="발 콕콕"><span class="tag">발 콕콕</span></div>
-          <div class="mv-gif tall"><img src="pose_gachi.gif" alt="가치코이"><span class="tag">가치코이</span></div>
+      <div class="mv-subbox">
+        <div class="mv-sublb">추가 포즈</div>
+        <div class="mv-slider">
+          <div class="mv-track">
+          <div class="mv-gif tall"><img src="pose_foot.gif" alt="발 콕콕" loading="lazy"><span class="tag">발 콕콕</span></div>
+          <div class="mv-gif tall"><img src="pose_gachi.gif" alt="가치코이" loading="lazy"><span class="tag">가치코이</span></div>
+          </div>
+          <div class="mv-ctrl"><button type="button" class="pv" aria-label="이전">‹</button><div class="mv-bar"><i></i></div><button type="button" class="nx" aria-label="다음">›</button></div>
         </div>
-        <div class="mv-ctrl"><button type="button" class="pv" aria-label="이전">‹</button><div class="mv-bar"><i></i></div><button type="button" class="nx" aria-label="다음">›</button></div>
       </div>
     </div>
     <div class="mv-group">
       <div class="mv-group-t"><span class="mv-chip">물리 디테일</span></div>
-      <div class="mv-slider">
-        <div class="mv-track">
-          <div class="mv-gif"><img src="phys_eye.gif" alt="눈동자 물리"><span class="tag">눈동자 물리</span></div>
-          <div class="mv-gif"><img src="phys_skirt.gif" alt="치마 물리"><span class="tag">치마 물리</span></div>
-          <div class="mv-gif"><img src="phys_hair.gif" alt="머리카락 물리"><span class="tag">머리카락 물리</span></div>
+      <div class="mv-subbox">
+        <div class="mv-sublb">물리</div>
+        <div class="mv-slider">
+          <div class="mv-track">
+          <div class="mv-gif"><img src="phys_eye.gif" alt="눈동자 물리" loading="lazy"><span class="tag">눈동자 물리</span></div>
+          <div class="mv-gif"><img src="phys_skirt.gif" alt="치마 물리" loading="lazy"><span class="tag">치마 물리</span></div>
+          <div class="mv-gif"><img src="phys_hair.gif" alt="머리카락 물리" loading="lazy"><span class="tag">머리카락 물리</span></div>
+          </div>
+          <div class="mv-ctrl"><button type="button" class="pv" aria-label="이전">‹</button><div class="mv-bar"><i></i></div><button type="button" class="nx" aria-label="다음">›</button></div>
         </div>
-        <div class="mv-ctrl"><button type="button" class="pv" aria-label="이전">‹</button><div class="mv-bar"><i></i></div><button type="button" class="nx" aria-label="다음">›</button></div>
       </div>
     </div>
   </section>
@@ -687,7 +705,7 @@
   /* 리깅 디테일 가로 슬라이더 */
   $$('.mv-slider').forEach(function(sl){
     var tr=sl.querySelector('.mv-track'), bar=sl.querySelector('.mv-bar i'), ctrl=sl.querySelector('.mv-ctrl');
-    var step=function(){var c=tr.firstElementChild; return c ? c.getBoundingClientRect().width+12 : 200;};
+    var step=function(){var c=tr.firstElementChild; return c ? c.getBoundingClientRect().width+14 : 200;};
     var upd=function(){
       var max=tr.scrollWidth-tr.clientWidth;
       ctrl.classList.toggle('off', max<=2);
