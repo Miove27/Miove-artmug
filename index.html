@@ -233,11 +233,11 @@
 #mv-nav .logo{font-size:22px;}
 
 /* 책갈피 네비 */
-#mv-nav{position:fixed;right:max(18px, calc(50vw - 590px - 190px));top:50%;transform:translateY(-50%);z-index:9999;font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
-#mv-nav .box{background:rgba(255,255,255,.96);border:1px solid #c4dafa;border-radius:22px;padding:12px;box-shadow:0 8px 28px rgba(77,130,188,.2);width:150px;}
+#mv-nav{position:fixed;right:max(10px, calc(50vw - 450px - 152px));top:50%;transform:translateY(-50%);z-index:9999;font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+#mv-nav .box{box-sizing:border-box;background:rgba(255,255,255,.96);border:1px solid #c4dafa;border-radius:20px;padding:10px;box-shadow:0 8px 28px rgba(77,130,188,.2);width:124px;}
 #mv-nav .logo{font-weight:900;font-size:17px;color:#27384d;padding:2px 8px 0;letter-spacing:1px;}
 #mv-nav .logo small{display:block;font-size:10px;color:#84b6f4;letter-spacing:2px;margin-bottom:6px;}
-#mv-nav a{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:12px;font-size:13px;color:#66788c;text-decoration:none;transition:.15s;}
+#mv-nav a{display:flex;align-items:center;gap:7px;padding:6px 9px;border-radius:12px;font-size:12.5px;color:#66788c;text-decoration:none;transition:.15s;}
 #mv-nav a::before{content:"";width:6px;height:6px;border-radius:50%;background:#c4dafa;flex:none;}
 #mv-nav a:hover{background:#eef4fd;color:#27384d;}
 #mv-nav a.on{background:#e3edfc;color:#4d82bc;font-weight:800;}
@@ -246,9 +246,12 @@
 #mv-nav a.cta::before{display:none;}
 #mv-nav .top{display:block;width:100%;margin-bottom:8px;border:1px solid #c4dafa;background:#fffcee;border-radius:12px;padding:6px;font:inherit;font-size:12px;font-weight:700;color:#27384d;cursor:pointer;}
 #mv-nav .tg{display:none;}
+/* 아트머그 안(iframe)에서는 스크립트가 보이는 화면 위치를 계산해서 옮겨요 */
+#mv-nav.framed{position:absolute;right:max(8px, calc(50% - 450px - 132px));transform:none;bottom:auto;transition:top .35s ease;}
 
-@media (max-width:1300px){
+@media (max-width:1170px){
   #mv-nav{top:auto;bottom:18px;transform:none;}
+  #mv-nav.framed{right:14px;bottom:auto;}
   #mv-nav .tg{display:flex;width:52px;height:52px;margin-left:auto;border-radius:50%;border:0;background:#84b6f4;color:#27384d;font-size:22px;cursor:pointer;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(77,130,188,.4);}
   #mv-nav .box{display:none;margin-bottom:10px;}
   #mv-nav.open .box{display:block;}
@@ -450,7 +453,7 @@
     <h2 class="mv-h">공지 사항</h2>
     <p class="mv-desc">신청 전 꼭 읽어주세요. 읽지 않아 생기는 불이익은 책임지지 않습니다.</p>
 
-    <details class="mv-acc"><summary><span class="q">0</span>신청 전 준비사항<span class="ic"></span></summary>
+    <details class="mv-acc" name="mv-notice"><summary><span class="q">0</span>신청 전 준비사항<span class="ic"></span></summary>
       <div class="bd"><ul>
         <li>일러스트는 미포함이며, <b>리깅만 작업</b>합니다.</li>
         <li>신청 시 <b>파츠 분리된 PSD 파일</b>이 필요합니다. 분리가 미흡하여 작업이 어려울 경우 의뢰가 반려되거나 모델의 움직임에 제약이 생길 수 있습니다. 파츠 분리 요청은 [4. 파츠 분리 관련] 항목을 참고 바랍니다.</li>
@@ -458,14 +461,14 @@
         <li>결제 전, 공지 사항 숙지 후 사전 문의 부탁드립니다.</li>
       </ul></div></details>
 
-    <details class="mv-acc"><summary><span class="q">1</span>작업 기간<span class="ic"></span></summary>
+    <details class="mv-acc" name="mv-notice"><summary><span class="q">1</span>작업 기간<span class="ic"></span></summary>
       <div class="bd"><ul>
         <li>입금일 기준 평균 <b>15~25일</b> 소요됩니다. (2026년 10월 기준)</li>
         <li>캐릭터 복잡도, 추가 옵션이나 수정 요청 등에 따라 작업 기간이 변동될 수 있습니다.</li>
         <li>안내 기간보다 작업이 일찍 마무리될 경우, 바로 전달드립니다.</li>
       </ul></div></details>
 
-    <details class="mv-acc"><summary><span class="q">2</span>작업물 공개 관련<span class="ic"></span></summary>
+    <details class="mv-acc" name="mv-notice"><summary><span class="q">2</span>작업물 공개 관련<span class="ic"></span></summary>
       <div class="bd"><ul>
         <li>리깅 결과물의 저작권은 작가 본인(Miove)에게 귀속됩니다.</li>
         <li>작업물 완성 전, 공유해 드린 과정은 외부 유출이 금지됩니다.</li>
@@ -475,7 +478,7 @@
         <li>완성된 작업물의 재판매, 양도를 원하실 경우 작가 본인(Miove)에게 허락을 구하셔야 합니다.</li>
       </ul></div></details>
 
-    <details class="mv-acc"><summary><span class="q">3</span>캐릭터 문의 가능 범위<span class="ic"></span></summary>
+    <details class="mv-acc" name="mv-notice"><summary><span class="q">3</span>캐릭터 문의 가능 범위<span class="ic"></span></summary>
       <div class="bd"><ul>
         <li><b>AI 일러스트 리깅 의뢰는 받지 않습니다.</b></li>
         <li>원작 IP가 있는 캐릭터는 저작권 문제 우려로 리깅 의뢰를 받지 않고 있습니다. 개인/비상업 목적이어도 거절됩니다.</li>
@@ -483,7 +486,7 @@
         <li>작가 역량상 진행이 어렵거나, 논란의 소지가 있는 일러스트는 사전 거절될 수 있습니다.</li>
       </ul></div></details>
 
-    <details class="mv-acc"><summary><span class="q">4</span>파츠 분리 관련<span class="ic"></span></summary>
+    <details class="mv-acc" name="mv-notice"><summary><span class="q">4</span>파츠 분리 관련<span class="ic"></span></summary>
       <div class="bd"><ul>
         <li>외부 작가님 작업물의 리터칭 및 파츠 분할도 받습니다.</li>
         <li>타 일러스트 작가님의 작업물에 대한 리터칭 및 파츠 분할은, 신청자가 해당 작가님께 직접 사전 동의를 받아온 경우에 한해 진행합니다. 이 경우 Miove가 해당 작가님과 직접 연락하여 동의 여부를 한 번 더 확인합니다.</li>
@@ -491,7 +494,7 @@
         <li>간단한 리터칭(비워진 색상 채우기, 삐져나온 선화 정리 등)은 추가금 없이 해드립니다.</li>
       </ul></div></details>
 
-    <details class="mv-acc"><summary><span class="q">5</span>필요 프로그램 및 제공 파일 안내<span class="ic"></span></summary>
+    <details class="mv-acc" name="mv-notice"><summary><span class="q">5</span>필요 프로그램 및 제공 파일 안내<span class="ic"></span></summary>
       <div class="bd"><ul>
         <li>iPhone 기준으로 작업하며, VTube Studio + VBridger를 사용합니다. VBridger는 페이셜 캡처 기능이 탑재된 iPhone 기종만 가능합니다. 프로그램 사용 및 세팅에 도움이 필요하시면 추가 안내드립니다.</li>
         <li>최종 제공 파일은 VTube Studio 구동용 파일 위주이며, 리깅 수정이 가능한 원본 파일(.cmo3)은 제공하지 않습니다.</li>
@@ -502,7 +505,7 @@
   <section class="mv-card" id="mv-apply">
     <h2 class="mv-h">신청 양식</h2>
     <p class="mv-desc">옵션을 고르면 예상 금액이 바로 계산돼요. 다 고른 뒤 <b>신청서 복사</b>를 눌러 문의창에 붙여넣어 주세요!</p>
-    <details class="mv-acc mv-base"><summary><span class="q">✓</span>기본 포함 사항 <small style="font-weight:500;color:var(--mute);">모든 신청에 포함돼요</small><span class="ic"></span></summary>
+    <details class="mv-acc mv-base" name="mv-notice"><summary><span class="q">✓</span>기본 포함 사항 <small style="font-weight:500;color:var(--mute);">모든 신청에 포함돼요</small><span class="ic"></span></summary>
       <div class="bd">
         <div class="mv-row"><span class="k">머리 XYZ</span><span class="mv-tag">눈</span><span class="mv-tag">눈 깜빡임</span><span class="mv-tag">미소</span><span class="mv-tag">눈꺼풀 근육</span></div>
         <div class="mv-row"><span class="k">눈동자</span><span class="mv-tag">눈동자 XY</span><span class="mv-tag">물리</span></div>
@@ -829,24 +832,62 @@
   });
   render();
 
+  /* 공지: 한 번에 하나만 펼치기 */
+  $$('details[name="mv-notice"]').forEach(function(d,_,all){
+    d.addEventListener('toggle',function(){ if(d.open) $$('details[name="mv-notice"]').forEach(function(o){ if(o!==d) o.open=false; }); });
+  });
+
   /* 책갈피 네비 */
   var nav=document.getElementById('mv-nav');
   if(nav){
-    if(nav.parentNode!==document.body) document.body.appendChild(nav); // 부모 요소 영향 없이 화면에 고정
-    var go=function(id){var el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); nav.classList.remove('open');};
-    nav.addEventListener('click',function(e){
-      var t=e.target.closest('[data-go]'); if(t){e.preventDefault(); go(t.getAttribute('data-go'));}
-      if(e.target.closest('.tg')) nav.classList.toggle('open');
-    });
+    if(nav.parentNode!==document.body) document.body.appendChild(nav);
+    var framed=false; try{ framed = window.self!==window.top; }catch(e){ framed=true; }
+    if(framed) nav.classList.add('framed');
     var links=Array.prototype.slice.call(nav.querySelectorAll('a[data-go]'));
-    if('IntersectionObserver' in window){
-      var io=new IntersectionObserver(function(ents){
-        ents.forEach(function(en){ if(en.isIntersecting){
-          links.forEach(function(a){a.classList.toggle('on', a.getAttribute('data-go')===en.target.id && !a.classList.contains('cta'));});
-        }});
-      },{rootMargin:'-40% 0px -55% 0px'});
-      links.forEach(function(a){var s=document.getElementById(a.getAttribute('data-go')); if(s) io.observe(s);});
+    var secs=links.map(function(a){return document.getElementById(a.getAttribute('data-go'));}).filter(Boolean);
+    var vis={top:0,h:window.innerHeight};
+    var compact=function(){return window.matchMedia('(max-width:1170px)').matches;};
+    var layout=function(){
+      var line=vis.top+vis.h*0.45, cur=null;
+      secs.forEach(function(sc){ if(sc.getBoundingClientRect().top+window.scrollY<=line) cur=sc.id; });
+      links.forEach(function(a){ a.classList.toggle('on', a.getAttribute('data-go')===cur && !a.classList.contains('cta')); });
+      if(framed){
+        var nh=nav.offsetHeight;
+        var pos = compact() ? vis.top+vis.h-nh-18 : vis.top+(vis.h-nh)/2;
+        var endEl=document.getElementById('mv-apply'), end=endEl ? endEl.getBoundingClientRect().bottom+window.scrollY : document.documentElement.scrollHeight;
+        var maxY=end-nh;
+        nav.style.top=Math.max(10,Math.min(pos,maxY))+'px';
+      }
+    };
+    if(framed && 'IntersectionObserver' in window){
+      // 아트머그 화면에서 상세페이지의 어느 부분이 보이는지 감지 (40px 띠를 깔아서 보이는 띠만 추적)
+      var probe=document.createElement('div');
+      probe.style.cssText='position:absolute;left:0;top:0;width:1px;overflow:hidden;pointer-events:none;opacity:0;';
+      document.body.appendChild(probe);
+      var seen={}, th=[]; for(var i=0;i<=10;i++) th.push(i/10);
+      var io=new IntersectionObserver(function(es){
+        es.forEach(function(en){ var k=en.target.getAttribute('data-k'); if(en.isIntersecting && en.intersectionRect.height>0) seen[k]=en.intersectionRect; else delete seen[k]; });
+        var t=Infinity, bt=-Infinity;
+        for(var k in seen){ t=Math.min(t,seen[k].top); bt=Math.max(bt,seen[k].bottom); }
+        if(bt>t){ vis={top:t+window.scrollY, h:bt-t}; layout(); }
+      },{threshold:th});
+      var built=0;
+      var build=function(){
+        var H=root.offsetHeight, n=Math.ceil(H/40);
+        if(n===built) return; built=n; io.disconnect(); seen={}; probe.innerHTML=''; probe.style.height=H+'px';
+        for(var i=0;i<n;i++){ var d=document.createElement('div'); d.setAttribute('data-k',i); d.style.cssText='position:absolute;left:0;width:1px;height:40px;top:'+(i*40)+'px;'; probe.appendChild(d); io.observe(d); }
+      };
+      build();
+      if('ResizeObserver' in window){ var rt; new ResizeObserver(function(){ clearTimeout(rt); rt=setTimeout(build,150); }).observe(root); }
+    } else {
+      var upd=function(){ vis={top:window.scrollY,h:window.innerHeight}; layout(); };
+      window.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); upd();
     }
+    var go=function(id){ var el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); nav.classList.remove('open'); setTimeout(layout,50); };
+    nav.addEventListener('click',function(e){
+      var t=e.target.closest('[data-go]'); if(t){ e.preventDefault(); go(t.getAttribute('data-go')); }
+      if(e.target.closest('.tg')){ nav.classList.toggle('open'); layout(); }
+    });
   }
 })();
 </script>
