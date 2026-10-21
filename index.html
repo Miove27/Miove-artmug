@@ -155,7 +155,7 @@
 
 /* 협업 작가 */
 #mv .mv-collab{display:flex;flex-direction:column;gap:14px;}
-#mv .mv-col{display:grid;grid-template-columns:270px 1fr;gap:22px;align-items:stretch;border:1.5px solid var(--line);border-radius:22px;padding:18px 20px;background:#fff;transition:border-color .2s,box-shadow .2s;}
+#mv .mv-col{display:grid;grid-template-columns:300px 1fr;gap:22px;align-items:stretch;border:1.5px solid var(--line);border-radius:22px;padding:18px 20px;background:#fff;transition:border-color .2s,box-shadow .2s;}
 #mv .mv-col:hover{border-color:var(--sky);box-shadow:0 4px 16px rgba(77,130,188,.12);}
 #mv .mv-col .info{display:flex;flex-direction:column;gap:10px;}
 #mv .mv-col .hd{display:flex;align-items:center;justify-content:space-between;gap:8px;}
@@ -167,6 +167,8 @@
 #mv .mv-col .smp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
 #mv .mv-col .bn{flex:1;display:flex;align-items:center;font-size:13.5px;background:var(--yel);border-radius:12px;padding:10px 14px;line-height:1.55;}
 #mv .mv-col .bn p{margin:0;word-break:keep-all;}
+#mv .mv-col .bn b{display:block;}
+#mv .mv-col .bn .d{display:block;white-space:nowrap;letter-spacing:-.02em;}
 #mv .mv-col .bn b{color:#8a6b00;}
 #mv .mv-col .go{flex:none;display:inline-block;white-space:nowrap;padding:6px 14px;border-radius:999px;background:var(--sky-ll);border:1.5px solid var(--sky-l);color:var(--sky-d);font-weight:800;font-size:12.5px;text-decoration:none;transition:.15s;}
 #mv .mv-col .go:hover{background:var(--sky-l);color:var(--ink);}
@@ -490,9 +492,9 @@
     <h2 class="mv-h">협업 작가님</h2>
     <p class="mv-desc">협업 작가님의 일러스트로 신청하시면 아래 혜택이 적용돼요.</p>
     <div class="mv-collab">
-      <div class="mv-col"><div class="info"><div class="hd"><div class="nm">행련 작가님</div><a class="go" href="https://artmug.kr/index.php?channel=view&amp;uid=27414" target="_blank" rel="noopener">페이지 보기 →</a></div><div class="bn"><p><b>[혜택]</b> 각각 5만원 할인 + 표정 일러/리깅 2개 무료</p></div></div><div class="smp"><span>샘플 준비 중</span><img src="hr_sample.png" alt="행련 작가님 샘플"></div></div>
-      <div class="mv-col"><div class="info"><div class="hd"><div class="nm">Chavi 작가님</div><a class="go" href="https://artmug.kr/index.php?channel=view&amp;uid=57144" target="_blank" rel="noopener">페이지 보기 →</a></div><div class="bn"><p><b>[혜택]</b> 리깅 5만원 할인 + 표정 일러/리깅 3개 무료</p></div></div><div class="smp"><span>샘플 준비 중</span><img src="chavi_sample.png" alt="Chavi 작가님 샘플"></div></div>
-      <div class="mv-col"><div class="info"><div class="hd"><div class="nm">유세 작가님</div><a class="go" href="https://artmug.kr/index.php?channel=view&amp;uid=60548" target="_blank" rel="noopener">페이지 보기 →</a></div><div class="bn wait"><p><b>[혜택]</b> 협의 중</p></div></div><div class="smp"><span>샘플 준비 중</span><img src="yuse_sample.png" alt="유세 작가님 샘플"></div></div>
+      <div class="mv-col"><div class="info"><div class="hd"><div class="nm">행련 작가님</div><a class="go" href="https://artmug.kr/index.php?channel=view&amp;uid=27414" target="_blank" rel="noopener">페이지 보기 →</a></div><div class="bn"><p><b>[협업 혜택]</b><span class="d">각각 5만원 할인+표정 일러/리깅 2개 무료</span></p></div></div><div class="smp"><span>샘플 준비 중</span><img src="hr_sample.png" alt="행련 작가님 샘플"></div></div>
+      <div class="mv-col"><div class="info"><div class="hd"><div class="nm">Chavi 작가님</div><a class="go" href="https://artmug.kr/index.php?channel=view&amp;uid=57144" target="_blank" rel="noopener">페이지 보기 →</a></div><div class="bn"><p><b>[협업 혜택]</b><span class="d">리깅 5만원 할인+표정 일러/리깅 3개 무료</span></p></div></div><div class="smp"><span>샘플 준비 중</span><img src="chavi_sample.png" alt="Chavi 작가님 샘플"></div></div>
+      <div class="mv-col"><div class="info"><div class="hd"><div class="nm">유세 작가님</div><a class="go" href="https://artmug.kr/index.php?channel=view&amp;uid=60548" target="_blank" rel="noopener">페이지 보기 →</a></div><div class="bn wait"><p><b>[협업 혜택]</b><span class="d">협의 중</span></p></div></div><div class="smp"><span>샘플 준비 중</span><img src="yuse_sample.png" alt="유세 작가님 샘플"></div></div>
       <!-- 협업 작가님 추가: 위 mv-col 줄 하나를 복사해서 이름·이미지·혜택·링크만 바꾸면 아래로 한 줄씩 쌓여요
            페이지가 준비되면 <span class="go off">준비 중</span> 을
            <a class="go" href="아트머그주소" target="_blank" rel="noopener">페이지 보기 →</a> 로 바꾸기 -->
