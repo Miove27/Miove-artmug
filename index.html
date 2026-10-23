@@ -222,7 +222,7 @@
 #mv .mv-stp output{width:28px;text-align:center;font-weight:800;font-size:14px;}
 #mv .mv-chk{flex:none;width:22px;height:22px;accent-color:var(--sky);cursor:pointer;}
 #mv label.mv-opt{cursor:pointer;}
-#mv .mv-sum{position:sticky;top:20px;background:#fff;border-radius:24px;padding:22px;box-shadow:0 8px 28px rgba(77,130,188,.18);}
+#mv .mv-sum{position:relative;will-change:transform;transition:transform .25s ease-out;background:#fff;border-radius:24px;padding:22px;box-shadow:0 8px 28px rgba(77,130,188,.18);}
 #mv .mv-sum-t{font-weight:800;font-size:16px;margin-bottom:12px;}
 #mv .mv-total{background:var(--ink);color:#fff;border-radius:18px;padding:18px;margin-bottom:14px;}
 #mv .mv-total .l{font-size:12px;opacity:.75;}
@@ -295,7 +295,7 @@
   #mv .mv-step{flex:1 1 30%;}
   #mv .mv-event-l{font-size:27px;}
   #mv .mv-big{font-size:44px;}
-  #mv .mv-sum{position:static;}
+  #mv .mv-sum{position:static;transform:none!important;}
   #mv .mv-acc .bd{padding-left:22px;}
 }
 </style>
@@ -910,6 +910,16 @@
     var secs=links.map(function(a){return document.getElementById(a.getAttribute('data-go'));}).filter(Boolean);
     var vis={top:0,h:window.innerHeight};
     var compact=function(){return window.matchMedia('(max-width:1170px)').matches;};
+    /* 예상 견적 박스: 보이는 화면을 따라 신청 양식 안에서 같이 내려오기 */
+    var sum=root.querySelector('.mv-sum'), form=root.querySelector('.mv-form');
+    var followSum=function(){
+      if(!sum||!form) return;
+      if(window.matchMedia('(max-width:760px)').matches){ sum.style.transform=''; return; }
+      var fTop=form.getBoundingClientRect().top+window.scrollY;
+      var maxOff=form.offsetHeight-sum.offsetHeight;
+      var off=Math.max(0,Math.min(vis.top+20-fTop,maxOff));
+      sum.style.transform='translateY('+Math.round(off)+'px)';
+    };
     var layout=function(){
       var line=vis.top+vis.h*0.45, cur=null;
       secs.forEach(function(sc){ if(sc.getBoundingClientRect().top+window.scrollY<=line) cur=sc.id; });
@@ -921,6 +931,7 @@
         var maxY=end-nh;
         nav.style.top=Math.max(10,Math.min(pos,maxY))+'px';
       }
+      followSum();
     };
     if(framed && 'IntersectionObserver' in window){
       // 아트머그 화면에서 상세페이지의 어느 부분이 보이는지 감지 (40px 띠를 깔아서 보이는 띠만 추적)
