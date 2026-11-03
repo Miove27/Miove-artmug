@@ -385,21 +385,7 @@
     차곡차곡 포트폴리오를 채워나갈 테니 계속 지켜봐 주세요!</p>
   </section>
 
-  <!-- ============ 추가 모집 공지 ============ -->
-  <section class="mv-notice-bar">
-    <div class="nb-l">
-      <span class="nb-chip">✦ NOTICE</span>
-      <div class="nb-t"><span class="pk"><span class="n">10</span>월 말</span>까지<br>딱 한 분만 모십니다</div>
-      <div class="nb-sub">작업 기간이 많이 남아서 급하게 모십니다!</div>
-    </div>
-    <div class="nb-r">
-      <b>10월 안에 신청</b>해 주시면<br>
-      <b>10월 말 ~ 11월 중순</b>에 바로 작업해 드려요.<br>
-      이 기간에는 <b>딱 한 분</b>만 받습니다.
-      <div class="nb-price"><span class="off">추가 모집 30% 할인</span><span><s>32만원</s> → <b>22.4만원</b> (반신)</span><span><s>64만원</s> → <b>44.8만원</b> (전신)</span></div>
-      <div><span class="dl">신청 마감 10/31</span></div>
-    </div>
-  </section>
+
 
   <!-- ============ 예약 현황 ============ -->
   <section class="mv-card" id="mv-sched">
@@ -592,7 +578,7 @@
 
     <details class="mv-acc" name="mv-notice"><summary><span class="q">1</span>작업 기간<span class="ic"></span></summary>
       <div class="bd"><ul>
-        <li>입금일 기준 평균 <b>15~25일</b> 소요됩니다. (2026년 10월 기준)</li>
+        <li>입금일 기준 평균 <b>15~25일</b> 소요됩니다. (2026년 11월 기준)</li>
         <li>캐릭터 복잡도, 추가 옵션이나 수정 요청 등에 따라 작업 기간이 변동될 수 있습니다.</li>
         <li>안내 기간보다 작업이 일찍 마무리될 경우, 바로 전달드립니다.</li>
       </ul></div></details>
@@ -647,9 +633,7 @@
 
     <div class="mv-form">
       <div class="mv-fbox">
-        <!-- 이벤트 -->
-        <label class="mv-opt mv-evopt" id="mv-evbox"><input type="checkbox" class="mv-chk" id="mv-ev"><div class="tx">추가 모집 30% 할인 적용하기<small>10월 31일까지 신청 · 10월 말 ~ 11월 중순 작업 (1자리)</small></div><span class="pr">기본 가격 −30%</span></label>
-
+        
         <!-- 기본 정보 -->
         <div class="mv-fsec">■ 기본 정보</div>
         <div class="mv-f2">
@@ -772,15 +756,14 @@
 (function(){
   /* ================= CONFIG : 여기만 고치면 됩니다 ================= */
   var CONFIG = {
-    eventOn: true,            // 할인 끝나면 false (신청 양식에서 할인 체크칸이 사라져요)
+    eventOn: false,            // 할인 끝나면 false (신청 양식에서 할인 체크칸이 사라져요)
     eventRate: 0.3,           // 할인율 (0.3 = 30%)
     eventLabel: '추가 모집 30% 할인',
     year: '2026년',
     months: ['10월','11월','12월'],   // 위쪽 달 이름
-    segs: [   // 아래 칸: span = 반 달 단위 칸 수(한 달 = 2) / pd = 폰에서 보이는 기간 / slots = 자리 수 / booked = 예약된 수
-      {span:1, pd:'10월 초·중순', tag:'오픈 이벤트', slots:1, booked:1},
-      {span:2, pd:'10월 말 ~ 11월 중순', tag:'추가 모집 · 30% 할인', hot:true, slots:1, booked:0, title:'1자리 모집 중', when:'10월 말 ~ 11월 중순 작업', note:'10/31까지 신청'},
-      {span:1, pd:'11월 말', tag:'오픈 이벤트', slots:1, booked:1},
+    segs: [
+      {span:2, pd:'10월', slots:1, booked:1},
+      {span:2, pd:'11월', slots:1, booked:1},
       {span:2, pd:'12월', tag:'예약 가능', slots:1, booked:0}
     ],
     base: { half:{name:'반신', price:320000, event:224000}, full:{name:'전신', price:640000, event:448000} },
