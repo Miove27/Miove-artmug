@@ -192,6 +192,8 @@
 #mv .mv-box li{margin-bottom:6px;}
 
 /* 협업 작가 */
+#mv .mv-free-note{margin:-8px 0 18px;background:#fde7f0;color:#b8456f;border-radius:14px;padding:12px 16px;font-size:13.5px;line-height:1.6;}
+#mv .mv-free-note b{color:#c2185b;}
 #mv .mv-collab{display:flex;flex-direction:column;gap:14px;}
 #mv .mv-col{display:grid;grid-template-columns:300px 1fr;gap:22px;align-items:stretch;border:1.5px solid var(--line);border-radius:22px;padding:18px 20px;background:#fff;transition:border-color .2s,box-shadow .2s;}
 #mv .mv-col:hover{border-color:var(--sky);box-shadow:0 4px 16px rgba(77,130,188,.12);}
@@ -260,7 +262,12 @@
 #mv .mv-stp output{width:28px;text-align:center;font-weight:800;font-size:14px;}
 #mv .mv-chk{flex:none;width:22px;height:22px;accent-color:var(--sky);cursor:pointer;}
 #mv label.mv-opt{cursor:pointer;}
-#mv .mv-evopt{background:#fff5f9;border:2px dashed var(--pink);margin-bottom:22px;}
+#mv .mv-evopt{background:#fff5f9;border:2px dashed var(--pink);margin-bottom:10px;}
+#mv #mv-rvbox{margin-bottom:22px;}
+#mv .mv-scope-guide{margin-top:10px;background:#fff;border:1.5px dashed var(--line);border-radius:12px;padding:10px 14px;font-size:13px;line-height:1.7;}
+#mv .mv-scope-guide div{display:flex;gap:10px;}
+#mv .mv-scope-guide b{flex:none;width:76px;color:var(--sky-d);}
+#mv .mv-scope-guide em{font-style:normal;color:var(--pink);font-weight:700;}
 #mv .mv-evopt .tx{color:var(--ink);font-weight:800;}
 #mv .mv-evopt .pr{color:var(--pink);}
 #mv .mv-evopt .mv-chk{accent-color:var(--pink);}
@@ -550,13 +557,14 @@
   <section class="mv-card" id="mv-collab">
     <h2 class="mv-h">협업 작가님</h2>
     <p class="mv-desc">협업 작가님의 일러스트로 신청하시면 아래 혜택이 적용돼요.</p>
+    <div class="mv-free-note">✿ 무료 표정은 <b>애니메이션 없는 표정</b>(홍조, 정색 등)만 해당돼요. 눈물·빙글 눈 같은 애니메이션 표정이나 하트 눈 같은 물리 표정은 추가금이 있어요.</div>
     <div class="mv-collab">
       <div class="mv-col"><div class="info"><div class="hd"><div class="nm">행련 작가님</div><a class="go" href="https://artmug.kr/index.php?channel=view&amp;uid=27414" target="_blank" rel="noopener">페이지 보기 →</a></div><div class="bn"><p><b>[협업 혜택]</b><span class="d">각 5만원 할인+표정 2종 무료(일러·리깅)</span></p></div></div><div class="smp"><span>샘플 준비 중</span><img src="hr_sample.png" alt="행련 작가님 샘플"></div></div>
       <div class="mv-col"><div class="info"><div class="hd"><div class="nm">Chavi 작가님</div><a class="go" href="https://artmug.kr/index.php?channel=view&amp;uid=57144" target="_blank" rel="noopener">페이지 보기 →</a></div><div class="bn"><p><b>[협업 혜택]</b><span class="d">각 5만원 할인+표정 3종 무료(일러·리깅)</span></p></div></div><div class="smp"><span>샘플 준비 중</span><img src="chavi_sample.png" alt="Chavi 작가님 샘플"></div></div>
       <div class="mv-col"><div class="info"><div class="hd"><div class="nm">HAREHA 작가님</div><a class="go" href="https://artmug.kr/index.php?channel=view&amp;uid=61163" target="_blank" rel="noopener">페이지 보기 →</a></div><div class="bn"><p><b>[협업 혜택]</b><span class="d">각 5만원 할인+표정 2종 무료(일러·리깅)</span></p></div></div><div class="smp"><span>샘플 준비 중</span><img src="hareha_sample.png" alt="HAREHA 작가님 샘플"></div></div>
       <div class="mv-col"><div class="info"><div class="hd"><div class="nm">BADA 작가님</div><a class="go" href="https://artmug.kr/index.php?channel=view&amp;uid=52052" target="_blank" rel="noopener">페이지 보기 →</a></div><div class="bn"><p><b>[협업 혜택]</b><span class="d">각 5만원 할인+표정 2종 무료(일러·리깅)</span></p></div></div><div class="smp"><span>샘플 준비 중</span><img src="bada_sample.png" alt="BADA 작가님 샘플"></div></div>
       <div class="mv-col"><div class="info"><div class="hd"><div class="nm">흐뉴 작가님</div><a class="go" href="https://artmug.kr/index.php?channel=view&uid=61699" target="_blank" rel="noopener">페이지 보기 →</a></div><div class="bn"><p><b>[협업 혜택]</b><span class="d">각 5만원 할인+표정 2종 무료(Only 리깅)</span></p></div></div><div class="smp"><span>샘플 준비 중</span><img src="hnew_sample.png" alt="흐뉴 작가님 샘플"></div></div>
-      <div class="mv-col"><div class="info"><div class="hd"><div class="nm">유세 작가님</div><a class="go" href="https://artmug.kr/index.php?channel=view&amp;uid=60548" target="_blank" rel="noopener">페이지 보기 →</a></div><div class="bn wait"><p><b>[협업 혜택]</b><span class="d">협의 중</span></p></div></div><div class="smp"><span>샘플 준비 중</span><img src="yuse_sample.png" alt="유세 작가님 샘플"></div></div>
+      <div class="mv-col"><div class="info"><div class="hd"><div class="nm">유세 작가님</div><a class="go" href="https://artmug.kr/index.php?channel=view&amp;uid=60548" target="_blank" rel="noopener">페이지 보기 →</a></div><div class="bn"><p><b>[협업 혜택]</b><span class="d">각 5만원 할인+표정 2종 무료(Only 리깅)</span></p></div></div><div class="smp"><span>샘플 준비 중</span><img src="yuse_sample.png" alt="유세 작가님 샘플"></div></div>
       <!-- 협업 작가님 추가: 위 mv-col 줄 하나를 복사해서 이름·이미지·혜택·링크만 바꾸면 아래로 한 줄씩 쌓여요
            페이지가 준비되면 <span class="go off">준비 중</span> 을
            <a class="go" href="아트머그주소" target="_blank" rel="noopener">페이지 보기 →</a> 로 바꾸기 -->
@@ -627,13 +635,19 @@
         <div class="mv-row"><span class="k">눈썹</span><span class="mv-tag">위아래</span><span class="mv-tag">변형(찡그림, 슬픔)</span></div>
         <div class="mv-row"><span class="k">입</span><span class="mv-tag">여닫기</span><span class="mv-tag">변형 9점</span></div>
         <div class="mv-row"><span class="k">몸 XYZ</span><span class="mv-tag">호흡</span><span class="mv-tag">머리카락 물리</span><span class="mv-tag">의상 물리</span></div>
-        <p style="margin:12px 0 0;font-size:13px;">※ 현재 작업 불가능한 기능 : SD 전환</p>
+        <p style="margin:12px 0 0;font-size:13px;">※ <b>반신</b>은 두상 + 상체(팔·손 제외) 기준이에요. 엉덩이·허벅지(무릎 위)까지 있는 일러스트는 <b>반신 + 하체</b>(+100,000원)로 신청해 주세요.</p>
+        <p style="margin:6px 0 0;font-size:13px;">※ 현재 작업 불가능한 기능 : SD 전환</p>
       </div></details>
     <div class="mv-alert"><span class="ex">!</span><div><b>문의창에 파츠 분리 PSD 파일을 첨부해 주세요.</b><br><span style="color:var(--sub)">곤란하거나 적기 어려운 부분은 비워두셔도 괜찮아요. PSD를 첨부해 주시면 더 정확한 견적을 드릴 수 있어요.</span></div></div>
 
     <div class="mv-form">
       <div class="mv-fbox">
         
+        <!-- 이벤트 -->
+        <div class="mv-fsec">■ 진행 중인 이벤트 <small style="font-weight:500;color:var(--mute);font-family:Pretendard,sans-serif;font-size:12.5px">해당되면 체크해 주세요</small></div>
+        <label class="mv-opt mv-evopt" id="mv-evbox"><input type="checkbox" class="mv-chk" id="mv-ev"><div class="tx">12월 10% 할인 이벤트<small>12월 작업 · 선착순 2분</small></div><span class="pr">기본 가격 −10%</span></label>
+        <label class="mv-opt mv-evopt" id="mv-rvbox"><input type="checkbox" class="mv-chk" id="mv-rv"><div class="tx">리뷰 이벤트<small>완성 후 아트머그에 후기를 남겨주시면 할인해 드려요</small></div><span class="pr">−30,000원</span></label>
+
         <!-- 기본 정보 -->
         <div class="mv-fsec">■ 기본 정보</div>
         <div class="mv-f2">
@@ -657,7 +671,13 @@
         <div class="mv-field"><label class="lb">신청 범위</label>
           <div class="mv-pills">
             <label class="mv-pill"><input type="radio" name="mv-scope" value="half" checked><span>반신</span></label>
+            <label class="mv-pill"><input type="radio" name="mv-scope" value="halfplus"><span>반신 + 하체</span></label>
             <label class="mv-pill"><input type="radio" name="mv-scope" value="full"><span>전신</span></label>
+          </div>
+          <div class="mv-scope-guide">
+            <div><b>반신</b><span>두상 + 상체 <em>(팔·손 제외)</em></span></div>
+            <div><b>반신 + 하체</b><span>반신 + 엉덩이·허벅지 <em>(무릎 위까지)</em> · +100,000원</span></div>
+            <div><b>전신</b><span>머리부터 발끝까지</span></div>
           </div></div>
         <div class="mv-field"><label class="lb">일러스트레이터</label>
           <div class="mv-pills">
@@ -667,7 +687,7 @@
             <label class="mv-pill"><input type="radio" name="mv-collab" value="hareha"><span>HAREHA 작가님 (협업)</span></label>
             <label class="mv-pill"><input type="radio" name="mv-collab" value="bada"><span>BADA 작가님 (협업)</span></label>
             <label class="mv-pill"><input type="radio" name="mv-collab" value="hnew"><span>흐뉴 작가님 (협업)</span></label>
-            <label class="mv-pill off" title="협업 혜택 협의 중"><input type="radio" name="mv-collab" value="yuse" disabled><span>유세 작가님 (혜택 협의 중)</span></label>
+            <label class="mv-pill"><input type="radio" name="mv-collab" value="yuse"><span>유세 작가님 (협업)</span></label>
           </div></div>
         <div class="mv-field"><label class="lb" for="mv-artist">일러스트레이터 닉네임</label><input class="mv-in" id="mv-artist" placeholder="작가명 또는 링크" data-k="일러스트레이터 닉네임"></div>
         <div class="mv-field"><label class="lb">일러스트 준비 상태</label>
@@ -685,7 +705,7 @@
 
         <!-- 옵션 -->
         <div class="mv-fsec">■ 추가 옵션</div>
-        <div class="mv-opt"><div class="tx">표정 · 애니메이션 X<small>홍조, 정색 등</small></div><span class="pr">+5,000</span><div class="mv-stp" data-id="exA"><button type="button" data-d="-1" aria-label="빼기">−</button><output>0</output><button type="button" data-d="1" aria-label="더하기">+</button></div></div>
+        <div class="mv-opt"><div class="tx">표정 · 애니메이션 X<small>홍조, 정색 등 · <b style="color:var(--pink)">협업 무료 표정은 이 항목만</b></small></div><span class="pr">+5,000</span><div class="mv-stp" data-id="exA"><button type="button" data-d="-1" aria-label="빼기">−</button><output>0</output><button type="button" data-d="1" aria-label="더하기">+</button></div></div>
         <div class="mv-opt"><div class="tx">표정 · 애니메이션 O<small>눈물 방울, 빙글 눈 등</small></div><span class="pr">+10,000</span><div class="mv-stp" data-id="exB"><button type="button" data-d="-1" aria-label="빼기">−</button><output>0</output><button type="button" data-d="1" aria-label="더하기">+</button></div></div>
         <div class="mv-opt"><div class="tx">표정 · 물리 O<small>하트 눈, 반짝 눈 등</small></div><span class="pr">+10,000</span><div class="mv-stp" data-id="exC"><button type="button" data-d="-1" aria-label="빼기">−</button><output>0</output><button type="button" data-d="1" aria-label="더하기">+</button></div></div>
         <div class="mv-field" style="margin-top:4px;"><label class="lb" for="mv-exdesc">원하는 표정 <small>(자유롭게)</small></label><input class="mv-in" id="mv-exdesc" placeholder="예: 홍조 1, 하트 눈 1" data-k="원하는 표정"></div>
@@ -756,17 +776,20 @@
 (function(){
   /* ================= CONFIG : 여기만 고치면 됩니다 ================= */
   var CONFIG = {
-    eventOn: false,            // 할인 끝나면 false (신청 양식에서 할인 체크칸이 사라져요)
-    eventRate: 0.3,           // 할인율 (0.3 = 30%)
-    eventLabel: '추가 모집 30% 할인',
+    eventOn: true,            // 할인 끝나면 false (신청 양식에서 할인 체크칸이 사라져요)
+    eventRate: 0.1,           // 할인율 (0.1 = 10%)
+    eventLabel: '12월 10% 할인 이벤트',
     year: '2026년',
+    reviewOn: true,           // 리뷰 이벤트 끝나면 false
+    reviewDiscount: 30000,    // 리뷰 이벤트 할인 금액
+    halfPlus: 100000,         // 하체 포함 반신 추가금
     months: ['10월','11월','12월'],   // 위쪽 달 이름
     segs: [
       {span:2, pd:'10월', slots:1, booked:1},
       {span:2, pd:'11월', slots:1, booked:1},
-      {span:2, pd:'12월', tag:'예약 가능', slots:1, booked:0}
+      {span:2, pd:'12월', tag:'12월 10% 할인 이벤트', hot:true, slots:2, booked:0, note:'선착순 2분'}
     ],
-    base: { half:{name:'반신', price:320000, event:224000}, full:{name:'전신', price:640000, event:448000} },
+    base: { half:{name:'반신', price:320000}, halfplus:{name:'반신 + 하체', price:420000}, full:{name:'전신', price:640000} },
     opt: {
       exA:{name:'표정 (애니메이션 X)', price:5000},
       exB:{name:'표정 (애니메이션 O)', price:10000},
@@ -783,9 +806,8 @@
       chavi:{name:'Chavi 작가님', discount:50000, freeExpr:3},
       hareha:{name:'HAREHA 작가님', discount:50000, freeExpr:2},
       bada:{name:'BADA 작가님', discount:50000, freeExpr:2},
-      hnew:{name:'흐뉴 작가님', discount:50000, freeExpr:2}     
-      // 유세 작가님 혜택이 정해지면: 위 줄 끝에 쉼표(,) 넣고 아래 줄 앞의 // 지우기 + 신청 양식의 유세 버튼에서 disabled 지우기
-      // ,yuse:{name:'유세 작가님', discount:0, freeExpr:0}
+      hnew:{name:'흐뉴 작가님', discount:50000, freeExpr:2},
+      yuse:{name:'유세 작가님', discount:50000, freeExpr:2}
     }
   };
   /* ================================================================ */
@@ -856,14 +878,17 @@
   var count = {exA:0,exB:0,exC:0,hair:0,outfit:0,prop:0};
   var radio = function(n){var r=root.querySelector('input[name="'+n+'"]:checked'); return r?r.value:'';};
   var radioText = function(n){var r=root.querySelector('input[name="'+n+'"]:checked'); return r?r.parentNode.textContent.trim():'';};
-  var vb=$('#mv-vb'), tg=$('#mv-tongue'), evc=$('#mv-ev');
+  var vb=$('#mv-vb'), tg=$('#mv-tongue'), evc=$('#mv-ev'), rvc=$('#mv-rv');
+  if(!CONFIG.reviewOn){ var rb=$('#mv-rvbox'); if(rb) rb.style.display='none'; }
   if(!CONFIG.eventOn){ var eb=$('#mv-evbox'); if(eb) eb.style.display='none'; }
 
   function calc(){
     var lines=[], total=0;
-    var b=CONFIG.base[radio('mv-scope')||'half'];
-    lines.push({t:b.name+' 기본', v:b.price}); total+=b.price;
+    var sc=radio('mv-scope')||'half', b=CONFIG.base[sc];
+    if(sc==='halfplus'){ lines.push({t:'반신 기본', v:CONFIG.base.half.price}); lines.push({t:'하체 포함 (엉덩이·허벅지)', v:b.price-CONFIG.base.half.price}); } else lines.push({t:b.name+' 기본', v:b.price});
+    total+=b.price;
     if(CONFIG.eventOn && evc && evc.checked){ var ed=Math.round(b.price*CONFIG.eventRate); lines.push({t:CONFIG.eventLabel, v:-ed, minus:true}); total-=ed; }
+    if(CONFIG.reviewOn && rvc && rvc.checked){ lines.push({t:'리뷰 이벤트', v:-CONFIG.reviewDiscount, minus:true}); total-=CONFIG.reviewDiscount; }
 
     Object.keys(CONFIG.opt).forEach(function(k){
       if(count[k]>0){var o=CONFIG.opt[k]; lines.push({t:o.name+' ×'+count[k], v:o.price*count[k]}); total+=o.price*count[k];}
@@ -878,11 +903,10 @@
     var c=CONFIG.collab[radio('mv-collab')||'none'];
     if(c.discount){
       lines.push({t:c.name+' 협업 할인', v:-c.discount, minus:true}); total-=c.discount;
-      var prices=[]; ['exB','exC','exA'].forEach(function(k){for(var i=0;i<count[k];i++) prices.push(CONFIG.opt[k].price);});
-      prices.sort(function(a,b){return b-a;});
-      var free=prices.slice(0,c.freeExpr).reduce(function(a,x){return a+x;},0);
-      if(free>0){lines.push({t:'협업 혜택 표정 '+Math.min(c.freeExpr,prices.length)+'개 무료', v:-free, minus:true}); total-=free;}
-      else lines.push({t:'협업 혜택: 표정 '+c.freeExpr+'개 무료 추가 가능', ask:true, txt:'혜택'});
+      // 무료 표정은 '애니메이션 없는 표정(exA)'만 해당
+      var fn=Math.min(c.freeExpr,count.exA), free=fn*CONFIG.opt.exA.price;
+      if(free>0){lines.push({t:'협업 혜택: 애니메이션 없는 표정 '+fn+'개 무료', v:-free, minus:true}); total-=free;}
+      if(fn<c.freeExpr) lines.push({t:'협업 혜택: 애니메이션 없는 표정 '+(c.freeExpr-fn)+'개 더 무료', ask:true, txt:'혜택'});
     }
     if(radio('mv-com')==='예') lines.push({t:'상업적 이용', ask:true, txt:'별도 견적'});
     if(radio('mv-psd')==='파츠 분리 전') lines.push({t:'파츠 분리 작업', ask:true, txt:'별도 견적'});
@@ -925,6 +949,7 @@
     L.push('■ 일러스트 정보');
     L.push('신청 범위 : '+radioText('mv-scope'));
     if(CONFIG.eventOn) L.push(CONFIG.eventLabel+' : '+(evc&&evc.checked?'적용':'미적용'));
+    if(CONFIG.reviewOn) L.push('리뷰 이벤트 : '+(rvc&&rvc.checked?'참여':'미참여'));
     L.push('일러스트레이터 : '+artist+(c.name?' (협업 작가)':''));
     L.push('일러스트 준비 상태 : '+radioText('mv-psd'));
     L.push('캐릭터 타입 : '+radioText('mv-type'),'');
@@ -964,7 +989,7 @@
     $$('.mv-in').forEach(function(i){i.value='';});
     $$('input[type=radio]').forEach(function(i){i.checked=false;});
     ['mv-com','mv-scope','mv-collab','mv-priv'].forEach(function(n){var f=root.querySelector('input[name="'+n+'"]'); if(f) f.checked=true;});
-    vb.checked=false; tg.checked=false; if(evc) evc.checked=false; $$('.mv-pose').forEach(function(c){c.checked=false;});
+    vb.checked=false; tg.checked=false; if(evc) evc.checked=false; if(rvc) rvc.checked=false; $$('.mv-pose').forEach(function(c){c.checked=false;});
     Object.keys(count).forEach(function(k){count[k]=0;});
     $$('.mv-stp output').forEach(function(o){o.textContent='0';});
     render();
