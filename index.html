@@ -264,6 +264,11 @@
 #mv label.mv-opt{cursor:pointer;}
 #mv .mv-evopt{background:#fff5f9;border:2px dashed var(--pink);margin-bottom:10px;}
 #mv #mv-rvbox{margin-bottom:22px;}
+#mv .mv-hint{margin-top:8px;font-size:12.5px;color:var(--sub);background:#fff;border:1.5px dashed var(--line);border-radius:10px;padding:7px 12px;}
+#mv .mv-hint .ok{color:var(--sky-d);}
+#mv .mv-hint .no{color:var(--pink);}
+#mv .mv-hint.pk{background:#fff5f9;border-color:#f6b8cf;}
+#mv .mv-hint.pk b{color:#c2185b;}
 #mv .mv-scope-guide{margin-top:10px;background:#fff;border:1.5px dashed var(--line);border-radius:12px;padding:10px 14px;font-size:13px;line-height:1.7;}
 #mv .mv-scope-guide div{display:flex;gap:10px;}
 #mv .mv-scope-guide b{flex:none;width:76px;color:var(--sky-d);}
@@ -597,7 +602,7 @@
         <li>작업물 완성 전, 공유해 드린 과정은 외부 유출이 금지됩니다.</li>
         <li>비공개 미신청 시, 작업 과정 및 완성본이 작가의 SNS/포트폴리오/쇼케이스에 샘플로 사용될 수 있습니다. <b>비공개 신청 시 3개월까지 무료</b>이며, 그 이후 추가금(5만원)이 발생합니다. 방송 데뷔 일정 등 단기 비공개를 희망하시면 사전 문의 바랍니다.</li>
         <li>의뢰자는 완성된 모델을 개인 방송 · 영상 콘텐츠 · SNS 등에서 자유롭게 사용 가능합니다.</li>
-        <li>사전 문의 없이 모델 리깅 자체를 활용한 굿즈 제작, 기업 광고 출연 등의 상업적 사업 진행을 금지합니다. (추가금이 붙습니다.)</li>
+        <li>사전 문의 없이 모델 리깅 자체를 활용한 굿즈 제작, 기업 광고 출연 등의 상업적 사업 진행을 금지합니다. (상업적 이용 추가금 300,000원)</li>
         <li>완성된 작업물의 재판매, 양도를 원하실 경우 작가 본인(Miove)에게 허락을 구하셔야 합니다.</li>
       </ul></div></details>
 
@@ -657,13 +662,17 @@
         <div class="mv-field"><label class="lb">사용 용도</label>
           <div class="mv-pills">
             <label class="mv-pill"><input type="radio" name="mv-use" value="방송용"><span>방송용</span></label>
-            <label class="mv-pill"><input type="radio" name="mv-use" value="영상용"><span>영상용</span></label>
+            <label class="mv-pill"><input type="radio" name="mv-use" value="개인소장용"><span>개인소장용</span></label>
             <label class="mv-pill"><input type="radio" name="mv-use" value="기타"><span>기타</span></label>
+          </div>
+          <div class="mv-hint">수익 창출 <b class="ok">O</b> · 모델 재판매 및 양도 <b class="no">X</b>
           </div></div>
-        <div class="mv-field"><label class="lb">상업적 이용 여부 <small>(굿즈·광고 등은 별도 견적)</small></label>
+        <div class="mv-field"><label class="lb">상업적 이용 여부 <small>(선택 시 +300,000원)</small></label>
           <div class="mv-pills">
             <label class="mv-pill"><input type="radio" name="mv-com" value="아니오" checked><span>아니오</span></label>
             <label class="mv-pill"><input type="radio" name="mv-com" value="예"><span>예</span></label>
+          </div>
+          <div class="mv-hint pk"><b>리깅된 모델을 이용한 굿즈 제작, 광고 촬영</b>은 상업적 이용에 해당해요.
           </div></div>
 
         <!-- 일러스트 정보 -->
@@ -780,6 +789,7 @@
     eventRate: 0.1,           // 할인율 (0.1 = 10%)
     eventLabel: '12월 10% 할인 이벤트',
     year: '2026년',
+    commercial: 300000,       // 상업적 이용 추가금
     reviewOn: true,           // 리뷰 이벤트 끝나면 false
     reviewDiscount: 30000,    // 리뷰 이벤트 할인 금액
     halfPlus: 100000,         // 하체 포함 반신 추가금
@@ -908,7 +918,7 @@
       if(free>0){lines.push({t:'협업 혜택: 애니메이션 없는 표정 '+fn+'개 무료', v:-free, minus:true}); total-=free;}
       if(fn<c.freeExpr) lines.push({t:'협업 혜택: 애니메이션 없는 표정 '+(c.freeExpr-fn)+'개 더 무료', ask:true, txt:'혜택'});
     }
-    if(radio('mv-com')==='예') lines.push({t:'상업적 이용', ask:true, txt:'별도 견적'});
+    if(radio('mv-com')==='예'){ lines.push({t:'상업적 이용', v:CONFIG.commercial}); total+=CONFIG.commercial; }
     if(radio('mv-psd')==='파츠 분리 전') lines.push({t:'파츠 분리 작업', ask:true, txt:'별도 견적'});
     if(total<0) total=0;
     return {lines:lines,total:total};
