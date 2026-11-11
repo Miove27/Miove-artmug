@@ -13,7 +13,7 @@
        profile.png · model1.png
        얼굴 각도  face_x.gif  face_y.gif  face_all.gif (염소)  face_lab.gif (연구원, 맨 위 큰 칸)
                  face_lina.gif  face_lina_x.gif  face_lina_y.gif (리나레이나 전체/X/Y)
-       눈동자    eye_goat.gif  eye_lab.gif  eye_lina.gif
+       눈동자    eye_goat.gif (염소)  eye_lina.gif (리나레이나)  eye_lab.gif (연구원)
        표정      expr_tear.gif (눈물)  expr_angry.gif (화남+정색)  expr_shy.gif (부끄러움+하트눈)  expr_surprise.gif (놀람)
        VBridger  vb_cheek.gif  vb_mouth.gif  vb_tongue.gif  vb_lip.gif
        추가 소품  prop_glasses.gif  prop_chain.gif  prop_ribbon.gif
@@ -125,10 +125,10 @@
 #mv .mv-subbox .mv-sublb{margin:0;padding:16px 22px;border-bottom:1.5px dashed var(--line);background:var(--sky-ll);font-size:19px;color:var(--ink);}
 #mv .mv-subbox .mv-slider{padding:18px 18px 16px;}
 #mv .mv-gif{position:relative;}
-#mv .mv-gif img{display:block;width:100%;aspect-ratio:1/1.08;object-fit:cover;border:1px solid var(--line);border-radius:16px;background:var(--sky-ll);}
+#mv .mv-gif img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border:1px solid var(--line);border-radius:16px;background:var(--sky-ll);}
 #mv .mv-gif.tall img{aspect-ratio:2/3;}
 #mv .mv-gif .tag{display:block;text-align:center;margin-top:9px;font-size:14px;font-weight:800;color:var(--ink);}
-#mv .mv-gif.empty::before{content:"GIF";display:flex;align-items:center;justify-content:center;aspect-ratio:1/1.08;border:1px dashed var(--sky);border-radius:16px;background:var(--sky-ll);color:var(--sky-d);font-weight:900;font-size:20px;letter-spacing:2px;}
+#mv .mv-gif.empty::before{content:"GIF";display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;border:1px dashed var(--sky);border-radius:16px;background:var(--sky-ll);color:var(--sky-d);font-weight:900;font-size:20px;letter-spacing:2px;}
 #mv .mv-gif.tall.empty::before{aspect-ratio:2/3;}
 #mv .mv-credit{font-size:12px;color:var(--mute);text-align:right;margin-top:14px;}
 
@@ -477,8 +477,8 @@
         <div class="mv-sublb">눈동자<small>캐릭터의 개성을 살린 눈동자 연출</small></div>
         <div class="mv-gbox"><div class="mv-grid">
           <div class="mv-gif"><img src="eye_goat.gif" alt="눈동자" loading="lazy"></div>
-          <div class="mv-gif"><img src="eye_lab.gif" alt="눈동자" loading="lazy"></div>
           <div class="mv-gif"><img src="eye_lina.gif" alt="눈동자" loading="lazy"></div>
+          <div class="mv-gif"><img src="eye_lab.gif" alt="눈동자" loading="lazy"></div>
         </div></div>
       </div>
       <div class="mv-subbox">
