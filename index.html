@@ -11,13 +11,14 @@
      Miove · Live2D 리깅 상세페이지 (깃허브 페이지스에 올려서 아트머그에 iframe으로 넣는 용)
      ▸ 이미지/움짤: 이 파일과 같은 곳에 아래 이름으로 올리면 자동으로 들어가요 (확장자까지 똑같이)
        profile.png · model1.png
-       얼굴 각도  face_x.gif  face_y.gif  face_all.gif
-       눈동자    phys_eye.gif  eye_2.gif  eye_3.gif
-       표정      expr_heart.gif  expr_serious.gif  expr_surprise.gif  expr_sad.gif  expr_shy.gif
+       얼굴 각도  face_x.gif  face_y.gif  face_all.gif (염소)  face_lab.gif (연구원, 맨 위 큰 칸)
+                 face_lina.gif  face_lina_x.gif  face_lina_y.gif (리나레이나 전체/X/Y)
+       눈동자    eye_goat.gif  eye_lab.gif  eye_lina.gif
+       표정      expr_tear.gif (눈물)  expr_angry.gif (화남+정색)  expr_shy.gif (부끄러움+하트눈)  expr_surprise.gif (놀람)
        VBridger  vb_cheek.gif  vb_mouth.gif  vb_tongue.gif  vb_lip.gif
+       추가 소품  prop_glasses.gif  prop_chain.gif  prop_ribbon.gif
        전신 각도  body_x.gif  body_y.gif  body_z.gif
-       추가 포즈  pose_foot.gif  pose_gachi.gif
-       물리      phys_skirt.gif (의상)  phys_hair.gif
+       추가 포즈  pose_foot.gif (발 콕콕)  pose_close.gif (가깝게 다가오기)
        협업 샘플  가로로 긴 이미지 1장(4:1 비율): hr_sample.png (행련)  chavi_sample.png (Chavi)  hareha_sample.png (HAREHA)  bada_sample.png (BADA)  yuse_sample.png (유세)
      ▸ 쇼케이스 영상 추가: mv-vslide 덩어리를 복사해서 embed/ 뒤에 유튜브 ID 넣기 / 협업 작가님 아트머그 주소 넣기
      ▸ 가격·이벤트·예약 슬롯은 맨 아래 스크립트의 CONFIG 에서 수정
@@ -138,6 +139,29 @@
 #mv .mv-track>.mv-gif{flex:0 0 calc((100% - 28px) / 3);scroll-snap-align:start;}
 #mv .mv-track.c4>.mv-gif{flex-basis:calc((100% - 42px) / 4);}
 #mv .mv-track.c2{justify-content:center;}
+/* 리깅 디테일 · 한눈에 보는 배열 (넘김 없음) */
+#mv .mv-subbox .mv-gbox{padding:20px 20px 18px;}
+#mv .mv-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:18px 16px;}
+#mv .mv-grid>.mv-gif{flex:0 0 calc((100% - 32px) / 3);min-width:0;}
+#mv .mv-grid.g4>.mv-gif{flex-basis:calc((100% - 48px) / 4);}
+#mv .mv-grid.g22{max-width:calc((100% - 32px) * 2 / 3 + 16px);margin:0 auto;}
+#mv .mv-grid.g22>.mv-gif{flex-basis:calc((100% - 16px) / 2);}
+#mv .mv-gif.soon::before{content:"작업 중";}
+#mv .mv-ahero{display:flex;align-items:center;gap:34px;padding-bottom:20px;margin-bottom:20px;border-bottom:1.5px dashed var(--line);}
+#mv .mv-ahero .mv-gif{flex:0 0 calc((100% - 32px) / 3);min-width:0;}
+#mv .mv-ahero .tx{flex:1;margin:0;font-size:19px;line-height:1.8;color:var(--ink);font-weight:600;}
+#mv .mv-ahero .tx b{color:var(--sky-d);font-weight:800;}
+@media (max-width:760px){
+  #mv .mv-subbox .mv-gbox{padding:14px 12px;}
+  #mv .mv-grid,#mv .mv-grid.g22{gap:14px 12px;max-width:480px;margin:0 auto;}
+  #mv .mv-grid>.mv-gif,#mv .mv-grid.g4>.mv-gif,#mv .mv-grid.g22>.mv-gif{flex-basis:calc((100% - 12px) / 2);}
+  #mv .mv-gif .tag{font-size:13px;}
+  #mv .mv-ahero{flex-direction:column;gap:14px;text-align:center;max-width:480px;margin:0 auto 16px;padding-bottom:16px;}
+  #mv .mv-ahero .mv-gif{flex:none;width:calc((100% - 12px) / 2);}
+  #mv .mv-ahero .tx{font-size:15px;}
+  #mv .mv-grid.g3m{gap:12px 8px;}
+  #mv .mv-grid.g3m>.mv-gif{flex-basis:calc((100% - 16px) / 3);}
+  }
 #mv .mv-ctrl{display:flex;align-items:center;gap:10px;margin-top:10px;}
 #mv .mv-ctrl button,#mv .mv-vctrl button{flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line);background:#fff;color:var(--sky-d);font-size:16px;line-height:1;cursor:pointer;transition:.15s;}
 #mv .mv-ctrl button:hover,#mv .mv-vctrl button:hover{background:var(--sky);color:var(--ink);}
@@ -431,92 +455,78 @@
   <!-- ============ 리깅 디테일 ============ -->
   <section class="mv-card" id="mv-detail">
     <h2 class="mv-h">리깅 디테일</h2>
-    <p class="mv-desc">*칸이 넘치는 줄은 옆으로 밀어서 보기</p>
     <div class="mv-group">
       <div class="mv-group-t"><span class="mv-chip">얼굴</span></div>
       <div class="mv-subbox">
         <div class="mv-sublb">각도<small>어느 각도에서도 자연스러운 얼굴</small></div>
-        <div class="mv-slider">
-          <div class="mv-track">
+        <div class="mv-gbox">
+          <div class="mv-ahero">
+            <div class="mv-gif"><img src="face_lab.gif" alt="얼굴 각도" loading="lazy"></div>
+            <p class="tx">어느 각도에서 멈추든<br>원래 일러스트의 퀄리티를 유지하도록<br><b>꼼꼼하게 작업합니다.</b></p>
+          </div>
+          <div class="mv-grid g3m">
+          <div class="mv-gif"><img src="face_all.gif" alt="전체" loading="lazy"><span class="tag">전체</span></div>
           <div class="mv-gif"><img src="face_x.gif" alt="X축" loading="lazy"><span class="tag">X축</span></div>
           <div class="mv-gif"><img src="face_y.gif" alt="Y축" loading="lazy"><span class="tag">Y축</span></div>
-          <div class="mv-gif"><img src="face_all.gif" alt="전체" loading="lazy"><span class="tag">전체</span></div>
-          </div>
-          <div class="mv-ctrl"><button type="button" class="pv" aria-label="이전">‹</button><div class="mv-bar"><i></i></div><button type="button" class="nx" aria-label="다음">›</button></div>
-        </div>
+          <div class="mv-gif"><img src="face_lina.gif" alt="전체" loading="lazy"><span class="tag">전체</span></div>
+          <div class="mv-gif"><img src="face_lina_x.gif" alt="X축" loading="lazy"><span class="tag">X축</span></div>
+          <div class="mv-gif"><img src="face_lina_y.gif" alt="Y축" loading="lazy"><span class="tag">Y축</span></div>
+        </div></div>
       </div>
       <div class="mv-subbox">
         <div class="mv-sublb">눈동자<small>캐릭터의 개성을 살린 눈동자 연출</small></div>
-        <div class="mv-slider">
-          <div class="mv-track">
-          <div class="mv-gif"><img src="phys_eye.gif" alt="눈동자 1" loading="lazy"><span class="tag">눈동자 1</span></div>
-          <div class="mv-gif"><img src="eye_2.gif" alt="눈동자 2" loading="lazy"><span class="tag">눈동자 2</span></div>
-          <div class="mv-gif"><img src="eye_3.gif" alt="눈동자 3" loading="lazy"><span class="tag">눈동자 3</span></div>
-          </div>
-          <div class="mv-ctrl"><button type="button" class="pv" aria-label="이전">‹</button><div class="mv-bar"><i></i></div><button type="button" class="nx" aria-label="다음">›</button></div>
-        </div>
+        <div class="mv-gbox"><div class="mv-grid">
+          <div class="mv-gif"><img src="eye_goat.gif" alt="눈동자" loading="lazy"></div>
+          <div class="mv-gif"><img src="eye_lab.gif" alt="눈동자" loading="lazy"></div>
+          <div class="mv-gif"><img src="eye_lina.gif" alt="눈동자" loading="lazy"></div>
+        </div></div>
       </div>
       <div class="mv-subbox">
         <div class="mv-sublb">표정<small>캐릭터의 매력이 돋보이는 풍부한 표정 연출</small></div>
-        <div class="mv-slider">
-          <div class="mv-track c4">
-          <div class="mv-gif"><img src="expr_heart.gif" alt="하트눈" loading="lazy"><span class="tag">하트눈</span></div>
-          <div class="mv-gif"><img src="expr_serious.gif" alt="정색" loading="lazy"><span class="tag">정색</span></div>
-          <div class="mv-gif"><img src="expr_surprise.gif" alt="놀람(동물 귀 연동)" loading="lazy"><span class="tag">놀람(동물 귀 연동)</span></div>
-          <div class="mv-gif"><img src="expr_sad.gif" alt="슬픔(동물 귀 연동)" loading="lazy"><span class="tag">슬픔(동물 귀 연동)</span></div>
-          <div class="mv-gif"><img src="expr_shy.gif" alt="부끄러움" loading="lazy"><span class="tag">부끄러움</span></div>
-          </div>
-          <div class="mv-ctrl"><button type="button" class="pv" aria-label="이전">‹</button><div class="mv-bar"><i></i></div><button type="button" class="nx" aria-label="다음">›</button></div>
-        </div>
+        <div class="mv-gbox"><div class="mv-grid g22">
+          <div class="mv-gif"><img src="expr_tear.gif" alt="눈물" loading="lazy"><span class="tag">눈물</span></div>
+          <div class="mv-gif"><img src="expr_angry.gif" alt="화남 + 정색" loading="lazy"><span class="tag">화남 + 정색</span></div>
+          <div class="mv-gif"><img src="expr_shy.gif" alt="부끄러움 + 하트눈" loading="lazy"><span class="tag">부끄러움 + 하트눈</span></div>
+          <div class="mv-gif"><img src="expr_surprise.gif" alt="놀람" loading="lazy"><span class="tag">놀람</span></div>
+        </div></div>
       </div>
       <div class="mv-subbox">
         <div class="mv-sublb">VBridger<small>다양한 입모양과 표정 연출 (iPhone 호환 기능)</small></div>
-        <div class="mv-slider">
-          <div class="mv-track c4">
+        <div class="mv-gbox"><div class="mv-grid g22">
           <div class="mv-gif"><img src="vb_cheek.gif" alt="볼 빵빵" loading="lazy"><span class="tag">볼 빵빵</span></div>
           <div class="mv-gif"><img src="vb_mouth.gif" alt="입 오물오물" loading="lazy"><span class="tag">입 오물오물</span></div>
           <div class="mv-gif"><img src="vb_tongue.gif" alt="혀 내밀기" loading="lazy"><span class="tag">혀 내밀기</span></div>
           <div class="mv-gif"><img src="vb_lip.gif" alt="입술 오므리기" loading="lazy"><span class="tag">입술 오므리기</span></div>
-          </div>
-          <div class="mv-ctrl"><button type="button" class="pv" aria-label="이전">‹</button><div class="mv-bar"><i></i></div><button type="button" class="nx" aria-label="다음">›</button></div>
-        </div>
+        </div></div>
+      </div>
+    </div>
+    <div class="mv-group">
+      <div class="mv-group-t"><span class="mv-chip">추가 소품</span></div>
+      <div class="mv-subbox">
+        <div class="mv-sublb">추가 소품<small>캐릭터의 디테일을 살리는 소품 움직임</small></div>
+        <div class="mv-gbox"><div class="mv-grid">
+          <div class="mv-gif"><img src="prop_glasses.gif" alt="안경" loading="lazy"><span class="tag">안경</span></div>
+          <div class="mv-gif"><img src="prop_chain.gif" alt="허리 체인" loading="lazy"><span class="tag">허리 체인</span></div>
+          <div class="mv-gif"><img src="prop_ribbon.gif" alt="리본" loading="lazy"><span class="tag">리본</span></div>
+        </div></div>
       </div>
     </div>
     <div class="mv-group">
       <div class="mv-group-t"><span class="mv-chip">전신</span></div>
       <div class="mv-subbox">
-        <div class="mv-sublb">각도<small>캐릭터와 어울리는 신체 연출</small></div>
-        <div class="mv-slider">
-          <div class="mv-track">
+        <div class="mv-sublb">전신 각도<small>캐릭터와 어울리는 신체 연출</small></div>
+        <div class="mv-gbox"><div class="mv-grid">
           <div class="mv-gif tall"><img src="body_x.gif" alt="X축" loading="lazy"><span class="tag">X축</span></div>
           <div class="mv-gif tall"><img src="body_y.gif" alt="Y축" loading="lazy"><span class="tag">Y축</span></div>
           <div class="mv-gif tall"><img src="body_z.gif" alt="Z축" loading="lazy"><span class="tag">Z축</span></div>
-          </div>
-          <div class="mv-ctrl"><button type="button" class="pv" aria-label="이전">‹</button><div class="mv-bar"><i></i></div><button type="button" class="nx" aria-label="다음">›</button></div>
-        </div>
+        </div></div>
       </div>
       <div class="mv-subbox">
         <div class="mv-sublb">추가 포즈<small>다양한 연출이 가능한 옵션</small></div>
-        <div class="mv-slider">
-          <div class="mv-track c2">
+        <div class="mv-gbox"><div class="mv-grid">
           <div class="mv-gif tall"><img src="pose_foot.gif" alt="발 콕콕" loading="lazy"><span class="tag">발 콕콕</span></div>
-          <div class="mv-gif tall"><img src="pose_gachi.gif" alt="가치코이" loading="lazy"><span class="tag">가치코이</span></div>
-          </div>
-          <div class="mv-ctrl"><button type="button" class="pv" aria-label="이전">‹</button><div class="mv-bar"><i></i></div><button type="button" class="nx" aria-label="다음">›</button></div>
-        </div>
-      </div>
-    </div>
-    <div class="mv-group">
-      <div class="mv-group-t"><span class="mv-chip">물리</span></div>
-      <div class="mv-subbox">
-        <div class="mv-sublb">물리</div>
-        <div class="mv-slider">
-          <div class="mv-track c2">
-          <div class="mv-gif"><img src="phys_skirt.gif" alt="의상 물리" loading="lazy"><span class="tag">의상 물리</span></div>
-          <div class="mv-gif"><img src="phys_hair.gif" alt="머리카락 물리" loading="lazy"><span class="tag">머리카락 물리</span></div>
-          </div>
-          <div class="mv-ctrl"><button type="button" class="pv" aria-label="이전">‹</button><div class="mv-bar"><i></i></div><button type="button" class="nx" aria-label="다음">›</button></div>
-        </div>
+          <div class="mv-gif tall"><img src="pose_close.gif" alt="가깝게 다가오기" loading="lazy"><span class="tag">가깝게 다가오기</span></div>
+        </div></div>
       </div>
     </div>
   </section>
@@ -723,7 +733,7 @@
         <label class="mv-opt"><input type="checkbox" class="mv-chk" id="mv-tongue"><div class="tx">혀 내밀기<small>VBridger 필요 (선택 시 자동 추가)</small></div><span class="pr">+30,000</span></label>
 
         <label class="mv-opt"><input type="checkbox" class="mv-chk mv-pose" value="foot"><div class="tx">추가 포즈 · 발 콕콕</div><span class="pr">+100,000</span></label>
-        <label class="mv-opt"><input type="checkbox" class="mv-chk mv-pose" value="gachi"><div class="tx">추가 포즈 · 가치코이</div><span class="pr">+100,000</span></label>
+        <label class="mv-opt"><input type="checkbox" class="mv-chk mv-pose" value="gachi"><div class="tx">추가 포즈 · 가깝게 다가오기</div><span class="pr">+100,000</span></label>
 
         <div class="mv-opt"><div class="tx">추가 헤어스타일</div><span class="pr">+100,000</span><div class="mv-stp" data-id="hair"><button type="button" data-d="-1" aria-label="빼기">−</button><output>0</output><button type="button" data-d="1" aria-label="더하기">+</button></div></div>
         <div class="mv-opt"><div class="tx">추가 의상<small>겉옷, 상의, 하의 등</small></div><span class="pr">+100,000</span><div class="mv-stp" data-id="outfit"><button type="button" data-d="-1" aria-label="빼기">−</button><output>0</output><button type="button" data-d="1" aria-label="더하기">+</button></div></div>
@@ -809,7 +819,7 @@
       prop:{name:'추가 소품',          price:30000}
     },
     vbridger:50000, tongue:30000, privacyOver3:50000,
-    pose: { foot:{name:'추가 포즈 (발 콕콕)', price:100000}, gachi:{name:'추가 포즈 (가치코이)', price:100000} },
+    pose: { foot:{name:'추가 포즈 (발 콕콕)', price:100000}, gachi:{name:'추가 포즈 (가깝게 다가오기)', price:100000} },
     collab: {
       none:{name:''},
       hr:{name:'행련 작가님', discount:50000, freeExpr:2},
