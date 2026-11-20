@@ -389,6 +389,183 @@
   #mv .mv-sum{position:static;transform:none!important;}
   #mv .mv-acc .bd{padding-left:22px;}
 }
+
+
+/* 예약 현황 · 월별 카드 */
+#mv .mv-yr{font-size:13px;font-weight:800;color:var(--mute);letter-spacing:.12em;margin:-2px 0 10px;}
+#mv .mv-mcards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+#mv .mv-mcards .mc{display:flex;flex-direction:column;align-items:center;gap:8px;border-radius:20px;padding:16px 6px 18px;text-align:center;border:1.5px solid var(--line);background:var(--sky-ll);}
+#mv .mv-mcards .m{font-size:15px;font-weight:900;color:var(--ink);background:#fff;border-radius:999px;padding:3px 14px;box-shadow:0 2px 6px rgba(77,130,188,.12);}
+#mv .mv-mcards b{font-size:15px;font-weight:900;color:var(--sky-d);white-space:nowrap;}
+#mv .mv-mcards .dots{display:flex;gap:5px;}
+#mv .mv-mcards .dots i{width:11px;height:11px;border-radius:50%;border:2px solid var(--sky-d);background:#fff;}
+#mv .mv-mcards .dots i.on{background:var(--sky-d);}
+#mv .mv-mcards .tg{font-size:11px;font-weight:800;color:#fff;background:var(--pink);border-radius:999px;padding:3px 9px;white-space:nowrap;}
+#mv .mv-mcards .done{background:var(--yel-l);border-color:var(--yel-d);}
+#mv .mv-mcards .done b{color:#a88a3a;}
+#mv .mv-mcards .done .dots i{border-color:#e8c440;}
+#mv .mv-mcards .done .dots i.on{background:#e8c440;}
+#mv .mv-mcards .open{background:linear-gradient(150deg,var(--sky),var(--sky-d));border-color:var(--sky-d);box-shadow:0 10px 22px rgba(77,130,188,.28);}
+#mv .mv-mcards .open b{color:#fff;}
+#mv .mv-mcards .open .dots i{border-color:#fff;background:transparent;}
+#mv .mv-mcards .open .dots i.on{background:#fff;}
+#mv .mv-duo #mv-sched .mv-legend{display:none;}
+@media (max-width:760px){ #mv .mv-mcards{gap:8px;} #mv .mv-mcards b{font-size:14px;} }
+
+/* 신청 양식 보강 */
+#mv .mv-scope-img{margin-top:10px;border:1.5px dashed var(--line);border-radius:14px;background:#fff;overflow:hidden;}
+#mv .mv-scope-img summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:13.5px;font-weight:800;color:var(--sky-d);}
+#mv .mv-scope-img summary::-webkit-details-marker{display:none;}
+#mv .mv-scope-img summary .ic{margin-left:auto;width:22px;height:22px;border-radius:50%;background:var(--sky-ll);position:relative;flex:none;}
+#mv .mv-scope-img summary .ic::before,#mv .mv-scope-img summary .ic::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:2px;background:var(--sky-d);transform:translate(-50%,-50%);}
+#mv .mv-scope-img summary .ic::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .2s;}
+#mv .mv-scope-img[open] summary .ic::after{transform:translate(-50%,-50%) rotate(0);}
+#mv .mv-scope-img .bd{padding:0 14px 14px;}
+#mv .mv-scope-img img{display:block;width:100%;max-width:300px;margin:0 auto;border-radius:10px;}
+#mv .mv-artistbox{margin:8px 0 4px;}
+#mv .mv-sublab{margin:14px 0 8px;padding-top:12px;border-top:1.5px dashed var(--line);font-size:13.5px;font-weight:800;color:var(--ink);}
+#mv .mv-sublab small,#mv .mv-optlab small{font-weight:500;color:var(--mute);margin-left:6px;font-size:12px;}
+#mv .mv-optlab.sep{margin-top:22px;padding-top:16px;border-top:1.5px dashed var(--line);}
+#mv .mv-optlab{margin:14px 0 6px 2px;font-size:13.5px;font-weight:800;color:var(--sky-d);}
+/* ===== 2026-11 개편 ===== */
+#mv .mv-hdf{font-family:'MvMeetme','Pretendard',sans-serif;font-weight:400;}
+/* ① 첫 화면 */
+#mv .mv-hero{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:center;background:linear-gradient(160deg,#eef4fd 0%,#fff 55%,#fffbe8 100%);}
+#mv .mv-hero .mv-video{border-radius:20px;}
+#mv .mv-who{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+#mv .mv-who .mv-avatar{width:72px;height:72px;border-width:3px;box-shadow:0 0 0 2px var(--sky-l);}
+#mv .mv-who small{display:block;font-size:11px;font-weight:800;letter-spacing:.2em;color:var(--sky-d);}
+#mv .mv-who .mv-name{font-size:38px;line-height:1.05;}
+#mv .mv-hcopy{font-family:'MvMeetme','Pretendard',sans-serif;font-size:21px;line-height:1.5;color:var(--sky-d);margin:0 0 14px;}
+#mv .mv-hash{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px;}
+#mv .mv-hash span{font-size:13px;font-weight:800;color:var(--sky-d);background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:5px 11px;}
+#mv .mv-hash span.p{color:#d4508a;background:#fde8f0;border-color:#f9c3d6;}
+#mv .mv-cta{display:inline-flex;align-items:center;gap:6px;border:0;border-radius:999px;padding:14px 28px;font:inherit;font-size:16px;font-weight:800;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--sky),var(--sky-d));box-shadow:0 10px 22px rgba(77,130,188,.32);transition:transform .15s;}
+#mv .mv-cta:hover{transform:translateY(-2px);}
+#mv .mv-cta.pk{background:linear-gradient(135deg,#f9a3c1,var(--pink));box-shadow:0 10px 22px rgba(242,123,165,.3);}
+
+/* ② 작업한 모델 */
+#mv .mv-works{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+#mv .mv-wk{border:1.5px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;display:flex;flex-direction:column;}
+#mv .mv-wk.new{border-color:#f9c3d6;box-shadow:0 10px 24px rgba(242,123,165,.16);}
+#mv .mv-wk .ph{position:relative;aspect-ratio:1/1;background:var(--sky-ll);}
+#mv .mv-wk .ph img{width:100%;height:100%;object-fit:cover;display:block;}
+#mv .mv-wk .ph.empty::before{content:"썸네일";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--sky-d);font-weight:900;}
+#mv .mv-wk .tg{position:absolute;left:12px;top:12px;font-size:12px;font-weight:800;color:#fff;background:var(--ink);border-radius:999px;padding:3px 11px;}
+#mv .mv-wk .nw{position:absolute;right:12px;top:12px;font-size:11.5px;font-weight:900;color:#fff;background:var(--pink);border-radius:999px;padding:3px 11px;}
+#mv .mv-wk .b{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1;}
+#mv .mv-wk .nm{font-family:'MvMeetme','Pretendard',sans-serif;font-size:23px;line-height:1.2;}
+#mv .mv-wk .pr{font-size:13px;color:var(--sub);margin:2px 0 12px;}
+#mv .mv-wk .pr b{font-size:17px;color:var(--sky-d);}
+#mv .mv-wk.new .pr b{color:#d4508a;}
+#mv .mv-wk .ac{display:flex;gap:6px;margin-top:auto;}
+#mv .mv-wk .ac button{flex:1;border:0;border-radius:999px;padding:9px 0;font:inherit;font-size:13px;font-weight:800;cursor:pointer;}
+#mv .mv-wk .ac .v{background:var(--sky-ll);color:var(--sky-d);}
+#mv .mv-wk .ac .v[disabled]{opacity:.55;cursor:default;}
+#mv .mv-wk .ac .q{background:var(--ink);color:#fff;}
+
+/* ③ 리깅 디테일 탭 */
+#mv .mv-tabs{display:flex;flex-wrap:wrap;gap:7px;padding:10px;border:1.5px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 6px 16px rgba(77,130,188,.08);margin:6px 0 18px;}
+#mv .mv-tabs button{border:0;border-radius:999px;padding:9px 16px;font:inherit;font-size:14px;font-weight:800;cursor:pointer;background:var(--sky-ll);color:var(--sky-d);transition:background .15s;}
+#mv .mv-tabs button:hover{background:#e0ebfb;}
+#mv .mv-tabs button.on{background:var(--ink);color:#fff;}
+#mv .mv-tpanel{display:none;}
+#mv .mv-tpanel.on{display:block;animation:mvFade .25s ease;}
+#mv .mv-tcap{font-size:13.5px;color:var(--sub);margin:0 0 14px 2px;}
+@keyframes mvFade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+/* ④ SD 스포트라이트 */
+#mv .mv-sd{display:grid;grid-template-columns:1fr 1.25fr;gap:26px;align-items:center;background:linear-gradient(135deg,#fde8f0 0%,#fff 60%);border:1.5px solid #f9c3d6;}
+#mv .mv-sd .mv-h::after{background:linear-gradient(90deg,#f9c3d6,transparent);}
+#mv .mv-sdprice{font-size:17px;font-weight:900;color:#d4508a;margin:2px 0 12px;}
+#mv .mv-set{background:#fff;border:1.5px solid #f9c3d6;border-radius:16px;padding:12px 16px;margin-bottom:14px;}
+#mv .mv-set .t{font-weight:800;font-size:14px;margin-bottom:6px;}
+#mv .mv-set .t b{color:#d4508a;}
+#mv .mv-set .r{display:flex;justify-content:space-between;font-size:13.5px;padding:6px 0;border-top:1px dashed #f9c3d6;color:var(--sub);}
+#mv .mv-set .r b{color:#d4508a;}
+#mv .mv-use{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+#mv .mv-use span{font-size:12.5px;font-weight:800;color:#d4508a;background:#fff;border:1px dashed #f3a9c4;border-radius:999px;padding:5px 11px;}
+#mv .mv-sdtabs{display:flex;justify-content:center;gap:6px;margin-bottom:12px;}
+#mv .mv-sdtabs button{border:1.5px solid #f9c3d6;background:#fff;color:#d4508a;border-radius:999px;padding:8px 22px;font:inherit;font-size:14px;font-weight:800;cursor:pointer;}
+#mv .mv-sdtabs button.on{background:var(--pink);border-color:var(--pink);color:#fff;}
+#mv .mv-sdbox{display:grid;}
+#mv .mv-sdpanel{grid-area:1/1;display:grid;grid-template-columns:1fr 1fr;gap:12px;visibility:hidden;opacity:0;}
+#mv .mv-sdpanel.on{visibility:visible;opacity:1;animation:mvFade .25s ease;}
+#mv .mv-sdpanel.two{align-self:center;}
+#mv .mv-sdpanel .mv-gif img{border-color:#f9c3d6;}
+#mv .mv-sdpanel .mv-gif.empty::before{content:"SD GIF";border-color:#f3a9c4;background:#fdf0f5;color:#d4508a;}
+
+/* ⑤⑥ 예약 현황 + 작업 과정 */
+#mv .mv-duo{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:28px;align-items:stretch;}
+#mv .mv-duo>.mv-card{margin-bottom:0;padding:30px 24px;}
+#mv .mv-duo .mv-legend{justify-content:flex-start;}
+#mv .mv-duo .mv-cal .mh{font-size:18px;padding:10px 0;}
+#mv .mv-duo .mv-cal .bar{gap:8px;padding:12px 8px;}
+#mv .mv-duo .mv-cal .seg{padding:14px 4px;}
+#mv .mv-duo .mv-cal .seg b,#mv .mv-duo .mv-cal .open b,#mv .mv-duo .mv-cal .avail b{font-size:15px;}
+#mv .mv-duo .mv-cal .slots i{width:12px;height:12px;}
+#mv .mv-duo .mv-cal .open .when{font-size:12px;}
+#mv .mv-duo .mv-cal .seg .tag{font-size:10.5px;padding:2px 8px;white-space:nowrap;}
+#mv .mv-flow{display:flex;flex-direction:column;gap:9px;}
+#mv .mv-flow div{display:flex;gap:11px;align-items:center;background:#f6faff;border:1.5px solid #dbe8fb;border-radius:14px;padding:11px 14px;font-size:14px;}
+#mv .mv-flow i{flex:none;width:26px;height:26px;border-radius:50%;background:var(--sky);color:#fff;font-style:normal;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;}
+#mv .mv-flow .hl{background:var(--yel);border-color:var(--yel-d);}
+#mv .mv-flow .hl i{background:#e8c440;}
+#mv .mv-flow b{color:var(--ink);}
+
+/* ⑩ 공지 동의 */
+#mv .mv-agree{display:flex;gap:9px;align-items:flex-start;background:#fde8f0;border:1.5px solid #f9c3d6;border-radius:12px;padding:10px 12px;margin:14px 0 10px;font-size:13px;font-weight:800;color:#d4508a;cursor:pointer;line-height:1.5;}
+#mv .mv-agree input{width:18px;height:18px;margin:1px 0 0;accent-color:var(--pink);flex:none;}
+#mv .mv-btn.lock,#mv .mv-btn.lock:hover{background:#d7dee8;cursor:not-allowed;}
+#mv .mv-flash{animation:mvFlash 1.4s ease;}
+@keyframes mvFlash{0%,100%{box-shadow:none}25%,60%{box-shadow:0 0 0 4px rgba(242,123,165,.45);}}
+#mv .mv-field.mv-flash{border-radius:14px;}
+
+/* ⑪ 환불 정책 */
+#mv .mv-rsteps{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
+#mv .mv-rs{position:relative;background:#f6faff;border:1.5px solid #dbe8fb;border-radius:18px;padding:16px 8px 14px;text-align:center;}
+#mv .mv-rs:not(:last-child)::after{content:"›";position:absolute;right:-10px;top:50%;transform:translateY(-50%);color:var(--sky);font-weight:900;font-size:20px;z-index:1;}
+#mv .mv-rs .n{width:24px;height:24px;margin:0 auto 6px;border-radius:50%;background:#fff;border:1.5px solid var(--line);font-size:11.5px;font-weight:900;color:var(--sky-d);display:flex;align-items:center;justify-content:center;}
+#mv .mv-rs .p{font-size:30px;font-weight:900;line-height:1;}
+#mv .mv-rs .p small{font-size:14px;margin-left:1px;}
+#mv .mv-rs .l{font-size:12.5px;font-weight:800;margin:7px 0 9px;}
+#mv .mv-rs .bar{height:6px;border-radius:999px;background:#e3ecf8;overflow:hidden;margin:0 8px;}
+#mv .mv-rs .bar i{display:block;height:100%;border-radius:999px;}
+#mv .mv-rnote{background:var(--yel-l);border:1px dashed var(--yel-d);border-radius:14px;padding:12px 16px;margin-top:16px;font-size:13px;color:var(--sub);line-height:1.8;}
+
+/* 영상 창 */
+.mv-modal{position:fixed;inset:0;z-index:100000;background:rgba(39,56,77,.62);display:none;font-family:'Pretendard','Apple SD Gothic Neo',sans-serif;}
+.mv-modal.on{display:block;}
+.mv-modal .dlg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(820px,calc(100% - 32px));background:#fff;border-radius:24px;padding:16px 16px 18px;box-shadow:0 30px 60px rgba(0,0,0,.3);color:#27384d;}
+.mv-modal.framed .dlg{transform:translateX(-50%);}
+.mv-modal .hd{display:flex;align-items:center;gap:10px;margin:0 4px 12px;}
+.mv-modal .tg{font-size:12px;font-weight:800;color:#fff;background:#27384d;border-radius:999px;padding:3px 11px;}
+.mv-modal .nm{font-family:'MvMeetme','Pretendard',sans-serif;font-size:26px;}
+.mv-modal .x{margin-left:auto;width:38px;height:38px;border-radius:50%;border:0;background:#eef4fd;color:#4d82bc;font-size:18px;font-weight:900;cursor:pointer;}
+.mv-modal .vd{position:relative;padding-top:56.25%;border-radius:14px;overflow:hidden;background:#111;}
+.mv-modal .vd iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.mv-modal .ft{display:flex;align-items:center;gap:10px;margin:14px 4px 0;}
+.mv-modal .pr{font-size:14px;color:#66788c;}
+.mv-modal .pr b{font-size:18px;color:#4d82bc;}
+.mv-modal .go{margin-left:auto;border:0;border-radius:999px;padding:11px 22px;font:inherit;font-size:14px;font-weight:800;color:#fff;cursor:pointer;background:linear-gradient(135deg,#84b6f4,#4d82bc);}
+
+@media (max-width:760px){
+  #mv .mv-hero,#mv .mv-sd,#mv .mv-duo{grid-template-columns:1fr;}
+  #mv .mv-hero{gap:18px;}
+  #mv .mv-who .mv-name{font-size:32px;}
+  #mv .mv-hcopy{font-size:18px;}
+  #mv .mv-cta{width:100%;justify-content:center;}
+  #mv .mv-works{grid-template-columns:1fr;max-width:420px;margin:0 auto;}
+  #mv .mv-tabs{gap:6px;padding:8px;}
+  #mv .mv-tabs button{padding:8px 12px;font-size:13px;}
+  #mv .mv-duo{gap:28px;}
+  #mv .mv-rsteps{grid-template-columns:repeat(3,1fr);}
+  #mv .mv-rs:nth-child(3)::after{display:none;}
+  #mv .mv-rs .p{font-size:24px;}
+  .mv-modal .nm{font-size:21px;}
+  .mv-modal .ft{flex-wrap:wrap;}
+  .mv-modal .go{width:100%;margin-left:0;}
+}
 </style>
 <style>
 #mv{--mvflower:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2228%22%20height%3D%2228%22%20viewBox%3D%22-17%20-17%2034%2034%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22g%22%20cx%3D%220%22%20cy%3D%220%22%20r%3D%2216%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20offset%3D%220.25%22%20stop-color%3D%22%23bcd9fb%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%238fbdf6%22/%3E%3C/radialGradient%3E%3C/defs%3E%3Cellipse%20cx%3D%220%22%20cy%3D%22-8.2%22%20rx%3D%226.2%22%20ry%3D%227.4%22%20transform%3D%22rotate%280%29%22%20fill%3D%22url%28%23g%29%22%20stroke%3D%22%234d82bc%22%20stroke-width%3D%221.2%22/%3E%3Cellipse%20cx%3D%220%22%20cy%3D%22-8.2%22%20rx%3D%226.2%22%20ry%3D%227.4%22%20transform%3D%22rotate%2872%29%22%20fill%3D%22url%28%23g%29%22%20stroke%3D%22%234d82bc%22%20stroke-width%3D%221.2%22/%3E%3Cellipse%20cx%3D%220%22%20cy%3D%22-8.2%22%20rx%3D%226.2%22%20ry%3D%227.4%22%20transform%3D%22rotate%28144%29%22%20fill%3D%22url%28%23g%29%22%20stroke%3D%22%234d82bc%22%20stroke-width%3D%221.2%22/%3E%3Cellipse%20cx%3D%220%22%20cy%3D%22-8.2%22%20rx%3D%226.2%22%20ry%3D%227.4%22%20transform%3D%22rotate%28216%29%22%20fill%3D%22url%28%23g%29%22%20stroke%3D%22%234d82bc%22%20stroke-width%3D%221.2%22/%3E%3Cellipse%20cx%3D%220%22%20cy%3D%22-8.2%22%20rx%3D%226.2%22%20ry%3D%227.4%22%20transform%3D%22rotate%28288%29%22%20fill%3D%22url%28%23g%29%22%20stroke%3D%22%234d82bc%22%20stroke-width%3D%221.2%22/%3E%3Ccircle%20r%3D%224.6%22%20fill%3D%22%23fff%22%20stroke%3D%22%234d82bc%22%20stroke-width%3D%221.2%22/%3E%3Ccircle%20r%3D%222.6%22%20fill%3D%22%23f6d965%22/%3E%3C/svg%3E");}
@@ -495,13 +672,30 @@ html[lang=ja] #mv *,html[lang=zh-CN] #mv *,html[lang=en] #mv *{word-break:normal
   #mv .mv-sum{position:static!important;}
 }
 @media (max-width:400px){ .hp-cta{display:none;} }
+/* ===== 해외 홈 · 새 레이아웃 보정 ===== */
+#mv .hp-prices{grid-template-columns:repeat(4,1fr);gap:12px;}
+#mv .hp-pc{padding:22px 12px 20px;}
+#mv .hp-pc .nm{font-size:22px;}
+#mv .hp-pc .now{font-size:32px;}
+#mv .hp-pc.sd{border-color:#f9c3d6;background:linear-gradient(180deg,#fff 0%,#fff5f9 100%);}
+#mv .hp-pc.sd .now{color:#d4508a;}
+#mv .mv-sdprice s{font-size:.6em;color:var(--mute);font-weight:700;margin-right:4px;}
+#mv .mv-scope-img .cap{margin:8px 0 0;text-align:center;font-size:12.5px;color:var(--sub);}
+#mv .mv-scope-img .cap:empty{display:none;}
+#mv section[id],#mv .mv-card{scroll-margin-top:76px;}
+html[lang=ja] #mv .mv-tabs button,html[lang=zh-CN] #mv .mv-tabs button{font-family:inherit;}
+html[lang=ja] #mv .mv-sdl .mv-h,html[lang=ja] .mv-modal .nm{font-family:'MvMeetme','Zen Maru Gothic','Noto Sans JP',sans-serif;font-weight:800;}
+html[lang=zh-CN] .mv-modal .nm{font-family:'MvMeetme','Noto Sans SC',sans-serif;font-weight:800;}
+@media (max-width:760px){
+  #mv .hp-prices{grid-template-columns:1fr 1fr!important;}
+}
 </style>
 
 <header class="hp-top">
   <div class="hp-in">
     <a class="hp-logo" href="#top">Miove<small>Live2D</small></a>
     <nav class="hp-nav">
-      <a href="#mv-showcase" data-i="nv_show">쇼케이스</a><a href="#mv-detail" data-i="nv_detail">리깅 디테일</a><a href="#mv-price" data-i="nv_price">가격</a><a href="#mv-sale" data-i="nv_sale">판매 모델</a><a href="#mv-process" data-i="nv_proc">작업 과정</a><a href="#mv-notice" data-i="nv_tos">공지 사항</a>
+      <a href="#mv-works" data-i="nv_works">작업한 모델</a><a href="#mv-detail" data-i="nv_detail">리깅 디테일</a><a href="#mv-sd" data-i="nv_sd">SD 리깅</a><a href="#mv-price" data-i="nv_price">가격</a><a href="#mv-process" data-i="nv_proc">작업 과정</a><a href="#mv-notice" data-i="nv_tos">공지 사항</a>
     </nav>
     <div class="hp-lang" role="group" aria-label="Language">
       <button type="button" data-lang="ko">KO</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="ja">JP</button><button type="button" data-lang="zh">中文</button>
@@ -516,10 +710,10 @@ html[lang=ja] #mv *,html[lang=zh-CN] #mv *,html[lang=en] #mv *{word-break:normal
       <div class="hp-copy">
         <div class="hp-label" data-i="hero_label">LIVE2D RIGGER</div>
         <h1 class="hp-title">Miove</h1>
-        <p class="hp-quote">“<span data-i="quote">일러스트의 새로운 모습, 새로운 생명</span>”</p>
+        <p class="hp-quote">“<span data-i="quote">어느 각도에서 멈춰도, 일러스트 그대로의 퀄리티</span>”</p>
         <p class="hp-sub" data-i="hero_sub">움직이는 순간에도 일러스트 그대로의 매력을.<br>섬세한 리깅으로 캐릭터에 생명을 불어넣어요.</p>
         <div class="hp-ev"><span class="b" data-i="ev_badge">해외 의뢰 오픈 기념</span><span class="big">20% OFF</span><span class="s" data-i="ev_s">기본 가격 + 모든 옵션 20% 할인 <small>(상업적 이용 추가금 제외)</small></span></div>
-        <div class="hp-btns"><a class="hp-btn pri" href="#mv-apply" data-i="hero_btn1">의뢰하기</a><a class="hp-btn" href="#mv-showcase" data-i="hero_btn2">작업 보기</a></div>
+        <div class="hp-btns"><a class="hp-btn pri" href="#mv-apply" data-i="hero_btn1">의뢰하기</a><a class="hp-btn" href="#mv-works" data-i="hero_btn2">작업 보기</a></div>
       </div>
       <div class="hp-art">
         <div class="hp-blob"></div>
@@ -540,124 +734,155 @@ html[lang=ja] #mv *,html[lang=zh-CN] #mv *,html[lang=en] #mv *{word-break:normal
     <p class="hp-konote" data-i="ko_note">※ 이 페이지는 해외 의뢰 전용이에요. 국내 의뢰는 아트머그에서 받고 있어요.</p>
   </section>
 
-  <!-- ============ showcase ============ -->
-  <section class="mv-card" id="mv-showcase">
-    <h2 class="mv-h">Showcase</h2>
-    <p class="mv-desc" data-i="show_desc">좌우로 넘겨서 영상을 골라 재생해 보세요.</p>
-    <div class="mv-vslider">
-      <div class="mv-vtrack">
-        <div class="mv-vslide">
-          <div class="mv-video"><iframe src="https://www.youtube.com/embed/itdtQLT0Pis?enablejsapi=1" title="Miove Live2D Showcase 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-          <div class="mv-vcap" data-i="cap1">리나레이나</div>
-        </div>
-        <div class="mv-vslide">
-          <div class="mv-video"><iframe src="https://www.youtube.com/embed/zM_-LtGsfJ8?enablejsapi=1" title="Miove Live2D Showcase 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-          <div class="mv-vcap" data-i="cap2">판매 모델 · 염소 소녀</div>
-        </div>
+  <!-- ============ 작업한 모델 (최신순) ============ -->
+  <!-- 모델 추가: mv-wk 덩어리 하나를 복사 · data-video 에 유튜브 영상 ID, data-scope 에 half/halfplus/full/sd -->
+  <section class="mv-card" id="mv-works">
+    <h2 class="mv-h" data-i="works_h">작업한 모델</h2>
+    <p class="mv-desc" data-i="works_desc">▶ 영상을 누르면 쇼케이스가 열리고, "이 범위로 견적"을 누르면 신청 양식에 범위가 자동으로 선택돼요.</p>
+    <div class="mv-works">
+      <div class="mv-wk new" data-scope="sd" data-video="1LakRllg0bE">
+        <div class="ph"><img src="work_sd.gif" alt="Miove SD"><span class="tg" data-i="sc_sd">SD</span><span class="nw">NEW</span></div>
+        <div class="b"><div class="nm" data-i="wk_sd">Miove(SD.ver)</div><div class="pr"></div><div class="ac"><button type="button" class="v" data-i="w_v">▶ 영상</button><button type="button" class="q" data-i="w_q">이 범위로 견적</button></div></div>
       </div>
-      <div class="mv-vctrl"><button type="button" class="pv" aria-label="prev">‹</button><div class="mv-dots"></div><button type="button" class="nx" aria-label="next">›</button></div>
+      <div class="mv-wk" data-scope="halfplus" data-video="itdtQLT0Pis">
+        <div class="ph"><img src="work_lina.gif" alt="Lina Reina"><span class="tg" data-i="sc_halfplus">반신</span></div>
+        <div class="b"><div class="nm" data-i="cap1">리나레이나</div><div class="pr"></div><div class="ac"><button type="button" class="v" data-i="w_v">▶ 영상</button><button type="button" class="q" data-i="w_q">이 범위로 견적</button></div></div>
+      </div>
+      <div class="mv-wk" data-scope="full" data-video="zM_-LtGsfJ8">
+        <div class="ph"><img src="work_goat.gif" alt="Goat girl"><span class="tg" data-i="sc_full">전신</span></div>
+        <div class="b"><div class="nm" data-i="wk_goat">염소 소녀 (판매 모델)</div><div class="pr"></div><div class="ac"><button type="button" class="v" data-i="w_v">▶ 영상</button><button type="button" class="q" data-i="w_q">이 범위로 견적</button></div></div>
+      </div>
     </div>
   </section>
 
-  <!-- ============ rigging details ============ -->
+  <!-- ============ 리깅 디테일 ============ -->
   <section class="mv-card" id="mv-detail">
-    <h2 class="mv-h"><span data-i="d_0">리깅 디테일</span></h2>
-    <div class="mv-group">
-      <div class="mv-group-t"><span class="mv-chip"><span data-i="d_1">얼굴</span></span></div>
-      <div class="mv-subbox">
-        <div class="mv-sublb"><span data-i="d_2">각도</span><small><span data-i="d_3">어느 각도에서도 자연스러운 얼굴</span></small></div>
-        <div class="mv-gbox">
+    <h2 class="mv-h" data-i="d_0">리깅 디테일</h2>
+    <div class="mv-tabs" role="tablist"><button type="button" data-tab="face" class="on" data-i="t_face">얼굴 각도</button><button type="button" data-tab="eye" data-i="d_10">눈동자</button><button type="button" data-tab="expr" data-i="d_12">표정</button><button type="button" data-tab="vb">VBridger</button><button type="button" data-tab="prop" data-i="d_23">추가 소품</button><button type="button" data-tab="body" data-i="d_29">전신 각도</button><button type="button" data-tab="pose" data-i="d_32">추가 포즈</button></div>
+    <div class="mv-tpanel on" data-tab="face">
+      <p class="mv-tcap" data-i="d_3">어느 각도에서도 자연스러운 얼굴</p>
+      <div class="mv-gbox">
           <div class="mv-ahero">
             <div class="mv-gif hl"><img src="face_lab.gif" alt="" loading="lazy"></div>
-            <p class="tx"><span data-i="d_4">어느 각도에서 멈추든</span><br><span data-i="d_5">원래 일러스트의 퀄리티를 유지하도록</span><br><b><span data-i="d_6">꼼꼼하게 작업합니다.</span></b></p>
+            <p class="tx"><span data-i="d_4">어느 각도에서 멈추든</span><br><span data-i="d_5">원래 일러스트의 퀄리티를 유지하도록</span><br><b data-i="d_6">꼼꼼하게 작업합니다.</b></p>
           </div>
           <div class="mv-grid g3m">
-          <div class="mv-gif hl"><img src="face_all.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_7">전체</span></span></div>
-          <div class="mv-gif"><img src="face_x.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_8">X축</span></span></div>
-          <div class="mv-gif"><img src="face_y.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_9">Y축</span></span></div>
-          <div class="mv-gif hl"><img src="face_lina.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_7">전체</span></span></div>
-          <div class="mv-gif"><img src="face_lina_x.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_8">X축</span></span></div>
-          <div class="mv-gif"><img src="face_lina_y.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_9">Y축</span></span></div>
+          <div class="mv-gif hl"><img src="face_all.gif" alt="" loading="lazy"><span class="tag" data-i="d_7">전체</span></div>
+          <div class="mv-gif"><img src="face_x.gif" alt="" loading="lazy"><span class="tag" data-i="d_8">X축</span></div>
+          <div class="mv-gif"><img src="face_y.gif" alt="" loading="lazy"><span class="tag" data-i="d_9">Y축</span></div>
+          <div class="mv-gif hl"><img src="face_lina.gif" alt="" loading="lazy"><span class="tag" data-i="d_7">전체</span></div>
+          <div class="mv-gif"><img src="face_lina_x.gif" alt="" loading="lazy"><span class="tag" data-i="d_8">X축</span></div>
+          <div class="mv-gif"><img src="face_lina_y.gif" alt="" loading="lazy"><span class="tag" data-i="d_9">Y축</span></div>
         </div></div>
-      </div>
-      <div class="mv-subbox">
-        <div class="mv-sublb"><span data-i="d_10">눈동자</span><small><span data-i="d_11">캐릭터의 개성을 살린 눈동자 연출</span></small></div>
-        <div class="mv-gbox"><div class="mv-grid">
+    </div>
+    <div class="mv-tpanel" data-tab="eye">
+      <p class="mv-tcap" data-i="d_11">캐릭터의 개성을 살린 눈동자 연출</p>
+      <div class="mv-gbox"><div class="mv-grid">
           <div class="mv-gif"><img src="eye_goat.gif" alt="" loading="lazy"></div>
           <div class="mv-gif"><img src="eye_lina.gif" alt="" loading="lazy"></div>
           <div class="mv-gif"><img src="eye_lab.gif" alt="" loading="lazy"></div>
         </div></div>
-      </div>
-      <div class="mv-subbox">
-        <div class="mv-sublb"><span data-i="d_12">표정</span><small><span data-i="d_13">캐릭터의 매력이 돋보이는 풍부한 표정 연출</span></small></div>
-        <div class="mv-gbox"><div class="mv-grid g22">
-          <div class="mv-gif"><img src="expr_tear.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_14">눈물</span></span></div>
-          <div class="mv-gif"><img src="expr_angry.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_15">화남 + 정색</span></span></div>
-          <div class="mv-gif"><img src="expr_shy.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_16">부끄러움 + 하트눈</span></span></div>
-          <div class="mv-gif"><img src="expr_surprise.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_17">놀람</span></span></div>
-        </div></div>
-      </div>
-      <div class="mv-subbox">
-        <div class="mv-sublb">VBridger<small><span data-i="d_18">다양한 입모양과 표정 연출 (iPhone 호환 기능)</span></small></div>
-        <div class="mv-gbox"><div class="mv-grid g22">
-          <div class="mv-gif"><img src="vb_cheek.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_19">볼 빵빵</span></span></div>
-          <div class="mv-gif"><img src="vb_mouth.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_20">입 오물오물</span></span></div>
-          <div class="mv-gif"><img src="vb_tongue.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_21">혀 내밀기</span></span></div>
-          <div class="mv-gif"><img src="vb_lip.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_22">입술 오므리기</span></span></div>
-        </div></div>
-      </div>
     </div>
-    <div class="mv-group">
-      <div class="mv-group-t"><span class="mv-chip"><span data-i="d_23">추가 소품</span></span></div>
-      <div class="mv-subbox">
-        <div class="mv-sublb"><span data-i="d_23">추가 소품</span><small><span data-i="d_24">캐릭터의 디테일을 살리는 소품 움직임</span></small></div>
-        <div class="mv-gbox"><div class="mv-grid">
-          <div class="mv-gif"><img src="prop_glasses.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_25">안경</span></span></div>
-          <div class="mv-gif"><img src="prop_chain.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_26">허리 체인</span></span></div>
-          <div class="mv-gif"><img src="prop_ribbon.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_27">리본</span></span></div>
+    <div class="mv-tpanel" data-tab="expr">
+      <p class="mv-tcap" data-i="d_13">캐릭터의 매력이 돋보이는 풍부한 표정 연출</p>
+      <div class="mv-gbox"><div class="mv-grid g22">
+          <div class="mv-gif"><img src="expr_tear.gif" alt="" loading="lazy"><span class="tag" data-i="d_14">눈물</span></div>
+          <div class="mv-gif"><img src="expr_angry.gif" alt="" loading="lazy"><span class="tag" data-i="d_15">화남 + 정색</span></div>
+          <div class="mv-gif"><img src="expr_shy.gif" alt="" loading="lazy"><span class="tag" data-i="d_16">부끄러움 + 하트눈</span></div>
+          <div class="mv-gif"><img src="expr_surprise.gif" alt="" loading="lazy"><span class="tag" data-i="d_17">놀람</span></div>
         </div></div>
-      </div>
     </div>
-    <div class="mv-group">
-      <div class="mv-group-t"><span class="mv-chip"><span data-i="d_28">전신</span></span></div>
-      <div class="mv-subbox">
-        <div class="mv-sublb"><span data-i="d_29">전신 각도</span><small><span data-i="d_30">캐릭터와 어울리는 신체 연출</span></small></div>
-        <div class="mv-gbox"><div class="mv-grid">
-          <div class="mv-gif tall"><img src="body_x.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_8">X축</span></span></div>
-          <div class="mv-gif tall"><img src="body_y.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_9">Y축</span></span></div>
-          <div class="mv-gif tall"><img src="body_z.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_31">Z축</span></span></div>
+    <div class="mv-tpanel" data-tab="vb">
+      <p class="mv-tcap" data-i="d_18">다양한 입모양과 표정 연출 (iPhone 호환 기능)</p>
+      <div class="mv-gbox"><div class="mv-grid g22">
+          <div class="mv-gif"><img src="vb_cheek.gif" alt="" loading="lazy"><span class="tag" data-i="d_19">볼 빵빵</span></div>
+          <div class="mv-gif"><img src="vb_mouth.gif" alt="" loading="lazy"><span class="tag" data-i="d_20">입 오물오물</span></div>
+          <div class="mv-gif"><img src="vb_tongue.gif" alt="" loading="lazy"><span class="tag" data-i="d_21">혀 내밀기</span></div>
+          <div class="mv-gif"><img src="vb_lip.gif" alt="" loading="lazy"><span class="tag" data-i="d_22">입술 오므리기</span></div>
         </div></div>
-      </div>
-      <div class="mv-subbox">
-        <div class="mv-sublb"><span data-i="d_32">추가 포즈</span><small><span data-i="d_33">다양한 연출이 가능한 옵션</span></small></div>
-        <div class="mv-gbox"><div class="mv-grid">
-          <div class="mv-gif tall"><img src="pose_foot.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_34">발 콕콕</span></span></div>
-          <div class="mv-gif tall"><img src="pose_close.gif" alt="" loading="lazy"><span class="tag"><span data-i="d_35">가깝게 다가오기</span></span></div>
+    </div>
+    <div class="mv-tpanel" data-tab="prop">
+      <p class="mv-tcap" data-i="d_24">캐릭터의 디테일을 살리는 소품 움직임</p>
+      <div class="mv-gbox"><div class="mv-grid">
+          <div class="mv-gif"><img src="prop_glasses.gif" alt="" loading="lazy"><span class="tag" data-i="d_25">안경</span></div>
+          <div class="mv-gif"><img src="prop_chain.gif" alt="" loading="lazy"><span class="tag" data-i="d_26">허리 체인</span></div>
+          <div class="mv-gif"><img src="prop_ribbon.gif" alt="" loading="lazy"><span class="tag" data-i="d_27">리본</span></div>
         </div></div>
+    </div>
+    <div class="mv-tpanel" data-tab="body">
+      <p class="mv-tcap" data-i="d_30">캐릭터와 어울리는 신체 연출</p>
+      <div class="mv-gbox"><div class="mv-grid">
+          <div class="mv-gif tall"><img src="body_x.gif" alt="" loading="lazy"><span class="tag" data-i="d_8">X축</span></div>
+          <div class="mv-gif tall"><img src="body_y.gif" alt="" loading="lazy"><span class="tag" data-i="d_9">Y축</span></div>
+          <div class="mv-gif tall"><img src="body_z.gif" alt="" loading="lazy"><span class="tag" data-i="d_31">Z축</span></div>
+        </div></div>
+    </div>
+    <div class="mv-tpanel" data-tab="pose">
+      <p class="mv-tcap" data-i="d_33">다양한 연출이 가능한 옵션</p>
+      <div class="mv-gbox"><div class="mv-grid">
+          <div class="mv-gif tall"><img src="pose_foot.gif" alt="" loading="lazy"><span class="tag" data-i="d_34">발 콕콕</span></div>
+          <div class="mv-gif tall"><img src="pose_close.gif" alt="" loading="lazy"><span class="tag" data-i="d_35">가깝게 다가오기</span></div>
+        </div></div>
+    </div>
+  </section>
+
+  <!-- ============ SD 리깅 ============ -->
+  <section class="mv-card mv-sd" id="mv-sd">
+    <div class="mv-sdl">
+      <h2 class="mv-h" data-i="sd_h">SD 리깅</h2>
+      <p class="mv-desc" style="color:var(--sub);font-size:14px;margin-bottom:8px" data-i="sd_desc">작고 귀여운 SD 캐릭터도 리깅해요.<br>방송 화면 구석, 대기 화면, 굿즈용으로 좋아요.</p>
+      <div class="mv-sdprice" id="hp-sdp"></div>
+      <div class="mv-set"><div class="t" data-i="sd_set_t">본 모델과 동시 제작 시 <b>세트 할인 최대 $145</b></div>
+        <div class="r"><span><span data-i="sc_half">흉상</span> + SD</span><b>−$35</b></div>
+        <div class="r"><span><span data-i="sc_halfplus">반신</span> + SD</span><b>−$70</b></div>
+        <div class="r"><span><span data-i="sc_full">전신</span> + SD</span><b>−$145</b></div></div>
+      <div class="mv-use"><span data-i="sd_u1">🎀 방송 대기 화면</span><span data-i="sd_u2">🎀 서브 아바타</span><span data-i="sd_u3">🎀 굿즈 · 이모티콘</span></div>
+      <button type="button" class="mv-cta pk" data-goto="mv-apply" data-scope="sd" data-i="sd_btn">SD로 견적 내보기</button>
+    </div>
+    <div class="mv-sdr">
+      <div class="mv-sdtabs"><button type="button" class="on" data-sd="expr" data-i="d_12">표정</button><button type="button" data-sd="angle" data-i="d_2">각도</button></div>
+      <div class="mv-sdbox">
+        <div class="mv-sdpanel two" data-sd="angle"><div class="mv-gif"><img src="sd_angle1.gif" alt="" loading="lazy"></div><div class="mv-gif"><img src="sd_angle2.gif" alt="" loading="lazy"></div></div>
+        <div class="mv-sdpanel on" data-sd="expr"><div class="mv-gif"><img src="sd_expr1.gif" alt="" loading="lazy"></div><div class="mv-gif"><img src="sd_expr2.gif" alt="" loading="lazy"></div><div class="mv-gif"><img src="sd_expr3.gif" alt="" loading="lazy"></div><div class="mv-gif"><img src="sd_expr4.gif" alt="" loading="lazy"></div></div>
       </div>
     </div>
   </section>
 
+  <!-- ============ 가격 ============ -->
   <section class="mv-card" id="mv-price">
     <h2 class="mv-h" data-i="price_h">가격</h2>
     <p class="mv-desc" data-i="price_desc">모든 가격은 USD 기준이에요. 오픈 기념 할인이 적용된 가격이에요.</p>
     <div class="hp-prices">
-      <div class="hp-pc"><div class="nm" data-i="sc_half">반신</div><div class="ds" data-i="g_half">두상 + 상체 <em>(팔·손 제외)</em></div><div class="was">$230</div><div class="now">$184</div></div>
-      <div class="hp-pc mid"><div class="nm" data-i="sc_halfplus">반신 + 하체</div><div class="ds" data-i="g_halfplus">반신 + 엉덩이·허벅지 <em>(무릎 위까지)</em> · +$70</div><div class="was">$300</div><div class="now">$240</div></div>
-      <div class="hp-pc"><div class="nm" data-i="sc_full">전신</div><div class="ds" data-i="g_full">머리부터 발끝까지</div><div class="was">$460</div><div class="now">$368</div></div>
+      <div class="hp-pc" data-k="half"><div class="nm" data-i="sc_half">흉상</div><div class="ds" data-i="g_half">두상 + 상체 <em>(팔·손 제외)</em></div><div class="was"></div><div class="now"></div></div>
+      <div class="hp-pc mid" data-k="halfplus"><div class="nm" data-i="sc_halfplus">반신</div><div class="ds" data-i="g_halfplus">흉상 + 엉덩이·허벅지 <em>(무릎 위까지)</em> · +$70</div><div class="was"></div><div class="now"></div></div>
+      <div class="hp-pc" data-k="full"><div class="nm" data-i="sc_full">전신</div><div class="ds" data-i="g_full">머리부터 발끝까지</div><div class="was"></div><div class="now"></div></div>
+      <div class="hp-pc sd" data-k="sd"><div class="nm" data-i="sc_sd">SD</div><div class="ds" data-i="g_sd">작고 귀여운 SD 캐릭터</div><div class="was"></div><div class="now"></div></div>
     </div>
-    <p class="mv-note" data-i="price_note">※ 표정, VBridger, 추가 포즈 등 옵션은 아래 신청하기에서 확인할 수 있어요.</p>
+    <p class="mv-note" data-i="price_note">※ 표정, 아이폰 트래킹, VBridger, 추가 포즈 등 옵션은 아래 신청하기에서 확인할 수 있어요.</p>
   </section>
 
+  <!-- ============ 예약 현황 + 작업 과정 ============ -->
+  <div class="mv-duo">
   <section class="mv-card" id="mv-sched">
     <h2 class="mv-h" data-i="sched_h">예약 현황</h2>
     <div class="mv-legend"><span><i></i><span data-i="lg_open">빈 자리</span></span><span><i class="done"></i><span data-i="lg_done">예약 완료</span></span></div>
-    <div style="text-align:center;font-weight:900;font-size:22px;margin-bottom:12px;" class="mv-js-year">2026</div>
-    <div class="mv-cal mv-js-months"></div>
+    <div class="mv-yr mv-js-year">2026</div>
+    <div class="mv-mcards mv-js-months"></div>
     <p class="mv-note" data-i="sched_note">※ 예약 슬롯 개수는 변동될 수 있습니다.</p>
   </section>
 
-  <!-- ============ sale ============ -->
+  <section class="mv-card" id="mv-process">
+    <h2 class="mv-h" data-i="proc_h">작업 과정</h2>
+    <div class="mv-flow">
+      <div><i>1</i><span data-i="pf1">문의 · 견적 상담 → 결제 (선금 50%)</span></div>
+      <div class="hl"><i>2</i><span data-i="pf2"><b>영상으로 2번 컨펌</b> · 얼굴 → 몸 순서</span></div>
+      <div><i>3</i><span data-i="pf3">잔금 50% → 모델 전달 · 세팅 안내</span></div>
+      <div class="hl"><i>★</i><span data-i="pf4"><b>완성 모델의 고퀄리티 쇼케이스 제작까지</b></span></div>
+    </div>
+  </section>
+  </div>
+
+  <!-- ============ 판매 중 모델 ============ -->
   <section class="mv-card" id="mv-sale">
     <h2 class="mv-h" data-i="sale_h">판매 중 모델</h2>
     <p class="mv-desc" data-i="sale_desc">바로 사용 가능한 리깅 완성 모델이에요.</p>
@@ -667,32 +892,11 @@ html[lang=ja] #mv *,html[lang=zh-CN] #mv *,html[lang=en] #mv *{word-break:normal
     <div class="mv-buy" data-i="sale_buy">💌 <b>구매를 희망하시면 문의 남겨주세요!</b> 원하시는 모델 이름을 함께 적어주시면 빠르게 안내드릴게요.</div>
   </section>
 
-  <!-- ============ process ============ -->
-  <section class="mv-card" id="mv-process">
-    <h2 class="mv-h" data-i="proc_h">작업 과정</h2>
-    <div class="mv-steps">
-      <div class="mv-step"><div class="dot">1</div><div class="n" data-i="st1">문의</div><div class="s" data-i="st1s">견적 상담</div></div>
-      <div class="mv-step"><div class="dot">2</div><div class="n" data-i="st2">결제</div><div class="s" data-i="st2s">선금 50%</div></div>
-      <div class="mv-step"><div class="dot">3</div><div class="n" data-i="st3">1차 컨펌</div><div class="s" data-i="st3s">얼굴 각도 / 표정 확인</div></div>
-      <div class="mv-step"><div class="dot">4</div><div class="n" data-i="st4">2차 컨펌</div><div class="s" data-i="st4s">몸 각도 / 물리 확인</div></div>
-      <div class="mv-step y"><div class="dot">★</div><div class="n" data-i="st5">모델 전달</div><div class="s" data-i="st5s">잔금 50% → 파일·세팅 안내</div></div>
-    </div>
-    <div class="mv-box">
-      <h4 data-i="cf_h">컨펌 관련 안내</h4>
-      <ul data-i="cf_list"><li>기본 컨펌 방식은 영상 촬영본 전달로 진행합니다. 컨펌 전날 미리 안내드립니다.</li><li>컨펌 당일 24시간 동안에 한해 화면 공유(디스코드) 요청이 가능하며, 이 시간이 지나면 화면 공유는 어렵습니다.</li><li>수정 요청은 48시간 동안 자유롭게 접수 가능하나, 반복적인 번복이나 초기 상담 시 논의된 범위를 크게 벗어나는 수정은 진행이 어렵거나 추가 비용이 청구될 수 있습니다.</li><li>컨펌 안내 후 48시간 동안 회신 및 요청 사항이 없을 경우, 원활한 진행을 위해 다음 단계로 넘어갑니다. 피드백이 늦어질 경우 언제까지 회신 가능한지 미리 말씀해 주세요.</li><li>기본 컨펌 횟수는 총 2회이며, 이를 초과하는 추가 요청 시 비용이 청구될 수 있습니다.</li></ul>
-    </div>
-    <div class="mv-box" style="background:var(--yel-l);border-color:#f3e3a0;">
-      <h4 style="color:#8a6b00;" data-i="ct_h">연락 방식</h4>
-      <ul><li data-i="ct">기본적으로 디스코드로 진행되며, 디스코드 사용이 어려우실 경우 이메일로 진행됩니다.</li></ul>
-    </div>
-  </section>
-
-  <!-- ============ terms ============ -->
+  <!-- ============ 공지 사항 ============ -->
   <section class="mv-card" id="mv-notice">
     <h2 class="mv-h" data-i="tos_h">공지 사항</h2>
     <p class="mv-desc" data-i="tos_desc">신청 전 꼭 읽어주세요. 읽지 않아 생기는 불이익은 책임지지 않습니다.</p>
-<div data-i="TOS">
-    <details class="mv-acc" name="mv-notice"><summary><span class="q">0</span>신청 전 준비사항<span class="ic"></span></summary>
+    <div data-i="TOS">    <details class="mv-acc" name="mv-notice"><summary><span class="q">0</span>신청 전 준비사항<span class="ic"></span></summary>
       <div class="bd"><ul><li>일러스트는 미포함이며, <b>리깅만 작업</b>합니다.</li><li>신청 시 <b>파츠 분리된 PSD 파일</b>이 필요합니다. 분리가 미흡하여 작업이 어려울 경우 의뢰가 반려되거나 모델의 움직임에 제약이 생길 수 있습니다. [5. 파츠 분리 관련] 항목을 참고 바랍니다.</li><li>캐릭터 디자인, 파츠 개수, 추가 옵션에 따라 가격 및 작업 기간 변동이 발생할 수 있습니다.</li><li>결제 전, 공지 사항 숙지 후 사전 문의 부탁드립니다.</li></ul></div></details>
     <details class="mv-acc" name="mv-notice"><summary><span class="q">1</span>결제<span class="ic"></span></summary>
       <div class="bd"><ul><li>가격은 <b>USD(달러)</b> 기준이며, <b>PayPal 인보이스</b>로 결제합니다.</li><li>작업 시작 전 <b>선금 50%</b>, 최종 컨펌 후 <b>잔금 50%</b>를 결제합니다.</li><li>모델 파일은 <b>전액 결제 확인 후</b> 전달드립니다.</li><li>환불: 작업 시작 전에는 전액 환불됩니다. 작업 시작 후에는 선금이 환불되지 않습니다. 작가 사정으로 완성하지 못할 경우 전액 환불해 드립니다.</li></ul></div></details>
@@ -706,10 +910,12 @@ html[lang=ja] #mv *,html[lang=zh-CN] #mv *,html[lang=en] #mv *{word-break:normal
       <div class="bd"><ul><li>외부 작가님 작업물의 리터칭 및 파츠 분할도 받습니다.</li><li>타 일러스트 작가님의 작업물에 대한 리터칭 및 파츠 분할은, 신청자가 해당 작가님께 직접 사전 동의를 받아온 경우에 한해 진행합니다. 이 경우 Miove가 해당 작가님과 직접 연락하여 동의 여부를 한 번 더 확인합니다.</li><li>파츠 분리 작업은 리깅을 Miove에게 의뢰하는 것을 전제로, 별도 추가금을 받고 진행합니다.</li><li>간단한 리터칭(비워진 색상 채우기, 삐져나온 선화 정리 등)은 추가금 없이 해드립니다.</li></ul></div></details>
     <details class="mv-acc" name="mv-notice"><summary><span class="q">6</span>필요 프로그램 및 제공 파일 안내<span class="ic"></span></summary>
       <div class="bd"><ul><li>iPhone 기준으로 작업하며, VTube Studio + VBridger를 사용합니다. VBridger는 페이셜 캡처 기능이 탑재된 iPhone 기종만 가능합니다. 프로그램 사용 및 세팅에 도움이 필요하시면 추가 안내드립니다.</li><li>최종 제공 파일은 VTube Studio 구동용 파일 위주이며, 리깅 수정이 가능한 원본 파일(.cmo3)은 제공하지 않습니다.</li></ul></div></details>
+    <details class="mv-acc" name="mv-notice"><summary><span class="q">7</span>컨펌 및 연락 방식<span class="ic"></span></summary>
+      <div class="bd"><ul><li>기본 컨펌 방식은 영상 촬영본 전달로 진행합니다. 컨펌 전날 미리 안내드립니다.</li><li>컨펌 당일 24시간 동안에 한해 화면 공유(디스코드) 요청이 가능하며, 이 시간이 지나면 화면 공유는 어렵습니다.</li><li>수정 요청은 48시간 동안 자유롭게 접수 가능하나, 반복적인 번복이나 초기 상담 시 논의된 범위를 크게 벗어나는 수정은 진행이 어렵거나 추가 비용이 청구될 수 있습니다.</li><li>컨펌 안내 후 48시간 동안 회신 및 요청 사항이 없을 경우, 원활한 진행을 위해 다음 단계로 넘어갑니다. 피드백이 늦어질 경우 언제까지 회신 가능한지 미리 말씀해 주세요.</li><li>기본 컨펌 횟수는 총 2회이며, 이를 초과하는 추가 요청 시 비용이 청구될 수 있습니다.</li></ul><p style="margin:10px 0 0;font-weight:800;">연락 방식</p><ul><li>기본적으로 디스코드로 진행되며, 디스코드 사용이 어려우실 경우 이메일로 진행됩니다.</li></ul></div></details>
 </div>
   </section>
 
-  <!-- ============ apply ============ -->
+  <!-- ============ 신청하기 ============ -->
   <section class="mv-card" id="mv-apply">
     <h2 class="mv-h" data-i="ap_h">신청하기</h2>
     <p class="mv-desc" data-i="ap_desc">옵션을 고르면 예상 금액이 바로 계산돼요.</p>
@@ -721,7 +927,7 @@ html[lang=ja] #mv *,html[lang=zh-CN] #mv *,html[lang=en] #mv *{word-break:normal
     <details class="mv-acc mv-base" name="mv-notice"><summary><span class="q">✓</span><span data-i="base_h">기본 포함 사항</span> <small style="font-weight:500;color:var(--mute);" data-i="base_s">모든 신청에 포함돼요</small><span class="ic"></span></summary>
       <div class="bd">
         <div data-i="base_rows"><div class="mv-row"><span class="k">머리 XYZ</span><span class="mv-tag">눈</span><span class="mv-tag">눈 깜빡임</span><span class="mv-tag">미소</span><span class="mv-tag">눈꺼풀 근육</span></div><div class="mv-row"><span class="k">눈동자</span><span class="mv-tag">눈동자 XY</span><span class="mv-tag">물리</span></div><div class="mv-row"><span class="k">눈썹</span><span class="mv-tag">위아래</span><span class="mv-tag">변형(찡그림, 슬픔)</span></div><div class="mv-row"><span class="k">입</span><span class="mv-tag">여닫기</span><span class="mv-tag">변형 9점</span></div><div class="mv-row"><span class="k">몸 XYZ</span><span class="mv-tag">호흡</span><span class="mv-tag">머리카락 물리</span><span class="mv-tag">의상 물리</span></div></div>
-        <p style="margin:12px 0 0;font-size:13px;" data-i="base_n1">※ <b>반신</b>은 두상 + 상체(팔·손 제외) 기준이에요. 엉덩이·허벅지(무릎 위)까지 있는 일러스트는 <b>반신 + 하체</b>(+$70)로 신청해 주세요.</p>
+        <p style="margin:12px 0 0;font-size:13px;" data-i="base_n1">※ <b>흉상</b>은 두상 + 상체(팔·손 제외) 기준이에요. 엉덩이·허벅지(무릎 위)까지 있는 일러스트는 <b>반신</b>(+$70)으로 신청해 주세요.</p>
         <p style="margin:6px 0 0;font-size:13px;" data-i="base_n2">※ 현재 작업 불가능한 기능 : SD 전환</p>
       </div></details>
     <div class="mv-alert"><span class="ex">!</span><div data-i="alert"><b>신청할 때 파츠 분리 PSD 파일을 꼭 첨부해 주세요.</b><br><span style="color:var(--sub)">(구글 드라이브, 드롭박스 등) 곤란하거나 적기 어려운 부분은 비워두셔도 괜찮아요. PSD를 보내주시면 더 정확한 견적을 드릴 수 있어요.</span></div></div>
@@ -748,17 +954,16 @@ html[lang=ja] #mv *,html[lang=zh-CN] #mv *,html[lang=en] #mv *{word-break:normal
           <div class="mv-hint pk" data-i="com_hint"><b>리깅된 모델을 이용한 굿즈 제작, 광고 촬영</b>은 상업적 이용에 해당해요.</div></div>
 
         <div class="mv-fsec">■ <span data-i="fs2">일러스트 정보</span></div>
-        <div class="mv-field"><label class="lb" data-i="f_scope">신청 범위</label>
+        <div class="mv-field" id="mv-scopefield"><label class="lb" data-i="f_scope">신청 범위</label>
           <div class="mv-pills">
-            <label class="mv-pill"><input type="radio" name="mv-scope" value="half" checked><span data-i="sc_half">반신</span></label>
-            <label class="mv-pill"><input type="radio" name="mv-scope" value="halfplus"><span data-i="sc_halfplus">반신 + 하체</span></label>
+            <label class="mv-pill"><input type="radio" name="mv-scope" value="half" checked><span data-i="sc_half">흉상</span></label>
+            <label class="mv-pill"><input type="radio" name="mv-scope" value="halfplus"><span data-i="sc_halfplus">반신</span></label>
             <label class="mv-pill"><input type="radio" name="mv-scope" value="full"><span data-i="sc_full">전신</span></label>
+            <label class="mv-pill"><input type="radio" name="mv-scope" value="sd"><span data-i="sc_sd">SD</span></label>
           </div>
-          <div class="mv-scope-guide">
-            <div><b data-i="sc_half">반신</b><span data-i="g_half">두상 + 상체 <em>(팔·손 제외)</em></span></div>
-            <div><b data-i="sc_halfplus">반신 + 하체</b><span data-i="g_halfplus">반신 + 엉덩이·허벅지 <em>(무릎 위까지)</em> · +$70</span></div>
-            <div><b data-i="sc_full">전신</b><span data-i="g_full">머리부터 발끝까지</span></div>
-          </div></div>
+          <details class="mv-scope-img"><summary><span data-i="scope_img">📏 범위 기준 그림으로 보기</span><span class="ic"></span></summary>
+            <div class="bd"><img src="scope_guide.png" alt="" loading="lazy"><p class="cap" data-i="scope_cap"></p></div>
+          </details></div>
         <div class="mv-field"><label class="lb" for="mv-artist" data-i="f_artist">일러스트레이터</label><input class="mv-in" id="mv-artist" data-ip="f_artist_ph" placeholder="작가명 또는 링크"></div>
         <div class="mv-field"><label class="lb" data-i="f_psd">일러스트 준비 상태</label>
           <div class="mv-pills">
@@ -774,20 +979,22 @@ html[lang=ja] #mv *,html[lang=zh-CN] #mv *,html[lang=en] #mv *{word-break:normal
           </div></div>
 
         <div class="mv-fsec">■ <span data-i="fs3">추가 옵션</span></div>
-        <div class="mv-opt"><div class="tx"><span data-i="exA">표정 · 애니메이션 X</span><small data-i="exA_s">홍조, 정색 등</small></div><span class="pr">+$4</span><div class="mv-stp" data-id="exA"><button type="button" data-d="-1" aria-label="-">−</button><output>0</output><button type="button" data-d="1" aria-label="+">+</button></div></div>
-        <div class="mv-opt"><div class="tx"><span data-i="exB">표정 · 애니메이션 O</span><small data-i="exB_s">눈물 방울, 빙글 눈 등</small></div><span class="pr">+$7</span><div class="mv-stp" data-id="exB"><button type="button" data-d="-1" aria-label="-">−</button><output>0</output><button type="button" data-d="1" aria-label="+">+</button></div></div>
-        <div class="mv-opt"><div class="tx"><span data-i="exC">표정 · 물리 O</span><small data-i="exC_s">하트 눈, 반짝 눈 등</small></div><span class="pr">+$7</span><div class="mv-stp" data-id="exC"><button type="button" data-d="-1" aria-label="-">−</button><output>0</output><button type="button" data-d="1" aria-label="+">+</button></div></div>
-        <div class="mv-field" style="margin-top:4px;"><label class="lb" for="mv-exdesc" data-i="f_exdesc">원하는 표정 <small>(자유롭게)</small></label><input class="mv-in" id="mv-exdesc" data-ip="f_exdesc_ph" placeholder="예: 홍조 1, 하트 눈 1"></div>
+        <label class="mv-opt" id="mv-sdaddbox"><input type="checkbox" class="mv-chk" id="mv-sdadd"><div class="tx"><span data-i="sdadd">SD 동시 제작</span><small data-i="sdadd_s">본 모델과 같이 신청하면 세트 할인 (흉상 −$35 · 반신 −$70 · 전신 −$145)</small></div><span class="pr" data-p="sdAdd"></span></label>
+        <div class="mv-opt"><div class="tx"><span data-i="exA">표정 · 애니메이션 X</span><small data-i="exA_s">홍조, 정색, 하트 눈, 반짝 눈</small></div><span class="pr" data-p="opt.exA"></span><div class="mv-stp" data-id="exA"><button type="button" data-d="-1" aria-label="-">−</button><output>0</output><button type="button" data-d="1" aria-label="+">+</button></div></div>
+        <div class="mv-opt"><div class="tx"><span data-i="exB">표정 · 애니메이션 O</span><small data-i="exB_s">눈물, 빙글 눈</small></div><span class="pr" data-p="opt.exB"></span><div class="mv-stp" data-id="exB"><button type="button" data-d="-1" aria-label="-">−</button><output>0</output><button type="button" data-d="1" aria-label="+">+</button></div></div>
+        <div class="mv-field" style="margin-top:4px;"><label class="lb" for="mv-exdesc" data-i="f_exdesc">추가 표정 <small>(직접 입력)</small></label><input class="mv-in" id="mv-exdesc" data-ip="f_exdesc_ph" placeholder="예: 홍조 1, 눈물 1"></div>
 
-        <label class="mv-opt"><input type="checkbox" class="mv-chk" id="mv-vb"><div class="tx">VBridger<small data-i="vb_s">볼빵빵, 오물오물 등 · 스팀에서 별도 구매 필요</small></div><span class="pr">+$35</span></label>
-        <label class="mv-opt"><input type="checkbox" class="mv-chk" id="mv-tongue"><div class="tx"><span data-i="tongue">혀 내밀기</span><small data-i="tongue_s">VBridger 필요 (선택 시 자동 추가)</small></div><span class="pr">+$20</span></label>
+        <div class="mv-optlab" data-i="iph_h">아이폰 트래킹 <small>아이폰으로 연결 시 가능한 표정</small></div>
+        <label class="mv-opt"><input type="checkbox" class="mv-chk" id="mv-iph"><div class="tx" data-i="iph">볼빵빵, 혀 내밀기</div><span class="pr" data-p="iphone"></span></label>
+        <div class="mv-optlab" data-i="vb_h">VBridger <small>VBridger 구매 필요 (스팀)</small></div>
+        <label class="mv-opt"><input type="checkbox" class="mv-chk" id="mv-vb"><div class="tx"><span data-i="vb_t">오물오물, 입술 오므리기 등</span><small data-i="vb_s2">자연스러운 입 움직임</small></div><span class="pr" data-p="vbridger"></span></label>
 
-        <label class="mv-opt"><input type="checkbox" class="mv-chk mv-pose" value="foot"><div class="tx" data-i="pose_foot">추가 포즈 · 발 콕콕</div><span class="pr">+$70</span></label>
-        <label class="mv-opt"><input type="checkbox" class="mv-chk mv-pose" value="close"><div class="tx" data-i="pose_close">추가 포즈 · 가깝게 다가오기</div><span class="pr">+$70</span></label>
-
-        <div class="mv-opt"><div class="tx" data-i="hair">추가 헤어스타일</div><span class="pr">+$70</span><div class="mv-stp" data-id="hair"><button type="button" data-d="-1" aria-label="-">−</button><output>0</output><button type="button" data-d="1" aria-label="+">+</button></div></div>
-        <div class="mv-opt"><div class="tx"><span data-i="outfit">추가 의상</span><small data-i="outfit_s">겉옷, 상의, 하의 등</small></div><span class="pr">+$70</span><div class="mv-stp" data-id="outfit"><button type="button" data-d="-1" aria-label="-">−</button><output>0</output><button type="button" data-d="1" aria-label="+">+</button></div></div>
-        <div class="mv-opt"><div class="tx"><span data-i="prop">추가 소품</span><small data-i="prop_s">귀, 꼬리, 날개 등</small></div><span class="pr">+$20</span><div class="mv-stp" data-id="prop"><button type="button" data-d="-1" aria-label="-">−</button><output>0</output><button type="button" data-d="1" aria-label="+">+</button></div></div>
+        <div class="mv-optlab sep" data-i="sep_h">포즈 · 헤어 · 의상 · 소품</div>
+        <label class="mv-opt"><input type="checkbox" class="mv-chk mv-pose" value="foot"><div class="tx" data-i="pose_foot">추가 포즈 · 발 콕콕</div><span class="pr" data-p="pose.foot"></span></label>
+        <label class="mv-opt"><input type="checkbox" class="mv-chk mv-pose" value="close"><div class="tx" data-i="pose_close">추가 포즈 · 가깝게 다가오기</div><span class="pr" data-p="pose.close"></span></label>
+        <div class="mv-opt"><div class="tx" data-i="hair">추가 헤어스타일</div><span class="pr" data-p="opt.hair"></span><div class="mv-stp" data-id="hair"><button type="button" data-d="-1" aria-label="-">−</button><output>0</output><button type="button" data-d="1" aria-label="+">+</button></div></div>
+        <div class="mv-opt"><div class="tx"><span data-i="outfit">추가 의상</span><small data-i="outfit_s">겉옷, 상의, 하의 등</small></div><span class="pr" data-p="opt.outfit"></span><div class="mv-stp" data-id="outfit"><button type="button" data-d="-1" aria-label="-">−</button><output>0</output><button type="button" data-d="1" aria-label="+">+</button></div></div>
+        <div class="mv-opt"><div class="tx"><span data-i="prop">추가 소품</span><small data-i="prop_s">귀, 꼬리, 날개 등</small></div><span class="pr" data-p="opt.prop"></span><div class="mv-stp" data-id="prop"><button type="button" data-d="-1" aria-label="-">−</button><output>0</output><button type="button" data-d="1" aria-label="+">+</button></div></div>
         <div class="mv-field" style="margin-top:4px;"><label class="lb" for="mv-partdesc" data-i="f_part">추가 파츠 설명 <small>(의상 변경, 소품, 헤어 변경 등)</small></label><input class="mv-in" id="mv-partdesc"></div>
 
         <div class="mv-fsec">■ <span data-i="fs4">일정 및 공개</span></div>
@@ -801,8 +1008,7 @@ html[lang=ja] #mv *,html[lang=zh-CN] #mv *,html[lang=en] #mv *{word-break:normal
           <div class="mv-pills">
             <label class="mv-pill"><input type="radio" name="mv-priv" value="none" checked><span data-i="pv_none">비공개 안 함</span></label>
             <label class="mv-pill"><input type="radio" name="mv-priv" value="in3"><span data-i="pv_in3">3개월 이내 (무료)</span></label>
-            <label class="mv-pill"><input type="radio" name="mv-priv" value="over3"><span data-i="pv_over3">3개월 이상</span></label>
-            <label class="mv-pill"><input type="radio" name="mv-priv" value="perm"><span data-i="pv_perm">영구</span></label>
+            <label class="mv-pill"><input type="radio" name="mv-priv" value="over3"><span data-i="pv_over3">3개월 이상 (+$35)</span></label>
           </div></div>
         <div class="mv-field"><label class="lb" for="mv-etc" data-i="f_etc">기타 요청사항</label><input class="mv-in" id="mv-etc"></div>
       </div>
@@ -812,7 +1018,8 @@ html[lang=ja] #mv *,html[lang=zh-CN] #mv *,html[lang=en] #mv *{word-break:normal
         <div class="mv-total"><div class="l" data-i="sum_l">예상 합계</div><div class="v" id="mv-total">$0</div></div>
         <div class="mv-lines" id="mv-lines"></div>
         <div class="mv-small" data-i="sum_small">최종 견적은 PSD 확인 후 안내드려요. 여기서 고른 내용은 상담을 위한 참고용입니다.</div>
-        <button type="button" class="mv-btn" id="mv-copy" data-i="btn_copy">① 신청서 복사</button>
+        <label class="mv-agree"><input type="checkbox" id="mv-agree"><span data-i="agree">공지 사항을 모두 읽고 숙지했습니다.</span></label>
+        <button type="button" class="mv-btn lock" id="mv-copy" aria-disabled="true" data-i="btn_copy">① 신청서 복사</button>
         <a class="mv-btn mv-form-go" id="mv-formgo" href="#" target="_blank" rel="noopener" data-i="btn_form">② 아트머그로 신청해 주세요 ↗</a>
         <button type="button" class="mv-btn ghost" id="mv-reset" data-i="btn_reset">모두 지우기</button>
         <p style="font-size:12px;color:var(--mute);margin:12px 0 0;" data-i="sum_foot">국내 의뢰는 아트머그에서 받고 있어요. 복사한 신청서를 아트머그 문의에 붙여넣고, PSD 파일을 첨부해 주세요.</p>
@@ -824,6 +1031,15 @@ html[lang=ja] #mv *,html[lang=zh-CN] #mv *,html[lang=en] #mv *{word-break:normal
   <footer class="hp-foot"><div class="lg">Miove</div><div data-i="foot">Live2D Rigging Commission</div><a href="https://x.com/Miove27" target="_blank" rel="noopener">X · @Miove27</a><div class="c">© 2026 Miove</div></footer>
 </div>
 
+<!-- ============ 영상 창 ============ -->
+<div class="mv-modal" id="mv-modal" aria-hidden="true">
+  <div class="dlg" role="dialog" aria-modal="true">
+    <div class="hd"><span class="tg"></span><span class="nm"></span><button type="button" class="x" aria-label="close">✕</button></div>
+    <div class="vd"></div>
+    <div class="ft"><span class="pr"></span><button type="button" class="go" data-i="w_go">이 범위로 견적 →</button></div>
+  </div>
+</div>
+
 <script>
 (function(){
   /* ================= CONFIG : 여기만 고치면 돼요 ================= */
@@ -832,124 +1048,102 @@ html[lang=ja] #mv *,html[lang=zh-CN] #mv *,html[lang=en] #mv *{word-break:normal
     artmugUrl: 'https://artmug.kr/index.php?channel=view&uid=61310',
     // 언어별 구글 폼 주소 (따옴표 안에 넣기). 비워두면 영어 폼으로 열려요.
     formUrl: {
-      en: 'https://docs.google.com/forms/d/1rOnzJ8X30ctQdaPsuTcpiALMzO2r73F1zxq4ZlnJM-Y/edit',   // 영어 페이지 → 예: 'https://forms.gle/xxxx'
-      ja: 'https://docs.google.com/forms/d/1p8KzI7TDt-3EKGWhgBrAcuVtEs1H0nTq7UQggM-Wm0M/edit',   // 일본어 페이지
-      zh: 'https://docs.google.com/forms/d/1wnFGCSNYwRsOkzC5kzsg-P0CFO0GJK9TAD3WN42F6pA/edit'    // 중국어 페이지
+      en: 'https://docs.google.com/forms/d/1rOnzJ8X30ctQdaPsuTcpiALMzO2r73F1zxq4ZlnJM-Y/viewform',   // 영어 페이지 → 예: 'https://forms.gle/xxxx'
+      ja: 'https://docs.google.com/forms/d/1p8KzI7TDt-3EKGWhgBrAcuVtEs1H0nTq7UQggM-Wm0M/viewform',   // 일본어 페이지
+      zh: 'https://docs.google.com/forms/d/1wnFGCSNYwRsOkzC5kzsg-P0CFO0GJK9TAD3WN42F6pA/viewform'    // 중국어 페이지
     },
     discOn: true,           // 오픈 기념 할인 끝나면 false
-    disc: 0.2,              // 할인율 (0.2 = 20%)
-    year: '2026',
-    // 예약 현황: 달 이름은 언어별로 자동. slots = 전체 자리, booked = 찬 자리, fcfs = 선착순 표시
+    disc: 0.2,              // 할인율 (0.2 = 20%) · 상업적 이용 추가금은 할인 제외
+    year: '2026 – 2027',
+    // 예약 현황 (달 이름은 언어별로 자동): slots = 전체 자리, booked = 찬 자리, hot:true = 진한 파란색 강조
     segs: [
-      {span:2, slots:1, booked:1},
-      {span:2, slots:1, booked:1},
-      {span:2, slots:2, booked:0, fcfs:true}
+      {slots:1, booked:1},
+      {slots:2, booked:0, hot:true},
+      {slots:2, booked:0}
     ],
-    base: { half:230, halfplus:300, full:460 },          // USD (할인 전 정가)
-    opt: { exA:4, exB:7, exC:7, hair:70, outfit:70, prop:20 },
-    vbridger:35, tongue:20, privacyOver3:35, commercial:220,
+    // ↓ 가격 (USD, 할인 전 정가) — 여기 숫자를 바꾸면 화면의 가격 표시도 같이 바뀌어요
+    base: { half:230, halfplus:300, full:460, sd:215 },
+    sdAdd: 215,                                  // 본 모델 + SD 동시 제작 시 SD 가격
+    sdSet: { half:35, halfplus:70, full:145 },   // SD 세트 할인
+    opt: { exA:4, exB:7, hair:70, outfit:70, prop:35 },
+    iphone:35,              // 아이폰 트래킹 (볼빵빵, 혀 내밀기)
+    vbridger:35,            // VBridger (자연스러운 입)
+    privacyOver3:35, commercial:220,
     pose: { foot:70, close:70 }
   };
   /* ============================================================== */
-var I={"ko": {"lang": "ko", "title": "Miove · Live2D 리깅", "intro_h": "인사말", "quote": "일러스트의 새로운 모습, 새로운 생명", "intro": "안녕하세요, 한 명의 훌륭한 리거가 되기 위해 노력하는 Miove입니다.<br>끊임없는 기술 연구와 집요한 디테일로, 매 작업마다 최고의 퀄리티와 애정을 담아내겠습니다.<br>차곡차곡 포트폴리오를 채워나갈 테니 계속 지켜봐 주세요!", "glob": "<b>해외 의뢰</b> · 한국 거주 (KST, UTC+9) · 한국어 / 영어 / 일본어 / 중국어 연락 가능 (번역기 사용)", "sched_h": "예약 현황", "lg_open": "빈 자리", "lg_done": "예약 완료", "sched_note": "※ 예약 슬롯 개수는 변동될 수 있습니다.", "show_desc": "좌우로 넘겨서 영상을 골라 재생해 보세요.", "cap1": "리나레이나", "cap2": "판매 모델 · 염소 소녀", "sale_h": "판매 중 모델", "sale_desc": "바로 사용 가능한 리깅 완성 모델이에요.", "goat": "염소 소녀", "sale_badge": "판매 중", "sale_buy": "💌 <b>구매를 희망하시면 문의 남겨주세요!</b> 원하시는 모델 이름을 함께 적어주시면 빠르게 안내드릴게요.", "proc_h": "작업 과정", "st1": "문의", "st1s": "견적 상담", "st2": "결제", "st2s": "선금 50%", "st3": "1차 컨펌", "st3s": "얼굴 각도 / 표정 확인", "st4": "2차 컨펌", "st4s": "몸 각도 / 물리 확인", "st5": "모델 전달", "st5s": "잔금 50% → 파일·세팅 안내", "cf_h": "컨펌 관련 안내", "cf_list": "<li>기본 컨펌 방식은 영상 촬영본 전달로 진행합니다. 컨펌 전날 미리 안내드립니다.</li><li>컨펌 당일 24시간 동안에 한해 화면 공유(디스코드) 요청이 가능하며, 이 시간이 지나면 화면 공유는 어렵습니다.</li><li>수정 요청은 48시간 동안 자유롭게 접수 가능하나, 반복적인 번복이나 초기 상담 시 논의된 범위를 크게 벗어나는 수정은 진행이 어렵거나 추가 비용이 청구될 수 있습니다.</li><li>컨펌 안내 후 48시간 동안 회신 및 요청 사항이 없을 경우, 원활한 진행을 위해 다음 단계로 넘어갑니다. 피드백이 늦어질 경우 언제까지 회신 가능한지 미리 말씀해 주세요.</li><li>기본 컨펌 횟수는 총 2회이며, 이를 초과하는 추가 요청 시 비용이 청구될 수 있습니다.</li>", "ct_h": "연락 방식", "ct": "기본적으로 디스코드로 진행되며, 디스코드 사용이 어려우실 경우 이메일로 진행됩니다.", "tos_h": "공지 사항", "tos_desc": "신청 전 꼭 읽어주세요. 읽지 않아 생기는 불이익은 책임지지 않습니다.", "TOS": "    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">0</span>신청 전 준비사항<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>일러스트는 미포함이며, <b>리깅만 작업</b>합니다.</li><li>신청 시 <b>파츠 분리된 PSD 파일</b>이 필요합니다. 분리가 미흡하여 작업이 어려울 경우 의뢰가 반려되거나 모델의 움직임에 제약이 생길 수 있습니다. [5. 파츠 분리 관련] 항목을 참고 바랍니다.</li><li>캐릭터 디자인, 파츠 개수, 추가 옵션에 따라 가격 및 작업 기간 변동이 발생할 수 있습니다.</li><li>결제 전, 공지 사항 숙지 후 사전 문의 부탁드립니다.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">1</span>결제<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>가격은 <b>USD(달러)</b> 기준이며, <b>PayPal 인보이스</b>로 결제합니다.</li><li>작업 시작 전 <b>선금 50%</b>, 최종 컨펌 후 <b>잔금 50%</b>를 결제합니다.</li><li>모델 파일은 <b>전액 결제 확인 후</b> 전달드립니다.</li><li>환불: 작업 시작 전에는 전액 환불됩니다. 작업 시작 후에는 선금이 환불되지 않습니다. 작가 사정으로 완성하지 못할 경우 전액 환불해 드립니다.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">2</span>작업 기간<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>선금 입금일 기준 평균 <b>15~25일</b> 소요됩니다. (2026년 11월 기준)</li><li>캐릭터 복잡도, 추가 옵션이나 수정 요청 등에 따라 작업 기간이 변동될 수 있습니다.</li><li>안내 기간보다 작업이 일찍 마무리될 경우, 바로 전달드립니다.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">3</span>작업물 공개 관련<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>리깅 결과물의 저작권은 작가 본인(Miove)에게 귀속됩니다.</li><li>작업물 완성 전, 공유해 드린 과정은 외부 유출이 금지됩니다.</li><li>비공개 미신청 시, 작업 과정 및 완성본이 작가의 SNS/포트폴리오/쇼케이스에 샘플로 사용될 수 있습니다. <b>비공개 신청 시 3개월까지 무료</b>이며, 그 이후 추가금($35)이 발생합니다. 방송 데뷔 일정 등 단기 비공개를 희망하시면 사전 문의 바랍니다.</li><li>의뢰자는 완성된 모델을 개인 방송 · 영상 콘텐츠 · SNS 등에서 자유롭게 사용 가능합니다. (수익 창출 가능)</li><li>사전 문의 없이 모델 리깅 자체를 활용한 굿즈 제작, 기업 광고 출연 등의 상업적 사업 진행을 금지합니다. (상업적 이용 추가금 $220)</li><li>완성된 작업물의 재판매, 양도를 원하실 경우 작가 본인(Miove)에게 허락을 구하셔야 합니다.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">4</span>캐릭터 문의 가능 범위<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li><b>AI 일러스트 리깅 의뢰는 받지 않습니다.</b></li><li>원작 IP가 있는 캐릭터는 저작권 문제 우려로 리깅 의뢰를 받지 않고 있습니다. 개인/비상업 목적이어도 거절됩니다.</li><li>미소녀, 미소년 캐릭터를 주력으로 다루고 있습니다. 그 외의 캐릭터상은 사전 문의 바랍니다.</li><li>작가 역량상 진행이 어렵거나, 논란의 소지가 있는 일러스트는 사전 거절될 수 있습니다.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">5</span>파츠 분리 관련<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>외부 작가님 작업물의 리터칭 및 파츠 분할도 받습니다.</li><li>타 일러스트 작가님의 작업물에 대한 리터칭 및 파츠 분할은, 신청자가 해당 작가님께 직접 사전 동의를 받아온 경우에 한해 진행합니다. 이 경우 Miove가 해당 작가님과 직접 연락하여 동의 여부를 한 번 더 확인합니다.</li><li>파츠 분리 작업은 리깅을 Miove에게 의뢰하는 것을 전제로, 별도 추가금을 받고 진행합니다.</li><li>간단한 리터칭(비워진 색상 채우기, 삐져나온 선화 정리 등)은 추가금 없이 해드립니다.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">6</span>필요 프로그램 및 제공 파일 안내<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>iPhone 기준으로 작업하며, VTube Studio + VBridger를 사용합니다. VBridger는 페이셜 캡처 기능이 탑재된 iPhone 기종만 가능합니다. 프로그램 사용 및 세팅에 도움이 필요하시면 추가 안내드립니다.</li><li>최종 제공 파일은 VTube Studio 구동용 파일 위주이며, 리깅 수정이 가능한 원본 파일(.cmo3)은 제공하지 않습니다.</li></ul></div></details>\n", "ap_h": "신청하기", "ap_desc": "옵션을 고르면 예상 금액이 바로 계산돼요.", "base_h": "기본 포함 사항", "base_s": "모든 신청에 포함돼요", "base_rows": "<div class=\"mv-row\"><span class=\"k\">머리 XYZ</span><span class=\"mv-tag\">눈</span><span class=\"mv-tag\">눈 깜빡임</span><span class=\"mv-tag\">미소</span><span class=\"mv-tag\">눈꺼풀 근육</span></div><div class=\"mv-row\"><span class=\"k\">눈동자</span><span class=\"mv-tag\">눈동자 XY</span><span class=\"mv-tag\">물리</span></div><div class=\"mv-row\"><span class=\"k\">눈썹</span><span class=\"mv-tag\">위아래</span><span class=\"mv-tag\">변형(찡그림, 슬픔)</span></div><div class=\"mv-row\"><span class=\"k\">입</span><span class=\"mv-tag\">여닫기</span><span class=\"mv-tag\">변형 9점</span></div><div class=\"mv-row\"><span class=\"k\">몸 XYZ</span><span class=\"mv-tag\">호흡</span><span class=\"mv-tag\">머리카락 물리</span><span class=\"mv-tag\">의상 물리</span></div>", "base_n1": "※ <b>반신</b>은 두상 + 상체(팔·손 제외) 기준이에요. 엉덩이·허벅지(무릎 위)까지 있는 일러스트는 <b>반신 + 하체</b>(+$70)로 신청해 주세요.", "base_n2": "※ 현재 작업 불가능한 기능 : SD 전환", "alert": "<b>신청할 때 파츠 분리 PSD 파일을 꼭 첨부해 주세요.</b><br><span style=\"color:var(--sub)\">(구글 드라이브, 드롭박스 등) 곤란하거나 적기 어려운 부분은 비워두셔도 괜찮아요. PSD를 보내주시면 더 정확한 견적을 드릴 수 있어요.</span>", "fs1": "기본 정보", "f_nick": "닉네임 / 활동명 <small>(작업 파일명으로 사용돼요)</small>", "f_plat": "방송 플랫폼 및 링크 <small>(데뷔 전이면 '데뷔 예정')</small>", "f_plat_ph": "유튜브 / 트위치 등", "f_use": "사용 용도", "use1": "방송용", "use2": "개인소장용", "use3": "기타", "use_hint": "수익 창출 <b class=\"ok\">O</b> · 모델 재판매 및 양도 <b class=\"no\">X</b>", "f_com": "상업적 이용 여부 <small>(선택 시 +$220)</small>", "no": "아니오", "yes": "예", "com_hint": "<b>리깅된 모델을 이용한 굿즈 제작, 광고 촬영</b>은 상업적 이용에 해당해요.", "fs2": "일러스트 정보", "f_scope": "신청 범위", "sc_half": "반신", "sc_halfplus": "반신 + 하체", "sc_full": "전신", "g_half": "두상 + 상체 <em>(팔·손 제외)</em>", "g_halfplus": "반신 + 엉덩이·허벅지 <em>(무릎 위까지)</em> · +$70", "g_full": "머리부터 발끝까지", "f_artist": "일러스트레이터", "f_artist_ph": "작가명 또는 링크", "f_psd": "일러스트 준비 상태", "psd1": "파츠 분리 PSD 완료", "psd2": "파츠 분리 전", "psd3": "일러스트 작업 중", "f_type": "캐릭터 타입", "ty1": "미소녀", "ty2": "미소년", "ty3": "기타", "fs3": "추가 옵션", "exA": "표정 · 애니메이션 X", "exA_s": "홍조, 정색 등", "exB": "표정 · 애니메이션 O", "exB_s": "눈물 방울, 빙글 눈 등", "exC": "표정 · 물리 O", "exC_s": "하트 눈, 반짝 눈 등", "f_exdesc": "원하는 표정 <small>(자유롭게)</small>", "f_exdesc_ph": "예: 홍조 1, 하트 눈 1", "vb_s": "볼빵빵, 오물오물 등 · 스팀에서 별도 구매 필요", "tongue": "혀 내밀기", "tongue_s": "VBridger 필요 (선택 시 자동 추가)", "pose_foot": "추가 포즈 · 발 콕콕", "pose_close": "추가 포즈 · 가깝게 다가오기", "hair": "추가 헤어스타일", "outfit": "추가 의상", "outfit_s": "겉옷, 상의, 하의 등", "prop": "추가 소품", "prop_s": "귀, 꼬리, 날개 등", "f_part": "추가 파츠 설명 <small>(의상 변경, 소품, 헤어 변경 등)</small>", "fs4": "일정 및 공개", "f_due": "희망 마감일 <small>(미정이면 '미정' 또는 대략적인 시기)</small>", "f_sns": "작업 과정 SNS 공개", "sns_ok": "가능", "sns_no": "불가능", "f_priv": "완성 후 비공개 기간", "pv_none": "비공개 안 함", "pv_in3": "3개월 이내 (무료)", "pv_over3": "3개월 이상", "pv_perm": "영구", "f_etc": "기타 요청사항", "sum_t": "예상 견적", "sum_l": "예상 합계", "sum_small": "최종 견적은 PSD 확인 후 안내드려요. 여기서 고른 내용은 상담을 위한 참고용입니다.", "btn_copy": "① 신청서 복사", "btn_form": "② 아트머그로 신청해 주세요 ↗", "btn_reset": "모두 지우기", "sum_foot": "국내 의뢰는 아트머그에서 받고 있어요. 복사한 신청서를 아트머그 문의에 붙여넣고, PSD 파일을 첨부해 주세요.", "nv_show": "쇼케이스", "nv_detail": "리깅 디테일", "nv_price": "가격", "nv_sale": "판매 모델", "nv_proc": "작업 과정", "nv_tos": "공지 사항", "nv_apply": "의뢰하기", "hero_label": "LIVE2D RIGGER", "hero_sub": "움직이는 순간에도 일러스트 그대로의 매력을.<br>섬세한 리깅으로 캐릭터에 생명을 불어넣어요.", "ev_badge": "해외 의뢰 오픈 기념", "ev_s": "기본 가격 + 모든 옵션 20% 할인 <small>(상업적 이용 추가금 제외)</small>", "hero_btn1": "의뢰하기", "hero_btn2": "작업 보기", "price_h": "가격", "price_desc": "모든 가격은 USD 기준이에요. 오픈 기념 할인이 적용된 가격이에요.", "price_from": "할인가", "price_note": "※ 표정, VBridger, 추가 포즈 등 옵션은 아래 신청하기에서 확인할 수 있어요.", "ap_s1": "옵션 고르기", "ap_s1d": "원하는 옵션을 고르면 예상 금액이 바로 계산돼요.", "ap_s2": "신청서 복사", "ap_s2d": "버튼 한 번이면 신청 내용이 통째로 복사돼요.", "ap_s3": "아트머그로 신청", "ap_s3d": "아트머그 커미션 페이지에서 신청하고, 복사한 신청서를 붙여넣어 주세요.", "ko_note": "※ 이 페이지는 해외 의뢰 전용이에요. 국내 의뢰는 아트머그에서 받고 있어요.", "foot": "Live2D Rigging Commission", "disc": "해외 오픈 기념 20% 할인", "d_0": "리깅 디테일", "d_1": "얼굴", "d_2": "각도", "d_3": "어느 각도에서도 자연스러운 얼굴", "d_4": "어느 각도에서 멈추든", "d_5": "원래 일러스트의 퀄리티를 유지하도록", "d_6": "꼼꼼하게 작업합니다.", "d_7": "전체", "d_8": "X축", "d_9": "Y축", "d_10": "눈동자", "d_11": "캐릭터의 개성을 살린 눈동자 연출", "d_12": "표정", "d_13": "캐릭터의 매력이 돋보이는 풍부한 표정 연출", "d_14": "눈물", "d_15": "화남 + 정색", "d_16": "부끄러움 + 하트눈", "d_17": "놀람", "d_18": "다양한 입모양과 표정 연출 (iPhone 호환 기능)", "d_19": "볼 빵빵", "d_20": "입 오물오물", "d_21": "혀 내밀기", "d_22": "입술 오므리기", "d_23": "추가 소품", "d_24": "캐릭터의 디테일을 살리는 소품 움직임", "d_25": "안경", "d_26": "허리 체인", "d_27": "리본", "d_28": "전신", "d_29": "전신 각도", "d_30": "캐릭터와 어울리는 신체 연출", "d_31": "Z축", "d_32": "추가 포즈", "d_33": "다양한 연출이 가능한 옵션", "d_34": "발 콕콕", "d_35": "가깝게 다가오기"}, "en": {"lang": "en", "title": "Miove · Live2D Rigging Commissions", "intro_h": "Hello", "quote": "A new form, a new life for your illustration", "intro": "Hi, I'm Miove, a Live2D rigger working hard to become a great one.<br>With constant study and an obsessive eye for detail, I put my best quality and care into every model.<br>My portfolio keeps growing — please keep an eye on it!", "glob": "<b>International commissions</b> · Based in Korea (KST, UTC+9) · English / Japanese / Chinese OK (via translation tools)", "sched_h": "Schedule", "lg_open": "Open", "lg_done": "Booked", "sched_note": "※ The number of slots may change.", "show_desc": "Swipe to choose a video.", "cap1": "Original model", "cap2": "For sale · Goat Girl", "sale_h": "Models for Sale", "sale_desc": "Fully rigged models, ready to use.", "goat": "Goat Girl", "sale_badge": "For sale", "sale_buy": "💌 <b>Interested? Send me an inquiry!</b> Include the model name and I'll get back to you soon.", "proc_h": "Process", "st1": "Inquiry", "st1s": "Quote", "st2": "Payment", "st2s": "50% deposit", "st3": "1st check", "st3s": "Face angles / expressions", "st4": "2nd check", "st4s": "Body angles / physics", "st5": "Delivery", "st5s": "Final 50% → files & setup guide", "cf_h": "About check-ins", "cf_list": "<li>Check-ins are done by sending recorded videos. I'll let you know the day before.</li><li>Screen sharing (Discord) can be requested only within 24 hours of a check-in.</li><li>Revision requests are open for 48 hours. Repeated reversals, or changes far beyond what we agreed on, may not be possible or may cost extra.</li><li>If I get no reply within 48 hours of a check-in, I'll move on to the next step. If you'll be late, please tell me when you can reply.</li><li>Two check-ins are included. Additional requests may cost extra.</li>", "ct_h": "Contact", "ct": "Communication is via Discord. If you can't use Discord, we can use email instead.", "tos_h": "Terms of Service", "tos_desc": "Please read before applying. I'm not responsible for problems caused by not reading these terms.", "TOS": "    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">0</span>Before applying<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>Illustration is not included — <b>rigging only</b>.</li><li>A <b>layered (part-separated) PSD</b> is required. If the separation isn't sufficient, the request may be declined or the model's movement may be limited. See [5. Part separation].</li><li>Price and timeline may vary with the character design, number of parts and options.</li><li>Please read the terms and contact me before paying.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">1</span>Payment<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>Prices are in <b>USD</b>. Payment is via <b>PayPal invoice</b>.</li><li><b>50% deposit</b> before work starts, <b>remaining 50%</b> after the final check.</li><li>Model files are delivered <b>after full payment</b>.</li><li>Refunds: full refund before work starts. Once work has started, the deposit is non-refundable. If I can't finish the work for my own reasons, I'll refund in full.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">2</span>Timeline<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>Usually <b>15–25 days</b> from the deposit. (as of Nov 2026)</li><li>May vary with the character's complexity, options and revision requests.</li><li>If I finish early, I'll deliver right away.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">3</span>Portfolio &amp; usage<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>The copyright of the rigging belongs to Miove.</li><li>WIP materials shared before completion must not be shared publicly.</li><li>Unless you request privacy, WIP and the finished model may be used as samples on my SNS / portfolio / showcase. <b>Privacy up to 3 months is free</b>; longer costs $35. For short-term privacy (e.g. until your debut), please ask in advance.</li><li>You may freely use the model for streaming, videos and SNS (monetization OK).</li><li>Commercial projects using the rigged model itself (merchandise, corporate ads, etc.) are not allowed without prior consent. (Commercial use: +$220)</li><li>Resale or transfer of the model requires Miove's permission.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">4</span>Accepted characters<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li><b>No AI-generated illustrations.</b></li><li>No characters from existing IPs (fan art) due to copyright concerns — even for personal / non-commercial use.</li><li>I mainly rig cute girl and boy characters. For other styles, please ask first.</li><li>Illustrations beyond my ability or that may be controversial can be declined.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">5</span>Part separation<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>I also take retouching and part separation of other artists' illustrations.</li><li>Only if you have the illustrator's prior consent. I'll also contact the illustrator directly to confirm.</li><li>Part separation is a paid add-on, available only when the rigging is also commissioned to Miove.</li><li>Simple retouching (filling empty colors, cleaning stray lines, etc.) is free.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">6</span>Software &amp; files<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>I rig for iPhone tracking with VTube Studio + VBridger. VBridger only works on iPhones with facial capture (Face ID). I can help with setup if needed.</li><li>Final files are for running the model in VTube Studio. The editable source file (.cmo3) is not provided.</li></ul></div></details>\n", "ap_h": "Application Form", "ap_desc": "Pick options to see an estimate right away.", "base_h": "Included", "base_s": "in every commission", "base_rows": "<div class=\"mv-row\"><span class=\"k\">Head XYZ</span><span class=\"mv-tag\">Eyes</span><span class=\"mv-tag\">Blink</span><span class=\"mv-tag\">Smile</span><span class=\"mv-tag\">Eyelid muscles</span></div><div class=\"mv-row\"><span class=\"k\">Pupils</span><span class=\"mv-tag\">Pupil XY</span><span class=\"mv-tag\">Physics</span></div><div class=\"mv-row\"><span class=\"k\">Eyebrows</span><span class=\"mv-tag\">Up / down</span><span class=\"mv-tag\">Deform (frown, sad)</span></div><div class=\"mv-row\"><span class=\"k\">Mouth</span><span class=\"mv-tag\">Open / close</span><span class=\"mv-tag\">9-point deform</span></div><div class=\"mv-row\"><span class=\"k\">Body XYZ</span><span class=\"mv-tag\">Breathing</span><span class=\"mv-tag\">Hair physics</span><span class=\"mv-tag\">Outfit physics</span></div>", "base_n1": "※ <b>Half body</b> = head + upper body (no arms / hands). If your illustration includes hips and thighs (above the knees), choose <b>Half body + lower body</b> (+$70).", "base_n2": "※ Not available yet: SD (chibi) switching", "alert": "<b>Please add a link to your layered PSD in the form.</b><br><span style=\"color:var(--sub)\">(Google Drive, Dropbox, etc.) It's okay to leave anything you're unsure about blank — with the PSD I can give a more accurate quote.</span>", "fs1": "Basic info", "f_nick": "Nickname / Activity name <small>(used for file names)</small>", "f_plat": "Platform &amp; link <small>(not debuted yet? write \"debuting soon\")</small>", "f_plat_ph": "YouTube / Twitch etc.", "f_use": "Usage", "use1": "Streaming", "use2": "Personal", "use3": "Other", "use_hint": "Monetization <b class=\"ok\">O</b> · Resale &amp; transfer <b class=\"no\">X</b>", "f_com": "Commercial use <small>(+$220 if yes)</small>", "no": "No", "yes": "Yes", "com_hint": "<b>Merchandise or ads using the rigged model</b> count as commercial use.", "fs2": "Illustration", "f_scope": "Scope", "sc_half": "Half body", "sc_halfplus": "Half body + lower body", "sc_full": "Full body", "g_half": "Head + upper body <em>(no arms / hands)</em>", "g_halfplus": "Half body + hips &amp; thighs <em>(above the knees)</em> · +$70", "g_full": "Head to toe", "f_artist": "Illustrator", "f_artist_ph": "Name or link", "f_psd": "Illustration status", "psd1": "Layered PSD ready", "psd2": "Not separated yet", "psd3": "Still being drawn", "f_type": "Character type", "ty1": "Girl", "ty2": "Boy", "ty3": "Other", "fs3": "Add-ons", "exA": "Expression · no animation", "exA_s": "Blush, serious face, etc.", "exB": "Expression · animated", "exB_s": "Tear drops, spiral eyes, etc.", "exC": "Expression · with physics", "exC_s": "Heart eyes, sparkly eyes, etc.", "f_exdesc": "Expressions you want <small>(free text)</small>", "f_exdesc_ph": "e.g. Blush 1, Heart eyes 1", "vb_s": "Puffed cheeks, mouth wiggle, etc. · Buy VBridger separately on Steam", "tongue": "Tongue out", "tongue_s": "Needs VBridger (added automatically)", "pose_foot": "Extra pose · Foot tap", "pose_close": "Extra pose · Lean in close", "hair": "Extra hairstyle", "outfit": "Extra outfit", "outfit_s": "Jacket, top, bottom, etc.", "prop": "Extra prop", "prop_s": "Ears, tail, wings, etc.", "f_part": "Extra parts details <small>(outfit change, props, hair change, etc.)</small>", "fs4": "Schedule &amp; privacy", "f_due": "Preferred deadline <small>(\"undecided\" or a rough time is fine)</small>", "f_sns": "Share WIP on SNS", "sns_ok": "OK", "sns_no": "Not OK", "f_priv": "Privacy after completion", "pv_none": "No privacy", "pv_in3": "Up to 3 months (free)", "pv_over3": "Over 3 months", "pv_perm": "Permanent", "f_etc": "Other requests", "sum_t": "Estimate", "sum_l": "Estimated total", "sum_small": "The final quote is given after I check your PSD. This is a reference for our consultation.", "btn_copy": "① Copy request", "btn_form": "② Open Google Form ↗", "btn_reset": "Clear all", "sum_foot": "Paste the copied text into the Google Form, and add your PSD link and contact.", "nv_top": "▲ Top", "nv1": "Hello", "nv2": "Showcase", "nv3": "Rigging", "nv4": "For Sale", "nv5": "Process", "nv6": "Terms", "nv7": "Apply ↗", "nv_show": "Showcase", "nv_detail": "Rigging", "nv_price": "Pricing", "nv_sale": "For Sale", "nv_proc": "Process", "nv_tos": "Terms", "nv_apply": "Commission", "hero_label": "LIVE2D RIGGER", "hero_sub": "Keep every bit of your illustration's charm — even in motion.<br>Detailed rigging that brings your character to life.", "ev_badge": "Overseas Opening Sale", "ev_s": "20% off base price + all add-ons <small>(excluding commercial use fee)</small>", "hero_btn1": "Commission me", "hero_btn2": "See my work", "price_h": "Pricing", "price_desc": "All prices are in USD, shown with the opening discount applied.", "price_from": "Sale price", "price_note": "※ Add-ons like expressions, VBridger and extra poses are listed in the application form below.", "ap_s1": "Choose options", "ap_s1d": "Pick what you need and the estimate is calculated right away.", "ap_s2": "Copy the request", "ap_s2d": "One click copies your whole request.", "ap_s3": "Paste into Google Form", "ap_s3d": "Open the Google Form, paste it, and add your PSD link and contact.", "ko_note": "", "foot": "Live2D Rigging Commission", "disc": "Opening sale 20% off", "d_0": "Rigging Details", "d_1": "Face", "d_2": "Angles", "d_3": "Natural from every angle", "d_4": "Wherever the motion stops,", "d_5": "the quality of the original art stays intact —", "d_6": "every detail carefully rigged.", "d_7": "All", "d_8": "X-axis", "d_9": "Y-axis", "d_10": "Eyes", "d_11": "Eye movement that brings out personality", "d_12": "Expressions", "d_13": "Rich expressions that show off the character", "d_14": "Tears", "d_15": "Angry + Serious", "d_16": "Shy + Heart eyes", "d_17": "Surprised", "d_18": "Various mouth shapes & expressions (iPhone only)", "d_19": "Puffed cheeks", "d_20": "Mouth wiggle", "d_21": "Tongue out", "d_22": "Pursed lips", "d_23": "Props", "d_24": "Prop movement that adds detail", "d_25": "Glasses", "d_26": "Waist chain", "d_27": "Ribbon", "d_28": "Body", "d_29": "Body Angles", "d_30": "Body motion that suits the character", "d_31": "Z-axis", "d_32": "Extra Poses", "d_33": "Optional poses for more variety", "d_34": "Foot tap", "d_35": "Lean in close"}, "ja": {"lang": "ja", "title": "Miove · Live2Dリギング依頼", "intro_h": "ごあいさつ", "quote": "イラストに、新しい姿と命を", "intro": "はじめまして、素敵なリガーを目指して日々努力しているMioveです。<br>技術の研究とこだわりのディテールで、一つひとつのモデルに最高のクオリティと愛情を込めてお届けします。<br>これからポートフォリオを少しずつ増やしていきますので、ぜひ見守っていてください！", "glob": "<b>海外からのご依頼</b> · 韓国在住（KST・UTC+9）· やり取りは日本語でOKです（翻訳ツールを使用します）", "sched_h": "受付状況", "lg_open": "空き", "lg_done": "予約済み", "sched_note": "※ 枠数は変更になる場合があります。", "show_desc": "左右にスワイプして動画を選んでください。", "cap1": "オリジナルモデル", "cap2": "販売モデル · ヤギの女の子", "sale_h": "販売中のモデル", "sale_desc": "すぐに使えるリギング済みモデルです。", "goat": "ヤギの女の子", "sale_badge": "販売中", "sale_buy": "💌 <b>ご購入希望の方はお問い合わせください！</b>モデル名を添えていただければ、すぐにご案内します。", "proc_h": "制作の流れ", "st1": "お問い合わせ", "st1s": "お見積もり", "st2": "お支払い", "st2s": "前金50%", "st3": "1次確認", "st3s": "顔の角度・表情", "st4": "2次確認", "st4s": "体の角度・物理", "st5": "納品", "st5s": "残金50% → データ・設定案内", "cf_h": "確認について", "cf_list": "<li>確認は録画した動画をお送りする形で行います。前日にご連絡します。</li><li>確認当日から24時間以内に限り、画面共有（Discord）をご希望いただけます。</li><li>修正のご依頼は48時間受け付けます。度重なる変更や、最初のご相談内容から大きく外れる修正は、お受けできないか追加料金が発生する場合があります。</li><li>確認のご案内から48時間返信がない場合は、次の工程に進みます。返信が遅れる場合は、いつ頃お返事できるか事前にお知らせください。</li><li>確認は基本2回です。それを超える場合は追加料金が発生することがあります。</li>", "ct_h": "連絡方法", "ct": "やり取りは基本的にDiscordで行います。Discordが難しい場合はメールでも対応します。", "tos_h": "利用規約", "tos_desc": "お申し込み前に必ずお読みください。未読による不利益については責任を負いかねます。", "TOS": "    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">0</span>お申し込み前の準備<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>イラストは含まれません。<b>リギングのみ</b>の作業です。</li><li><b>パーツ分けしたPSD</b>が必要です。パーツ分けが不十分な場合、お断りするか、モデルの動きに制限が出ることがあります。[5. パーツ分けについて]をご覧ください。</li><li>キャラクターデザイン、パーツ数、追加オプションによって価格や制作期間が変わる場合があります。</li><li>お支払い前に規約をご確認のうえ、事前にお問い合わせください。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">1</span>お支払い<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>料金は<b>USD（米ドル）</b>表記です。お支払いは<b>PayPalの請求書</b>で行います。</li><li>作業開始前に<b>前金50%</b>、最終確認後に<b>残金50%</b>をお支払いいただきます。</li><li>モデルデータは<b>全額のお支払い確認後</b>にお渡しします。</li><li>返金：作業開始前は全額返金します。作業開始後は前金の返金はできません。こちらの都合で完成できない場合は全額返金します。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">2</span>制作期間<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>前金のお支払い日から平均<b>15〜25日</b>ほどかかります。（2026年11月時点）</li><li>キャラクターの複雑さ、追加オプションや修正のご依頼などにより変動する場合があります。</li><li>予定より早く完成した場合は、すぐにお渡しします。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">3</span>作品の公開・使用について<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>リギングの著作権はMioveに帰属します。</li><li>完成前に共有した制作過程の外部公開は禁止です。</li><li>非公開をご希望でない場合、制作過程や完成品を作家のSNS・ポートフォリオ・ショーケースにサンプルとして使用することがあります。<b>非公開は3ヶ月まで無料</b>、それ以降は追加料金（$35）がかかります。デビュー日程などで短期間の非公開をご希望の場合は事前にご相談ください。</li><li>完成したモデルは、配信・動画コンテンツ・SNSなどで自由にご使用いただけます（収益化OK）。</li><li>事前のご相談なく、リギングモデルそのものを使ったグッズ制作や企業広告への出演などの商業利用は禁止です。（商業利用の追加料金：$220）</li><li>完成品の転売・譲渡をご希望の場合は、Mioveの許可が必要です。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">4</span>お受けできるキャラクター<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li><b>AIイラストのリギングはお受けしていません。</b></li><li>原作IPのあるキャラクター（二次創作）は、著作権の観点からお受けしていません。個人・非商用目的でもお断りしています。</li><li>美少女・美少年キャラクターを中心に制作しています。それ以外のキャラクターは事前にご相談ください。</li><li>技術的に対応が難しいイラストや、問題になる可能性のあるイラストはお断りする場合があります。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">5</span>パーツ分けについて<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>他の作家さまのイラストのリタッチやパーツ分けもお受けします。</li><li>ご依頼者さまがイラストレーターさまから事前に同意を得ている場合に限ります。この場合、Mioveからもイラストレーターさまに直接連絡し、同意を再確認します。</li><li>パーツ分け作業は、リギングをMioveにご依頼いただくことを前提に、別途追加料金で承ります。</li><li>簡単なリタッチ（塗り残しの補完、はみ出した線画の整理など）は無料で対応します。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">6</span>必要なソフトとお渡しするデータ<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>iPhone基準で制作し、VTube Studio + VBridgerを使用します。VBridgerはフェイシャルキャプチャ（Face ID）対応のiPhoneのみ使用できます。設定のサポートが必要な場合はご案内します。</li><li>お渡しするデータはVTube Studio用のファイルが中心で、リギングを編集できる元データ（.cmo3）はお渡ししていません。</li></ul></div></details>\n", "ap_h": "お申し込みフォーム", "ap_desc": "オプションを選ぶと見積もりがすぐに計算されます。", "base_h": "基本に含まれる内容", "base_s": "すべてのご依頼に含まれます", "base_rows": "<div class=\"mv-row\"><span class=\"k\">頭 XYZ</span><span class=\"mv-tag\">目</span><span class=\"mv-tag\">まばたき</span><span class=\"mv-tag\">笑顔</span><span class=\"mv-tag\">まぶたの筋肉</span></div><div class=\"mv-row\"><span class=\"k\">瞳</span><span class=\"mv-tag\">瞳 XY</span><span class=\"mv-tag\">物理</span></div><div class=\"mv-row\"><span class=\"k\">眉</span><span class=\"mv-tag\">上下</span><span class=\"mv-tag\">変形（しかめ・悲しみ）</span></div><div class=\"mv-row\"><span class=\"k\">口</span><span class=\"mv-tag\">開閉</span><span class=\"mv-tag\">変形9点</span></div><div class=\"mv-row\"><span class=\"k\">体 XYZ</span><span class=\"mv-tag\">呼吸</span><span class=\"mv-tag\">髪の物理</span><span class=\"mv-tag\">衣装の物理</span></div>", "base_n1": "※ <b>半身</b>は頭＋上半身（腕・手を除く）が基準です。お尻・太もも（膝上）まであるイラストは<b>半身＋下半身</b>（+$70）でお申し込みください。", "base_n2": "※ 現在対応できない機能：SD切り替え", "alert": "<b>フォームにパーツ分けしたPSDのリンクを記入してください。</b><br><span style=\"color:var(--sub)\">（Googleドライブ、Dropboxなど）分からない項目は空欄でも大丈夫です。PSDがあればより正確なお見積もりをお出しできます。</span>", "fs1": "基本情報", "f_nick": "ニックネーム・活動名 <small>（ファイル名に使用します）</small>", "f_plat": "配信プラットフォーム・リンク <small>（デビュー前なら「デビュー予定」）</small>", "f_plat_ph": "YouTube / Twitch など", "f_use": "用途", "use1": "配信用", "use2": "個人所有", "use3": "その他", "use_hint": "収益化 <b class=\"ok\">O</b> · モデルの転売・譲渡 <b class=\"no\">X</b>", "f_com": "商業利用 <small>（選択時 +$220）</small>", "no": "いいえ", "yes": "はい", "com_hint": "<b>リギングモデルを使ったグッズ制作・広告撮影</b>は商業利用にあたります。", "fs2": "イラスト情報", "f_scope": "範囲", "sc_half": "半身", "sc_halfplus": "半身 + 下半身", "sc_full": "全身", "g_half": "頭 + 上半身 <em>（腕・手を除く）</em>", "g_halfplus": "半身 + お尻・太もも <em>（膝上まで）</em> · +$70", "g_full": "頭からつま先まで", "f_artist": "イラストレーター", "f_artist_ph": "お名前またはリンク", "f_psd": "イラストの準備状況", "psd1": "パーツ分けPSD完成", "psd2": "パーツ分け前", "psd3": "イラスト制作中", "f_type": "キャラクタータイプ", "ty1": "美少女", "ty2": "美少年", "ty3": "その他", "fs3": "追加オプション", "exA": "表情・アニメーションなし", "exA_s": "照れ、真顔など", "exB": "表情・アニメーションあり", "exB_s": "涙、ぐるぐる目など", "exC": "表情・物理あり", "exC_s": "ハート目、キラキラ目など", "f_exdesc": "希望の表情 <small>（自由記入）</small>", "f_exdesc_ph": "例：照れ 1、ハート目 1", "vb_s": "頬ふくらまし、もぐもぐなど・Steamで別途購入が必要", "tongue": "舌出し", "tongue_s": "VBridgerが必要（選択すると自動で追加）", "pose_foot": "追加ポーズ・足トントン", "pose_close": "追加ポーズ・近づく", "hair": "追加ヘアスタイル", "outfit": "追加衣装", "outfit_s": "上着、トップス、ボトムスなど", "prop": "追加小物", "prop_s": "耳、しっぽ、羽など", "f_part": "追加パーツの説明 <small>（衣装変更、小物、ヘア変更など）</small>", "fs4": "スケジュール・公開設定", "f_due": "希望納期 <small>（未定なら「未定」またはおおよその時期）</small>", "f_sns": "制作過程のSNS公開", "sns_ok": "可", "sns_no": "不可", "f_priv": "完成後の非公開期間", "pv_none": "非公開にしない", "pv_in3": "3ヶ月以内（無料）", "pv_over3": "3ヶ月以上", "pv_perm": "永久", "f_etc": "その他のご要望", "sum_t": "お見積もり", "sum_l": "見積もり合計", "sum_small": "最終的なお見積もりはPSD確認後にご案内します。ここでの内容はご相談のための目安です。", "btn_copy": "① 申込内容をコピー", "btn_form": "② Googleフォームを開く ↗", "btn_reset": "すべてクリア", "sum_foot": "コピーした内容をGoogleフォームに貼り付け、PSDのリンクと連絡先を添えてください。", "nv_top": "▲ トップへ", "nv1": "ごあいさつ", "nv2": "動画", "nv3": "リギング", "nv4": "販売モデル", "nv5": "制作の流れ", "nv6": "利用規約", "nv7": "申し込み ↗", "nv_show": "動画", "nv_detail": "リギング", "nv_price": "料金", "nv_sale": "販売モデル", "nv_proc": "制作の流れ", "nv_tos": "利用規約", "nv_apply": "依頼する", "hero_label": "LIVE2D RIGGER", "hero_sub": "動いても、イラストそのままの魅力を。<br>丁寧なリギングで、キャラクターに命を吹き込みます。", "ev_badge": "海外依頼オープン記念", "ev_s": "基本料金＋全オプション 20%オフ <small>（商業利用の追加料金を除く）</small>", "hero_btn1": "依頼する", "hero_btn2": "作品を見る", "price_h": "料金", "price_desc": "料金はすべてUSD表記で、オープン記念割引適用後の価格です。", "price_from": "割引価格", "price_note": "※ 表情、VBridger、追加ポーズなどのオプションは下のお申し込みフォームでご確認いただけます。", "ap_s1": "オプションを選ぶ", "ap_s1d": "希望のオプションを選ぶと、見積もりがすぐに計算されます。", "ap_s2": "申込内容をコピー", "ap_s2d": "ボタン一つで申込内容をまとめてコピーできます。", "ap_s3": "Googleフォームに貼り付け", "ap_s3d": "Googleフォームを開いて貼り付け、PSDのリンクと連絡先を記入してください。", "ko_note": "", "foot": "Live2D Rigging Commission", "disc": "オープン記念 20%オフ", "d_0": "リギング詳細", "d_1": "顔", "d_2": "角度", "d_3": "どの角度から見ても自然な顔", "d_4": "どの角度で止まっても", "d_5": "元のイラストのクオリティを保てるよう", "d_6": "丁寧に作業しています。", "d_7": "全体", "d_8": "X軸", "d_9": "Y軸", "d_10": "瞳", "d_11": "キャラクターの個性を活かした瞳の演出", "d_12": "表情", "d_13": "キャラクターの魅力が引き立つ豊かな表情", "d_14": "涙", "d_15": "怒り + 真顔", "d_16": "照れ + ハート目", "d_17": "驚き", "d_18": "多彩な口の形と表情（iPhone対応機能）", "d_19": "頬ふくらまし", "d_20": "もぐもぐ", "d_21": "舌出し", "d_22": "口すぼめ", "d_23": "追加小物", "d_24": "キャラクターのディテールを活かす小物の動き", "d_25": "メガネ", "d_26": "ウエストチェーン", "d_27": "リボン", "d_28": "全身", "d_29": "全身の角度", "d_30": "キャラクターに合った体の動き", "d_31": "Z軸", "d_32": "追加ポーズ", "d_33": "多彩な演出ができるオプション", "d_34": "足トントン", "d_35": "近づく"}, "zh": {"lang": "zh-CN", "title": "Miove · Live2D绑定委托", "intro_h": "你好", "quote": "赋予插画全新的姿态与生命", "intro": "你好，我是Miove，一名努力成为优秀Live2D绑定师的创作者。<br>凭借不断的技术钻研与对细节的执着，我会在每一件作品中倾注最好的品质与心意。<br>作品集会持续更新，欢迎关注！", "glob": "<b>海外委托</b> · 常驻韩国（KST，UTC+9）· 可以用中文沟通（我会使用翻译工具）", "sched_h": "预约情况", "lg_open": "空位", "lg_done": "已预约", "sched_note": "※ 名额数量可能会有变动。", "show_desc": "左右滑动选择视频播放。", "cap1": "原创模型", "cap2": "在售模型 · 山羊少女", "sale_h": "在售模型", "sale_desc": "可直接使用的已绑定模型。", "goat": "山羊少女", "sale_badge": "在售", "sale_buy": "💌 <b>如需购买请联系我！</b>注明模型名称，我会尽快回复。", "proc_h": "制作流程", "st1": "咨询", "st1s": "报价", "st2": "付款", "st2s": "50%定金", "st3": "第一次确认", "st3s": "面部角度 / 表情", "st4": "第二次确认", "st4s": "身体角度 / 物理", "st5": "交付", "st5s": "尾款50% → 文件·设置指导", "cf_h": "关于确认", "cf_list": "<li>确认方式为发送录制视频，会在前一天通知您。</li><li>仅在确认当天起24小时内可申请屏幕共享（Discord）。</li><li>修改请求可在48小时内提出。反复变更或明显超出初期沟通范围的修改可能无法进行或需额外收费。</li><li>确认通知后48小时内未收到回复，将进入下一阶段。如需延后回复，请提前告知大概时间。</li><li>基础确认次数共2次，超出部分可能需要额外收费。</li>", "ct_h": "联系方式", "ct": "主要通过Discord沟通。如无法使用Discord，也可以通过邮件联系。", "tos_h": "委托须知", "tos_desc": "申请前请务必阅读。因未阅读而产生的问题恕不负责。", "TOS": "    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">0</span>申请前准备<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>不包含插画，<b>仅提供绑定</b>。</li><li>需要<b>已拆分图层的PSD文件</b>。若拆分不完善，可能会被拒绝委托或导致模型动作受限。请参考[5. 拆分相关]。</li><li>价格与制作周期会根据角色设计、部件数量及附加选项而有所变动。</li><li>付款前请阅读须知并提前咨询。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">1</span>付款<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>价格以<b>美元（USD）</b>计，通过<b>PayPal账单</b>付款。</li><li>开工前支付<b>50%定金</b>，最终确认后支付<b>剩余50%</b>。</li><li>模型文件在<b>全款确认后</b>交付。</li><li>退款：开工前可全额退款；开工后定金不予退还。如因本人原因无法完成，将全额退款。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">2</span>制作周期<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>自支付定金起平均需要<b>15〜25天</b>。（截至2026年11月）</li><li>会因角色复杂度、附加选项或修改请求而有所变动。</li><li>若提前完成，会立即交付。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">3</span>作品公开与使用<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>绑定成果的著作权归Miove所有。</li><li>完成前分享的制作过程禁止外传。</li><li>若未申请不公开，制作过程及成品可能会作为样品用于本人的SNS / 作品集 / 展示视频。<b>不公开3个月内免费</b>，超过需额外支付$35。如因出道日程等需要短期不公开，请提前咨询。</li><li>完成的模型可自由用于直播、视频内容、SNS等（可盈利）。</li><li>未经事先沟通，禁止将绑定模型本身用于周边制作、企业广告等商业用途。（商业使用附加费：$220）</li><li>如需转卖或转让成品，须获得Miove的许可。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">4</span>可接受的角色<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li><b>不接受AI插画的绑定委托。</b></li><li>出于版权考虑，不接受已有IP的角色（同人）委托，个人/非商业用途也不例外。</li><li>主要制作美少女、美少年角色，其他类型请提前咨询。</li><li>能力范围外或可能引发争议的插画可能会被拒绝。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">5</span>拆分相关<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>也接受其他画师作品的修图与拆分。</li><li>仅限委托人已事先获得该画师同意的情况。届时Miove也会直接联系画师再次确认。</li><li>拆分作业以委托Miove绑定为前提，需另外收费。</li><li>简单修图（补色、整理溢出线稿等）免费处理。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">6</span>所需软件与交付文件<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>以iPhone为基准制作，使用VTube Studio + VBridger。VBridger仅支持带面部捕捉（Face ID）功能的iPhone。如需设置方面的帮助，我会另行指导。</li><li>最终交付文件以VTube Studio运行文件为主，不提供可编辑绑定的源文件（.cmo3）。</li></ul></div></details>\n", "ap_h": "申请表", "ap_desc": "选择选项即可立即计算预估价格。", "base_h": "基础包含内容", "base_s": "所有委托均包含", "base_rows": "<div class=\"mv-row\"><span class=\"k\">头部 XYZ</span><span class=\"mv-tag\">眼睛</span><span class=\"mv-tag\">眨眼</span><span class=\"mv-tag\">微笑</span><span class=\"mv-tag\">眼睑肌肉</span></div><div class=\"mv-row\"><span class=\"k\">瞳孔</span><span class=\"mv-tag\">瞳孔 XY</span><span class=\"mv-tag\">物理</span></div><div class=\"mv-row\"><span class=\"k\">眉毛</span><span class=\"mv-tag\">上下</span><span class=\"mv-tag\">变形（皱眉、悲伤）</span></div><div class=\"mv-row\"><span class=\"k\">嘴巴</span><span class=\"mv-tag\">开合</span><span class=\"mv-tag\">9点变形</span></div><div class=\"mv-row\"><span class=\"k\">身体 XYZ</span><span class=\"mv-tag\">呼吸</span><span class=\"mv-tag\">头发物理</span><span class=\"mv-tag\">服装物理</span></div>", "base_n1": "※ <b>半身</b>以头部＋上半身（不含手臂、手）为准。插画包含臀部、大腿（膝盖以上）时，请选择<b>半身＋下半身</b>（+$70）。", "base_n2": "※ 目前暂不支持：SD（Q版）切换", "alert": "<b>请在表单中附上已拆分PSD的链接。</b><br><span style=\"color:var(--sub)\">（Google Drive、Dropbox等）不确定的项目可以留空。提供PSD可以给出更准确的报价。</span>", "fs1": "基本信息", "f_nick": "昵称 / 活动名 <small>（用于文件命名）</small>", "f_plat": "直播平台及链接 <small>（未出道请填写\"即将出道\"）</small>", "f_plat_ph": "Bilibili / YouTube 等", "f_use": "用途", "use1": "直播用", "use2": "个人收藏", "use3": "其他", "use_hint": "可盈利 <b class=\"ok\">O</b> · 转卖 / 转让 <b class=\"no\">X</b>", "f_com": "商业使用 <small>（选择后 +$220）</small>", "no": "否", "yes": "是", "com_hint": "<b>使用绑定模型制作周边、拍摄广告</b>属于商业使用。", "fs2": "插画信息", "f_scope": "范围", "sc_half": "半身", "sc_halfplus": "半身 + 下半身", "sc_full": "全身", "g_half": "头部 + 上半身 <em>（不含手臂、手）</em>", "g_halfplus": "半身 + 臀部、大腿 <em>（膝盖以上）</em> · +$70", "g_full": "从头到脚", "f_artist": "画师", "f_artist_ph": "名称或链接", "f_psd": "插画准备情况", "psd1": "已拆分PSD", "psd2": "尚未拆分", "psd3": "插画制作中", "f_type": "角色类型", "ty1": "美少女", "ty2": "美少年", "ty3": "其他", "fs3": "附加选项", "exA": "表情 · 无动画", "exA_s": "脸红、冷脸等", "exB": "表情 · 有动画", "exB_s": "泪滴、转圈眼等", "exC": "表情 · 带物理", "exC_s": "爱心眼、闪亮眼等", "f_exdesc": "想要的表情 <small>（自由填写）</small>", "f_exdesc_ph": "例：脸红 1、爱心眼 1", "vb_s": "鼓脸、嘴巴蠕动等 · 需在Steam另行购买", "tongue": "吐舌", "tongue_s": "需要VBridger（选择后自动添加）", "pose_foot": "追加姿势 · 踮脚", "pose_close": "追加姿势 · 靠近镜头", "hair": "追加发型", "outfit": "追加服装", "outfit_s": "外套、上衣、下装等", "prop": "附加配件", "prop_s": "耳朵、尾巴、翅膀等", "f_part": "附加部件说明 <small>（换装、配件、换发型等）</small>", "fs4": "日程与公开", "f_due": "希望截止日期 <small>（未定可填\"未定\"或大致时间）</small>", "f_sns": "制作过程SNS公开", "sns_ok": "可以", "sns_no": "不可以", "f_priv": "完成后不公开期限", "pv_none": "不需要", "pv_in3": "3个月内（免费）", "pv_over3": "3个月以上", "pv_perm": "永久", "f_etc": "其他要求", "sum_t": "预估报价", "sum_l": "预估总价", "sum_small": "最终报价将在确认PSD后告知。此处内容仅供参考。", "btn_copy": "① 复制申请内容", "btn_form": "② 打开Google表单 ↗", "btn_reset": "全部清除", "sum_foot": "将复制的内容粘贴到Google表单，并附上PSD链接和联系方式。", "nv_top": "▲ 返回顶部", "nv1": "你好", "nv2": "展示", "nv3": "绑定细节", "nv4": "在售模型", "nv5": "制作流程", "nv6": "委托须知", "nv7": "申请 ↗", "nv_show": "展示", "nv_detail": "绑定细节", "nv_price": "价格", "nv_sale": "在售模型", "nv_proc": "制作流程", "nv_tos": "委托须知", "nv_apply": "立即委托", "hero_label": "LIVE2D RIGGER", "hero_sub": "动起来，依然保留插画原有的魅力。<br>用细致的绑定为角色注入生命。", "ev_badge": "海外委托开放纪念", "ev_s": "基础价格 + 所有选项 8折 <small>（商业使用附加费除外）</small>", "hero_btn1": "立即委托", "hero_btn2": "查看作品", "price_h": "价格", "price_desc": "所有价格以美元（USD）计，已包含开放纪念折扣。", "price_from": "折后价", "price_note": "※ 表情、VBridger、追加姿势等选项请在下方申请表中查看。", "ap_s1": "选择选项", "ap_s1d": "选择所需选项即可立即计算预估价格。", "ap_s2": "复制申请内容", "ap_s2d": "一键复制全部申请内容。", "ap_s3": "粘贴到Google表单", "ap_s3d": "打开Google表单粘贴，并填写PSD链接和联系方式。", "ko_note": "", "foot": "Live2D Rigging Commission", "disc": "开放纪念 8折", "d_0": "绑定细节", "d_1": "面部", "d_2": "角度", "d_3": "任何角度都自然的面部", "d_4": "无论停在哪个角度，", "d_5": "都能保持原插画的品质，", "d_6": "每一处都细心制作。", "d_7": "整体", "d_8": "X轴", "d_9": "Y轴", "d_10": "瞳孔", "d_11": "展现角色个性的瞳孔演出", "d_12": "表情", "d_13": "凸显角色魅力的丰富表情", "d_14": "流泪", "d_15": "生气 + 冷脸", "d_16": "害羞 + 爱心眼", "d_17": "惊讶", "d_18": "多样的口型与表情（iPhone专用功能）", "d_19": "鼓脸", "d_20": "嘴巴蠕动", "d_21": "吐舌", "d_22": "嘟嘴", "d_23": "附加配件", "d_24": "提升角色细节的配件动态", "d_25": "眼镜", "d_26": "腰链", "d_27": "蝴蝶结", "d_28": "全身", "d_29": "全身角度", "d_30": "契合角色的身体动态", "d_31": "Z轴", "d_32": "追加姿势", "d_33": "实现多样演出的选项", "d_34": "踮脚", "d_35": "靠近镜头"}};
-var J={"ko": {"months": ["10월", "11월", "12월"], "full": "예약 마감", "left": "{n}자리 남음", "fcfs": "선착순", "base": "{s} 기본", "lower": "하체 포함 (엉덩이·허벅지)", "exA": "표정 (애니메이션 X)", "exB": "표정 (애니메이션 O)", "exC": "표정 (물리 O)", "hair": "추가 헤어스타일", "outfit": "추가 의상", "prop": "추가 소품", "vb": "VBridger", "tongue": "혀 내밀기", "foot": "추가 포즈 (발 콕콕)", "close": "추가 포즈 (가깝게 다가오기)", "priv": "비공개 3개월 초과", "com": "상업적 이용", "sep": "파츠 분리 작업", "sepTxt": "별도 견적", "copied": "복사 완료! 아트머그 문의에 붙여넣어 주세요", "head": "[Miove 리깅 신청서]", "s1": "기본 정보", "s2": "일러스트 정보", "s3": "옵션", "s4": "일정 및 공개", "s5": "선택 옵션 & 예상 금액", "nick": "닉네임 / 활동명", "use": "사용 용도", "plat": "방송 플랫폼 및 링크", "comq": "상업적 이용 여부", "scope": "신청 범위", "artist": "일러스트레이터", "psd": "일러스트 준비 상태", "type": "캐릭터 타입", "exd": "원하는 표정", "part": "추가 파츠", "due": "희망 마감일", "sns": "작업 과정 SNS 공개", "pv": "완성 후 비공개 기간", "etc": "기타 요청사항", "total": "예상 합계", "plusSep": " + 별도 견적", "final": "※ 최종 견적은 PSD 확인 후 확정됩니다.", "psdlink": "PSD 파일 : (아트머그 신청 시 첨부)", "pvMap": {"none": "비공개 안 함", "in3": "3개월 이내", "over3": "3개월 이상", "perm": "영구"}, "disc": "해외 오픈 기념 20% 할인"}, "en": {"months": ["Oct", "Nov", "Dec"], "full": "Fully booked", "left": "{n} slot(s) left", "fcfs": "First come, first served", "base": "{s} (base)", "lower": "Lower body (hips & thighs)", "exA": "Expression (no animation)", "exB": "Expression (animated)", "exC": "Expression (physics)", "hair": "Extra hairstyle", "outfit": "Extra outfit", "prop": "Extra prop", "vb": "VBridger", "tongue": "Tongue out", "foot": "Extra pose (Foot tap)", "close": "Extra pose (Lean in close)", "priv": "Privacy over 3 months", "com": "Commercial use", "sep": "Part separation", "sepTxt": "Quoted separately", "copied": "Copied! Paste it into the form", "head": "[Miove Rigging Request]", "s1": "Basic info", "s2": "Illustration", "s3": "Add-ons", "s4": "Schedule & privacy", "s5": "Selected options & estimate", "nick": "Nickname / Activity name", "use": "Usage", "plat": "Platform & link", "comq": "Commercial use", "scope": "Scope", "artist": "Illustrator", "psd": "Illustration status", "type": "Character type", "exd": "Expressions wanted", "part": "Extra parts", "due": "Preferred deadline", "sns": "Share WIP on SNS", "pv": "Privacy after completion", "etc": "Other requests", "total": "Estimated total", "plusSep": " + quoted separately", "final": "※ The final quote is confirmed after checking the PSD.", "psdlink": "PSD link : (please add)", "pvMap": {"none": "No privacy", "in3": "Up to 3 months", "over3": "Over 3 months", "perm": "Permanent"}, "disc": "Opening sale 20% off"}, "ja": {"months": ["10月", "11月", "12月"], "full": "受付終了", "left": "残り{n}枠", "fcfs": "先着順", "base": "{s}（基本）", "lower": "下半身（お尻・太もも）", "exA": "表情（アニメーションなし）", "exB": "表情（アニメーションあり）", "exC": "表情（物理あり）", "hair": "追加ヘアスタイル", "outfit": "追加衣装", "prop": "追加小物", "vb": "VBridger", "tongue": "舌出し", "foot": "追加ポーズ（足トントン）", "close": "追加ポーズ（近づく）", "priv": "3ヶ月超の非公開", "com": "商業利用", "sep": "パーツ分け作業", "sepTxt": "別途見積もり", "copied": "コピーしました！フォームに貼り付けてください", "head": "[Miove リギング申込書]", "s1": "基本情報", "s2": "イラスト情報", "s3": "オプション", "s4": "スケジュール・公開設定", "s5": "選択オプション・見積もり", "nick": "ニックネーム・活動名", "use": "用途", "plat": "配信プラットフォーム・リンク", "comq": "商業利用", "scope": "範囲", "artist": "イラストレーター", "psd": "イラストの準備状況", "type": "キャラクタータイプ", "exd": "希望の表情", "part": "追加パーツ", "due": "希望納期", "sns": "制作過程のSNS公開", "pv": "完成後の非公開期間", "etc": "その他のご要望", "total": "見積もり合計", "plusSep": " + 別途見積もり", "final": "※ 最終的なお見積もりはPSD確認後に確定します。", "psdlink": "PSDリンク : （記入してください）", "pvMap": {"none": "非公開にしない", "in3": "3ヶ月以内", "over3": "3ヶ月以上", "perm": "永久"}, "disc": "オープン記念 20%オフ"}, "zh": {"months": ["10月", "11月", "12月"], "full": "已约满", "left": "剩余{n}个名额", "fcfs": "先到先得", "base": "{s}（基础）", "lower": "下半身（臀部、大腿）", "exA": "表情（无动画）", "exB": "表情（有动画）", "exC": "表情（带物理）", "hair": "追加发型", "outfit": "追加服装", "prop": "附加配件", "vb": "VBridger", "tongue": "吐舌", "foot": "追加姿势（踮脚）", "close": "追加姿势（靠近镜头）", "priv": "不公开超过3个月", "com": "商业使用", "sep": "拆分作业", "sepTxt": "另行报价", "copied": "已复制！请粘贴到表单中", "head": "[Miove 绑定申请表]", "s1": "基本信息", "s2": "插画信息", "s3": "附加选项", "s4": "日程与公开", "s5": "所选选项与预估价格", "nick": "昵称 / 活动名", "use": "用途", "plat": "直播平台及链接", "comq": "商业使用", "scope": "范围", "artist": "画师", "psd": "插画准备情况", "type": "角色类型", "exd": "想要的表情", "part": "附加部件", "due": "希望截止日期", "sns": "制作过程SNS公开", "pv": "完成后不公开期限", "etc": "其他要求", "total": "预估总价", "plusSep": " + 另行报价", "final": "※ 最终报价将在确认PSD后确定。", "psdlink": "PSD链接 : （请填写）", "pvMap": {"none": "不需要", "in3": "3个月内", "over3": "3个月以上", "perm": "永久"}, "disc": "开放纪念 8折"}};
+var I={"ko": {"lang": "ko", "title": "Miove · Live2D 리깅", "intro_h": "인사말", "quote": "어느 각도에서 멈춰도, 일러스트 그대로의 퀄리티", "intro": "안녕하세요, 한 명의 훌륭한 리거가 되기 위해 노력하는 Miove입니다.<br>끊임없는 기술 연구와 집요한 디테일로, 매 작업마다 최고의 퀄리티와 애정을 담아내겠습니다.<br>차곡차곡 포트폴리오를 채워나갈 테니 계속 지켜봐 주세요!", "glob": "<b>해외 의뢰</b> · 한국 거주 (KST, UTC+9) · 한국어 / 영어 / 일본어 / 중국어 연락 가능 (번역기 사용)", "sched_h": "예약 현황", "lg_open": "빈 자리", "lg_done": "예약 완료", "sched_note": "※ 예약 슬롯 개수는 변동될 수 있습니다.", "cap1": "리나레이나", "sale_h": "판매 중 모델", "sale_desc": "바로 사용 가능한 리깅 완성 모델이에요.", "goat": "염소 소녀", "sale_badge": "판매 중", "sale_buy": "💌 <b>구매를 희망하시면 문의 남겨주세요!</b> 원하시는 모델 이름을 함께 적어주시면 빠르게 안내드릴게요.", "proc_h": "작업 과정", "tos_h": "공지 사항", "tos_desc": "신청 전 꼭 읽어주세요. 읽지 않아 생기는 불이익은 책임지지 않습니다.", "TOS": "    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">0</span>신청 전 준비사항<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>일러스트는 미포함이며, <b>리깅만 작업</b>합니다.</li><li>신청 시 <b>파츠 분리된 PSD 파일</b>이 필요합니다. 분리가 미흡하여 작업이 어려울 경우 의뢰가 반려되거나 모델의 움직임에 제약이 생길 수 있습니다. [5. 파츠 분리 관련] 항목을 참고 바랍니다.</li><li>캐릭터 디자인, 파츠 개수, 추가 옵션에 따라 가격 및 작업 기간 변동이 발생할 수 있습니다.</li><li>결제 전, 공지 사항 숙지 후 사전 문의 부탁드립니다.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">1</span>결제<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>가격은 <b>USD(달러)</b> 기준이며, <b>PayPal 인보이스</b>로 결제합니다.</li><li>작업 시작 전 <b>선금 50%</b>, 최종 컨펌 후 <b>잔금 50%</b>를 결제합니다.</li><li>모델 파일은 <b>전액 결제 확인 후</b> 전달드립니다.</li><li>환불: 작업 시작 전에는 전액 환불됩니다. 작업 시작 후에는 선금이 환불되지 않습니다. 작가 사정으로 완성하지 못할 경우 전액 환불해 드립니다.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">2</span>작업 기간<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>선금 입금일 기준 평균 <b>15~25일</b> 소요됩니다. (2026년 11월 기준)</li><li>캐릭터 복잡도, 추가 옵션이나 수정 요청 등에 따라 작업 기간이 변동될 수 있습니다.</li><li>안내 기간보다 작업이 일찍 마무리될 경우, 바로 전달드립니다.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">3</span>작업물 공개 관련<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>리깅 결과물의 저작권은 작가 본인(Miove)에게 귀속됩니다.</li><li>작업물 완성 전, 공유해 드린 과정은 외부 유출이 금지됩니다.</li><li>비공개 미신청 시, 작업 과정 및 완성본이 작가의 SNS/포트폴리오/쇼케이스에 샘플로 사용될 수 있습니다. <b>비공개 신청 시 3개월까지 무료</b>이며, 그 이후 추가금($35)이 발생합니다. 방송 데뷔 일정 등 단기 비공개를 희망하시면 사전 문의 바랍니다.</li><li>의뢰자는 완성된 모델을 개인 방송 · 영상 콘텐츠 · SNS 등에서 자유롭게 사용 가능합니다. (수익 창출 가능)</li><li>사전 문의 없이 모델 리깅 자체를 활용한 굿즈 제작, 기업 광고 출연 등의 상업적 사업 진행을 금지합니다. (상업적 이용 추가금 $220)</li><li>완성된 작업물의 재판매, 양도를 원하실 경우 작가 본인(Miove)에게 허락을 구하셔야 합니다.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">4</span>캐릭터 문의 가능 범위<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li><b>AI 일러스트 리깅 의뢰는 받지 않습니다.</b></li><li>원작 IP가 있는 캐릭터는 저작권 문제 우려로 리깅 의뢰를 받지 않고 있습니다. 개인/비상업 목적이어도 거절됩니다.</li><li>미소녀, 미소년 캐릭터를 주력으로 다루고 있습니다. 그 외의 캐릭터상은 사전 문의 바랍니다.</li><li>작가 역량상 진행이 어렵거나, 논란의 소지가 있는 일러스트는 사전 거절될 수 있습니다.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">5</span>파츠 분리 관련<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>외부 작가님 작업물의 리터칭 및 파츠 분할도 받습니다.</li><li>타 일러스트 작가님의 작업물에 대한 리터칭 및 파츠 분할은, 신청자가 해당 작가님께 직접 사전 동의를 받아온 경우에 한해 진행합니다. 이 경우 Miove가 해당 작가님과 직접 연락하여 동의 여부를 한 번 더 확인합니다.</li><li>파츠 분리 작업은 리깅을 Miove에게 의뢰하는 것을 전제로, 별도 추가금을 받고 진행합니다.</li><li>간단한 리터칭(비워진 색상 채우기, 삐져나온 선화 정리 등)은 추가금 없이 해드립니다.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">6</span>필요 프로그램 및 제공 파일 안내<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>iPhone 기준으로 작업하며, VTube Studio + VBridger를 사용합니다. VBridger는 페이셜 캡처 기능이 탑재된 iPhone 기종만 가능합니다. 프로그램 사용 및 세팅에 도움이 필요하시면 추가 안내드립니다.</li><li>최종 제공 파일은 VTube Studio 구동용 파일 위주이며, 리깅 수정이 가능한 원본 파일(.cmo3)은 제공하지 않습니다.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">7</span>컨펌 및 연락 방식<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>기본 컨펌 방식은 영상 촬영본 전달로 진행합니다. 컨펌 전날 미리 안내드립니다.</li><li>컨펌 당일 24시간 동안에 한해 화면 공유(디스코드) 요청이 가능하며, 이 시간이 지나면 화면 공유는 어렵습니다.</li><li>수정 요청은 48시간 동안 자유롭게 접수 가능하나, 반복적인 번복이나 초기 상담 시 논의된 범위를 크게 벗어나는 수정은 진행이 어렵거나 추가 비용이 청구될 수 있습니다.</li><li>컨펌 안내 후 48시간 동안 회신 및 요청 사항이 없을 경우, 원활한 진행을 위해 다음 단계로 넘어갑니다. 피드백이 늦어질 경우 언제까지 회신 가능한지 미리 말씀해 주세요.</li><li>기본 컨펌 횟수는 총 2회이며, 이를 초과하는 추가 요청 시 비용이 청구될 수 있습니다.</li></ul><p style=\"margin:10px 0 0;font-weight:800;\">연락 방식</p><ul><li>기본적으로 디스코드로 진행되며, 디스코드 사용이 어려우실 경우 이메일로 진행됩니다.</li></ul></div></details>\n", "ap_h": "신청하기", "ap_desc": "옵션을 고르면 예상 금액이 바로 계산돼요.", "base_h": "기본 포함 사항", "base_s": "모든 신청에 포함돼요", "base_rows": "<div class=\"mv-row\"><span class=\"k\">머리 XYZ</span><span class=\"mv-tag\">눈</span><span class=\"mv-tag\">눈 깜빡임</span><span class=\"mv-tag\">미소</span><span class=\"mv-tag\">눈꺼풀 근육</span></div><div class=\"mv-row\"><span class=\"k\">눈동자</span><span class=\"mv-tag\">눈동자 XY</span><span class=\"mv-tag\">물리</span></div><div class=\"mv-row\"><span class=\"k\">눈썹</span><span class=\"mv-tag\">위아래</span><span class=\"mv-tag\">변형(찡그림, 슬픔)</span></div><div class=\"mv-row\"><span class=\"k\">입</span><span class=\"mv-tag\">여닫기</span><span class=\"mv-tag\">변형 9점</span></div><div class=\"mv-row\"><span class=\"k\">몸 XYZ</span><span class=\"mv-tag\">호흡</span><span class=\"mv-tag\">머리카락 물리</span><span class=\"mv-tag\">의상 물리</span></div>", "base_n1": "※ <b>흉상</b>은 두상 + 상체(팔·손 제외) 기준이에요. 엉덩이·허벅지(무릎 위)까지 있는 일러스트는 <b>반신</b>(+$70)으로 신청해 주세요.", "base_n2": "※ 현재 작업 불가능한 기능 : SD 전환", "alert": "<b>신청할 때 파츠 분리 PSD 파일을 꼭 첨부해 주세요.</b><br><span style=\"color:var(--sub)\">(구글 드라이브, 드롭박스 등) 곤란하거나 적기 어려운 부분은 비워두셔도 괜찮아요. PSD를 보내주시면 더 정확한 견적을 드릴 수 있어요.</span>", "fs1": "기본 정보", "f_nick": "닉네임 / 활동명 <small>(작업 파일명으로 사용돼요)</small>", "f_plat": "방송 플랫폼 및 링크 <small>(데뷔 전이면 '데뷔 예정')</small>", "f_plat_ph": "유튜브 / 트위치 등", "f_use": "사용 용도", "use1": "방송용", "use2": "개인소장용", "use3": "기타", "use_hint": "수익 창출 <b class=\"ok\">O</b> · 모델 재판매 및 양도 <b class=\"no\">X</b>", "f_com": "상업적 이용 여부 <small>(선택 시 +$220)</small>", "no": "아니오", "yes": "예", "com_hint": "<b>리깅된 모델을 이용한 굿즈 제작, 광고 촬영</b>은 상업적 이용에 해당해요.", "fs2": "일러스트 정보", "f_scope": "신청 범위", "sc_half": "흉상", "sc_halfplus": "반신", "sc_full": "전신", "g_half": "두상 + 상체 <em>(팔·손 제외)</em>", "g_halfplus": "흉상 + 엉덩이·허벅지 <em>(무릎 위까지)</em> · +$70", "g_full": "머리부터 발끝까지", "f_artist": "일러스트레이터", "f_artist_ph": "작가명 또는 링크", "f_psd": "일러스트 준비 상태", "psd1": "파츠 분리 PSD 완료", "psd2": "파츠 분리 전", "psd3": "일러스트 작업 중", "f_type": "캐릭터 타입", "ty1": "미소녀", "ty2": "미소년", "ty3": "기타", "fs3": "추가 옵션", "exA": "표정 · 애니메이션 X", "exA_s": "홍조, 정색, 하트 눈, 반짝 눈", "exB": "표정 · 애니메이션 O", "exB_s": "눈물, 빙글 눈", "f_exdesc": "추가 표정 <small>(직접 입력)</small>", "f_exdesc_ph": "예: 홍조 1, 눈물 1", "pose_foot": "추가 포즈 · 발 콕콕", "pose_close": "추가 포즈 · 가깝게 다가오기", "hair": "추가 헤어스타일", "outfit": "추가 의상", "outfit_s": "겉옷, 상의, 하의 등", "prop": "추가 소품", "prop_s": "귀, 꼬리, 날개 등", "f_part": "추가 파츠 설명 <small>(의상 변경, 소품, 헤어 변경 등)</small>", "fs4": "일정 및 공개", "f_due": "희망 마감일 <small>(미정이면 '미정' 또는 대략적인 시기)</small>", "f_sns": "작업 과정 SNS 공개", "sns_ok": "가능", "sns_no": "불가능", "f_priv": "완성 후 비공개 기간", "pv_none": "비공개 안 함", "pv_in3": "3개월 이내 (무료)", "pv_over3": "3개월 이상 (+$35)", "f_etc": "기타 요청사항", "sum_t": "예상 견적", "sum_l": "예상 합계", "sum_small": "최종 견적은 PSD 확인 후 안내드려요. 여기서 고른 내용은 상담을 위한 참고용입니다.", "btn_copy": "① 신청서 복사", "btn_form": "② 아트머그로 신청해 주세요 ↗", "btn_reset": "모두 지우기", "sum_foot": "국내 의뢰는 아트머그에서 받고 있어요. 복사한 신청서를 아트머그 문의에 붙여넣고, PSD 파일을 첨부해 주세요.", "nv_detail": "리깅 디테일", "nv_price": "가격", "nv_sale": "판매 모델", "nv_proc": "작업 과정", "nv_tos": "공지 사항", "nv_apply": "의뢰하기", "hero_label": "LIVE2D RIGGER", "hero_sub": "움직이는 순간에도 일러스트 그대로의 매력을.<br>섬세한 리깅으로 캐릭터에 생명을 불어넣어요.", "ev_badge": "해외 의뢰 오픈 기념", "ev_s": "기본 가격 + 모든 옵션 20% 할인 <small>(상업적 이용 추가금 제외)</small>", "hero_btn1": "의뢰하기", "hero_btn2": "작업 보기", "price_h": "가격", "price_desc": "모든 가격은 USD 기준이에요. 오픈 기념 할인이 적용된 가격이에요.", "price_from": "할인가", "price_note": "※ 표정, 아이폰 트래킹, VBridger, 추가 포즈 등 옵션은 아래 신청하기에서 확인할 수 있어요.", "ap_s1": "옵션 고르기", "ap_s1d": "원하는 옵션을 고르면 예상 금액이 바로 계산돼요.", "ap_s2": "신청서 복사", "ap_s2d": "버튼 한 번이면 신청 내용이 통째로 복사돼요.", "ap_s3": "아트머그로 신청", "ap_s3d": "아트머그 커미션 페이지에서 신청하고, 복사한 신청서를 붙여넣어 주세요.", "ko_note": "※ 이 페이지는 해외 의뢰 전용이에요. 국내 의뢰는 아트머그에서 받고 있어요.", "foot": "Live2D Rigging Commission", "disc": "해외 오픈 기념 20% 할인", "d_0": "리깅 디테일", "d_2": "각도", "d_3": "어느 각도에서도 자연스러운 얼굴", "d_4": "어느 각도에서 멈추든", "d_5": "원래 일러스트의 퀄리티를 유지하도록", "d_6": "꼼꼼하게 작업합니다.", "d_7": "전체", "d_8": "X축", "d_9": "Y축", "d_10": "눈동자", "d_11": "캐릭터의 개성을 살린 눈동자 연출", "d_12": "표정", "d_13": "캐릭터의 매력이 돋보이는 풍부한 표정 연출", "d_14": "눈물", "d_15": "화남 + 정색", "d_16": "부끄러움 + 하트눈", "d_17": "놀람", "d_18": "다양한 입모양과 표정 연출 (iPhone 호환 기능)", "d_19": "볼 빵빵", "d_20": "입 오물오물", "d_21": "혀 내밀기", "d_22": "입술 오므리기", "d_23": "추가 소품", "d_24": "캐릭터의 디테일을 살리는 소품 움직임", "d_25": "안경", "d_26": "허리 체인", "d_27": "리본", "d_29": "전신 각도", "d_30": "캐릭터와 어울리는 신체 연출", "d_31": "Z축", "d_32": "추가 포즈", "d_33": "다양한 연출이 가능한 옵션", "d_34": "발 콕콕", "d_35": "가깝게 다가오기", "nv_works": "작업한 모델", "nv_sd": "SD 리깅", "works_h": "작업한 모델", "works_desc": "▶ 영상을 누르면 쇼케이스가 열리고, \"이 범위로 견적\"을 누르면 신청 양식에 범위가 자동으로 선택돼요.", "w_v": "▶ 영상", "w_q": "이 범위로 견적", "w_go": "이 범위로 견적 →", "wk_sd": "Miove(SD.ver)", "wk_goat": "염소 소녀 (판매 모델)", "t_face": "얼굴 각도", "sd_h": "SD 리깅", "sd_desc": "작고 귀여운 SD 캐릭터도 리깅해요.<br>방송 화면 구석, 대기 화면, 굿즈용으로 좋아요.", "sd_set_t": "본 모델과 동시 제작 시 <b>세트 할인 최대 $145</b>", "sd_u1": "🎀 방송 대기 화면", "sd_u2": "🎀 서브 아바타", "sd_u3": "🎀 굿즈 · 이모티콘", "sd_btn": "SD로 견적 내보기", "sc_sd": "SD", "g_sd": "작고 귀여운 SD 캐릭터", "pf1": "문의 · 견적 상담 → 결제 (선금 50%)", "pf2": "<b>영상으로 2번 컨펌</b> · 얼굴 → 몸 순서", "pf3": "잔금 50% → 모델 전달 · 세팅 안내", "pf4": "<b>완성 모델의 고퀄리티 쇼케이스 제작까지</b>", "n7": "컨펌 및 연락 방식", "scope_img": "📏 범위 기준 그림으로 보기", "scope_cap": "", "sdadd": "SD 동시 제작", "sdadd_s": "본 모델과 같이 신청하면 세트 할인 (흉상 −$35 · 반신 −$70 · 전신 −$145)", "iph_h": "아이폰 트래킹 <small>아이폰으로 연결 시 가능한 표정</small>", "iph": "볼빵빵, 혀 내밀기", "vb_h": "VBridger <small>VBridger 구매 필요 (스팀)</small>", "vb_t": "오물오물, 입술 오므리기 등", "vb_s2": "자연스러운 입 움직임", "sep_h": "포즈 · 헤어 · 의상 · 소품", "agree": "공지 사항을 모두 읽고 숙지했습니다.", "modal_lb": "쇼케이스 영상", "close": "닫기"}, "en": {"lang": "en", "title": "Miove · Live2D Rigging Commissions", "intro_h": "Hello", "quote": "Pause at any angle — it still looks just like your illustration", "intro": "Hi, I'm Miove, a Live2D rigger working hard to become a great one.<br>With constant study and an obsessive eye for detail, I put my best quality and care into every model.<br>My portfolio keeps growing — please keep an eye on it!", "glob": "<b>International commissions</b> · Based in Korea (KST, UTC+9) · English / Japanese / Chinese OK (via translation tools)", "sched_h": "Schedule", "lg_open": "Open", "lg_done": "Booked", "sched_note": "※ The number of slots may change.", "cap1": "Original model", "sale_h": "Models for Sale", "sale_desc": "Fully rigged models, ready to use.", "goat": "Goat Girl", "sale_badge": "For sale", "sale_buy": "💌 <b>Interested? Send me an inquiry!</b> Include the model name and I'll get back to you soon.", "proc_h": "Process", "tos_h": "Terms of Service", "tos_desc": "Please read before applying. I'm not responsible for problems caused by not reading these terms.", "TOS": "    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">0</span>Before applying<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>Illustration is not included — <b>rigging only</b>.</li><li>A <b>layered (part-separated) PSD</b> is required. If the separation isn't sufficient, the request may be declined or the model's movement may be limited. See [5. Part separation].</li><li>Price and timeline may vary with the character design, number of parts and options.</li><li>Please read the terms and contact me before paying.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">1</span>Payment<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>Prices are in <b>USD</b>. Payment is via <b>PayPal invoice</b>.</li><li><b>50% deposit</b> before work starts, <b>remaining 50%</b> after the final check.</li><li>Model files are delivered <b>after full payment</b>.</li><li>Refunds: full refund before work starts. Once work has started, the deposit is non-refundable. If I can't finish the work for my own reasons, I'll refund in full.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">2</span>Timeline<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>Usually <b>15–25 days</b> from the deposit. (as of Nov 2026)</li><li>May vary with the character's complexity, options and revision requests.</li><li>If I finish early, I'll deliver right away.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">3</span>Portfolio &amp; usage<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>The copyright of the rigging belongs to Miove.</li><li>WIP materials shared before completion must not be shared publicly.</li><li>Unless you request privacy, WIP and the finished model may be used as samples on my SNS / portfolio / showcase. <b>Privacy up to 3 months is free</b>; longer costs $35. For short-term privacy (e.g. until your debut), please ask in advance.</li><li>You may freely use the model for streaming, videos and SNS (monetization OK).</li><li>Commercial projects using the rigged model itself (merchandise, corporate ads, etc.) are not allowed without prior consent. (Commercial use: +$220)</li><li>Resale or transfer of the model requires Miove's permission.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">4</span>Accepted characters<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li><b>No AI-generated illustrations.</b></li><li>No characters from existing IPs (fan art) due to copyright concerns — even for personal / non-commercial use.</li><li>I mainly rig cute girl and boy characters. For other styles, please ask first.</li><li>Illustrations beyond my ability or that may be controversial can be declined.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">5</span>Part separation<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>I also take retouching and part separation of other artists' illustrations.</li><li>Only if you have the illustrator's prior consent. I'll also contact the illustrator directly to confirm.</li><li>Part separation is a paid add-on, available only when the rigging is also commissioned to Miove.</li><li>Simple retouching (filling empty colors, cleaning stray lines, etc.) is free.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">6</span>Software &amp; files<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>I rig for iPhone tracking with VTube Studio + VBridger. VBridger only works on iPhones with facial capture (Face ID). I can help with setup if needed.</li><li>Final files are for running the model in VTube Studio. The editable source file (.cmo3) is not provided.</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">7</span>Check-ins &amp; contact<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>Check-ins are done by sending recorded videos. I'll let you know the day before.</li><li>Screen sharing (Discord) can be requested only within 24 hours of a check-in.</li><li>Revision requests are open for 48 hours. Repeated reversals, or changes far beyond what we agreed on, may not be possible or may cost extra.</li><li>If I get no reply within 48 hours of a check-in, I'll move on to the next step. If you'll be late, please tell me when you can reply.</li><li>Two check-ins are included. Additional requests may cost extra.</li></ul><p style=\"margin:10px 0 0;font-weight:800;\">Contact</p><ul><li>Communication is via Discord. If you can't use Discord, we can use email instead.</li></ul></div></details>\n", "ap_h": "Application Form", "ap_desc": "Pick options to see an estimate right away.", "base_h": "Included", "base_s": "in every commission", "base_rows": "<div class=\"mv-row\"><span class=\"k\">Head XYZ</span><span class=\"mv-tag\">Eyes</span><span class=\"mv-tag\">Blink</span><span class=\"mv-tag\">Smile</span><span class=\"mv-tag\">Eyelid muscles</span></div><div class=\"mv-row\"><span class=\"k\">Pupils</span><span class=\"mv-tag\">Pupil XY</span><span class=\"mv-tag\">Physics</span></div><div class=\"mv-row\"><span class=\"k\">Eyebrows</span><span class=\"mv-tag\">Up / down</span><span class=\"mv-tag\">Deform (frown, sad)</span></div><div class=\"mv-row\"><span class=\"k\">Mouth</span><span class=\"mv-tag\">Open / close</span><span class=\"mv-tag\">9-point deform</span></div><div class=\"mv-row\"><span class=\"k\">Body XYZ</span><span class=\"mv-tag\">Breathing</span><span class=\"mv-tag\">Hair physics</span><span class=\"mv-tag\">Outfit physics</span></div>", "base_n1": "※ <b>Bust-up</b> = head + upper body (no arms / hands). If your illustration includes hips and thighs (above the knees), choose <b>Half body</b> (+$70).", "base_n2": "※ Not available yet: SD (chibi) switching", "alert": "<b>Please add a link to your layered PSD in the form.</b><br><span style=\"color:var(--sub)\">(Google Drive, Dropbox, etc.) It's okay to leave anything you're unsure about blank — with the PSD I can give a more accurate quote.</span>", "fs1": "Basic info", "f_nick": "Nickname / Activity name <small>(used for file names)</small>", "f_plat": "Platform &amp; link <small>(not debuted yet? write \"debuting soon\")</small>", "f_plat_ph": "YouTube / Twitch etc.", "f_use": "Usage", "use1": "Streaming", "use2": "Personal", "use3": "Other", "use_hint": "Monetization <b class=\"ok\">O</b> · Resale &amp; transfer <b class=\"no\">X</b>", "f_com": "Commercial use <small>(+$220 if yes)</small>", "no": "No", "yes": "Yes", "com_hint": "<b>Merchandise or ads using the rigged model</b> count as commercial use.", "fs2": "Illustration", "f_scope": "Scope", "sc_half": "Bust-up", "sc_halfplus": "Half body", "sc_full": "Full body", "g_half": "Head + upper body <em>(no arms / hands)</em>", "g_halfplus": "Bust-up + hips &amp; thighs <em>(above the knees)</em> · +$70", "g_full": "Head to toe", "f_artist": "Illustrator", "f_artist_ph": "Name or link", "f_psd": "Illustration status", "psd1": "Layered PSD ready", "psd2": "Not separated yet", "psd3": "Still being drawn", "f_type": "Character type", "ty1": "Girl", "ty2": "Boy", "ty3": "Other", "fs3": "Add-ons", "exA": "Expression · no animation", "exA_s": "Blush, serious face, heart eyes, sparkly eyes", "exB": "Expression · animated", "exB_s": "Tears, spiral eyes", "f_exdesc": "Extra expressions <small>(type freely)</small>", "f_exdesc_ph": "e.g. Blush 1, Tears 1", "pose_foot": "Extra pose · Foot tap", "pose_close": "Extra pose · Lean in close", "hair": "Extra hairstyle", "outfit": "Extra outfit", "outfit_s": "Jacket, top, bottom, etc.", "prop": "Extra prop", "prop_s": "Ears, tail, wings, etc.", "f_part": "Extra parts details <small>(outfit change, props, hair change, etc.)</small>", "fs4": "Schedule &amp; privacy", "f_due": "Preferred deadline <small>(\"undecided\" or a rough time is fine)</small>", "f_sns": "Share WIP on SNS", "sns_ok": "OK", "sns_no": "Not OK", "f_priv": "Privacy after completion", "pv_none": "No privacy", "pv_in3": "Up to 3 months (free)", "pv_over3": "Over 3 months (+$35)", "f_etc": "Other requests", "sum_t": "Estimate", "sum_l": "Estimated total", "sum_small": "The final quote is given after I check your PSD. This is a reference for our consultation.", "btn_copy": "① Copy request", "btn_form": "② Open Google Form ↗", "btn_reset": "Clear all", "sum_foot": "Paste the copied text into the Google Form, and add your PSD link and contact.", "nv_top": "▲ Top", "nv1": "Hello", "nv2": "Showcase", "nv3": "Rigging", "nv4": "For Sale", "nv5": "Process", "nv6": "Terms", "nv7": "Apply ↗", "nv_detail": "Rigging", "nv_price": "Pricing", "nv_sale": "For Sale", "nv_proc": "Process", "nv_tos": "Terms", "nv_apply": "Commission", "hero_label": "LIVE2D RIGGER", "hero_sub": "Keep every bit of your illustration's charm — even in motion.<br>Detailed rigging that brings your character to life.", "ev_badge": "Overseas Opening Sale", "ev_s": "20% off base price + all add-ons <small>(excluding commercial use fee)</small>", "hero_btn1": "Commission me", "hero_btn2": "See my work", "price_h": "Pricing", "price_desc": "All prices are in USD, shown with the opening discount applied.", "price_from": "Sale price", "price_note": "※ Add-ons like expressions, iPhone tracking, VBridger and extra poses are listed in the application form below.", "ap_s1": "Choose options", "ap_s1d": "Pick what you need and the estimate is calculated right away.", "ap_s2": "Copy the request", "ap_s2d": "One click copies your whole request.", "ap_s3": "Paste into Google Form", "ap_s3d": "Open the Google Form, paste it, and add your PSD link and contact.", "ko_note": "", "foot": "Live2D Rigging Commission", "disc": "Opening sale 20% off", "d_0": "Rigging Details", "d_2": "Angles", "d_3": "Natural from every angle", "d_4": "Wherever the motion stops,", "d_5": "the quality of the original art stays intact —", "d_6": "every detail carefully rigged.", "d_7": "All", "d_8": "X-axis", "d_9": "Y-axis", "d_10": "Eyes", "d_11": "Eye movement that brings out personality", "d_12": "Expressions", "d_13": "Rich expressions that show off the character", "d_14": "Tears", "d_15": "Angry + Serious", "d_16": "Shy + Heart eyes", "d_17": "Surprised", "d_18": "Various mouth shapes & expressions (iPhone only)", "d_19": "Puffed cheeks", "d_20": "Mouth wiggle", "d_21": "Tongue out", "d_22": "Pursed lips", "d_23": "Props", "d_24": "Prop movement that adds detail", "d_25": "Glasses", "d_26": "Waist chain", "d_27": "Ribbon", "d_29": "Body Angles", "d_30": "Body motion that suits the character", "d_31": "Z-axis", "d_32": "Extra Poses", "d_33": "Optional poses for more variety", "d_34": "Foot tap", "d_35": "Lean in close", "nv_works": "Works", "nv_sd": "SD Rigging", "works_h": "Works", "works_desc": "Tap ▶ Video to watch the showcase. \"Quote this scope\" selects that scope in the form for you.", "w_v": "▶ Video", "w_q": "Quote this scope", "w_go": "Quote this scope →", "wk_sd": "Miove (SD ver.)", "wk_goat": "Goat Girl (for sale)", "t_face": "Face Angles", "sd_h": "SD Rigging", "sd_desc": "I also rig small, cute SD (chibi) characters.<br>Great for a corner of your stream, waiting screens, or merch.", "sd_set_t": "Order with a main model: <b>set discount up to $145</b>", "sd_u1": "🎀 Stream waiting screen", "sd_u2": "🎀 Sub avatar", "sd_u3": "🎀 Merch · Emotes", "sd_btn": "Get an SD quote", "sc_sd": "SD", "g_sd": "Small, cute chibi character", "pf1": "Inquiry &amp; quote → Payment (50% deposit)", "pf2": "<b>2 check-ins by video</b> · face → body", "pf3": "Remaining 50% → Delivery &amp; setup guide", "pf4": "<b>Plus a high-quality showcase video of your finished model</b>", "n7": "Check-ins &amp; contact", "scope_img": "📏 See the scope guide", "scope_cap": "흉상 = Bust-up · 반신 = Half body · 전신 = Full body", "sdadd": "Add an SD model", "sdadd_s": "Set discount with a main model (Bust-up −$35 · Half body −$70 · Full body −$145)", "iph_h": "iPhone tracking <small>Expressions available when tracking with an iPhone</small>", "iph": "Puffed cheeks, tongue out", "vb_h": "VBridger <small>Requires VBridger (sold on Steam)</small>", "vb_t": "Mouth wiggle, lip pucker, etc.", "vb_s2": "Natural mouth movement", "sep_h": "Poses · Hair · Outfits · Props", "agree": "I have read and understood the Terms of Service.", "modal_lb": "Showcase video", "close": "Close"}, "ja": {"lang": "ja", "title": "Miove · Live2Dリギング依頼", "intro_h": "ごあいさつ", "quote": "どの角度で止めても、イラストそのままのクオリティ", "intro": "はじめまして、素敵なリガーを目指して日々努力しているMioveです。<br>技術の研究とこだわりのディテールで、一つひとつのモデルに最高のクオリティと愛情を込めてお届けします。<br>これからポートフォリオを少しずつ増やしていきますので、ぜひ見守っていてください！", "glob": "<b>海外からのご依頼</b> · 韓国在住（KST・UTC+9）· やり取りは日本語でOKです（翻訳ツールを使用します）", "sched_h": "受付状況", "lg_open": "空き", "lg_done": "予約済み", "sched_note": "※ 枠数は変更になる場合があります。", "cap1": "オリジナルモデル", "sale_h": "販売中のモデル", "sale_desc": "すぐに使えるリギング済みモデルです。", "goat": "ヤギの女の子", "sale_badge": "販売中", "sale_buy": "💌 <b>ご購入希望の方はお問い合わせください！</b>モデル名を添えていただければ、すぐにご案内します。", "proc_h": "制作の流れ", "tos_h": "利用規約", "tos_desc": "お申し込み前に必ずお読みください。未読による不利益については責任を負いかねます。", "TOS": "    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">0</span>お申し込み前の準備<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>イラストは含まれません。<b>リギングのみ</b>の作業です。</li><li><b>パーツ分けしたPSD</b>が必要です。パーツ分けが不十分な場合、お断りするか、モデルの動きに制限が出ることがあります。[5. パーツ分けについて]をご覧ください。</li><li>キャラクターデザイン、パーツ数、追加オプションによって価格や制作期間が変わる場合があります。</li><li>お支払い前に規約をご確認のうえ、事前にお問い合わせください。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">1</span>お支払い<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>料金は<b>USD（米ドル）</b>表記です。お支払いは<b>PayPalの請求書</b>で行います。</li><li>作業開始前に<b>前金50%</b>、最終確認後に<b>残金50%</b>をお支払いいただきます。</li><li>モデルデータは<b>全額のお支払い確認後</b>にお渡しします。</li><li>返金：作業開始前は全額返金します。作業開始後は前金の返金はできません。こちらの都合で完成できない場合は全額返金します。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">2</span>制作期間<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>前金のお支払い日から平均<b>15〜25日</b>ほどかかります。（2026年11月時点）</li><li>キャラクターの複雑さ、追加オプションや修正のご依頼などにより変動する場合があります。</li><li>予定より早く完成した場合は、すぐにお渡しします。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">3</span>作品の公開・使用について<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>リギングの著作権はMioveに帰属します。</li><li>完成前に共有した制作過程の外部公開は禁止です。</li><li>非公開をご希望でない場合、制作過程や完成品を作家のSNS・ポートフォリオ・ショーケースにサンプルとして使用することがあります。<b>非公開は3ヶ月まで無料</b>、それ以降は追加料金（$35）がかかります。デビュー日程などで短期間の非公開をご希望の場合は事前にご相談ください。</li><li>完成したモデルは、配信・動画コンテンツ・SNSなどで自由にご使用いただけます（収益化OK）。</li><li>事前のご相談なく、リギングモデルそのものを使ったグッズ制作や企業広告への出演などの商業利用は禁止です。（商業利用の追加料金：$220）</li><li>完成品の転売・譲渡をご希望の場合は、Mioveの許可が必要です。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">4</span>お受けできるキャラクター<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li><b>AIイラストのリギングはお受けしていません。</b></li><li>原作IPのあるキャラクター（二次創作）は、著作権の観点からお受けしていません。個人・非商用目的でもお断りしています。</li><li>美少女・美少年キャラクターを中心に制作しています。それ以外のキャラクターは事前にご相談ください。</li><li>技術的に対応が難しいイラストや、問題になる可能性のあるイラストはお断りする場合があります。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">5</span>パーツ分けについて<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>他の作家さまのイラストのリタッチやパーツ分けもお受けします。</li><li>ご依頼者さまがイラストレーターさまから事前に同意を得ている場合に限ります。この場合、Mioveからもイラストレーターさまに直接連絡し、同意を再確認します。</li><li>パーツ分け作業は、リギングをMioveにご依頼いただくことを前提に、別途追加料金で承ります。</li><li>簡単なリタッチ（塗り残しの補完、はみ出した線画の整理など）は無料で対応します。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">6</span>必要なソフトとお渡しするデータ<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>iPhone基準で制作し、VTube Studio + VBridgerを使用します。VBridgerはフェイシャルキャプチャ（Face ID）対応のiPhoneのみ使用できます。設定のサポートが必要な場合はご案内します。</li><li>お渡しするデータはVTube Studio用のファイルが中心で、リギングを編集できる元データ（.cmo3）はお渡ししていません。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">7</span>確認・連絡方法<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>確認は録画した動画をお送りする形で行います。前日にご連絡します。</li><li>確認当日から24時間以内に限り、画面共有（Discord）をご希望いただけます。</li><li>修正のご依頼は48時間受け付けます。度重なる変更や、最初のご相談内容から大きく外れる修正は、お受けできないか追加料金が発生する場合があります。</li><li>確認のご案内から48時間返信がない場合は、次の工程に進みます。返信が遅れる場合は、いつ頃お返事できるか事前にお知らせください。</li><li>確認は基本2回です。それを超える場合は追加料金が発生することがあります。</li></ul><p style=\"margin:10px 0 0;font-weight:800;\">連絡方法</p><ul><li>やり取りは基本的にDiscordで行います。Discordが難しい場合はメールでも対応します。</li></ul></div></details>\n", "ap_h": "お申し込みフォーム", "ap_desc": "オプションを選ぶと見積もりがすぐに計算されます。", "base_h": "基本に含まれる内容", "base_s": "すべてのご依頼に含まれます", "base_rows": "<div class=\"mv-row\"><span class=\"k\">頭 XYZ</span><span class=\"mv-tag\">目</span><span class=\"mv-tag\">まばたき</span><span class=\"mv-tag\">笑顔</span><span class=\"mv-tag\">まぶたの筋肉</span></div><div class=\"mv-row\"><span class=\"k\">瞳</span><span class=\"mv-tag\">瞳 XY</span><span class=\"mv-tag\">物理</span></div><div class=\"mv-row\"><span class=\"k\">眉</span><span class=\"mv-tag\">上下</span><span class=\"mv-tag\">変形（しかめ・悲しみ）</span></div><div class=\"mv-row\"><span class=\"k\">口</span><span class=\"mv-tag\">開閉</span><span class=\"mv-tag\">変形9点</span></div><div class=\"mv-row\"><span class=\"k\">体 XYZ</span><span class=\"mv-tag\">呼吸</span><span class=\"mv-tag\">髪の物理</span><span class=\"mv-tag\">衣装の物理</span></div>", "base_n1": "※ <b>バストアップ</b>は頭＋上半身（腕・手を除く）が基準です。お尻・太もも（膝上）まであるイラストは<b>半身</b>（+$70）でお申し込みください。", "base_n2": "※ 現在対応できない機能：SD切り替え", "alert": "<b>フォームにパーツ分けしたPSDのリンクを記入してください。</b><br><span style=\"color:var(--sub)\">（Googleドライブ、Dropboxなど）分からない項目は空欄でも大丈夫です。PSDがあればより正確なお見積もりをお出しできます。</span>", "fs1": "基本情報", "f_nick": "ニックネーム・活動名 <small>（ファイル名に使用します）</small>", "f_plat": "配信プラットフォーム・リンク <small>（デビュー前なら「デビュー予定」）</small>", "f_plat_ph": "YouTube / Twitch など", "f_use": "用途", "use1": "配信用", "use2": "個人所有", "use3": "その他", "use_hint": "収益化 <b class=\"ok\">O</b> · モデルの転売・譲渡 <b class=\"no\">X</b>", "f_com": "商業利用 <small>（選択時 +$220）</small>", "no": "いいえ", "yes": "はい", "com_hint": "<b>リギングモデルを使ったグッズ制作・広告撮影</b>は商業利用にあたります。", "fs2": "イラスト情報", "f_scope": "範囲", "sc_half": "バストアップ", "sc_halfplus": "半身", "sc_full": "全身", "g_half": "頭 + 上半身 <em>（腕・手を除く）</em>", "g_halfplus": "バストアップ + お尻・太もも <em>（膝上まで）</em> · +$70", "g_full": "頭からつま先まで", "f_artist": "イラストレーター", "f_artist_ph": "お名前またはリンク", "f_psd": "イラストの準備状況", "psd1": "パーツ分けPSD完成", "psd2": "パーツ分け前", "psd3": "イラスト制作中", "f_type": "キャラクタータイプ", "ty1": "美少女", "ty2": "美少年", "ty3": "その他", "fs3": "追加オプション", "exA": "表情・アニメーションなし", "exA_s": "照れ、真顔、ハート目、キラキラ目", "exB": "表情・アニメーションあり", "exB_s": "涙、ぐるぐる目", "f_exdesc": "追加表情 <small>（自由記入）</small>", "f_exdesc_ph": "例：照れ 1、涙 1", "pose_foot": "追加ポーズ・足トントン", "pose_close": "追加ポーズ・近づく", "hair": "追加ヘアスタイル", "outfit": "追加衣装", "outfit_s": "上着、トップス、ボトムスなど", "prop": "追加小物", "prop_s": "耳、しっぽ、羽など", "f_part": "追加パーツの説明 <small>（衣装変更、小物、ヘア変更など）</small>", "fs4": "スケジュール・公開設定", "f_due": "希望納期 <small>（未定なら「未定」またはおおよその時期）</small>", "f_sns": "制作過程のSNS公開", "sns_ok": "可", "sns_no": "不可", "f_priv": "完成後の非公開期間", "pv_none": "非公開にしない", "pv_in3": "3ヶ月以内（無料）", "pv_over3": "3ヶ月以上（+$35）", "f_etc": "その他のご要望", "sum_t": "お見積もり", "sum_l": "見積もり合計", "sum_small": "最終的なお見積もりはPSD確認後にご案内します。ここでの内容はご相談のための目安です。", "btn_copy": "① 申込内容をコピー", "btn_form": "② Googleフォームを開く ↗", "btn_reset": "すべてクリア", "sum_foot": "コピーした内容をGoogleフォームに貼り付け、PSDのリンクと連絡先を添えてください。", "nv_top": "▲ トップへ", "nv1": "ごあいさつ", "nv2": "動画", "nv3": "リギング", "nv4": "販売モデル", "nv5": "制作の流れ", "nv6": "利用規約", "nv7": "申し込み ↗", "nv_detail": "リギング", "nv_price": "料金", "nv_sale": "販売モデル", "nv_proc": "制作の流れ", "nv_tos": "利用規約", "nv_apply": "依頼する", "hero_label": "LIVE2D RIGGER", "hero_sub": "動いても、イラストそのままの魅力を。<br>丁寧なリギングで、キャラクターに命を吹き込みます。", "ev_badge": "海外依頼オープン記念", "ev_s": "基本料金＋全オプション 20%オフ <small>（商業利用の追加料金を除く）</small>", "hero_btn1": "依頼する", "hero_btn2": "作品を見る", "price_h": "料金", "price_desc": "料金はすべてUSD表記で、オープン記念割引適用後の価格です。", "price_from": "割引価格", "price_note": "※ 表情、iPhoneトラッキング、VBridger、追加ポーズなどのオプションは下のお申し込みフォームでご確認いただけます。", "ap_s1": "オプションを選ぶ", "ap_s1d": "希望のオプションを選ぶと、見積もりがすぐに計算されます。", "ap_s2": "申込内容をコピー", "ap_s2d": "ボタン一つで申込内容をまとめてコピーできます。", "ap_s3": "Googleフォームに貼り付け", "ap_s3d": "Googleフォームを開いて貼り付け、PSDのリンクと連絡先を記入してください。", "ko_note": "", "foot": "Live2D Rigging Commission", "disc": "オープン記念 20%オフ", "d_0": "リギング詳細", "d_2": "角度", "d_3": "どの角度から見ても自然な顔", "d_4": "どの角度で止まっても", "d_5": "元のイラストのクオリティを保てるよう", "d_6": "丁寧に作業しています。", "d_7": "全体", "d_8": "X軸", "d_9": "Y軸", "d_10": "瞳", "d_11": "キャラクターの個性を活かした瞳の演出", "d_12": "表情", "d_13": "キャラクターの魅力が引き立つ豊かな表情", "d_14": "涙", "d_15": "怒り + 真顔", "d_16": "照れ + ハート目", "d_17": "驚き", "d_18": "多彩な口の形と表情（iPhone対応機能）", "d_19": "頬ふくらまし", "d_20": "もぐもぐ", "d_21": "舌出し", "d_22": "口すぼめ", "d_23": "追加小物", "d_24": "キャラクターのディテールを活かす小物の動き", "d_25": "メガネ", "d_26": "ウエストチェーン", "d_27": "リボン", "d_29": "全身の角度", "d_30": "キャラクターに合った体の動き", "d_31": "Z軸", "d_32": "追加ポーズ", "d_33": "多彩な演出ができるオプション", "d_34": "足トントン", "d_35": "近づく", "nv_works": "制作実績", "nv_sd": "SDリギング", "works_h": "制作実績", "works_desc": "▶動画を押すとショーケースが開きます。「この範囲で見積もり」を押すと、申込フォームで範囲が自動で選ばれます。", "w_v": "▶ 動画", "w_q": "この範囲で見積もり", "w_go": "この範囲で見積もり →", "wk_sd": "Miove（SD ver.）", "wk_goat": "ヤギの女の子（販売モデル）", "t_face": "顔の角度", "sd_h": "SDリギング", "sd_desc": "小さくてかわいいSDキャラもリギングします。<br>配信画面の隅や待機画面、グッズ用にもぴったりです。", "sd_set_t": "本モデルと同時制作で<b>セット割引 最大$145</b>", "sd_u1": "🎀 配信の待機画面", "sd_u2": "🎀 サブアバター", "sd_u3": "🎀 グッズ・スタンプ", "sd_btn": "SDで見積もりする", "sc_sd": "SD", "g_sd": "小さくてかわいいSDキャラ", "pf1": "お問い合わせ・お見積もり → お支払い（前金50%）", "pf2": "<b>動画で2回確認</b>・顔 → 体の順", "pf3": "残金50% → モデル納品・セッティング案内", "pf4": "<b>完成モデルの高クオリティなショーケース動画まで制作</b>", "n7": "確認・連絡方法", "scope_img": "📏 範囲の目安を見る", "scope_cap": "흉상 = バストアップ · 반신 = 半身 · 전신 = 全身", "sdadd": "SD同時制作", "sdadd_s": "本モデルと一緒に申し込むとセット割引（バストアップ −$35・半身 −$70・全身 −$145）", "iph_h": "iPhoneトラッキング <small>iPhone接続時に使える表情</small>", "iph": "頬ふくらまし、舌出し", "vb_h": "VBridger <small>VBridgerの購入が必要（Steam）</small>", "vb_t": "もぐもぐ、口すぼめなど", "vb_s2": "自然な口の動き", "sep_h": "ポーズ・ヘア・衣装・小物", "agree": "利用規約をすべて読み、理解しました。", "modal_lb": "ショーケース動画", "close": "閉じる"}, "zh": {"lang": "zh-CN", "title": "Miove · Live2D绑定委托", "intro_h": "你好", "quote": "无论停在哪个角度，都保持原画般的品质", "intro": "你好，我是Miove，一名努力成为优秀Live2D绑定师的创作者。<br>凭借不断的技术钻研与对细节的执着，我会在每一件作品中倾注最好的品质与心意。<br>作品集会持续更新，欢迎关注！", "glob": "<b>海外委托</b> · 常驻韩国（KST，UTC+9）· 可以用中文沟通（我会使用翻译工具）", "sched_h": "预约情况", "lg_open": "空位", "lg_done": "已预约", "sched_note": "※ 名额数量可能会有变动。", "cap1": "原创模型", "sale_h": "在售模型", "sale_desc": "可直接使用的已绑定模型。", "goat": "山羊少女", "sale_badge": "在售", "sale_buy": "💌 <b>如需购买请联系我！</b>注明模型名称，我会尽快回复。", "proc_h": "制作流程", "tos_h": "委托须知", "tos_desc": "申请前请务必阅读。因未阅读而产生的问题恕不负责。", "TOS": "    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">0</span>申请前准备<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>不包含插画，<b>仅提供绑定</b>。</li><li>需要<b>已拆分图层的PSD文件</b>。若拆分不完善，可能会被拒绝委托或导致模型动作受限。请参考[5. 拆分相关]。</li><li>价格与制作周期会根据角色设计、部件数量及附加选项而有所变动。</li><li>付款前请阅读须知并提前咨询。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">1</span>付款<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>价格以<b>美元（USD）</b>计，通过<b>PayPal账单</b>付款。</li><li>开工前支付<b>50%定金</b>，最终确认后支付<b>剩余50%</b>。</li><li>模型文件在<b>全款确认后</b>交付。</li><li>退款：开工前可全额退款；开工后定金不予退还。如因本人原因无法完成，将全额退款。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">2</span>制作周期<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>自支付定金起平均需要<b>15〜25天</b>。（截至2026年11月）</li><li>会因角色复杂度、附加选项或修改请求而有所变动。</li><li>若提前完成，会立即交付。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">3</span>作品公开与使用<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>绑定成果的著作权归Miove所有。</li><li>完成前分享的制作过程禁止外传。</li><li>若未申请不公开，制作过程及成品可能会作为样品用于本人的SNS / 作品集 / 展示视频。<b>不公开3个月内免费</b>，超过需额外支付$35。如因出道日程等需要短期不公开，请提前咨询。</li><li>完成的模型可自由用于直播、视频内容、SNS等（可盈利）。</li><li>未经事先沟通，禁止将绑定模型本身用于周边制作、企业广告等商业用途。（商业使用附加费：$220）</li><li>如需转卖或转让成品，须获得Miove的许可。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">4</span>可接受的角色<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li><b>不接受AI插画的绑定委托。</b></li><li>出于版权考虑，不接受已有IP的角色（同人）委托，个人/非商业用途也不例外。</li><li>主要制作美少女、美少年角色，其他类型请提前咨询。</li><li>能力范围外或可能引发争议的插画可能会被拒绝。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">5</span>拆分相关<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>也接受其他画师作品的修图与拆分。</li><li>仅限委托人已事先获得该画师同意的情况。届时Miove也会直接联系画师再次确认。</li><li>拆分作业以委托Miove绑定为前提，需另外收费。</li><li>简单修图（补色、整理溢出线稿等）免费处理。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">6</span>所需软件与交付文件<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>以iPhone为基准制作，使用VTube Studio + VBridger。VBridger仅支持带面部捕捉（Face ID）功能的iPhone。如需设置方面的帮助，我会另行指导。</li><li>最终交付文件以VTube Studio运行文件为主，不提供可编辑绑定的源文件（.cmo3）。</li></ul></div></details>\n    <details class=\"mv-acc\" name=\"mv-notice\"><summary><span class=\"q\">7</span>确认与联系方式<span class=\"ic\"></span></summary>\n      <div class=\"bd\"><ul><li>确认方式为发送录制视频，会在前一天通知您。</li><li>仅在确认当天起24小时内可申请屏幕共享（Discord）。</li><li>修改请求可在48小时内提出。反复变更或明显超出初期沟通范围的修改可能无法进行或需额外收费。</li><li>确认通知后48小时内未收到回复，将进入下一阶段。如需延后回复，请提前告知大概时间。</li><li>基础确认次数共2次，超出部分可能需要额外收费。</li></ul><p style=\"margin:10px 0 0;font-weight:800;\">联系方式</p><ul><li>主要通过Discord沟通。如无法使用Discord，也可以通过邮件联系。</li></ul></div></details>\n", "ap_h": "申请表", "ap_desc": "选择选项即可立即计算预估价格。", "base_h": "基础包含内容", "base_s": "所有委托均包含", "base_rows": "<div class=\"mv-row\"><span class=\"k\">头部 XYZ</span><span class=\"mv-tag\">眼睛</span><span class=\"mv-tag\">眨眼</span><span class=\"mv-tag\">微笑</span><span class=\"mv-tag\">眼睑肌肉</span></div><div class=\"mv-row\"><span class=\"k\">瞳孔</span><span class=\"mv-tag\">瞳孔 XY</span><span class=\"mv-tag\">物理</span></div><div class=\"mv-row\"><span class=\"k\">眉毛</span><span class=\"mv-tag\">上下</span><span class=\"mv-tag\">变形（皱眉、悲伤）</span></div><div class=\"mv-row\"><span class=\"k\">嘴巴</span><span class=\"mv-tag\">开合</span><span class=\"mv-tag\">9点变形</span></div><div class=\"mv-row\"><span class=\"k\">身体 XYZ</span><span class=\"mv-tag\">呼吸</span><span class=\"mv-tag\">头发物理</span><span class=\"mv-tag\">服装物理</span></div>", "base_n1": "※ <b>胸像</b>以头部＋上半身（不含手臂、手）为准。插画包含臀部、大腿（膝盖以上）时，请选择<b>半身</b>（+$70）。", "base_n2": "※ 目前暂不支持：SD（Q版）切换", "alert": "<b>请在表单中附上已拆分PSD的链接。</b><br><span style=\"color:var(--sub)\">（Google Drive、Dropbox等）不确定的项目可以留空。提供PSD可以给出更准确的报价。</span>", "fs1": "基本信息", "f_nick": "昵称 / 活动名 <small>（用于文件命名）</small>", "f_plat": "直播平台及链接 <small>（未出道请填写\"即将出道\"）</small>", "f_plat_ph": "Bilibili / YouTube 等", "f_use": "用途", "use1": "直播用", "use2": "个人收藏", "use3": "其他", "use_hint": "可盈利 <b class=\"ok\">O</b> · 转卖 / 转让 <b class=\"no\">X</b>", "f_com": "商业使用 <small>（选择后 +$220）</small>", "no": "否", "yes": "是", "com_hint": "<b>使用绑定模型制作周边、拍摄广告</b>属于商业使用。", "fs2": "插画信息", "f_scope": "范围", "sc_half": "胸像", "sc_halfplus": "半身", "sc_full": "全身", "g_half": "头部 + 上半身 <em>（不含手臂、手）</em>", "g_halfplus": "胸像 + 臀部、大腿 <em>（膝盖以上）</em> · +$70", "g_full": "从头到脚", "f_artist": "画师", "f_artist_ph": "名称或链接", "f_psd": "插画准备情况", "psd1": "已拆分PSD", "psd2": "尚未拆分", "psd3": "插画制作中", "f_type": "角色类型", "ty1": "美少女", "ty2": "美少年", "ty3": "其他", "fs3": "附加选项", "exA": "表情 · 无动画", "exA_s": "脸红、冷脸、爱心眼、闪亮眼", "exB": "表情 · 有动画", "exB_s": "流泪、转圈眼", "f_exdesc": "追加表情 <small>（自由填写）</small>", "f_exdesc_ph": "例：脸红 1、流泪 1", "pose_foot": "追加姿势 · 踮脚", "pose_close": "追加姿势 · 靠近镜头", "hair": "追加发型", "outfit": "追加服装", "outfit_s": "外套、上衣、下装等", "prop": "附加配件", "prop_s": "耳朵、尾巴、翅膀等", "f_part": "附加部件说明 <small>（换装、配件、换发型等）</small>", "fs4": "日程与公开", "f_due": "希望截止日期 <small>（未定可填\"未定\"或大致时间）</small>", "f_sns": "制作过程SNS公开", "sns_ok": "可以", "sns_no": "不可以", "f_priv": "完成后不公开期限", "pv_none": "不需要", "pv_in3": "3个月内（免费）", "pv_over3": "3个月以上（+$35）", "f_etc": "其他要求", "sum_t": "预估报价", "sum_l": "预估总价", "sum_small": "最终报价将在确认PSD后告知。此处内容仅供参考。", "btn_copy": "① 复制申请内容", "btn_form": "② 打开Google表单 ↗", "btn_reset": "全部清除", "sum_foot": "将复制的内容粘贴到Google表单，并附上PSD链接和联系方式。", "nv_top": "▲ 返回顶部", "nv1": "你好", "nv2": "展示", "nv3": "绑定细节", "nv4": "在售模型", "nv5": "制作流程", "nv6": "委托须知", "nv7": "申请 ↗", "nv_detail": "绑定细节", "nv_price": "价格", "nv_sale": "在售模型", "nv_proc": "制作流程", "nv_tos": "委托须知", "nv_apply": "立即委托", "hero_label": "LIVE2D RIGGER", "hero_sub": "动起来，依然保留插画原有的魅力。<br>用细致的绑定为角色注入生命。", "ev_badge": "海外委托开放纪念", "ev_s": "基础价格 + 所有选项 8折 <small>（商业使用附加费除外）</small>", "hero_btn1": "立即委托", "hero_btn2": "查看作品", "price_h": "价格", "price_desc": "所有价格以美元（USD）计，已包含开放纪念折扣。", "price_from": "折后价", "price_note": "※ 表情、iPhone追踪、VBridger、追加姿势等选项请在下方申请表中查看。", "ap_s1": "选择选项", "ap_s1d": "选择所需选项即可立即计算预估价格。", "ap_s2": "复制申请内容", "ap_s2d": "一键复制全部申请内容。", "ap_s3": "粘贴到Google表单", "ap_s3d": "打开Google表单粘贴，并填写PSD链接和联系方式。", "ko_note": "", "foot": "Live2D Rigging Commission", "disc": "开放纪念 8折", "d_0": "绑定细节", "d_2": "角度", "d_3": "任何角度都自然的面部", "d_4": "无论停在哪个角度，", "d_5": "都能保持原插画的品质，", "d_6": "每一处都细心制作。", "d_7": "整体", "d_8": "X轴", "d_9": "Y轴", "d_10": "瞳孔", "d_11": "展现角色个性的瞳孔演出", "d_12": "表情", "d_13": "凸显角色魅力的丰富表情", "d_14": "流泪", "d_15": "生气 + 冷脸", "d_16": "害羞 + 爱心眼", "d_17": "惊讶", "d_18": "多样的口型与表情（iPhone专用功能）", "d_19": "鼓脸", "d_20": "嘴巴蠕动", "d_21": "吐舌", "d_22": "嘟嘴", "d_23": "附加配件", "d_24": "提升角色细节的配件动态", "d_25": "眼镜", "d_26": "腰链", "d_27": "蝴蝶结", "d_29": "全身角度", "d_30": "契合角色的身体动态", "d_31": "Z轴", "d_32": "追加姿势", "d_33": "实现多样演出的选项", "d_34": "踮脚", "d_35": "靠近镜头", "nv_works": "作品", "nv_sd": "SD绑定", "works_h": "作品展示", "works_desc": "点击 ▶ 视频即可观看展示。点击「按此范围报价」会在申请表中自动选择该范围。", "w_v": "▶ 视频", "w_q": "按此范围报价", "w_go": "按此范围报价 →", "wk_sd": "Miove（SD版）", "wk_goat": "山羊少女（在售模型）", "t_face": "面部角度", "sd_h": "SD绑定", "sd_desc": "也可以绑定小巧可爱的SD（Q版）角色。<br>适合放在直播画面角落、等待画面或用于周边。", "sd_set_t": "与主模型同时制作，<b>套装优惠最高$145</b>", "sd_u1": "🎀 直播等待画面", "sd_u2": "🎀 副形象", "sd_u3": "🎀 周边 · 表情包", "sd_btn": "获取SD报价", "sc_sd": "SD", "g_sd": "小巧可爱的Q版角色", "pf1": "咨询 · 报价 → 付款（定金50%）", "pf2": "<b>通过视频确认2次</b> · 先脸部后身体", "pf3": "尾款50% → 交付模型 · 设置指导", "pf4": "<b>还会为完成的模型制作高质量展示视频</b>", "n7": "确认与联系方式", "scope_img": "📏 查看范围示意图", "scope_cap": "흉상 = 胸像 · 반신 = 半身 · 전신 = 全身", "sdadd": "同时制作SD", "sdadd_s": "与主模型一起申请可享套装优惠（胸像 −$35 · 半身 −$70 · 全身 −$145）", "iph_h": "iPhone追踪 <small>使用iPhone连接时可用的表情</small>", "iph": "鼓脸、吐舌", "vb_h": "VBridger <small>需购买VBridger（Steam）</small>", "vb_t": "嘴巴蠕动、嘟嘴等", "vb_s2": "自然的嘴部动作", "sep_h": "姿势 · 发型 · 服装 · 配件", "agree": "我已阅读并理解全部委托须知。", "modal_lb": "展示视频", "close": "关闭"}};
+var J={"ko": {"months": ["11월", "12월", "1월"], "full": "예약 마감", "left": "{n}자리 남음", "fcfs": "선착순", "base": "{s} 기본", "exA": "표정 (애니메이션 X)", "exB": "표정 (애니메이션 O)", "hair": "추가 헤어스타일", "outfit": "추가 의상", "prop": "추가 소품", "vb": "VBridger (자연스러운 입)", "foot": "추가 포즈 (발 콕콕)", "priv": "비공개 3개월 이상", "com": "상업적 이용", "sep": "파츠 분리 작업", "sepTxt": "별도 견적", "copied": "복사 완료! 아트머그 문의에 붙여넣어 주세요", "head": "[Miove 리깅 신청서]", "s1": "기본 정보", "s2": "일러스트 정보", "s3": "옵션", "s4": "일정 및 공개", "s5": "선택 옵션 & 예상 금액", "nick": "닉네임 / 활동명", "use": "사용 용도", "plat": "방송 플랫폼 및 링크", "comq": "상업적 이용 여부", "scope": "신청 범위", "artist": "일러스트레이터", "psd": "일러스트 준비 상태", "type": "캐릭터 타입", "exd": "추가 표정", "part": "추가 파츠", "due": "희망 마감일", "sns": "작업 과정 SNS 공개", "pv": "완성 후 비공개 기간", "etc": "기타 요청사항", "total": "예상 합계", "plusSep": " + 별도 견적", "final": "※ 최종 견적은 PSD 확인 후 확정됩니다.", "pvMap": {"none": "비공개 안 함", "in3": "3개월 이내", "over3": "3개월 이상"}, "disc": "해외 오픈 기념 20% 할인", "from": "{s} <b>{p}~</b>", "sdadd": "SD 동시 제작", "sdset": "SD 세트 할인 ({s} + SD)", "iph": "아이폰 트래킹 (볼빵빵, 혀 내밀기)", "agreeLine": "공지 사항 확인 : 예", "soon": "영상 준비 중"}, "en": {"months": ["Nov", "Dec", "Jan"], "full": "Fully booked", "left": "{n} slot(s) left", "fcfs": "First come, first served", "base": "{s} (base)", "exA": "Expression (no animation)", "exB": "Expression (animated)", "hair": "Extra hairstyle", "outfit": "Extra outfit", "prop": "Extra prop", "vb": "VBridger (natural mouth)", "foot": "Extra pose (Foot tap)", "priv": "Privacy over 3 months", "com": "Commercial use", "sep": "Part separation", "sepTxt": "Quoted separately", "copied": "Copied! Paste it into the form", "head": "[Miove Rigging Request]", "s1": "Basic info", "s2": "Illustration", "s3": "Add-ons", "s4": "Schedule & privacy", "s5": "Selected options & estimate", "nick": "Nickname / Activity name", "use": "Usage", "plat": "Platform & link", "comq": "Commercial use", "scope": "Scope", "artist": "Illustrator", "psd": "Illustration status", "type": "Character type", "exd": "Extra expressions", "part": "Extra parts", "due": "Preferred deadline", "sns": "Share WIP on SNS", "pv": "Privacy after completion", "etc": "Other requests", "total": "Estimated total", "plusSep": " + quoted separately", "final": "※ The final quote is confirmed after checking the PSD.", "pvMap": {"none": "No privacy", "in3": "Up to 3 months", "over3": "Over 3 months"}, "disc": "Opening sale 20% off", "from": "{s} from <b>{p}</b>", "sdadd": "SD model (with main model)", "sdset": "SD set discount ({s} + SD)", "iph": "iPhone tracking (puffed cheeks, tongue out)", "agreeLine": "Read the Terms of Service : Yes", "soon": "Video coming soon"}, "ja": {"months": ["11月", "12月", "1月"], "full": "受付終了", "left": "残り{n}枠", "fcfs": "先着順", "base": "{s}（基本）", "exA": "表情（アニメーションなし）", "exB": "表情（アニメーションあり）", "hair": "追加ヘアスタイル", "outfit": "追加衣装", "prop": "追加小物", "vb": "VBridger（自然な口の動き）", "foot": "追加ポーズ（足トントン）", "priv": "3ヶ月以上の非公開", "com": "商業利用", "sep": "パーツ分け作業", "sepTxt": "別途見積もり", "copied": "コピーしました！フォームに貼り付けてください", "head": "[Miove リギング申込書]", "s1": "基本情報", "s2": "イラスト情報", "s3": "オプション", "s4": "スケジュール・公開設定", "s5": "選択オプション・見積もり", "nick": "ニックネーム・活動名", "use": "用途", "plat": "配信プラットフォーム・リンク", "comq": "商業利用", "scope": "範囲", "artist": "イラストレーター", "psd": "イラストの準備状況", "type": "キャラクタータイプ", "exd": "追加表情", "part": "追加パーツ", "due": "希望納期", "sns": "制作過程のSNS公開", "pv": "完成後の非公開期間", "etc": "その他のご要望", "total": "見積もり合計", "plusSep": " + 別途見積もり", "final": "※ 最終的なお見積もりはPSD確認後に確定します。", "pvMap": {"none": "非公開にしない", "in3": "3ヶ月以内", "over3": "3ヶ月以上"}, "disc": "オープン記念 20%オフ", "from": "{s} <b>{p}〜</b>", "sdadd": "SD同時制作", "sdset": "SDセット割引（{s} + SD）", "iph": "iPhoneトラッキング（頬ふくらまし、舌出し）", "agreeLine": "利用規約の確認：はい", "soon": "動画準備中"}, "zh": {"months": ["11月", "12月", "1月"], "full": "已约满", "left": "剩余{n}个名额", "fcfs": "先到先得", "base": "{s}（基础）", "exA": "表情（无动画）", "exB": "表情（有动画）", "hair": "追加发型", "outfit": "追加服装", "prop": "附加配件", "vb": "VBridger（自然嘴部）", "foot": "追加姿势（踮脚）", "priv": "不公开3个月以上", "com": "商业使用", "sep": "拆分作业", "sepTxt": "另行报价", "copied": "已复制！请粘贴到表单中", "head": "[Miove 绑定申请表]", "s1": "基本信息", "s2": "插画信息", "s3": "附加选项", "s4": "日程与公开", "s5": "所选选项与预估价格", "nick": "昵称 / 活动名", "use": "用途", "plat": "直播平台及链接", "comq": "商业使用", "scope": "范围", "artist": "画师", "psd": "插画准备情况", "type": "角色类型", "exd": "追加表情", "part": "附加部件", "due": "希望截止日期", "sns": "制作过程SNS公开", "pv": "完成后不公开期限", "etc": "其他要求", "total": "预估总价", "plusSep": " + 另行报价", "final": "※ 最终报价将在确认PSD后确定。", "pvMap": {"none": "不需要", "in3": "3个月内", "over3": "3个月以上"}, "disc": "开放纪念 8折", "from": "{s} <b>{p}起</b>", "sdadd": "同时制作SD", "sdset": "SD套装优惠（{s} + SD）", "iph": "iPhone追踪（鼓脸、吐舌）", "agreeLine": "已阅读委托须知：是", "soon": "视频准备中"}};
   var root = document.getElementById('mv'); if(!root) return;
   var $ = function(s){return root.querySelector(s);};
   var $$ = function(s){return Array.prototype.slice.call(root.querySelectorAll(s));};
   var HTMLLANG={ko:'ko',en:'en',ja:'ja',zh:'zh-CN'};
   var L='ko', S=J.ko;
   var strip=function(h){return String(h).replace(/<[^>]+>/g,'').trim();};
-  var SC=function(){return {half:strip(I[L].sc_half),halfplus:strip(I[L].sc_halfplus),full:strip(I[L].sc_full)};};
+  var SC=function(k){return strip(I[L]['sc_'+k]);};
   var money=function(n){return (n<0?'−$':'$')+Math.abs(n).toLocaleString('en-US');};
+  var sale=function(p){return CONFIG.discOn?Math.round(p*(1-CONFIG.disc)):p;};
 
-  /* schedule */
+  /* 예약 현황 */
   function sched(){
-    var M=S.months, box=$('.mv-js-months'), n=M.length;
     $('.mv-js-year').textContent = CONFIG.year;
-    box.style.gridTemplateColumns='repeat('+n+',1fr)';
-    var h=M.map(function(m){return '<div class="mh">'+m+'</div>';}).join('');
-    for(var i=1;i<n;i++) h+='<i class="dv" style="left:calc('+(100*i/n)+'% - 1px)"></i>';
-    h+='<div class="bar" style="grid-column:1/'+(n+1)+';grid-template-columns:repeat('+(n*2)+',1fr)">';
-    h+=CONFIG.segs.map(function(x,idx){
+    $('.mv-js-months').innerHTML=CONFIG.segs.map(function(x,idx){
       var slots=x.slots||0, booked=Math.min(x.booked||0,slots), full=slots>0&&booked>=slots;
-      var cls=full?'done':'avail';
+      var cls=full?'done':(x.hot?'open':'avail');
       var dots=''; for(var k=0;k<slots;k++) dots+='<i'+(k<booked?' class="on"':'')+'></i>';
       var title=full?S.full:S.left.replace('{n}',slots-booked);
-      var when=(!full&&x.fcfs)?'<span class="when"><em>'+S.fcfs+'</em></span>':'';
-      return '<div class="seg '+cls+'" style="grid-column:span '+(x.span||1)+'"><span class="pd">'+(M[idx]||'')+'</span><b>'+title+'</b>'+(slots?'<div class="slots">'+dots+'</div>':'')+when+'</div>';
-    }).join('')+'</div>';
-    box.innerHTML=h;
+      return '<div class="mc '+cls+'"><div class="m">'+(S.months[idx]||'')+'</div><b>'+title+'</b>'+(slots?'<div class="dots">'+dots+'</div>':'')+'</div>';
+    }).join('');
   }
 
-  /* prices */
+  /* 화면에 보이는 가격들 (CONFIG 숫자로 자동 표시) */
   function prices(){
-    var ids={half:0,halfplus:1,full:2}, cards=$$('.hp-pc');
-    Object.keys(ids).forEach(function(k){
-      var c=cards[ids[k]]; if(!c) return; var p=CONFIG.base[k];
+    $$('.hp-pc').forEach(function(c){
+      var p=CONFIG.base[c.getAttribute('data-k')]; if(p==null) return;
       c.querySelector('.was').textContent=CONFIG.discOn?money(p):'';
-      var now=c.querySelector('.now'); now.textContent=money(CONFIG.discOn?Math.round(p*(1-CONFIG.disc)):p);
+      var now=c.querySelector('.now'); now.textContent=money(sale(p));
       now.setAttribute('data-l',CONFIG.discOn?strip(I[L].price_from):'');
     });
-    var ev=$('.hp-ev'); if(ev) ev.style.display=CONFIG.discOn?'':'none';
+    var ev=document.querySelector('.hp-ev'); if(ev) ev.style.display=CONFIG.discOn?'':'none';
+    $$('.mv-wk').forEach(function(card){
+      var k=card.getAttribute('data-scope'), p=S.from.replace('{s}',SC(k)).replace('{p}',money(sale(CONFIG.base[k])));
+      card.querySelector('.pr').innerHTML=p; card.setAttribute('data-price',p);
+    });
+    var sdp=document.getElementById('hp-sdp');
+    if(sdp) sdp.innerHTML='SD '+(CONFIG.discOn?'<s>'+money(CONFIG.base.sd)+'</s> ':'')+money(sale(CONFIG.base.sd))+'~';
+    $$('[data-p]').forEach(function(e){
+      var path=e.getAttribute('data-p').split('.'), v=CONFIG; path.forEach(function(k){v=v[k];});
+      e.textContent='+'+money(v);
+    });
   }
+
   /* 이미지 자리 비어있을 때 표시 */
-  [].slice.call([]).forEach(function(img){ var f=function(){img.style.display='none';}; if(img.complete && img.naturalWidth===0) f(); else img.addEventListener('error',f); });
-  $$('.mv-gif img, .mv-avatar img, .mv-item .ph img').forEach(function(img){
+  $$('.mv-gif img, .mv-avatar img, .mv-item .ph img, .mv-wk .ph img').forEach(function(img){
     var fail=function(){img.style.display='none'; var p=img.parentNode; if(p.classList.contains('mv-gif')||p.classList.contains('ph')) p.classList.add('empty');};
-    if(!img.getAttribute('src') || img.getAttribute('src').charAt(0)==='[') fail(); else img.addEventListener('error', fail);
+    if(!img.getAttribute('src')) fail(); else img.addEventListener('error', fail);
   });
 
-  /* 리깅 디테일 가로 슬라이더 */
-  $$('.mv-slider').forEach(function(sl){
-    var tr=sl.querySelector('.mv-track'), bar=sl.querySelector('.mv-bar i'), ctrl=sl.querySelector('.mv-ctrl');
-    var step=function(){var c=tr.firstElementChild; return c ? c.getBoundingClientRect().width+14 : 200;};
-    var upd=function(){
-      var max=tr.scrollWidth-tr.clientWidth;
-      ctrl.classList.toggle('off', max<=2);
-      var w=tr.clientWidth/tr.scrollWidth*100, x=max>0 ? tr.scrollLeft/max*(100-w) : 0;
-      bar.style.width=w+'%'; bar.style.left=x+'%';
-    };
-    sl.querySelector('.pv').addEventListener('click',function(){tr.scrollBy({left:-step(),behavior:'smooth'});});
-    sl.querySelector('.nx').addEventListener('click',function(){tr.scrollBy({left:step(),behavior:'smooth'});});
-    tr.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); upd();
-    Array.prototype.forEach.call(tr.querySelectorAll('img'),function(i){i.addEventListener('load',upd);});
-  });
-
-  /* 쇼케이스 영상 슬라이더 */
-  $$('.mv-vslider').forEach(function(vs){
-    var tr=vs.querySelector('.mv-vtrack'), slides=Array.prototype.slice.call(tr.querySelectorAll('.mv-vslide'));
-    var dots=vs.querySelector('.mv-dots'), ctrl=vs.querySelector('.mv-vctrl'), cur=0, t=null;
-    if(slides.length<2){ctrl.classList.add('off'); return;}
-    slides.forEach(function(_,i){var b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label','Video '+(i+1)); b.addEventListener('click',function(){go(i);}); dots.appendChild(b);});
-    var pause=function(i){var f=slides[i].querySelector('iframe'); if(f&&f.contentWindow) try{f.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}','*');}catch(e){}};
-    var mark=function(i){ if(i!==cur){pause(cur); cur=i;} Array.prototype.forEach.call(dots.children,function(d,k){d.classList.toggle('on',k===cur);}); };
-    var go=function(i){i=(i+slides.length)%slides.length; tr.scrollTo({left:i*tr.clientWidth,behavior:'smooth'}); mark(i);};
-    vs.querySelector('.pv').addEventListener('click',function(){go(cur-1);});
-    vs.querySelector('.nx').addEventListener('click',function(){go(cur+1);});
-    tr.addEventListener('scroll',function(){clearTimeout(t); t=setTimeout(function(){mark(Math.round(tr.scrollLeft/tr.clientWidth));},120);},{passive:true});
-    mark(0);
-  });
-
-  /* ===== calculator ===== */
-  var count = {exA:0,exB:0,exC:0,hair:0,outfit:0,prop:0};
+  /* ===== 계산기 ===== */
+  var count = {exA:0,exB:0,hair:0,outfit:0,prop:0};
   var radio = function(n){var r=root.querySelector('input[name="'+n+'"]:checked'); return r?r.value:'';};
   var radioText = function(n){var r=root.querySelector('input[name="'+n+'"]:checked'); return r?r.parentNode.textContent.trim():'';};
-  var vb=$('#mv-vb'), tg=$('#mv-tongue');
+  var vb=$('#mv-vb'), iph=$('#mv-iph'), sda=$('#mv-sdadd');
 
   function calc(){
-    var lines=[], total=0, sc=SC();
+    var lines=[], total=0;
     var k=radio('mv-scope')||'half', bp=CONFIG.base[k];
-    if(k==='halfplus'){ lines.push({t:S.base.replace('{s}',sc.half), v:CONFIG.base.half}); lines.push({t:S.lower, v:bp-CONFIG.base.half}); }
-    else lines.push({t:S.base.replace('{s}',sc[k]), v:bp});
-    total+=bp;
+    lines.push({t:S.base.replace('{s}',SC(k)), v:bp}); total+=bp;
+    if(k!=='sd' && sda.checked){
+      lines.push({t:S.sdadd, v:CONFIG.sdAdd}); total+=CONFIG.sdAdd;
+      var sdd=CONFIG.sdSet[k]||0; if(sdd){ lines.push({t:S.sdset.replace('{s}',SC(k)), v:-sdd, minus:true}); total-=sdd; }
+    }
     Object.keys(CONFIG.opt).forEach(function(o){
       if(count[o]>0){ lines.push({t:S[o]+' ×'+count[o], v:CONFIG.opt[o]*count[o]}); total+=CONFIG.opt[o]*count[o]; }
     });
+    if(iph.checked){lines.push({t:S.iph, v:CONFIG.iphone}); total+=CONFIG.iphone;}
     if(vb.checked){lines.push({t:S.vb, v:CONFIG.vbridger}); total+=CONFIG.vbridger;}
-    if(tg.checked){lines.push({t:S.tongue, v:CONFIG.tongue}); total+=CONFIG.tongue;}
     $$('.mv-pose').forEach(function(c){ if(c.checked){ lines.push({t:S[c.value], v:CONFIG.pose[c.value]}); total+=CONFIG.pose[c.value]; } });
-    var pv=radio('mv-priv');
-    if(pv==='over3'||pv==='perm'){lines.push({t:S.priv, v:CONFIG.privacyOver3}); total+=CONFIG.privacyOver3;}
+    if(radio('mv-priv')==='over3'){lines.push({t:S.priv, v:CONFIG.privacyOver3}); total+=CONFIG.privacyOver3;}
     if(CONFIG.discOn){ var d=Math.round(total*CONFIG.disc); lines.push({t:S.disc, v:-d, minus:true}); total-=d; }
     if(radio('mv-com')==='yes'){ lines.push({t:S.com, v:CONFIG.commercial}); total+=CONFIG.commercial; }
     if(radio('mv-psd')==='notsep') lines.push({t:S.sep, ask:true, txt:S.sepTxt});
@@ -957,6 +1151,7 @@ var J={"ko": {"months": ["10월", "11월", "12월"], "full": "예약 마감", "l
   }
   var hasSep=function(r){return r.lines.some(function(l){return l.ask;});};
   function render(){
+    var sb=$('#mv-sdaddbox'); if(sb) sb.style.display=(radio('mv-scope')==='sd')?'none':'';
     var r=calc();
     $('#mv-total').textContent = money(r.total)+(hasSep(r)?' +α':'');
     $('#mv-lines').innerHTML = r.lines.map(function(l){
@@ -970,8 +1165,6 @@ var J={"ko": {"months": ["10월", "11월", "12월"], "full": "예약 마감", "l
       count[id]=Math.max(0,Math.min(20,count[id]+parseInt(d,10))); out.textContent=count[id]; render();
     });
   });
-  tg.addEventListener('change',function(){if(tg.checked) vb.checked=true; render();});
-  vb.addEventListener('change',function(){if(!vb.checked) tg.checked=false; render();});
   root.addEventListener('change',render);
 
   function val(id){var el=$('#'+id); return el?el.value.trim():'';}
@@ -984,7 +1177,7 @@ var J={"ko": {"months": ["10월", "11월", "12월"], "full": "예약 마감", "l
     T.push(S.plat+' : '+val('mv-plat'));
     T.push(S.comq+' : '+radioText('mv-com'),'');
     T.push('■ '+S.s2);
-    T.push(S.scope+' : '+radioText('mv-scope'));
+    T.push(S.scope+' : '+radioText('mv-scope')+((radio('mv-scope')!=='sd'&&sda.checked)?' + SD':''));
     T.push(S.artist+' : '+val('mv-artist'));
     T.push(S.psd+' : '+radioText('mv-psd'));
     T.push(S.type+' : '+radioText('mv-type'),'');
@@ -1000,6 +1193,7 @@ var J={"ko": {"months": ["10월", "11월", "12월"], "full": "예약 마감", "l
     r.lines.forEach(function(l){T.push('- '+l.t+' : '+(l.ask?l.txt:money(l.v)));});
     T.push(S.total+' : '+money(r.total)+(hasSep(r)?S.plusSep:''));
     T.push(S.final);
+    T.push(S.agreeLine);
     return T.join('\n');
   }
   function fallbackCopy(t){
@@ -1011,8 +1205,11 @@ var J={"ko": {"months": ["10월", "11월", "12월"], "full": "예약 마감", "l
     var ok=false; try{ok=document.execCommand('copy');}catch(e){}
     sel.removeAllRanges(); document.body.removeChild(box); return ok;
   }
-  var btn=$('#mv-copy'), btnT=null;
+  var btn=$('#mv-copy'), btnT=null, agree=$('#mv-agree');
+  var lockUpd=function(){ var ok=agree.checked; btn.classList.toggle('lock',!ok); btn.setAttribute('aria-disabled',ok?'false':'true'); };
+  agree.addEventListener('change',lockUpd); lockUpd();
   btn.addEventListener('click',function(){
+    if(!agree.checked){ var lb=agree.parentNode; lb.classList.remove('mv-flash'); void lb.offsetWidth; lb.classList.add('mv-flash'); return; }
     var t=buildText();
     var done=function(){btn.innerHTML=S.copied; btn.classList.add('ok'); clearTimeout(btnT); btnT=setTimeout(function(){btn.innerHTML=I[L].btn_copy; btn.classList.remove('ok');},2500);};
     if(navigator.clipboard && window.isSecureContext){navigator.clipboard.writeText(t).then(done,function(){if(fallbackCopy(t)) done();});}
@@ -1027,13 +1224,69 @@ var J={"ko": {"months": ["10월", "11월", "12월"], "full": "예약 마감", "l
     $$('.mv-in').forEach(function(i){i.value='';});
     $$('input[type=radio]').forEach(function(i){i.checked=false;});
     ['mv-com','mv-scope','mv-priv'].forEach(function(n){var f=root.querySelector('input[name="'+n+'"]'); if(f) f.checked=true;});
-    vb.checked=false; tg.checked=false; $$('.mv-pose').forEach(function(c){c.checked=false;});
+    vb.checked=false; iph.checked=false; sda.checked=false; agree.checked=false; lockUpd();
+    $$('.mv-pose').forEach(function(c){c.checked=false;});
     Object.keys(count).forEach(function(k){count[k]=0;});
     $$('.mv-stp output').forEach(function(o){o.textContent='0';});
     render();
   });
 
-  /* ===== language switch ===== */
+  /* 페이지 안 이동 (견적 내보기 · 이 범위로 견적) */
+  var goTo=function(id){ var el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); };
+  var pickScope=function(sc){
+    var r=root.querySelector('input[name="mv-scope"][value="'+sc+'"]'); if(!r) return;
+    r.checked=true; render();
+    var f=$('#mv-scopefield'); if(f){ f.classList.remove('mv-flash'); void f.offsetWidth; f.classList.add('mv-flash'); }
+  };
+  root.addEventListener('click',function(e){
+    var g=e.target.closest('[data-goto]'); if(!g) return;
+    var sc=g.getAttribute('data-scope'); if(sc) pickScope(sc);
+    goTo(g.getAttribute('data-goto'));
+  });
+
+  /* 리깅 디테일 탭 */
+  var tabBox=$('.mv-tabs');
+  if(tabBox) tabBox.addEventListener('click',function(e){
+    var b=e.target.closest('button[data-tab]'); if(!b) return;
+    var k=b.getAttribute('data-tab');
+    Array.prototype.forEach.call(tabBox.children,function(x){x.classList.toggle('on',x===b);});
+    $$('.mv-tpanel').forEach(function(p){p.classList.toggle('on',p.getAttribute('data-tab')===k);});
+  });
+  /* SD 표정 / 각도 탭 */
+  var sdTabs=$('.mv-sdtabs');
+  if(sdTabs) sdTabs.addEventListener('click',function(e){
+    var b=e.target.closest('button[data-sd]'); if(!b) return;
+    var k=b.getAttribute('data-sd');
+    Array.prototype.forEach.call(sdTabs.children,function(x){x.classList.toggle('on',x===b);});
+    $$('.mv-sdpanel').forEach(function(p){p.classList.toggle('on',p.getAttribute('data-sd')===k);});
+  });
+
+  /* 작업한 모델: 영상 창 */
+  var modal=document.getElementById('mv-modal'), curScope='';
+  var vd=modal.querySelector('.vd');
+  var openV=function(card){
+    var id=card.getAttribute('data-video'); if(!id) return;
+    curScope=card.getAttribute('data-scope')||'';
+    modal.querySelector('.tg').textContent=SC(curScope);
+    modal.querySelector('.nm').textContent=card.querySelector('.nm').textContent;
+    modal.querySelector('.pr').innerHTML=card.getAttribute('data-price')||'';
+    vd.innerHTML='<iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0" title="Showcase" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+    modal.classList.add('on'); modal.setAttribute('aria-hidden','false');
+  };
+  var closeV=function(){ modal.classList.remove('on'); modal.setAttribute('aria-hidden','true'); vd.innerHTML=''; };
+  modal.addEventListener('click',function(e){
+    if(e.target===modal || e.target.closest('.x')) closeV();
+    else if(e.target.closest('.go')){ var sc=curScope; closeV(); if(sc) pickScope(sc); goTo('mv-apply'); }
+  });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && modal.classList.contains('on')) closeV(); });
+  $$('.mv-wk').forEach(function(card){
+    var v=card.querySelector('.v'), q=card.querySelector('.q');
+    if(!card.getAttribute('data-video')){ v.disabled=true; v.removeAttribute('data-i'); }
+    v.addEventListener('click',function(){ openV(card); });
+    q.addEventListener('click',function(){ pickScope(card.getAttribute('data-scope')); goTo('mv-apply'); });
+  });
+
+  /* ===== 언어 전환 ===== */
   function applyLang(l){
     if(!I[l]) l='ko'; L=l; S=J[l];
     document.documentElement.lang=HTMLLANG[l];
@@ -1041,7 +1294,10 @@ var J={"ko": {"months": ["10월", "11월", "12월"], "full": "예약 마감", "l
     Array.prototype.forEach.call(document.querySelectorAll('[data-i]'),function(e){var v=I[l][e.getAttribute('data-i')]; if(v!=null) e.innerHTML=v;});
     Array.prototype.forEach.call(document.querySelectorAll('[data-ip]'),function(e){var v=I[l][e.getAttribute('data-ip')]; if(v!=null) e.setAttribute('placeholder',strip(v));});
     Array.prototype.forEach.call(document.querySelectorAll('.hp-lang button'),function(b){b.classList.toggle('on',b.getAttribute('data-lang')===l);});
-    btn.innerHTML=I[l].btn_copy; btn.classList.remove('ok');
+    $$('.mv-wk .v[disabled]').forEach(function(v){v.textContent=S.soon;});
+    modal.querySelector('.dlg').setAttribute('aria-label',strip(I[l].modal_lb));
+    modal.querySelector('.x').setAttribute('aria-label',strip(I[l].close));
+    btn.classList.remove('ok');
     sched(); prices(); render(); setForm();
     try{localStorage.setItem('miove-lang',l);}catch(e){}
     try{var u=new URL(location.href); if(l==='ko') u.searchParams.delete('lang'); else u.searchParams.set('lang',l); history.replaceState(null,'',u.toString());}catch(e){}
@@ -1052,11 +1308,23 @@ var J={"ko": {"months": ["10월", "11월", "12월"], "full": "예약 마감", "l
   applyLang(start);
 
   /* 공지: 한 번에 하나만 펼치기 */
-  $$('details[name="mv-notice"]').forEach(function(d,_,all){
-    d.addEventListener('toggle',function(){ if(d.open) $$('details[name="mv-notice"]').forEach(function(o){ if(o!==d) o.open=false; }); });
-  });
+  root.addEventListener('toggle',function(e){
+    var d=e.target; if(!d.matches || !d.matches('details[name="mv-notice"]') || !d.open) return;
+    $$('details[name="mv-notice"]').forEach(function(o){ if(o!==d) o.open=false; });
+  },true);
 
-  /* 물망초 커서 (아트머그 안에서도 보이도록 직접 그리기) */
+  /* 예상 견적 박스: 스크롤을 따라 신청 양식 안에서 같이 내려오기 */
+  var sum=$('.mv-sum'), form=$('.mv-form');
+  var followSum=function(){
+    if(window.matchMedia('(max-width:760px)').matches){ sum.style.transform=''; return; }
+    var head=document.querySelector('.hp-top'), hh=head?head.offsetHeight:0;
+    var fTop=form.getBoundingClientRect().top+window.scrollY;
+    var off=Math.max(0,Math.min(window.scrollY+hh+16-fTop, form.offsetHeight-sum.offsetHeight));
+    sum.style.transform='translateY('+Math.round(off)+'px)';
+  };
+  window.addEventListener('scroll',followSum,{passive:true}); window.addEventListener('resize',followSum); followSum();
+
+  /* 물망초 커서 */
   (function(){
     if(!window.matchMedia || !window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
     document.documentElement.classList.add('mv-fx');
@@ -1071,7 +1339,6 @@ var J={"ko": {"months": ["10월", "11월", "12월"], "full": "예약 마감", "l
       c.classList.toggle('link', !!(t && t.closest && t.closest('a,button,label,summary,.mv-pill,.mv-stp button')));
       if(!raf) raf=requestAnimationFrame(draw);
     },{passive:true});
-    document.addEventListener('pointerleave',function(){ c.classList.remove('on'); });
     window.addEventListener('blur',function(){ c.classList.remove('on'); });
     document.documentElement.addEventListener('mouseleave',function(){ c.classList.remove('on'); });
   })();
@@ -1091,72 +1358,7 @@ var J={"ko": {"months": ["10월", "11월", "12월"], "full": "예약 마감", "l
       setTimeout(function(){ if(b.parentNode) b.parentNode.removeChild(b); },900);
     },{passive:true});
   })();
-
-  /* 책갈피 네비 */
-  var nav=document.getElementById('mv-nav');
-  if(nav){
-    if(nav.parentNode!==document.body) document.body.appendChild(nav);
-    var framed=false; try{ framed = window.self!==window.top; }catch(e){ framed=true; }
-    if(framed) nav.classList.add('framed');
-    var links=Array.prototype.slice.call(nav.querySelectorAll('a[data-go]'));
-    var secs=links.map(function(a){return document.getElementById(a.getAttribute('data-go'));}).filter(Boolean);
-    var vis={top:0,h:window.innerHeight};
-    var compact=function(){return window.matchMedia('(max-width:1170px)').matches;};
-    /* 예상 견적 박스: 보이는 화면을 따라 신청 양식 안에서 같이 내려오기 */
-    var sum=root.querySelector('.mv-sum'), form=root.querySelector('.mv-form');
-    var followSum=function(){
-      if(!sum||!form) return;
-      if(window.matchMedia('(max-width:760px)').matches){ sum.style.transform=''; return; }
-      var fTop=form.getBoundingClientRect().top+window.scrollY;
-      var maxOff=form.offsetHeight-sum.offsetHeight;
-      var off=Math.max(0,Math.min(vis.top+20-fTop,maxOff));
-      sum.style.transform='translateY('+Math.round(off)+'px)';
-    };
-    var layout=function(){
-      var line=vis.top+vis.h*0.45, cur=null;
-      secs.forEach(function(sc){ if(sc.getBoundingClientRect().top+window.scrollY<=line) cur=sc.id; });
-      links.forEach(function(a){ a.classList.toggle('on', a.getAttribute('data-go')===cur && !a.classList.contains('cta')); });
-      if(framed){
-        var nh=nav.offsetHeight;
-        var pos = compact() ? vis.top+vis.h-nh-18 : vis.top+(vis.h-nh)/2;
-        var endEl=document.getElementById('mv-apply'), end=endEl ? endEl.getBoundingClientRect().bottom+window.scrollY : document.documentElement.scrollHeight;
-        var maxY=end-nh;
-        nav.style.top=Math.max(10,Math.min(pos,maxY))+'px';
-      }
-      followSum();
-    };
-    if(framed && 'IntersectionObserver' in window){
-      // 아트머그 화면에서 상세페이지의 어느 부분이 보이는지 감지 (40px 띠를 깔아서 보이는 띠만 추적)
-      var probe=document.createElement('div');
-      probe.style.cssText='position:absolute;left:0;top:0;width:1px;overflow:hidden;pointer-events:none;opacity:0;';
-      document.body.appendChild(probe);
-      var seen={}, th=[]; for(var i=0;i<=10;i++) th.push(i/10);
-      var io=new IntersectionObserver(function(es){
-        es.forEach(function(en){ var k=en.target.getAttribute('data-k'); if(en.isIntersecting && en.intersectionRect.height>0) seen[k]=en.intersectionRect; else delete seen[k]; });
-        var t=Infinity, bt=-Infinity;
-        for(var k in seen){ t=Math.min(t,seen[k].top); bt=Math.max(bt,seen[k].bottom); }
-        if(bt>t){ vis={top:t+window.scrollY, h:bt-t}; layout(); }
-      },{threshold:th});
-      var built=0;
-      var build=function(){
-        var H=root.offsetHeight, n=Math.ceil(H/40);
-        if(n===built) return; built=n; io.disconnect(); seen={}; probe.innerHTML=''; probe.style.height=H+'px';
-        for(var i=0;i<n;i++){ var d=document.createElement('div'); d.setAttribute('data-k',i); d.style.cssText='position:absolute;left:0;width:1px;height:40px;top:'+(i*40)+'px;'; probe.appendChild(d); io.observe(d); }
-      };
-      build();
-      if('ResizeObserver' in window){ var rt; new ResizeObserver(function(){ clearTimeout(rt); rt=setTimeout(build,150); }).observe(root); }
-    } else {
-      var upd=function(){ vis={top:window.scrollY,h:window.innerHeight}; layout(); };
-      window.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); upd();
-    }
-    var go=function(id){ var el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); nav.classList.remove('open'); setTimeout(layout,50); };
-    nav.addEventListener('click',function(e){
-      var t=e.target.closest('[data-go]'); if(t){ e.preventDefault(); go(t.getAttribute('data-go')); }
-      if(e.target.closest('.tg')){ nav.classList.toggle('open'); layout(); }
-    });
-  }
 })();
 </script>
-
 </body>
 </html>
