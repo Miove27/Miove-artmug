@@ -424,6 +424,22 @@
 #mv .mv-mcards .open .dots i.on{background:#fff;}
 #mv .mv-duo #mv-sched .mv-legend{display:none;}
 @media (max-width:760px){ #mv .mv-mcards{gap:8px;} #mv .mv-mcards b{font-size:14px;} }
+
+/* 신청 양식 보강 */
+#mv .mv-scope-img{margin-top:10px;border:1.5px dashed var(--line);border-radius:14px;background:#fff;overflow:hidden;}
+#mv .mv-scope-img summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:13.5px;font-weight:800;color:var(--sky-d);}
+#mv .mv-scope-img summary::-webkit-details-marker{display:none;}
+#mv .mv-scope-img summary .ic{margin-left:auto;width:22px;height:22px;border-radius:50%;background:var(--sky-ll);position:relative;flex:none;}
+#mv .mv-scope-img summary .ic::before,#mv .mv-scope-img summary .ic::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:2px;background:var(--sky-d);transform:translate(-50%,-50%);}
+#mv .mv-scope-img summary .ic::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .2s;}
+#mv .mv-scope-img[open] summary .ic::after{transform:translate(-50%,-50%) rotate(0);}
+#mv .mv-scope-img .bd{padding:0 14px 14px;}
+#mv .mv-scope-img img{display:block;width:100%;max-width:300px;margin:0 auto;border-radius:10px;}
+#mv .mv-artistbox{margin:8px 0 4px;}
+#mv .mv-sublab{margin:14px 0 8px;padding-top:12px;border-top:1.5px dashed var(--line);font-size:13.5px;font-weight:800;color:var(--ink);}
+#mv .mv-sublab small,#mv .mv-optlab small{font-weight:500;color:var(--mute);margin-left:6px;font-size:12px;}
+#mv .mv-optlab.sep{margin-top:22px;padding-top:16px;border-top:1.5px dashed var(--line);}
+#mv .mv-optlab{margin:14px 0 6px 2px;font-size:13.5px;font-weight:800;color:var(--sky-d);}
 /* ===== 2026-11 개편 ===== */
 #mv .mv-hdf{font-family:'MvMeetme','Pretendard',sans-serif;font-weight:400;}
 /* ① 첫 화면 */
@@ -585,15 +601,15 @@
     <h2 class="mv-h">작업한 모델</h2>
     <p class="mv-desc">▶ 영상을 누르면 쇼케이스가 열리고, "이 범위로 견적"을 누르면 신청 양식에 범위가 자동으로 선택돼요.</p>
     <div class="mv-works">
-      <div class="mv-wk new" data-name="SD 미오브" data-scope="sd" data-tag="SD" data-price="SD <b>30만원~</b>" data-video="1LakRllg0bE">
+      <div class="mv-wk new" data-name="Miove(SD.ver)" data-scope="sd" data-tag="SD" data-price="SD <b>30만원~</b>" data-video="1LakRllg0bE">
         <div class="ph"><img src="work_sd.gif" alt="SD 미오브"><span class="tg">SD</span><span class="nw">NEW</span></div>
         <div class="b"><div class="nm">Miove(SD.ver)</div><div class="pr">SD <b>30만원~</b></div><div class="ac"><button type="button" class="v">▶ 영상</button><button type="button" class="q">이 범위로 견적</button></div></div>
       </div>
-      <div class="mv-wk" data-name="리나레이나" data-scope="halfplus" data-tag="반신" data-price="반신 <b>42만원~</b>" data-video="itdtQLT0Pis">
+      <div class="mv-wk" data-name="리나 레이나 님" data-scope="halfplus" data-tag="반신" data-price="반신 <b>42만원~</b>" data-video="itdtQLT0Pis">
         <div class="ph"><img src="work_lina.gif" alt="리나레이나"><span class="tg">반신</span></div>
         <div class="b"><div class="nm">리나 레이나 님</div><div class="pr">반신 <b>42만원~</b></div><div class="ac"><button type="button" class="v">▶ 영상</button><button type="button" class="q">이 범위로 견적</button></div></div>
       </div>
-      <div class="mv-wk" data-name="염소 소녀" data-scope="full" data-tag="전신" data-price="전신 <b>64만원~</b>" data-video="zM_-LtGsfJ8">
+      <div class="mv-wk" data-name="염소 소녀 (판매 모델)" data-scope="full" data-tag="전신" data-price="전신 <b>64만원~</b>" data-video="zM_-LtGsfJ8">
         <div class="ph"><img src="work_goat.gif" alt="염소 소녀"><span class="tg">전신</span></div>
         <div class="b"><div class="nm">염소 소녀 (판매 모델)</div><div class="pr">전신 <b>64만원~</b></div><div class="ac"><button type="button" class="v">▶ 영상</button><button type="button" class="q">이 범위로 견적</button></div></div>
       </div>
@@ -834,7 +850,7 @@
         
         <!-- 이벤트 -->
         <div class="mv-fsec">■ 진행 중인 이벤트 <small style="font-weight:500;color:var(--mute);font-family:Pretendard,sans-serif;font-size:12.5px">해당되면 체크해 주세요</small></div>
-        <label class="mv-opt mv-evopt" id="mv-evbox"><input type="checkbox" class="mv-chk" id="mv-ev"><div class="tx">12월 10% 할인 이벤트<small>12월 작업 · 선착순 2분</small></div><span class="pr">기본 가격 −10%</span></label>
+        <label class="mv-opt mv-evopt" id="mv-evbox"><input type="checkbox" class="mv-chk" id="mv-ev"><div class="tx">12월 10% 할인 이벤트<small>12월 작업 · 선착순 2분</small></div><span class="pr">전체 금액 −10%</span></label>
         <label class="mv-opt mv-evopt" id="mv-rvbox"><input type="checkbox" class="mv-chk" id="mv-rv"><div class="tx">리뷰 이벤트<small>완성 후 아트머그에 후기를 남겨주시면 할인해 드려요</small></div><span class="pr">−30,000원</span></label>
 
         <!-- 기본 정보 -->
@@ -868,22 +884,22 @@
             <label class="mv-pill"><input type="radio" name="mv-scope" value="full"><span>전신</span></label>
             <label class="mv-pill"><input type="radio" name="mv-scope" value="sd"><span>SD</span></label>
           </div>
-          <div class="mv-scope-guide">
-            <div><b>흉상</b><span>두상 + 상체 <em>(팔·손 제외)</em></span></div>
-            <div><b>반신</b><span>흉상 + 엉덩이·허벅지 <em>(무릎 위까지)</em> · +100,000원</span></div>
-            <div><b>전신</b><span>머리부터 발끝까지</span></div>
-            <div><b>SD</b><span>SD 캐릭터 · 300,000원</span></div>
-          </div></div>
+          <details class="mv-scope-img"><summary>📏 범위 기준 그림으로 보기<span class="ic"></span></summary>
+            <div class="bd"><img src="scope_guide.png" alt="흉상 · 반신 · 전신 범위 기준" loading="lazy"></div>
+          </details></div>
         <div class="mv-field"><label class="lb">일러스트레이터</label>
           <div class="mv-pills">
             <label class="mv-pill"><input type="radio" name="mv-collab" value="none" checked><span>일반 작가님</span></label>
-            <label class="mv-pill"><input type="radio" name="mv-collab" value="chavi"><span>Chavi 작가님 (협업)</span></label>
-            <label class="mv-pill"><input type="radio" name="mv-collab" value="hareha"><span>HAREHA 작가님 (협업)</span></label>
-            <label class="mv-pill"><input type="radio" name="mv-collab" value="bada"><span>BADA 작가님 (협업)</span></label>
-            <label class="mv-pill"><input type="radio" name="mv-collab" value="hnew"><span>흐뉴 작가님 (협업)</span></label>
-            <label class="mv-pill"><input type="radio" name="mv-collab" value="yuse"><span>유세 작가님 (협업)</span></label>
+          </div>
+          <div class="mv-artistbox" id="mv-artistbox"><input class="mv-in" id="mv-artist" placeholder="작가님 닉네임 또는 링크를 적어주세요" data-k="일러스트레이터 닉네임"></div>
+          <div class="mv-sublab">협업 작가님 <small>협업 할인 · 무료 표정 혜택이 자동으로 적용돼요</small></div>
+          <div class="mv-pills">
+            <label class="mv-pill"><input type="radio" name="mv-collab" value="chavi"><span>Chavi 작가님</span></label>
+            <label class="mv-pill"><input type="radio" name="mv-collab" value="hareha"><span>HAREHA 작가님</span></label>
+            <label class="mv-pill"><input type="radio" name="mv-collab" value="bada"><span>BADA 작가님</span></label>
+            <label class="mv-pill"><input type="radio" name="mv-collab" value="hnew"><span>흐뉴 작가님</span></label>
+            <label class="mv-pill"><input type="radio" name="mv-collab" value="yuse"><span>유세 작가님</span></label>
           </div></div>
-        <div class="mv-field"><label class="lb" for="mv-artist">일러스트레이터 닉네임</label><input class="mv-in" id="mv-artist" placeholder="작가명 또는 링크" data-k="일러스트레이터 닉네임"></div>
         <div class="mv-field"><label class="lb">일러스트 준비 상태</label>
           <div class="mv-pills">
             <label class="mv-pill"><input type="radio" name="mv-psd" value="파츠 분리 PSD 완료"><span>파츠 분리 PSD 완료</span></label>
@@ -900,14 +916,16 @@
         <!-- 옵션 -->
         <div class="mv-fsec">■ 추가 옵션</div>
         <label class="mv-opt" id="mv-sdaddbox"><input type="checkbox" class="mv-chk" id="mv-sdadd"><div class="tx">SD 동시 제작<small>본 모델과 같이 신청하면 세트 할인 (흉상 −5만 · 반신 −10만 · 전신 −20만)</small></div><span class="pr">+300,000</span></label>
-        <div class="mv-opt"><div class="tx">표정 · 애니메이션 X<small>홍조, 정색 등 · <b style="color:var(--pink)">협업 무료 표정은 이 항목만</b></small></div><span class="pr">+5,000</span><div class="mv-stp" data-id="exA"><button type="button" data-d="-1" aria-label="빼기">−</button><output>0</output><button type="button" data-d="1" aria-label="더하기">+</button></div></div>
-        <div class="mv-opt"><div class="tx">표정 · 애니메이션 O<small>눈물 방울, 빙글 눈 등</small></div><span class="pr">+10,000</span><div class="mv-stp" data-id="exB"><button type="button" data-d="-1" aria-label="빼기">−</button><output>0</output><button type="button" data-d="1" aria-label="더하기">+</button></div></div>
-        <div class="mv-opt"><div class="tx">표정 · 물리 O<small>하트 눈, 반짝 눈 등</small></div><span class="pr">+10,000</span><div class="mv-stp" data-id="exC"><button type="button" data-d="-1" aria-label="빼기">−</button><output>0</output><button type="button" data-d="1" aria-label="더하기">+</button></div></div>
-        <div class="mv-field" style="margin-top:4px;"><label class="lb" for="mv-exdesc">원하는 표정 <small>(자유롭게)</small></label><input class="mv-in" id="mv-exdesc" placeholder="예: 홍조 1, 하트 눈 1" data-k="원하는 표정"></div>
+        <div class="mv-opt"><div class="tx">표정 · 애니메이션 X<small>홍조, 정색, 하트 눈, 반짝 눈 · <b style="color:var(--pink)">협업 무료 표정은 이 항목만</b></small></div><span class="pr">+5,000</span><div class="mv-stp" data-id="exA"><button type="button" data-d="-1" aria-label="빼기">−</button><output>0</output><button type="button" data-d="1" aria-label="더하기">+</button></div></div>
+        <div class="mv-opt"><div class="tx">표정 · 애니메이션 O<small>눈물, 빙글 눈</small></div><span class="pr">+10,000</span><div class="mv-stp" data-id="exB"><button type="button" data-d="-1" aria-label="빼기">−</button><output>0</output><button type="button" data-d="1" aria-label="더하기">+</button></div></div>
+        <div class="mv-field" style="margin-top:4px;"><label class="lb" for="mv-exdesc">추가 표정 <small>(직접 입력)</small></label><input class="mv-in" id="mv-exdesc" placeholder="예: 홍조 1, 눈물 1" data-k="추가 표정"></div>
 
-        <label class="mv-opt"><input type="checkbox" class="mv-chk" id="mv-vb"><div class="tx">VBridger<small>볼빵빵, 오물오물 등 · 스팀에서 별도 구매 필요</small></div><span class="pr">+50,000</span></label>
-        <label class="mv-opt"><input type="checkbox" class="mv-chk" id="mv-tongue"><div class="tx">혀 내밀기<small>VBridger 필요 (선택 시 자동 추가)</small></div><span class="pr">+30,000</span></label>
+        <div class="mv-optlab">아이폰 트래킹 <small>아이폰으로 연결 시 가능한 표정</small></div>
+        <label class="mv-opt"><input type="checkbox" class="mv-chk" id="mv-iph"><div class="tx">볼빵빵, 혀 내밀기</div><span class="pr">+50,000</span></label>
+        <div class="mv-optlab">VBridger <small>VBridger 구매 필요 (스팀)</small></div>
+        <label class="mv-opt"><input type="checkbox" class="mv-chk" id="mv-vb"><div class="tx">오물오물, 입술 오므리기 등<small>자연스러운 입 움직임</small></div><span class="pr">+50,000</span></label>
 
+        <div class="mv-optlab sep">포즈 · 헤어 · 의상 · 소품</div>
         <label class="mv-opt"><input type="checkbox" class="mv-chk mv-pose" value="foot"><div class="tx">추가 포즈 · 발 콕콕</div><span class="pr">+100,000</span></label>
         <label class="mv-opt"><input type="checkbox" class="mv-chk mv-pose" value="gachi"><div class="tx">추가 포즈 · 가깝게 다가오기</div><span class="pr">+100,000</span></label>
 
@@ -928,8 +946,7 @@
           <div class="mv-pills">
             <label class="mv-pill"><input type="radio" name="mv-priv" value="none" checked><span>비공개 안 함</span></label>
             <label class="mv-pill"><input type="radio" name="mv-priv" value="in3"><span>3개월 이내 (무료)</span></label>
-            <label class="mv-pill"><input type="radio" name="mv-priv" value="over3"><span>3개월 이상</span></label>
-            <label class="mv-pill"><input type="radio" name="mv-priv" value="perm"><span>영구</span></label>
+            <label class="mv-pill"><input type="radio" name="mv-priv" value="over3"><span>3개월 이상 (+50,000원)</span></label>
           </div></div>
         <div class="mv-field"><label class="lb" for="mv-etc">기타 요청사항</label><input class="mv-in" id="mv-etc" data-k="기타 요청사항" placeholder="자유롭게 적어주세요"></div>
       </div>
@@ -1019,12 +1036,13 @@
     opt: {
       exA:{name:'표정 (애니메이션 X)', price:5000},
       exB:{name:'표정 (애니메이션 O)', price:10000},
-      exC:{name:'표정 (물리 O)',       price:10000},
       hair:{name:'추가 헤어스타일',    price:100000},
       outfit:{name:'추가 의상',        price:100000},
       prop:{name:'추가 소품',          price:30000}
     },
-    vbridger:50000, tongue:30000, privacyOver3:50000,
+    iphone:50000,             // 아이폰 트래킹 (볼빵빵, 혀 내밀기)
+    vbridger:50000,           // VBridger (자연스러운 입)
+    privacyOver3:50000,
     pose: { foot:{name:'추가 포즈 (발 콕콕)', price:100000}, gachi:{name:'추가 포즈 (가깝게 다가오기)', price:100000} },
     collab: {
       none:{name:''},
@@ -1095,10 +1113,10 @@
   });
 
   /* 계산기 */
-  var count = {exA:0,exB:0,exC:0,hair:0,outfit:0,prop:0};
+  var count = {exA:0,exB:0,hair:0,outfit:0,prop:0};
   var radio = function(n){var r=root.querySelector('input[name="'+n+'"]:checked'); return r?r.value:'';};
   var radioText = function(n){var r=root.querySelector('input[name="'+n+'"]:checked'); return r?r.parentNode.textContent.trim():'';};
-  var vb=$('#mv-vb'), tg=$('#mv-tongue'), evc=$('#mv-ev'), rvc=$('#mv-rv');
+  var vb=$('#mv-vb'), iph=$('#mv-iph'), evc=$('#mv-ev'), rvc=$('#mv-rv');
   if(!CONFIG.reviewOn){ var rb=$('#mv-rvbox'); if(rb) rb.style.display='none'; }
   if(!CONFIG.eventOn){ var eb=$('#mv-evbox'); if(eb) eb.style.display='none'; }
 
@@ -1107,20 +1125,17 @@
     var sc=radio('mv-scope')||'half', b=CONFIG.base[sc];
     lines.push({t:b.name+' 기본', v:b.price});
     total+=b.price;
-    if(CONFIG.eventOn && evc && evc.checked){ var ed=Math.round(b.price*CONFIG.eventRate); lines.push({t:CONFIG.eventLabel, v:-ed, minus:true}); total-=ed; }
     var sda=$('#mv-sdadd');
     if(sc!=='sd' && sda && sda.checked){ lines.push({t:'SD 동시 제작', v:CONFIG.sdAdd}); total+=CONFIG.sdAdd; var sdd=CONFIG.sdSet[sc]||0; if(sdd){ lines.push({t:'SD 세트 할인 ('+b.name+' + SD)', v:-sdd, minus:true}); total-=sdd; } }
-    if(CONFIG.reviewOn && rvc && rvc.checked){ lines.push({t:'리뷰 이벤트', v:-CONFIG.reviewDiscount, minus:true}); total-=CONFIG.reviewDiscount; }
 
     Object.keys(CONFIG.opt).forEach(function(k){
       if(count[k]>0){var o=CONFIG.opt[k]; lines.push({t:o.name+' ×'+count[k], v:o.price*count[k]}); total+=o.price*count[k];}
     });
-    if(vb.checked){lines.push({t:'VBridger', v:CONFIG.vbridger}); total+=CONFIG.vbridger;}
-    if(tg.checked){lines.push({t:'혀 내밀기', v:CONFIG.tongue}); total+=CONFIG.tongue;}
+    if(iph&&iph.checked){lines.push({t:'아이폰 트래킹 (볼빵빵, 혀 내밀기)', v:CONFIG.iphone}); total+=CONFIG.iphone;}
+    if(vb.checked){lines.push({t:'VBridger (자연스러운 입)', v:CONFIG.vbridger}); total+=CONFIG.vbridger;}
     $$('.mv-pose').forEach(function(c){ if(c.checked){var o=CONFIG.pose[c.value]; lines.push({t:o.name, v:o.price}); total+=o.price;} });
 
-    var pv=radio('mv-priv');
-    if(pv==='over3'||pv==='perm'){lines.push({t:'비공개 3개월 초과', v:CONFIG.privacyOver3}); total+=CONFIG.privacyOver3;}
+    if(radio('mv-priv')==='over3'){lines.push({t:'비공개 3개월 이상', v:CONFIG.privacyOver3}); total+=CONFIG.privacyOver3;}
 
     var c=CONFIG.collab[radio('mv-collab')||'none'];
     if(c.discount){
@@ -1131,6 +1146,9 @@
       if(fn<c.freeExpr) lines.push({t:'협업 혜택: 애니메이션 없는 표정 '+(c.freeExpr-fn)+'개 더 무료', ask:true, txt:'혜택'});
     }
     if(radio('mv-com')==='예'){ lines.push({t:'상업적 이용', v:CONFIG.commercial}); total+=CONFIG.commercial; }
+    // 12월 이벤트: 위 금액 전체에서 10% 할인
+    if(CONFIG.eventOn && evc && evc.checked && total>0){ var ed=Math.round(total*CONFIG.eventRate); lines.push({t:CONFIG.eventLabel+' (전체 금액)', v:-ed, minus:true}); total-=ed; }
+    if(CONFIG.reviewOn && rvc && rvc.checked){ lines.push({t:'리뷰 이벤트', v:-CONFIG.reviewDiscount, minus:true}); total-=CONFIG.reviewDiscount; }
     if(radio('mv-psd')==='파츠 분리 전') lines.push({t:'파츠 분리 작업', ask:true, txt:'별도 견적'});
     if(total<0) total=0;
     return {lines:lines,total:total};
@@ -1138,6 +1156,7 @@
 
   function render(){
     var sdb=$('#mv-sdaddbox'); if(sdb) sdb.style.display=(radio('mv-scope')==='sd')?'none':'';
+    var ab=$('#mv-artistbox'); if(ab) ab.style.display=((radio('mv-collab')||'none')==='none')?'':'none';
     var r=calc();
     $('#mv-total').textContent = won(r.total)+(r.lines.some(function(l){return l.txt==='별도 견적';})?' +α':'');
     $('#mv-lines').innerHTML = r.lines.map(function(l){
@@ -1152,16 +1171,14 @@
       count[id]=Math.max(0,Math.min(20,count[id]+parseInt(d,10))); out.textContent=count[id]; render();
     });
   });
-  tg.addEventListener('change',function(){if(tg.checked) vb.checked=true; render();});
-  vb.addEventListener('change',function(){if(!vb.checked) tg.checked=false; render();});
   root.addEventListener('change',render);
 
   /* 신청서 텍스트 만들기 */
   function val(id){var el=$('#'+id); return el?el.value.trim():'';}
   function buildText(){
     var r=calc(), c=CONFIG.collab[radio('mv-collab')||'none'];
-    var artist = val('mv-artist') || c.name || '';
-    var pvMap={none:'비공개 안 함',in3:'3개월 이내',over3:'3개월 이상',perm:'영구'};
+    var artist = (radio('mv-collab')||'none')==='none' ? val('mv-artist') : c.name;
+    var pvMap={none:'비공개 안 함',in3:'3개월 이내',over3:'3개월 이상'};
     var L=[];
     L.push('[Miove 리깅 신청서]','');
     L.push('■ 기본 정보');
@@ -1177,7 +1194,7 @@
     L.push('일러스트 준비 상태 : '+radioText('mv-psd'));
     L.push('캐릭터 타입 : '+radioText('mv-type'),'');
     L.push('■ 옵션');
-    L.push('원하는 표정 : '+val('mv-exdesc'));
+    L.push('추가 표정 : '+val('mv-exdesc'));
     L.push('추가 파츠 : '+val('mv-partdesc'),'');
     L.push('■ 일정 및 공개');
     L.push('희망 마감일 : '+val('mv-due'));
@@ -1216,7 +1233,7 @@
     $$('.mv-in').forEach(function(i){i.value='';});
     $$('input[type=radio]').forEach(function(i){i.checked=false;});
     ['mv-com','mv-scope','mv-collab','mv-priv'].forEach(function(n){var f=root.querySelector('input[name="'+n+'"]'); if(f) f.checked=true;});
-    vb.checked=false; tg.checked=false; var sda2=$('#mv-sdadd'); if(sda2) sda2.checked=false; if(agree){agree.checked=false; lockUpd();} if(evc) evc.checked=false; if(rvc) rvc.checked=false; $$('.mv-pose').forEach(function(c){c.checked=false;});
+    vb.checked=false; if(iph) iph.checked=false; var sda2=$('#mv-sdadd'); if(sda2) sda2.checked=false; if(agree){agree.checked=false; lockUpd();} if(evc) evc.checked=false; if(rvc) rvc.checked=false; $$('.mv-pose').forEach(function(c){c.checked=false;});
     Object.keys(count).forEach(function(k){count[k]=0;});
     $$('.mv-stp output').forEach(function(o){o.textContent='0';});
     render();
