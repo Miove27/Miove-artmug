@@ -402,65 +402,218 @@
   #mv .mv-sum{position:static;transform:none!important;}
   #mv .mv-acc .bd{padding-left:22px;}
 }
+
+
+/* 예약 현황 · 월별 카드 */
+#mv .mv-yr{font-size:13px;font-weight:800;color:var(--mute);letter-spacing:.12em;margin:-2px 0 10px;}
+#mv .mv-mcards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+#mv .mv-mcards .mc{display:flex;flex-direction:column;align-items:center;gap:8px;border-radius:20px;padding:16px 6px 18px;text-align:center;border:1.5px solid var(--line);background:var(--sky-ll);}
+#mv .mv-mcards .m{font-size:15px;font-weight:900;color:var(--ink);background:#fff;border-radius:999px;padding:3px 14px;box-shadow:0 2px 6px rgba(77,130,188,.12);}
+#mv .mv-mcards b{font-size:15px;font-weight:900;color:var(--sky-d);white-space:nowrap;}
+#mv .mv-mcards .dots{display:flex;gap:5px;}
+#mv .mv-mcards .dots i{width:11px;height:11px;border-radius:50%;border:2px solid var(--sky-d);background:#fff;}
+#mv .mv-mcards .dots i.on{background:var(--sky-d);}
+#mv .mv-mcards .tg{font-size:11px;font-weight:800;color:#fff;background:var(--pink);border-radius:999px;padding:3px 9px;white-space:nowrap;}
+#mv .mv-mcards .done{background:var(--yel-l);border-color:var(--yel-d);}
+#mv .mv-mcards .done b{color:#a88a3a;}
+#mv .mv-mcards .done .dots i{border-color:#e8c440;}
+#mv .mv-mcards .done .dots i.on{background:#e8c440;}
+#mv .mv-mcards .open{background:linear-gradient(150deg,var(--sky),var(--sky-d));border-color:var(--sky-d);box-shadow:0 10px 22px rgba(77,130,188,.28);}
+#mv .mv-mcards .open b{color:#fff;}
+#mv .mv-mcards .open .dots i{border-color:#fff;background:transparent;}
+#mv .mv-mcards .open .dots i.on{background:#fff;}
+#mv .mv-duo #mv-sched .mv-legend{display:none;}
+@media (max-width:760px){ #mv .mv-mcards{gap:8px;} #mv .mv-mcards b{font-size:14px;} }
+/* ===== 2026-11 개편 ===== */
+#mv .mv-hdf{font-family:'MvMeetme','Pretendard',sans-serif;font-weight:400;}
+/* ① 첫 화면 */
+#mv .mv-hero{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:center;background:linear-gradient(160deg,#eef4fd 0%,#fff 55%,#fffbe8 100%);}
+#mv .mv-hero .mv-video{border-radius:20px;}
+#mv .mv-who{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+#mv .mv-who .mv-avatar{width:72px;height:72px;border-width:3px;box-shadow:0 0 0 2px var(--sky-l);}
+#mv .mv-who small{display:block;font-size:11px;font-weight:800;letter-spacing:.2em;color:var(--sky-d);}
+#mv .mv-who .mv-name{font-size:38px;line-height:1.05;}
+#mv .mv-hcopy{font-family:'MvMeetme','Pretendard',sans-serif;font-size:21px;line-height:1.5;color:var(--sky-d);margin:0 0 14px;}
+#mv .mv-hash{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px;}
+#mv .mv-hash span{font-size:13px;font-weight:800;color:var(--sky-d);background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:5px 11px;}
+#mv .mv-hash span.p{color:#d4508a;background:#fde8f0;border-color:#f9c3d6;}
+#mv .mv-cta{display:inline-flex;align-items:center;gap:6px;border:0;border-radius:999px;padding:14px 28px;font:inherit;font-size:16px;font-weight:800;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--sky),var(--sky-d));box-shadow:0 10px 22px rgba(77,130,188,.32);transition:transform .15s;}
+#mv .mv-cta:hover{transform:translateY(-2px);}
+#mv .mv-cta.pk{background:linear-gradient(135deg,#f9a3c1,var(--pink));box-shadow:0 10px 22px rgba(242,123,165,.3);}
+
+/* ② 작업한 모델 */
+#mv .mv-works{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+#mv .mv-wk{border:1.5px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;display:flex;flex-direction:column;}
+#mv .mv-wk.new{border-color:#f9c3d6;box-shadow:0 10px 24px rgba(242,123,165,.16);}
+#mv .mv-wk .ph{position:relative;aspect-ratio:1/1;background:var(--sky-ll);}
+#mv .mv-wk .ph img{width:100%;height:100%;object-fit:cover;display:block;}
+#mv .mv-wk .ph.empty::before{content:"썸네일";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--sky-d);font-weight:900;}
+#mv .mv-wk .tg{position:absolute;left:12px;top:12px;font-size:12px;font-weight:800;color:#fff;background:var(--ink);border-radius:999px;padding:3px 11px;}
+#mv .mv-wk .nw{position:absolute;right:12px;top:12px;font-size:11.5px;font-weight:900;color:#fff;background:var(--pink);border-radius:999px;padding:3px 11px;}
+#mv .mv-wk .b{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1;}
+#mv .mv-wk .nm{font-family:'MvMeetme','Pretendard',sans-serif;font-size:23px;line-height:1.2;}
+#mv .mv-wk .pr{font-size:13px;color:var(--sub);margin:2px 0 12px;}
+#mv .mv-wk .pr b{font-size:17px;color:var(--sky-d);}
+#mv .mv-wk.new .pr b{color:#d4508a;}
+#mv .mv-wk .ac{display:flex;gap:6px;margin-top:auto;}
+#mv .mv-wk .ac button{flex:1;border:0;border-radius:999px;padding:9px 0;font:inherit;font-size:13px;font-weight:800;cursor:pointer;}
+#mv .mv-wk .ac .v{background:var(--sky-ll);color:var(--sky-d);}
+#mv .mv-wk .ac .v[disabled]{opacity:.55;cursor:default;}
+#mv .mv-wk .ac .q{background:var(--ink);color:#fff;}
+
+/* ③ 리깅 디테일 탭 */
+#mv .mv-tabs{display:flex;flex-wrap:wrap;gap:7px;padding:10px;border:1.5px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 6px 16px rgba(77,130,188,.08);margin:6px 0 18px;}
+#mv .mv-tabs button{border:0;border-radius:999px;padding:9px 16px;font:inherit;font-size:14px;font-weight:800;cursor:pointer;background:var(--sky-ll);color:var(--sky-d);transition:background .15s;}
+#mv .mv-tabs button:hover{background:#e0ebfb;}
+#mv .mv-tabs button.on{background:var(--ink);color:#fff;}
+#mv .mv-tpanel{display:none;}
+#mv .mv-tpanel.on{display:block;animation:mvFade .25s ease;}
+#mv .mv-tcap{font-size:13.5px;color:var(--sub);margin:0 0 14px 2px;}
+@keyframes mvFade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+/* ④ SD 스포트라이트 */
+#mv .mv-sd{display:grid;grid-template-columns:1fr 1.25fr;gap:26px;align-items:center;background:linear-gradient(135deg,#fde8f0 0%,#fff 60%);border:1.5px solid #f9c3d6;}
+#mv .mv-sd .mv-h::after{background:linear-gradient(90deg,#f9c3d6,transparent);}
+#mv .mv-sdprice{font-size:17px;font-weight:900;color:#d4508a;margin:2px 0 12px;}
+#mv .mv-set{background:#fff;border:1.5px solid #f9c3d6;border-radius:16px;padding:12px 16px;margin-bottom:14px;}
+#mv .mv-set .t{font-weight:800;font-size:14px;margin-bottom:6px;}
+#mv .mv-set .t b{color:#d4508a;}
+#mv .mv-set .r{display:flex;justify-content:space-between;font-size:13.5px;padding:6px 0;border-top:1px dashed #f9c3d6;color:var(--sub);}
+#mv .mv-set .r b{color:#d4508a;}
+#mv .mv-use{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+#mv .mv-use span{font-size:12.5px;font-weight:800;color:#d4508a;background:#fff;border:1px dashed #f3a9c4;border-radius:999px;padding:5px 11px;}
+#mv .mv-sdtabs{display:flex;justify-content:center;gap:6px;margin-bottom:12px;}
+#mv .mv-sdtabs button{border:1.5px solid #f9c3d6;background:#fff;color:#d4508a;border-radius:999px;padding:8px 22px;font:inherit;font-size:14px;font-weight:800;cursor:pointer;}
+#mv .mv-sdtabs button.on{background:var(--pink);border-color:var(--pink);color:#fff;}
+#mv .mv-sdbox{display:grid;}
+#mv .mv-sdpanel{grid-area:1/1;display:grid;grid-template-columns:1fr 1fr;gap:12px;visibility:hidden;opacity:0;}
+#mv .mv-sdpanel.on{visibility:visible;opacity:1;animation:mvFade .25s ease;}
+#mv .mv-sdpanel.two{align-self:center;}
+#mv .mv-sdpanel .mv-gif img{border-color:#f9c3d6;}
+#mv .mv-sdpanel .mv-gif.empty::before{content:"SD GIF";border-color:#f3a9c4;background:#fdf0f5;color:#d4508a;}
+
+/* ⑤⑥ 예약 현황 + 작업 과정 */
+#mv .mv-duo{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:28px;align-items:stretch;}
+#mv .mv-duo>.mv-card{margin-bottom:0;padding:30px 24px;}
+#mv .mv-duo .mv-legend{justify-content:flex-start;}
+#mv .mv-duo .mv-cal .mh{font-size:18px;padding:10px 0;}
+#mv .mv-duo .mv-cal .bar{gap:8px;padding:12px 8px;}
+#mv .mv-duo .mv-cal .seg{padding:14px 4px;}
+#mv .mv-duo .mv-cal .seg b,#mv .mv-duo .mv-cal .open b,#mv .mv-duo .mv-cal .avail b{font-size:15px;}
+#mv .mv-duo .mv-cal .slots i{width:12px;height:12px;}
+#mv .mv-duo .mv-cal .open .when{font-size:12px;}
+#mv .mv-duo .mv-cal .seg .tag{font-size:10.5px;padding:2px 8px;white-space:nowrap;}
+#mv .mv-flow{display:flex;flex-direction:column;gap:9px;}
+#mv .mv-flow div{display:flex;gap:11px;align-items:center;background:#f6faff;border:1.5px solid #dbe8fb;border-radius:14px;padding:11px 14px;font-size:14px;}
+#mv .mv-flow i{flex:none;width:26px;height:26px;border-radius:50%;background:var(--sky);color:#fff;font-style:normal;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;}
+#mv .mv-flow .hl{background:var(--yel);border-color:var(--yel-d);}
+#mv .mv-flow .hl i{background:#e8c440;}
+#mv .mv-flow b{color:var(--ink);}
+
+/* ⑩ 공지 동의 */
+#mv .mv-agree{display:flex;gap:9px;align-items:flex-start;background:#fde8f0;border:1.5px solid #f9c3d6;border-radius:12px;padding:10px 12px;margin:14px 0 10px;font-size:13px;font-weight:800;color:#d4508a;cursor:pointer;line-height:1.5;}
+#mv .mv-agree input{width:18px;height:18px;margin:1px 0 0;accent-color:var(--pink);flex:none;}
+#mv .mv-btn.lock,#mv .mv-btn.lock:hover{background:#d7dee8;cursor:not-allowed;}
+#mv .mv-flash{animation:mvFlash 1.4s ease;}
+@keyframes mvFlash{0%,100%{box-shadow:none}25%,60%{box-shadow:0 0 0 4px rgba(242,123,165,.45);}}
+#mv .mv-field.mv-flash{border-radius:14px;}
+
+/* ⑪ 환불 정책 */
+#mv .mv-rsteps{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
+#mv .mv-rs{position:relative;background:#f6faff;border:1.5px solid #dbe8fb;border-radius:18px;padding:16px 8px 14px;text-align:center;}
+#mv .mv-rs:not(:last-child)::after{content:"›";position:absolute;right:-10px;top:50%;transform:translateY(-50%);color:var(--sky);font-weight:900;font-size:20px;z-index:1;}
+#mv .mv-rs .n{width:24px;height:24px;margin:0 auto 6px;border-radius:50%;background:#fff;border:1.5px solid var(--line);font-size:11.5px;font-weight:900;color:var(--sky-d);display:flex;align-items:center;justify-content:center;}
+#mv .mv-rs .p{font-size:30px;font-weight:900;line-height:1;}
+#mv .mv-rs .p small{font-size:14px;margin-left:1px;}
+#mv .mv-rs .l{font-size:12.5px;font-weight:800;margin:7px 0 9px;}
+#mv .mv-rs .bar{height:6px;border-radius:999px;background:#e3ecf8;overflow:hidden;margin:0 8px;}
+#mv .mv-rs .bar i{display:block;height:100%;border-radius:999px;}
+#mv .mv-rnote{background:var(--yel-l);border:1px dashed var(--yel-d);border-radius:14px;padding:12px 16px;margin-top:16px;font-size:13px;color:var(--sub);line-height:1.8;}
+
+/* 영상 창 */
+.mv-modal{position:fixed;inset:0;z-index:100000;background:rgba(39,56,77,.62);display:none;font-family:'Pretendard','Apple SD Gothic Neo',sans-serif;}
+.mv-modal.on{display:block;}
+.mv-modal .dlg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(820px,calc(100% - 32px));background:#fff;border-radius:24px;padding:16px 16px 18px;box-shadow:0 30px 60px rgba(0,0,0,.3);color:#27384d;}
+.mv-modal.framed .dlg{transform:translateX(-50%);}
+.mv-modal .hd{display:flex;align-items:center;gap:10px;margin:0 4px 12px;}
+.mv-modal .tg{font-size:12px;font-weight:800;color:#fff;background:#27384d;border-radius:999px;padding:3px 11px;}
+.mv-modal .nm{font-family:'MvMeetme','Pretendard',sans-serif;font-size:26px;}
+.mv-modal .x{margin-left:auto;width:38px;height:38px;border-radius:50%;border:0;background:#eef4fd;color:#4d82bc;font-size:18px;font-weight:900;cursor:pointer;}
+.mv-modal .vd{position:relative;padding-top:56.25%;border-radius:14px;overflow:hidden;background:#111;}
+.mv-modal .vd iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.mv-modal .ft{display:flex;align-items:center;gap:10px;margin:14px 4px 0;}
+.mv-modal .pr{font-size:14px;color:#66788c;}
+.mv-modal .pr b{font-size:18px;color:#4d82bc;}
+.mv-modal .go{margin-left:auto;border:0;border-radius:999px;padding:11px 22px;font:inherit;font-size:14px;font-weight:800;color:#fff;cursor:pointer;background:linear-gradient(135deg,#84b6f4,#4d82bc);}
+
+@media (max-width:760px){
+  #mv .mv-hero,#mv .mv-sd,#mv .mv-duo{grid-template-columns:1fr;}
+  #mv .mv-hero{gap:18px;}
+  #mv .mv-who .mv-name{font-size:32px;}
+  #mv .mv-hcopy{font-size:18px;}
+  #mv .mv-cta{width:100%;justify-content:center;}
+  #mv .mv-works{grid-template-columns:1fr;max-width:420px;margin:0 auto;}
+  #mv .mv-tabs{gap:6px;padding:8px;}
+  #mv .mv-tabs button{padding:8px 12px;font-size:13px;}
+  #mv .mv-duo{gap:28px;}
+  #mv .mv-rsteps{grid-template-columns:repeat(3,1fr);}
+  #mv .mv-rs:nth-child(3)::after{display:none;}
+  #mv .mv-rs .p{font-size:24px;}
+  .mv-modal .nm{font-size:21px;}
+  .mv-modal .ft{flex-wrap:wrap;}
+  .mv-modal .go{width:100%;margin-left:0;}
+}
 </style>
 
 <div id="mv">
 <div class="mv-wrap">
 
-  <!-- ============ 인사말 ============ -->
-  <section class="mv-card" id="mv-intro">
-    <h2 class="mv-h">인사말</h2>
-    <p class="mv-quote"><span>“</span>일러스트의 새로운 모습, 새로운 생명<span>”</span></p>
-    <div class="mv-profile">
-      <div class="mv-avatar"><img src="profile.png" alt="Miove 프로필"></div>
-      <div>
-        <div class="mv-name">Miove</div>
-      </div>
-    </div>
-    <p class="mv-intro">안녕하세요, 한 명의 훌륭한 리거가 되기 위해 노력하는 Miove입니다.<br>
-    끊임없는 기술 연구와 집요한 디테일로, 매 작업마다 최고의 퀄리티와 애정을 담아내겠습니다.<br>
-    차곡차곡 포트폴리오를 채워나갈 테니 계속 지켜봐 주세요!</p>
-  </section>
-
-
-
-  <!-- ============ 예약 현황 ============ -->
-  <section class="mv-card" id="mv-sched">
-    <h2 class="mv-h">예약 현황</h2>
-    <div class="mv-legend"><span><i></i>빈 자리</span><span><i class="done"></i>예약 완료</span></div>
-    <div style="text-align:center;font-weight:900;font-size:22px;margin-bottom:12px;" class="mv-js-year">2026년</div>
-    <div class="mv-cal mv-js-months"></div>
-    <p class="mv-note">※ 예약 슬롯 개수는 변동될 수 있습니다.</p>
-  </section>
-
-  <!-- ============ 쇼케이스 ============ -->
-  <section class="mv-card" id="mv-showcase">
-    <h2 class="mv-h">Showcase</h2>
-    <p class="mv-desc">좌우로 넘겨서 영상을 골라 재생해 보세요.</p>
-    <!-- 영상 추가: mv-vslide 덩어리를 하나 복사해서 아래에 붙여넣으면 돼요 -->
-    <div class="mv-vslider">
-      <div class="mv-vtrack">
-        <div class="mv-vslide">
-          <div class="mv-video"><iframe src="https://www.youtube.com/embed/itdtQLT0Pis?enablejsapi=1" title="Miove Live2D Showcase" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-          <div class="mv-vcap">리나레이나</div>
-        </div>
-        <div class="mv-vslide">
-          <div class="mv-video"><iframe src="https://www.youtube.com/embed/zM_-LtGsfJ8?enablejsapi=1" title="Miove Live2D Showcase 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-          <div class="mv-vcap">판매 모델 · 염소 소녀</div>
-        </div>
-      </div>
-      <div class="mv-vctrl"><button type="button" class="pv" aria-label="이전 영상">‹</button><div class="mv-dots"></div><button type="button" class="nx" aria-label="다음 영상">›</button></div>
+  <!-- ============ ① 첫 화면 ============ -->
+  <section class="mv-card mv-hero" id="mv-intro">
+    <div class="mv-hvid"><div class="mv-video"><iframe src="https://www.youtube.com/embed/itdtQLT0Pis?enablejsapi=1" title="Miove Live2D 대표 쇼케이스" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+    <div class="mv-hinfo">
+      <div class="mv-who"><div class="mv-avatar"><img src="profile.png" alt="Miove 프로필"></div><div><small>LIVE2D RIGGER</small><div class="mv-name">Miove</div></div></div>
+      <p class="mv-hcopy">“어느 각도에서 멈춰도,<br>일러스트 그대로의 퀄리티”</p>
+      <div class="mv-hash"><span>#SD 30만원부터</span><span>#평균 15~25일</span><span class="p">#12월 오픈 할인</span><span class="p">#리뷰 시 3만원 할인</span></div>
+      <button type="button" class="mv-cta" data-goto="mv-apply">견적 내보기 →</button>
     </div>
   </section>
+
+  <!-- ============ ② 작업한 모델 (최신순) ============ -->
+  <!-- 모델 추가: mv-wk 덩어리 하나를 복사 · data-video 에 유튜브 영상 ID, data-scope 에 half(흉상)/halfplus(반신)/full(전신)/sd -->
+  <section class="mv-card" id="mv-works">
+    <h2 class="mv-h">작업한 모델</h2>
+    <p class="mv-desc">▶ 영상을 누르면 쇼케이스가 열리고, "이 범위로 견적"을 누르면 신청 양식에 범위가 자동으로 선택돼요.</p>
+    <div class="mv-works">
+      <div class="mv-wk new" data-name="SD 미오브" data-scope="sd" data-tag="SD" data-price="SD <b>30만원~</b>" data-video="">
+        <div class="ph"><img src="work_sd.gif" alt="SD 미오브"><span class="tg">SD</span><span class="nw">NEW</span></div>
+        <div class="b"><div class="nm">SD 미오브</div><div class="pr">SD <b>30만원~</b></div><div class="ac"><button type="button" class="v">▶ 영상</button><button type="button" class="q">이 범위로 견적</button></div></div>
+      </div>
+      <div class="mv-wk" data-name="리나레이나" data-scope="halfplus" data-tag="반신" data-price="반신 <b>42만원~</b>" data-video="itdtQLT0Pis">
+        <div class="ph"><img src="work_lina.gif" alt="리나레이나"><span class="tg">반신</span></div>
+        <div class="b"><div class="nm">리나레이나</div><div class="pr">반신 <b>42만원~</b></div><div class="ac"><button type="button" class="v">▶ 영상</button><button type="button" class="q">이 범위로 견적</button></div></div>
+      </div>
+      <div class="mv-wk" data-name="염소 소녀" data-scope="full" data-tag="전신" data-price="전신 <b>64만원~</b>" data-video="zM_-LtGsfJ8">
+        <div class="ph"><img src="work_goat.gif" alt="염소 소녀"><span class="tg">전신</span></div>
+        <div class="b"><div class="nm">염소 소녀</div><div class="pr">전신 <b>64만원~</b></div><div class="ac"><button type="button" class="v">▶ 영상</button><button type="button" class="q">이 범위로 견적</button></div></div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
 
   <!-- ============ 리깅 디테일 ============ -->
   <section class="mv-card" id="mv-detail">
     <h2 class="mv-h">리깅 디테일</h2>
-    <div class="mv-group">
-      <div class="mv-group-t"><span class="mv-chip">얼굴</span></div>
-      <div class="mv-subbox">
-        <div class="mv-sublb">각도<small>어느 각도에서도 자연스러운 얼굴</small></div>
-        <div class="mv-gbox">
+    <div class="mv-tabs" role="tablist"><button type="button" data-tab="face" class="on">얼굴 각도</button><button type="button" data-tab="eye">눈동자</button><button type="button" data-tab="expr">표정</button><button type="button" data-tab="vb">VBridger</button><button type="button" data-tab="prop">추가 소품</button><button type="button" data-tab="body">전신 각도</button><button type="button" data-tab="pose">추가 포즈</button></div>
+    <div class="mv-tpanel on" data-tab="face">
+      <p class="mv-tcap">어느 각도에서도 자연스러운 얼굴</p>
+      <div class="mv-gbox">
           <div class="mv-ahero">
             <div class="mv-gif hl"><img src="face_lab.gif" alt="얼굴 각도" loading="lazy"></div>
             <p class="tx">어느 각도에서 멈추든<br>원래 일러스트의 퀄리티를 유지하도록<br><b>꼼꼼하게 작업합니다.</b></p>
@@ -473,64 +626,100 @@
           <div class="mv-gif"><img src="face_lina_x.gif" alt="X축" loading="lazy"><span class="tag">X축</span></div>
           <div class="mv-gif"><img src="face_lina_y.gif" alt="Y축" loading="lazy"><span class="tag">Y축</span></div>
         </div></div>
-      </div>
-      <div class="mv-subbox">
-        <div class="mv-sublb">눈동자<small>캐릭터의 개성을 살린 눈동자 연출</small></div>
-        <div class="mv-gbox"><div class="mv-grid">
+    </div>
+    <div class="mv-tpanel" data-tab="eye">
+      <p class="mv-tcap">캐릭터의 개성을 살린 눈동자 연출</p>
+      <div class="mv-gbox"><div class="mv-grid">
           <div class="mv-gif"><img src="eye_goat.gif" alt="눈동자" loading="lazy"></div>
           <div class="mv-gif"><img src="eye_lina.gif" alt="눈동자" loading="lazy"></div>
           <div class="mv-gif"><img src="eye_lab.gif" alt="눈동자" loading="lazy"></div>
         </div></div>
-      </div>
-      <div class="mv-subbox">
-        <div class="mv-sublb">표정<small>캐릭터의 매력이 돋보이는 풍부한 표정 연출</small></div>
-        <div class="mv-gbox"><div class="mv-grid g22">
+    </div>
+    <div class="mv-tpanel" data-tab="expr">
+      <p class="mv-tcap">캐릭터의 매력이 돋보이는 풍부한 표정 연출</p>
+      <div class="mv-gbox"><div class="mv-grid g22">
           <div class="mv-gif"><img src="expr_tear.gif" alt="눈물" loading="lazy"><span class="tag">눈물</span></div>
           <div class="mv-gif"><img src="expr_angry.gif" alt="화남 + 정색" loading="lazy"><span class="tag">화남 + 정색</span></div>
           <div class="mv-gif"><img src="expr_shy.gif" alt="부끄러움 + 하트눈" loading="lazy"><span class="tag">부끄러움 + 하트눈</span></div>
           <div class="mv-gif"><img src="expr_surprise.gif" alt="놀람" loading="lazy"><span class="tag">놀람</span></div>
         </div></div>
-      </div>
-      <div class="mv-subbox">
-        <div class="mv-sublb">VBridger<small>다양한 입모양과 표정 연출 (iPhone 호환 기능)</small></div>
-        <div class="mv-gbox"><div class="mv-grid g22">
+    </div>
+    <div class="mv-tpanel" data-tab="vb">
+      <p class="mv-tcap">다양한 입모양과 표정 연출 (iPhone 호환 기능)</p>
+      <div class="mv-gbox"><div class="mv-grid g22">
           <div class="mv-gif"><img src="vb_cheek.gif" alt="볼 빵빵" loading="lazy"><span class="tag">볼 빵빵</span></div>
           <div class="mv-gif"><img src="vb_mouth.gif" alt="입 오물오물" loading="lazy"><span class="tag">입 오물오물</span></div>
           <div class="mv-gif"><img src="vb_tongue.gif" alt="혀 내밀기" loading="lazy"><span class="tag">혀 내밀기</span></div>
           <div class="mv-gif"><img src="vb_lip.gif" alt="입술 오므리기" loading="lazy"><span class="tag">입술 오므리기</span></div>
         </div></div>
-      </div>
     </div>
-    <div class="mv-group">
-      <div class="mv-group-t"><span class="mv-chip">추가 소품</span></div>
-      <div class="mv-subbox">
-        <div class="mv-sublb">추가 소품<small>캐릭터의 디테일을 살리는 소품 움직임</small></div>
-        <div class="mv-gbox"><div class="mv-grid">
+    <div class="mv-tpanel" data-tab="prop">
+      <p class="mv-tcap">캐릭터의 디테일을 살리는 소품 움직임</p>
+      <div class="mv-gbox"><div class="mv-grid">
           <div class="mv-gif"><img src="prop_glasses.gif" alt="안경" loading="lazy"><span class="tag">안경</span></div>
           <div class="mv-gif"><img src="prop_chain.gif" alt="허리 체인" loading="lazy"><span class="tag">허리 체인</span></div>
           <div class="mv-gif"><img src="prop_ribbon.gif" alt="리본" loading="lazy"><span class="tag">리본</span></div>
         </div></div>
-      </div>
     </div>
-    <div class="mv-group">
-      <div class="mv-group-t"><span class="mv-chip">전신</span></div>
-      <div class="mv-subbox">
-        <div class="mv-sublb">전신 각도<small>캐릭터와 어울리는 신체 연출</small></div>
-        <div class="mv-gbox"><div class="mv-grid">
+    <div class="mv-tpanel" data-tab="body">
+      <p class="mv-tcap">캐릭터와 어울리는 신체 연출</p>
+      <div class="mv-gbox"><div class="mv-grid">
           <div class="mv-gif tall"><img src="body_x.gif" alt="X축" loading="lazy"><span class="tag">X축</span></div>
           <div class="mv-gif tall"><img src="body_y.gif" alt="Y축" loading="lazy"><span class="tag">Y축</span></div>
           <div class="mv-gif tall"><img src="body_z.gif" alt="Z축" loading="lazy"><span class="tag">Z축</span></div>
         </div></div>
-      </div>
-      <div class="mv-subbox">
-        <div class="mv-sublb">추가 포즈<small>다양한 연출이 가능한 옵션</small></div>
-        <div class="mv-gbox"><div class="mv-grid">
+    </div>
+    <div class="mv-tpanel" data-tab="pose">
+      <p class="mv-tcap">다양한 연출이 가능한 옵션</p>
+      <div class="mv-gbox"><div class="mv-grid">
           <div class="mv-gif tall"><img src="pose_foot.gif" alt="발 콕콕" loading="lazy"><span class="tag">발 콕콕</span></div>
           <div class="mv-gif tall"><img src="pose_close.gif" alt="가깝게 다가오기" loading="lazy"><span class="tag">가깝게 다가오기</span></div>
         </div></div>
+    </div>
+  </section>
+
+  <!-- ============ ④ SD 리깅 ============ -->
+  <section class="mv-card mv-sd" id="mv-sd">
+    <div class="mv-sdl">
+      <h2 class="mv-h">SD 리깅</h2>
+      <p class="mv-desc" style="color:var(--sub);font-size:14px;margin-bottom:8px">작고 귀여운 SD 캐릭터도 리깅해요.<br>방송 화면 구석, 대기 화면, 굿즈용으로 좋아요.</p>
+      <div class="mv-sdprice">SD 30만원~</div>
+      <div class="mv-set"><div class="t">본 모델과 동시 제작 시 <b>세트 할인 최대 20만원</b></div>
+        <div class="r"><span>흉상 + SD</span><b>−5만원</b></div>
+        <div class="r"><span>반신 + SD</span><b>−10만원</b></div>
+        <div class="r"><span>전신 + SD</span><b>−20만원</b></div></div>
+      <div class="mv-use"><span>🎀 방송 대기 화면</span><span>🎀 서브 아바타</span><span>🎀 굿즈 · 이모티콘</span></div>
+      <button type="button" class="mv-cta pk" data-goto="mv-apply" data-scope="sd">SD로 견적 내보기</button>
+    </div>
+    <div class="mv-sdr">
+      <div class="mv-sdtabs"><button type="button" class="on" data-sd="expr">표정</button><button type="button" data-sd="angle">각도</button></div>
+      <div class="mv-sdbox">
+        <div class="mv-sdpanel two" data-sd="angle"><div class="mv-gif"><img src="sd_angle1.gif" alt="SD 각도 1" loading="lazy"></div><div class="mv-gif"><img src="sd_angle2.gif" alt="SD 각도 2" loading="lazy"></div></div>
+        <div class="mv-sdpanel on" data-sd="expr"><div class="mv-gif"><img src="sd_expr1.gif" alt="SD 표정 1" loading="lazy"></div><div class="mv-gif"><img src="sd_expr2.gif" alt="SD 표정 2" loading="lazy"></div><div class="mv-gif"><img src="sd_expr3.gif" alt="SD 표정 3" loading="lazy"></div><div class="mv-gif"><img src="sd_expr4.gif" alt="SD 표정 4" loading="lazy"></div></div>
       </div>
     </div>
   </section>
+
+  <!-- ============ ⑤ 예약 현황 + ⑥ 작업 과정 ============ -->
+  <div class="mv-duo">
+  <section class="mv-card" id="mv-sched">
+    <h2 class="mv-h">예약 현황</h2>
+    <div class="mv-legend"><span><i></i>빈 자리</span><span><i class="done"></i>예약 완료</span></div>
+    <div class="mv-yr mv-js-year">2026</div>
+    <div class="mv-mcards mv-js-months"></div>
+    <p class="mv-note">※ 예약 슬롯 개수는 변동될 수 있습니다.</p>
+  </section>
+
+  <section class="mv-card" id="mv-process">
+    <h2 class="mv-h">작업 과정</h2>
+    <div class="mv-flow">
+      <div><i>1</i><span>문의 · 견적 상담 → 결제</span></div>
+      <div class="hl"><i>2</i><span><b>영상으로 2번 컨펌</b> · 얼굴 → 몸 순서</span></div>
+      <div><i>3</i><span>모델 전달 · 세팅 안내</span></div>
+      <div class="hl"><i>★</i><span><b>완성 모델의 고퀄리티 쇼케이스 제작까지</b></span></div>
+    </div>
+  </section>
+  </div>
 
   <!-- ============ 판매 중 모델 ============ -->
   <!-- 모델 추가: mv-item 줄을 복사해 아래에 붙여넣기 / 판매 완료는 class="mv-item sold" 로 바꾸면 SOLD OUT 표시돼요 -->
@@ -543,31 +732,7 @@
     <div class="mv-buy">💌 <b>구매를 희망하시면 문의 남겨주세요!</b> 원하시는 모델 이름을 함께 적어주시면 빠르게 안내드릴게요.</div>
   </section>
 
-  <!-- ============ 작업 과정 ============ -->
-  <section class="mv-card" id="mv-process">
-    <h2 class="mv-h">작업 과정</h2>
-    <div class="mv-steps">
-      <div class="mv-step"><div class="dot">1</div><div class="n">문의</div><div class="s">견적 상담</div></div>
-      <div class="mv-step"><div class="dot">2</div><div class="n">결제</div><div class="s">입금 확인</div></div>
-      <div class="mv-step"><div class="dot">3</div><div class="n">1차 컨펌</div><div class="s">얼굴 각도 / 표정 확인</div></div>
-      <div class="mv-step"><div class="dot">4</div><div class="n">2차 컨펌</div><div class="s">몸 각도 / 물리 확인</div></div>
-      <div class="mv-step y"><div class="dot">★</div><div class="n">모델 전달</div><div class="s">세팅 안내</div></div>
-    </div>
-    <div class="mv-box">
-      <h4>컨펌 관련 안내</h4>
-      <ul>
-        <li>기본 컨펌 방식은 영상 촬영본 전달로 진행합니다. 컨펌 전날 미리 안내드립니다.</li>
-        <li>컨펌 당일 24시간 동안에 한해 화면 공유(디스코드) 요청이 가능하며, 이 시간이 지나면 화면 공유는 어렵습니다.</li>
-        <li>수정 요청은 48시간 동안 자유롭게 접수 가능하나, 반복적인 번복이나 초기 상담 시 논의된 범위를 크게 벗어나는 수정은 진행이 어렵거나 추가 비용이 청구될 수 있습니다.</li>
-        <li>컨펌 안내 후 48시간 동안 회신 및 요청 사항이 없을 경우, 원활한 진행을 위해 다음 단계로 넘어갑니다. 피드백이 늦어질 경우 언제까지 회신 가능한지 미리 말씀해 주세요.</li>
-        <li>기본 컨펌 횟수는 총 2회이며, 이를 초과하는 추가 요청 시 비용이 청구될 수 있습니다.</li>
-      </ul>
-    </div>
-    <div class="mv-box" style="background:var(--yel-l);border-color:#f3e3a0;">
-      <h4 style="color:#8a6b00;">연락 방식</h4>
-      <ul><li>기본적으로 디스코드로 진행되며, 부득이하게 디스코드 사용이 어려우실 경우 오픈 카톡방으로 진행됩니다.</li></ul>
-    </div>
-  </section>
+
 
   <!-- ============ 협업 작가 ============ -->
   <section class="mv-card" id="mv-collab">
@@ -637,6 +802,15 @@
         <li>iPhone 기준으로 작업하며, VTube Studio + VBridger를 사용합니다. VBridger는 페이셜 캡처 기능이 탑재된 iPhone 기종만 가능합니다. 프로그램 사용 및 세팅에 도움이 필요하시면 추가 안내드립니다.</li>
         <li>최종 제공 파일은 VTube Studio 구동용 파일 위주이며, 리깅 수정이 가능한 원본 파일(.cmo3)은 제공하지 않습니다.</li>
       </ul></div></details>
+
+    <details class="mv-acc" name="mv-notice"><summary><span class="q">6</span>컨펌 및 연락 방식<span class="ic"></span></summary>
+      <div class="bd"><ul>
+        <li>기본 컨펌 방식은 영상 촬영본 전달로 진행합니다. 컨펌 전날 미리 안내드립니다.</li>
+        <li>컨펌 당일 24시간 동안에 한해 화면 공유(디스코드) 요청이 가능하며, 이 시간이 지나면 화면 공유는 어렵습니다.</li>
+        <li>수정 요청은 48시간 동안 자유롭게 접수 가능하나, 반복적인 번복이나 초기 상담 시 논의된 범위를 크게 벗어나는 수정은 진행이 어렵거나 추가 비용이 청구될 수 있습니다.</li>
+        <li>컨펌 안내 후 48시간 동안 회신 및 요청 사항이 없을 경우, 원활한 진행을 위해 다음 단계로 넘어갑니다. 피드백이 늦어질 경우 언제까지 회신 가능한지 미리 말씀해 주세요.</li>
+        <li>기본 컨펌 횟수는 총 2회이며, 이를 초과하는 추가 요청 시 비용이 청구될 수 있습니다.</li></ul>
+      <p style="margin:10px 0 0;font-weight:800;">연락 방식</p><ul><li>기본적으로 디스코드로 진행되며, 부득이하게 디스코드 사용이 어려우실 경우 오픈 카톡방으로 진행됩니다.</li></ul></div></details>
   </section>
 
   <!-- ============ 신청 양식 (견적 계산기) ============ -->
@@ -650,7 +824,7 @@
         <div class="mv-row"><span class="k">눈썹</span><span class="mv-tag">위아래</span><span class="mv-tag">변형(찡그림, 슬픔)</span></div>
         <div class="mv-row"><span class="k">입</span><span class="mv-tag">여닫기</span><span class="mv-tag">변형 9점</span></div>
         <div class="mv-row"><span class="k">몸 XYZ</span><span class="mv-tag">호흡</span><span class="mv-tag">머리카락 물리</span><span class="mv-tag">의상 물리</span></div>
-        <p style="margin:12px 0 0;font-size:13px;">※ <b>반신</b>은 두상 + 상체(팔·손 제외) 기준이에요. 엉덩이·허벅지(무릎 위)까지 있는 일러스트는 <b>반신 + 하체</b>(+100,000원)로 신청해 주세요.</p>
+        <p style="margin:12px 0 0;font-size:13px;">※ <b>흉상</b>은 두상 + 상체(팔·손 제외) 기준이에요. 엉덩이·허벅지(무릎 위)까지 있는 일러스트는 <b>반신</b>(+100,000원)으로 신청해 주세요.</p>
         <p style="margin:6px 0 0;font-size:13px;">※ 현재 작업 불가능한 기능 : SD 전환</p>
       </div></details>
     <div class="mv-alert"><span class="ex">!</span><div><b>문의창에 파츠 분리 PSD 파일을 첨부해 주세요.</b><br><span style="color:var(--sub)">곤란하거나 적기 어려운 부분은 비워두셔도 괜찮아요. PSD를 첨부해 주시면 더 정확한 견적을 드릴 수 있어요.</span></div></div>
@@ -687,16 +861,18 @@
 
         <!-- 일러스트 정보 -->
         <div class="mv-fsec">■ 일러스트 정보</div>
-        <div class="mv-field"><label class="lb">신청 범위</label>
+        <div class="mv-field" id="mv-scopefield"><label class="lb">신청 범위</label>
           <div class="mv-pills">
-            <label class="mv-pill"><input type="radio" name="mv-scope" value="half" checked><span>반신</span></label>
-            <label class="mv-pill"><input type="radio" name="mv-scope" value="halfplus"><span>반신 + 하체</span></label>
+            <label class="mv-pill"><input type="radio" name="mv-scope" value="half" checked><span>흉상</span></label>
+            <label class="mv-pill"><input type="radio" name="mv-scope" value="halfplus"><span>반신</span></label>
             <label class="mv-pill"><input type="radio" name="mv-scope" value="full"><span>전신</span></label>
+            <label class="mv-pill"><input type="radio" name="mv-scope" value="sd"><span>SD</span></label>
           </div>
           <div class="mv-scope-guide">
-            <div><b>반신</b><span>두상 + 상체 <em>(팔·손 제외)</em></span></div>
-            <div><b>반신 + 하체</b><span>반신 + 엉덩이·허벅지 <em>(무릎 위까지)</em> · +100,000원</span></div>
+            <div><b>흉상</b><span>두상 + 상체 <em>(팔·손 제외)</em></span></div>
+            <div><b>반신</b><span>흉상 + 엉덩이·허벅지 <em>(무릎 위까지)</em> · +100,000원</span></div>
             <div><b>전신</b><span>머리부터 발끝까지</span></div>
+            <div><b>SD</b><span>SD 캐릭터 · 300,000원</span></div>
           </div></div>
         <div class="mv-field"><label class="lb">일러스트레이터</label>
           <div class="mv-pills">
@@ -723,6 +899,7 @@
 
         <!-- 옵션 -->
         <div class="mv-fsec">■ 추가 옵션</div>
+        <label class="mv-opt" id="mv-sdaddbox"><input type="checkbox" class="mv-chk" id="mv-sdadd"><div class="tx">SD 동시 제작<small>본 모델과 같이 신청하면 세트 할인 (흉상 −5만 · 반신 −10만 · 전신 −20만)</small></div><span class="pr">+300,000</span></label>
         <div class="mv-opt"><div class="tx">표정 · 애니메이션 X<small>홍조, 정색 등 · <b style="color:var(--pink)">협업 무료 표정은 이 항목만</b></small></div><span class="pr">+5,000</span><div class="mv-stp" data-id="exA"><button type="button" data-d="-1" aria-label="빼기">−</button><output>0</output><button type="button" data-d="1" aria-label="더하기">+</button></div></div>
         <div class="mv-opt"><div class="tx">표정 · 애니메이션 O<small>눈물 방울, 빙글 눈 등</small></div><span class="pr">+10,000</span><div class="mv-stp" data-id="exB"><button type="button" data-d="-1" aria-label="빼기">−</button><output>0</output><button type="button" data-d="1" aria-label="더하기">+</button></div></div>
         <div class="mv-opt"><div class="tx">표정 · 물리 O<small>하트 눈, 반짝 눈 등</small></div><span class="pr">+10,000</span><div class="mv-stp" data-id="exC"><button type="button" data-d="-1" aria-label="빼기">−</button><output>0</output><button type="button" data-d="1" aria-label="더하기">+</button></div></div>
@@ -763,14 +940,39 @@
         <div class="mv-total"><div class="l">예상 합계</div><div class="v" id="mv-total">0원</div></div>
         <div class="mv-lines" id="mv-lines"></div>
         <div class="mv-small">최종 견적은 PSD 확인 후 안내드려요. 여기서 고른 내용은 상담을 위한 참고용입니다.</div>
-        <button type="button" class="mv-btn" id="mv-copy">신청서 복사</button>
+        <label class="mv-agree"><input type="checkbox" id="mv-agree"><span>공지 사항과 환불 정책을 모두 읽고 숙지했습니다.</span></label>
+        <button type="button" class="mv-btn lock" id="mv-copy" aria-disabled="true">신청서 복사</button>
         <button type="button" class="mv-btn ghost" id="mv-reset">모두 지우기</button>
         <p style="font-size:12px;color:var(--mute);margin:12px 0 0;">복사한 내용을 아트머그 <b>문의하기</b> 창에 붙여넣고, PSD 파일을 첨부해 주세요.</p>
       </aside>
     </div>
   </section>
 
+  <!-- ============ ⑪ 환불 정책 ============ -->
+  <section class="mv-card" id="mv-refund">
+    <h2 class="mv-h">환불 정책</h2>
+    <p class="mv-desc">작업이 어느 단계까지 진행됐는지에 따라 환불 비율이 달라져요.</p>
+    <div class="mv-rsteps">
+      <div class="mv-rs"><div class="n">1</div><div class="p" style="color:#4d82bc">100<small>%</small></div><div class="l">작업 진행 전</div><div class="bar"><i style="width:100%;background:#4d82bc"></i></div></div>
+      <div class="mv-rs"><div class="n">2</div><div class="p" style="color:#6a9bd6">80<small>%</small></div><div class="l">메쉬 작업 단계</div><div class="bar"><i style="width:80%;background:#6a9bd6"></i></div></div>
+      <div class="mv-rs"><div class="n">3</div><div class="p" style="color:#84b6f4">60<small>%</small></div><div class="l">얼굴 리깅 단계</div><div class="bar"><i style="width:60%;background:#84b6f4"></i></div></div>
+      <div class="mv-rs"><div class="n">4</div><div class="p" style="color:#a9c8f2">40<small>%</small></div><div class="l">헤어 리깅 단계</div><div class="bar"><i style="width:40%;background:#a9c8f2"></i></div></div>
+      <div class="mv-rs"><div class="n">5</div><div class="p" style="color:#c4dafa">20<small>%</small></div><div class="l">몸 리깅 단계</div><div class="bar"><i style="width:20%;background:#c4dafa"></i></div></div>
+      <div class="mv-rs"><div class="n">6</div><div class="p" style="color:#d4508a">0<small>%</small></div><div class="l">물리 · 마무리 단계</div><div class="bar"><i style="width:0%;background:#f27ba5"></i></div></div>
+    </div>
+    <div class="mv-rnote">※ 상호 간의 합의로 인해 환불 가격 변동이 이루어질 수 있습니다.<br>※ 작업 들어가기 전 진행 상황에 대한 노티를 드리며, 해당 노티를 기준으로 환불이 진행됩니다.</div>
+  </section>
+
 </div>
+</div>
+
+<!-- ============ 영상 창 ============ -->
+<div class="mv-modal" id="mv-modal" aria-hidden="true">
+  <div class="dlg" role="dialog" aria-modal="true" aria-label="쇼케이스 영상">
+    <div class="hd"><span class="tg"></span><span class="nm"></span><button type="button" class="x" aria-label="닫기">✕</button></div>
+    <div class="vd"></div>
+    <div class="ft"><span class="pr"></span><button type="button" class="go">이 범위로 견적 →</button></div>
+  </div>
 </div>
 
 <!-- ============ 오른쪽 책갈피 ============ -->
@@ -779,13 +981,15 @@
     <button type="button" class="top" data-go="mv">▲ 맨 위로</button>
     <div class="logo">Miove<small>MENU</small></div>
     <a href="#mv-intro" data-go="mv-intro">소개</a>
-    <a href="#mv-showcase" data-go="mv-showcase">쇼케이스</a>
+    <a href="#mv-works" data-go="mv-works">작업한 모델</a>
     <a href="#mv-detail" data-go="mv-detail">리깅 디테일</a>
+    <a href="#mv-sd" data-go="mv-sd">SD 리깅</a>
+    <a href="#mv-sched" data-go="mv-sched">예약 현황</a>
     <a href="#mv-sale" data-go="mv-sale">판매 중 모델</a>
-    <a href="#mv-process" data-go="mv-process">작업 과정</a>
     <a href="#mv-collab" data-go="mv-collab">협업 작가</a>
     <a href="#mv-notice" data-go="mv-notice">공지 사항</a>
     <a href="#mv-apply" data-go="mv-apply" class="cta">신청 양식 ↗</a>
+    <a href="#mv-refund" data-go="mv-refund">환불 정책</a>
   </div>
   <button type="button" class="tg" aria-label="목차 열기">☰</button>
 </nav>
@@ -797,18 +1001,21 @@
     eventOn: true,            // 할인 끝나면 false (신청 양식에서 할인 체크칸이 사라져요)
     eventRate: 0.1,           // 할인율 (0.1 = 10%)
     eventLabel: '12월 10% 할인 이벤트',
-    year: '2026년',
+    year: '2026 – 2027',
     commercial: 300000,       // 상업적 이용 추가금
     reviewOn: true,           // 리뷰 이벤트 끝나면 false
     reviewDiscount: 30000,    // 리뷰 이벤트 할인 금액
-    halfPlus: 100000,         // 하체 포함 반신 추가금
-    months: ['10월','11월','12월'],   // 위쪽 달 이름
+    halfPlus: 100000,         // 반신(흉상 + 엉덩이·허벅지) 추가금
+    months: ['11월','12월','1월'],   // 위쪽 달 이름
+    // slots = 전체 자리, booked = 찬 자리, hot:true = 진한 파란색 강조, tag = 위에 붙는 분홍 표시
     segs: [
-      {span:2, pd:'10월', slots:1, booked:1},
       {span:2, pd:'11월', slots:1, booked:1},
-      {span:2, pd:'12월', tag:'12월 10% 할인 이벤트', hot:true, slots:2, booked:0, note:'선착순 2분'}
+      {span:2, pd:'12월', tag:'🎁 이벤트 할인 중', hot:true, slots:2, booked:0},
+      {span:2, pd:'1월', slots:2, booked:0}
     ],
-    base: { half:{name:'반신', price:320000}, halfplus:{name:'반신 + 하체', price:420000}, full:{name:'전신', price:640000} },
+    base: { half:{name:'흉상', price:320000}, halfplus:{name:'반신', price:420000}, full:{name:'전신', price:640000}, sd:{name:'SD', price:300000} },
+    sdAdd: 300000,            // 본 모델 + SD 동시 제작 시 SD 가격
+    sdSet: { half:50000, halfplus:100000, full:200000 },   // 동시 제작 세트 할인
     opt: {
       exA:{name:'표정 (애니메이션 X)', price:5000},
       exB:{name:'표정 (애니메이션 O)', price:10000},
@@ -831,6 +1038,7 @@
   /* ================================================================ */
 
   var root = document.getElementById('mv'); if(!root) return;
+  var VIS=null, FRAMED=false;   // 아트머그 화면에서 지금 보이는 영역 (책갈피 코드가 채워줌)
   var $ = function(s){return root.querySelector(s);};
   var $$ = function(s){return Array.prototype.slice.call(root.querySelectorAll(s));};
   var won = function(n){return n.toLocaleString('ko-KR')+'원';};
@@ -838,25 +1046,19 @@
   /* 이벤트·예약 현황 */
   $('.mv-js-year').textContent = CONFIG.year;
   (function(){
-    var box=$('.mv-js-months'), n=CONFIG.months.length;
-    box.style.gridTemplateColumns='repeat('+n+',1fr)';
-    var h=CONFIG.months.map(function(m){return '<div class="mh">'+m+'</div>';}).join('');
-    for(var i=1;i<n;i++) h+='<i class="dv" style="left:calc('+(100*i/n)+'% - 1px)"></i>';
-    h+='<div class="bar" style="grid-column:1/'+(n+1)+';grid-template-columns:repeat('+(n*2)+',1fr)">';
-    h+=CONFIG.segs.map(function(x){
+    var box=$('.mv-js-months');
+    box.innerHTML=CONFIG.segs.map(function(x,idx){
       var slots=x.slots||0, booked=Math.min(x.booked||0,slots), full=slots>0&&booked>=slots;
       var cls=full?'done':(x.hot?'open':'avail');
       var dots=''; for(var k=0;k<slots;k++) dots+='<i'+(k<booked?' class="on"':'')+'></i>';
-      var title=full?'예약 마감':(x.title||((slots-booked)+'자리 남음'));
-      var when=(!full&&(x.when||x.note))?'<span class="when">'+(x.when?'<span class="w">'+x.when+'</span>':'')+(x.when&&x.note?'<br class="w">':'')+(x.note?'<em>'+x.note+'</em>':'')+'</span>':'';
-      return '<div class="seg '+cls+'" style="grid-column:span '+(x.span||1)+'"><span class="pd">'+(x.pd||'')+'</span>'+(x.tag?'<span class="tag">'+x.tag+'</span>':'')+'<b>'+title+'</b>'+(slots?'<div class="slots">'+dots+'</div>':'')+when+'</div>';
-    }).join('')+'</div>';
-    box.innerHTML=h;
+      var title=full?'슬롯 마감':(x.title||((slots-booked)+'자리 남음'));
+      return '<div class="mc '+cls+'"><div class="m">'+(x.pd||CONFIG.months[idx]||'')+'</div><b>'+title+'</b>'+(slots?'<div class="dots">'+dots+'</div>':'')+(x.tag&&!full?'<span class="tg">'+x.tag+'</span>':'')+'</div>';
+    }).join('');
   })();
 
   /* 이미지 자리 비어있을 때 표시 */
   $$('.mv-col .smp img').forEach(function(img){ var f=function(){img.style.display='none';}; if(img.complete && img.naturalWidth===0) f(); else img.addEventListener('error',f); });
-  $$('.mv-gif img, .mv-avatar img, .mv-item .ph img').forEach(function(img){
+  $$('.mv-gif img, .mv-avatar img, .mv-item .ph img, .mv-wk .ph img').forEach(function(img){
     var fail=function(){img.style.display='none'; var p=img.parentNode; if(p.classList.contains('mv-gif')||p.classList.contains('ph')) p.classList.add('empty');};
     if(!img.getAttribute('src') || img.getAttribute('src').charAt(0)==='[') fail(); else img.addEventListener('error', fail);
   });
@@ -903,9 +1105,11 @@
   function calc(){
     var lines=[], total=0;
     var sc=radio('mv-scope')||'half', b=CONFIG.base[sc];
-    if(sc==='halfplus'){ lines.push({t:'반신 기본', v:CONFIG.base.half.price}); lines.push({t:'하체 포함 (엉덩이·허벅지)', v:b.price-CONFIG.base.half.price}); } else lines.push({t:b.name+' 기본', v:b.price});
+    lines.push({t:b.name+' 기본', v:b.price});
     total+=b.price;
     if(CONFIG.eventOn && evc && evc.checked){ var ed=Math.round(b.price*CONFIG.eventRate); lines.push({t:CONFIG.eventLabel, v:-ed, minus:true}); total-=ed; }
+    var sda=$('#mv-sdadd');
+    if(sc!=='sd' && sda && sda.checked){ lines.push({t:'SD 동시 제작', v:CONFIG.sdAdd}); total+=CONFIG.sdAdd; var sdd=CONFIG.sdSet[sc]||0; if(sdd){ lines.push({t:'SD 세트 할인 ('+b.name+' + SD)', v:-sdd, minus:true}); total-=sdd; } }
     if(CONFIG.reviewOn && rvc && rvc.checked){ lines.push({t:'리뷰 이벤트', v:-CONFIG.reviewDiscount, minus:true}); total-=CONFIG.reviewDiscount; }
 
     Object.keys(CONFIG.opt).forEach(function(k){
@@ -933,6 +1137,7 @@
   }
 
   function render(){
+    var sdb=$('#mv-sdaddbox'); if(sdb) sdb.style.display=(radio('mv-scope')==='sd')?'none':'';
     var r=calc();
     $('#mv-total').textContent = won(r.total)+(r.lines.some(function(l){return l.txt==='별도 견적';})?' +α':'');
     $('#mv-lines').innerHTML = r.lines.map(function(l){
@@ -983,6 +1188,7 @@
     r.lines.forEach(function(l){L.push('- '+l.t+' : '+(l.ask?l.txt:(l.v<0?'-'+won(-l.v):won(l.v))));});
     L.push('예상 합계 : '+won(r.total)+(r.lines.some(function(l){return l.txt==='별도 견적';})?' + 별도 견적':''));
     L.push('※ 최종 견적은 PSD 확인 후 확정됩니다.');
+    L.push('공지 사항 및 환불 정책 확인 : 예');
     return L.join('\n');
   }
 
@@ -995,8 +1201,11 @@
     var ok=false; try{ok=document.execCommand('copy');}catch(e){}
     sel.removeAllRanges(); document.body.removeChild(box); return ok;
   }
-  var btn=$('#mv-copy');
+  var btn=$('#mv-copy'), agree=$('#mv-agree');
+  var lockUpd=function(){ var ok=agree&&agree.checked; btn.classList.toggle('lock',!ok); btn.setAttribute('aria-disabled',ok?'false':'true'); };
+  if(agree){ agree.addEventListener('change',lockUpd); lockUpd(); }
   btn.addEventListener('click',function(){
+    if(agree && !agree.checked){ var lb=agree.parentNode; lb.classList.remove('mv-flash'); void lb.offsetWidth; lb.classList.add('mv-flash'); return; }
     var t=buildText();
     var done=function(){btn.textContent='복사 완료! 문의창에 붙여넣어 주세요'; btn.classList.add('ok'); setTimeout(function(){btn.textContent='신청서 복사'; btn.classList.remove('ok');},2500);};
     if(navigator.clipboard && window.isSecureContext){navigator.clipboard.writeText(t).then(done,function(){if(fallbackCopy(t)) done();});}
@@ -1007,12 +1216,74 @@
     $$('.mv-in').forEach(function(i){i.value='';});
     $$('input[type=radio]').forEach(function(i){i.checked=false;});
     ['mv-com','mv-scope','mv-collab','mv-priv'].forEach(function(n){var f=root.querySelector('input[name="'+n+'"]'); if(f) f.checked=true;});
-    vb.checked=false; tg.checked=false; if(evc) evc.checked=false; if(rvc) rvc.checked=false; $$('.mv-pose').forEach(function(c){c.checked=false;});
+    vb.checked=false; tg.checked=false; var sda2=$('#mv-sdadd'); if(sda2) sda2.checked=false; if(agree){agree.checked=false; lockUpd();} if(evc) evc.checked=false; if(rvc) rvc.checked=false; $$('.mv-pose').forEach(function(c){c.checked=false;});
     Object.keys(count).forEach(function(k){count[k]=0;});
     $$('.mv-stp output').forEach(function(o){o.textContent='0';});
     render();
   });
   render();
+
+  /* 페이지 안 이동 (견적 내보기 · 이 범위로 견적) */
+  var goTo=function(id){ var el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); };
+  var pickScope=function(sc){
+    var r=root.querySelector('input[name="mv-scope"][value="'+sc+'"]'); if(!r) return;
+    r.checked=true; render();
+    var f=$('#mv-scopefield'); if(f){ f.classList.remove('mv-flash'); void f.offsetWidth; f.classList.add('mv-flash'); }
+  };
+  root.addEventListener('click',function(e){
+    var g=e.target.closest('[data-goto]'); if(!g) return;
+    var sc=g.getAttribute('data-scope'); if(sc) pickScope(sc);
+    goTo(g.getAttribute('data-goto'));
+  });
+
+  /* 리깅 디테일 탭 */
+  var tabBox=$('.mv-tabs');
+  if(tabBox) tabBox.addEventListener('click',function(e){
+    var b=e.target.closest('button[data-tab]'); if(!b) return;
+    var k=b.getAttribute('data-tab');
+    Array.prototype.forEach.call(tabBox.children,function(x){x.classList.toggle('on',x===b);});
+    $$('.mv-tpanel').forEach(function(p){p.classList.toggle('on',p.getAttribute('data-tab')===k);});
+  });
+  /* SD 각도 / 표정 탭 */
+  var sdTabs=$('.mv-sdtabs');
+  if(sdTabs) sdTabs.addEventListener('click',function(e){
+    var b=e.target.closest('button[data-sd]'); if(!b) return;
+    var k=b.getAttribute('data-sd');
+    Array.prototype.forEach.call(sdTabs.children,function(x){x.classList.toggle('on',x===b);});
+    $$('.mv-sdpanel').forEach(function(p){p.classList.toggle('on',p.getAttribute('data-sd')===k);});
+  });
+
+  /* 작업한 모델: 영상 창 */
+  var modal=document.getElementById('mv-modal');
+  if(modal){
+    if(modal.parentNode!==document.body) document.body.appendChild(modal);
+    var dlg=modal.querySelector('.dlg'), vd=modal.querySelector('.vd'), curScope='';
+    var place=function(){
+      if(FRAMED && VIS){ modal.classList.add('framed'); dlg.style.top=Math.max(VIS.top+10, VIS.top+(VIS.h-dlg.offsetHeight)/2)+'px'; }
+      else { modal.classList.remove('framed'); dlg.style.top=''; }
+    };
+    var open=function(card){
+      var id=card.getAttribute('data-video'); if(!id) return;
+      curScope=card.getAttribute('data-scope')||'';
+      modal.querySelector('.tg').textContent=card.getAttribute('data-tag')||'';
+      modal.querySelector('.nm').textContent=card.getAttribute('data-name')||'';
+      modal.querySelector('.pr').innerHTML=card.getAttribute('data-price')||'';
+      vd.innerHTML='<iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0" title="쇼케이스 영상" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+      modal.classList.add('on'); modal.setAttribute('aria-hidden','false'); place();
+    };
+    var close=function(){ modal.classList.remove('on'); modal.setAttribute('aria-hidden','true'); vd.innerHTML=''; };
+    modal.addEventListener('click',function(e){
+      if(e.target===modal || e.target.closest('.x')) close();
+      else if(e.target.closest('.go')){ var sc=curScope; close(); if(sc) pickScope(sc); goTo('mv-apply'); }
+    });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape' && modal.classList.contains('on')) close(); });
+    $$('.mv-wk').forEach(function(card){
+      var v=card.querySelector('.v'), q=card.querySelector('.q');
+      if(!card.getAttribute('data-video')){ v.disabled=true; v.textContent='영상 준비 중'; }
+      v.addEventListener('click',function(){ open(card); });
+      q.addEventListener('click',function(){ pickScope(card.getAttribute('data-scope')); goTo('mv-apply'); });
+    });
+  }
 
   /* 공지: 한 번에 하나만 펼치기 */
   $$('details[name="mv-notice"]').forEach(function(d,_,all){
@@ -1061,6 +1332,7 @@
     if(nav.parentNode!==document.body) document.body.appendChild(nav);
     var framed=false; try{ framed = window.self!==window.top; }catch(e){ framed=true; }
     if(framed) nav.classList.add('framed');
+    FRAMED=framed;
     var links=Array.prototype.slice.call(nav.querySelectorAll('a[data-go]'));
     var secs=links.map(function(a){return document.getElementById(a.getAttribute('data-go'));}).filter(Boolean);
     var vis={top:0,h:window.innerHeight};
@@ -1076,13 +1348,14 @@
       sum.style.transform='translateY('+Math.round(off)+'px)';
     };
     var layout=function(){
+      VIS=vis;
       var line=vis.top+vis.h*0.45, cur=null;
       secs.forEach(function(sc){ if(sc.getBoundingClientRect().top+window.scrollY<=line) cur=sc.id; });
       links.forEach(function(a){ a.classList.toggle('on', a.getAttribute('data-go')===cur && !a.classList.contains('cta')); });
       if(framed){
         var nh=nav.offsetHeight;
         var pos = compact() ? vis.top+vis.h-nh-18 : vis.top+(vis.h-nh)/2;
-        var endEl=document.getElementById('mv-apply'), end=endEl ? endEl.getBoundingClientRect().bottom+window.scrollY : document.documentElement.scrollHeight;
+        var endEl=document.getElementById('mv-refund')||document.getElementById('mv-apply'), end=endEl ? endEl.getBoundingClientRect().bottom+window.scrollY : document.documentElement.scrollHeight;
         var maxY=end-nh;
         nav.style.top=Math.max(10,Math.min(pos,maxY))+'px';
       }
