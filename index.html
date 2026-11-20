@@ -425,6 +425,35 @@
 #mv .mv-duo #mv-sched .mv-legend{display:none;}
 @media (max-width:760px){ #mv .mv-mcards{gap:8px;} #mv .mv-mcards b{font-size:14px;} }
 
+
+/* 신청 범위 탭 */
+#mv .mv-scopebox{margin:18px 0 18px;padding:16px;background:var(--sky-ll);border-radius:20px;}
+#mv .mv-ftabs-t{font-weight:800;font-size:15px;color:var(--ink);margin:0 0 12px 2px;}
+#mv .mv-ftabs-t small{font-weight:500;font-size:12.5px;color:var(--mute);margin-left:6px;}
+#mv .mv-ftabs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+#mv .mv-ftab{cursor:pointer;display:block;position:relative;}
+#mv .mv-ftab input{position:absolute;opacity:0;pointer-events:none;}
+#mv .mv-ftab>span{position:relative;display:flex;flex-direction:column;align-items:center;gap:3px;padding:14px 6px 13px;border-radius:14px;background:#fff;border:2px solid var(--sky-l);color:var(--ink);box-shadow:0 3px 0 var(--sky-l);transition:transform .12s,box-shadow .12s,background .15s,border-color .15s,color .15s;}
+#mv .mv-ftab b{font-size:18px;font-weight:800;}
+#mv .mv-ftab small{font-size:12px;font-weight:700;color:var(--sky-d);}
+#mv .mv-ftab:hover>span{transform:translateY(-2px);box-shadow:0 5px 0 var(--sky-l);border-color:var(--sky);}
+#mv .mv-ftab:active>span{transform:translateY(2px);box-shadow:0 1px 0 var(--sky-l);}
+#mv .mv-ftab input:checked+span{background:var(--sky-d);border-color:var(--sky-d);color:#fff;box-shadow:0 3px 0 #355f8f;}
+#mv .mv-ftab input:checked+span small{color:#e3eefc;}
+#mv .mv-ftab input:checked+span::after{content:"✓";position:absolute;top:-8px;right:-6px;width:22px;height:22px;border-radius:50%;background:var(--yel-d);color:#5a4500;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.15);}
+#mv .mv-ftab.sd input:checked+span{background:#e0679c;border-color:#e0679c;box-shadow:0 3px 0 #b54a79;}
+#mv .mv-ftab.sd small{color:#d4508a;}
+#mv .mv-ftab input:focus-visible+span{outline:3px solid var(--sky);outline-offset:2px;}
+#mv .mv-ftabs-guide{margin-top:12px!important;}
+#mv .mv-sdnote{background:#fff;border:1.5px dashed #f9c3d6;border-radius:14px;padding:11px 14px;font-size:13.5px;color:var(--ink);}
+#mv .mv-sdnote b{color:#d4508a;}
+#mv .mv-sdbase{border:1.5px solid #f9c3d6;background:#fff5f9;border-radius:14px;padding:12px 14px;margin-bottom:10px;}
+#mv .mv-sdbase .t{font-weight:800;font-size:14px;color:#d4508a;margin-bottom:8px;}
+#mv .mv-sdbase .c{display:flex;flex-wrap:wrap;gap:6px;}
+#mv .mv-sdbase .c span{background:#fff;border:1px solid #f9c3d6;border-radius:999px;padding:4px 10px;font-size:12.5px;font-weight:600;color:var(--ink);}
+#mv .mv-sdprice small{font-size:13px;font-weight:600;color:var(--sub);margin-left:4px;}
+#mv .mv-set .t small{font-weight:500;color:var(--mute);font-size:11.5px;}
+@media (max-width:760px){ #mv .mv-scopebox{padding:12px;} #mv .mv-ftabs{gap:6px;} #mv .mv-ftab b{font-size:15px;} #mv .mv-ftab small{font-size:10.5px;} #mv .mv-ftab>span{padding:11px 2px 10px;} #mv .mv-ftabs-t small{display:block;margin:4px 0 0;} }
 /* 신청 양식 보강 */
 #mv .mv-scope-img{margin-top:10px;border:1.5px dashed var(--line);border-radius:14px;background:#fff;overflow:hidden;}
 #mv .mv-scope-img summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:13.5px;font-weight:800;color:var(--sky-d);}
@@ -699,8 +728,8 @@
     <div class="mv-sdl">
       <h2 class="mv-h">SD 리깅</h2>
       <p class="mv-desc" style="color:var(--sub);font-size:14px;margin-bottom:8px">작고 귀여운 SD 캐릭터도 리깅해요.<br>방송 화면 구석, 대기 화면, 굿즈용으로 좋아요.</p>
-      <div class="mv-sdprice">SD 20만원~</div>
-      <div class="mv-set"><div class="t">본 모델과 동시 제작 시 <b>세트 할인 최대 10만원</b></div>
+      <div class="mv-sdprice">SD 20만원~ <small>리깅만 · 일러 포함 35만원</small></div>
+      <div class="mv-set"><div class="t">본 모델과 동시 제작 시 <b>세트 할인 최대 10만원</b> <small>(SD 리깅만 기준)</small></div>
         <div class="r"><span>흉상 + SD</span><b>−1만원</b></div>
         <div class="r"><span>반신 + SD</span><b>−5만원</b></div>
         <div class="r"><span>전신 + SD</span><b>−10만원</b></div></div>
@@ -842,9 +871,23 @@
         <div class="mv-row"><span class="k">몸 XYZ</span><span class="mv-tag">호흡</span><span class="mv-tag">머리카락 물리</span><span class="mv-tag">의상 물리</span></div>
         <p style="margin:12px 0 0;font-size:13px;">※ <b>흉상</b>은 두상 + 상체(팔·손 제외) 기준이에요. 엉덩이·허벅지(무릎 위)까지 있는 일러스트는 <b>반신</b>(+100,000원)으로 신청해 주세요.</p>
         <p style="margin:6px 0 0;font-size:13px;">※ 현재 작업 불가능한 기능 : SD 전환</p>
+        <p style="margin:6px 0 0;font-size:13px;">※ <b>SD</b>는 신청 양식의 SD 탭에서 기본 구성(기본 표정 6개)을 확인해 주세요.</p>
       </div></details>
     <div class="mv-alert"><span class="ex">!</span><div><b>문의창에 파츠 분리 PSD 파일을 첨부해 주세요.</b><br><span style="color:var(--sub)">곤란하거나 적기 어려운 부분은 비워두셔도 괜찮아요. PSD를 첨부해 주시면 더 정확한 견적을 드릴 수 있어요.</span></div></div>
 
+    <div class="mv-scopebox" id="mv-scopefield">
+    <div class="mv-ftabs-t">👆 신청 범위를 먼저 골라주세요 <small>누르면 아래 양식이 범위에 맞게 바뀌어요</small></div>
+    <div class="mv-ftabs" role="radiogroup" aria-label="신청 범위">
+      <label class="mv-ftab"><input type="radio" name="mv-scope" value="half" checked><span><b>흉상</b><small>32만원~</small></span></label>
+      <label class="mv-ftab"><input type="radio" name="mv-scope" value="halfplus"><span><b>반신</b><small>42만원~</small></span></label>
+      <label class="mv-ftab"><input type="radio" name="mv-scope" value="full"><span><b>전신</b><small>64만원~</small></span></label>
+      <label class="mv-ftab sd"><input type="radio" name="mv-scope" value="sd"><span><b>SD</b><small>20만원~</small></span></label>
+    </div>
+    <details class="mv-scope-img mv-ftabs-guide" data-not="sd"><summary>📏 흉상 · 반신 · 전신 범위 기준 보기<span class="ic"></span></summary>
+      <div class="bd"><img src="scope_guide.png" alt="흉상 · 반신 · 전신 범위 기준" loading="lazy"></div>
+    </details>
+    <div class="mv-ftabs-guide mv-sdnote" data-only="sd">🎀 SD는 <b>일러 포함 35만원</b> / <b>리깅만 20만원</b> · 기본 표정 6개 포함</div>
+    </div>
     <div class="mv-form">
       <div class="mv-fbox">
         
@@ -877,17 +920,15 @@
 
         <!-- 일러스트 정보 -->
         <div class="mv-fsec">■ 일러스트 정보</div>
-        <div class="mv-field" id="mv-scopefield"><label class="lb">신청 범위</label>
+        <div class="mv-field" data-only="sd"><label class="lb">SD 신청 방식</label>
           <div class="mv-pills">
-            <label class="mv-pill"><input type="radio" name="mv-scope" value="half" checked><span>흉상</span></label>
-            <label class="mv-pill"><input type="radio" name="mv-scope" value="halfplus"><span>반신</span></label>
-            <label class="mv-pill"><input type="radio" name="mv-scope" value="full"><span>전신</span></label>
-            <label class="mv-pill"><input type="radio" name="mv-scope" value="sd"><span>SD</span></label>
+            <label class="mv-pill"><input type="radio" name="mv-sdtype" value="illust" checked><span>일러 포함 (350,000원)</span></label>
+            <label class="mv-pill"><input type="radio" name="mv-sdtype" value="rig"><span>리깅만 (200,000원)</span></label>
           </div>
-          <details class="mv-scope-img"><summary>📏 범위 기준 그림으로 보기<span class="ic"></span></summary>
-            <div class="bd"><img src="scope_guide.png" alt="흉상 · 반신 · 전신 범위 기준" loading="lazy"></div>
-          </details></div>
-        <div class="mv-field"><label class="lb">일러스트레이터</label>
+          <div class="mv-hint">일러 포함은 <b>Miove의 SD 그림체</b>로 그려드려요. 리깅만은 파츠 분리된 SD 일러스트를 보내주세요.</div></div>
+        <div class="mv-field" data-only="sd-illust"><label class="lb" for="mv-ref">캐릭터 레퍼런스 <small>(본 모델 일러스트, 캐릭터 시트 링크 등)</small></label><input class="mv-in" id="mv-ref" placeholder="링크를 적거나 문의창에 이미지를 첨부해 주세요" data-k="캐릭터 레퍼런스"></div>
+        <div class="mv-field" data-only="sd-rig"><label class="lb" for="mv-sdartist">일러스트레이터</label><input class="mv-in" id="mv-sdartist" placeholder="작가님 닉네임 또는 링크를 적어주세요" data-k="일러스트레이터"></div>
+        <div class="mv-field" data-not="sd"><label class="lb">일러스트레이터</label>
           <div class="mv-pills">
             <label class="mv-pill"><input type="radio" name="mv-collab" value="none" checked><span>일반 작가님</span></label>
           </div>
@@ -900,7 +941,7 @@
             <label class="mv-pill"><input type="radio" name="mv-collab" value="hnew"><span>흐뉴 작가님</span></label>
             <label class="mv-pill"><input type="radio" name="mv-collab" value="yuse"><span>유세 작가님</span></label>
           </div></div>
-        <div class="mv-field"><label class="lb">일러스트 준비 상태</label>
+        <div class="mv-field" data-not="sd-illust"><label class="lb">일러스트 준비 상태</label>
           <div class="mv-pills">
             <label class="mv-pill"><input type="radio" name="mv-psd" value="파츠 분리 PSD 완료"><span>파츠 분리 PSD 완료</span></label>
             <label class="mv-pill"><input type="radio" name="mv-psd" value="파츠 분리 전"><span>파츠 분리 전</span></label>
@@ -915,7 +956,8 @@
 
         <!-- 옵션 -->
         <div class="mv-fsec">■ 추가 옵션</div>
-        <label class="mv-opt" id="mv-sdaddbox"><input type="checkbox" class="mv-chk" id="mv-sdadd"><div class="tx">SD 동시 제작<small>본 모델과 같이 신청하면 세트 할인 (흉상 −1만 · 반신 −5만 · 전신 −10만)</small></div><span class="pr">+200,000</span></label>
+        <div data-not="sd">
+        <label class="mv-opt" id="mv-sdaddbox"><input type="checkbox" class="mv-chk" id="mv-sdadd"><div class="tx">SD 동시 제작<small>SD 리깅만 기준 · 세트 할인 (흉상 −1만 · 반신 −5만 · 전신 −10만)</small></div><span class="pr">+200,000</span></label>
         <div class="mv-opt"><div class="tx">표정 · 애니메이션 X<small>홍조, 정색, 하트 눈, 반짝 눈 · <b style="color:var(--pink)">협업 무료 표정은 이 항목만</b></small></div><span class="pr">+5,000</span><div class="mv-stp" data-id="exA"><button type="button" data-d="-1" aria-label="빼기">−</button><output>0</output><button type="button" data-d="1" aria-label="더하기">+</button></div></div>
         <div class="mv-opt"><div class="tx">표정 · 애니메이션 O<small>눈물, 빙글 눈</small></div><span class="pr">+10,000</span><div class="mv-stp" data-id="exB"><button type="button" data-d="-1" aria-label="빼기">−</button><output>0</output><button type="button" data-d="1" aria-label="더하기">+</button></div></div>
         <div class="mv-field" style="margin-top:4px;"><label class="lb" for="mv-exdesc">추가 표정 <small>(직접 입력)</small></label><input class="mv-in" id="mv-exdesc" placeholder="예: 홍조 1, 눈물 1" data-k="추가 표정"></div>
@@ -925,14 +967,24 @@
         <div class="mv-optlab">VBridger <small>VBridger 구매 필요 (스팀)</small></div>
         <label class="mv-opt"><input type="checkbox" class="mv-chk" id="mv-vb"><div class="tx">오물오물, 입술 오므리기 등<small>자연스러운 입 움직임</small></div><span class="pr">+50,000</span></label>
 
-        <div class="mv-optlab sep">포즈 · 헤어 · 의상 · 소품</div>
-        <label class="mv-opt"><input type="checkbox" class="mv-chk mv-pose" value="foot"><div class="tx">추가 포즈 · 발 콕콕</div><span class="pr">+100,000</span></label>
-        <label class="mv-opt"><input type="checkbox" class="mv-chk mv-pose" value="gachi"><div class="tx">추가 포즈 · 가깝게 다가오기</div><span class="pr">+100,000</span></label>
+        <div class="mv-optlab sep" data-only="full">추가 포즈 <small>전신만 가능해요</small></div>
+        <label class="mv-opt" data-only="full"><input type="checkbox" class="mv-chk mv-pose" value="foot"><div class="tx">발 콕콕</div><span class="pr">+100,000</span></label>
+        <label class="mv-opt" data-only="full"><input type="checkbox" class="mv-chk mv-pose" value="gachi"><div class="tx">가깝게 다가오기</div><span class="pr">+100,000</span></label>
+
+        <div class="mv-optlab sep">헤어 · 의상 · 소품</div>
 
         <div class="mv-opt"><div class="tx">추가 헤어스타일</div><span class="pr">+100,000</span><div class="mv-stp" data-id="hair"><button type="button" data-d="-1" aria-label="빼기">−</button><output>0</output><button type="button" data-d="1" aria-label="더하기">+</button></div></div>
         <div class="mv-opt"><div class="tx">추가 의상<small>겉옷, 상의, 하의 등</small></div><span class="pr">+100,000</span><div class="mv-stp" data-id="outfit"><button type="button" data-d="-1" aria-label="빼기">−</button><output>0</output><button type="button" data-d="1" aria-label="더하기">+</button></div></div>
         <div class="mv-opt"><div class="tx">추가 소품<small>귀, 꼬리, 날개 등</small></div><span class="pr">+50,000</span><div class="mv-stp" data-id="prop"><button type="button" data-d="-1" aria-label="빼기">−</button><output>0</output><button type="button" data-d="1" aria-label="더하기">+</button></div></div>
         <div class="mv-field" style="margin-top:4px;"><label class="lb" for="mv-partdesc">추가 파츠 설명 <small>(의상 변경, 소품, 헤어 변경 등)</small></label><input class="mv-in" id="mv-partdesc" data-k="추가 파츠 설명"></div>
+        </div>
+
+        <div data-only="sd">
+        <div class="mv-sdbase"><div class="t">✓ SD 기본 표정 6개 포함</div>
+          <div class="c"><span>하트 눈</span><span>반짝 눈</span><span>얼굴 그림자</span><span>짜증</span><span>좌절</span><span>찡긋 눈 (&gt;&lt;)</span></div></div>
+        <div class="mv-opt"><div class="tx">SD 추가 표정<small>뱅글 눈, 눈물 등 · 1개당</small></div><span class="pr">+10,000</span><div class="mv-stp" data-id="sdex"><button type="button" data-d="-1" aria-label="빼기">−</button><output>0</output><button type="button" data-d="1" aria-label="더하기">+</button></div></div>
+        <div class="mv-field" style="margin-top:4px;"><label class="lb" for="mv-sdexdesc">추가 표정 <small>(직접 입력)</small></label><input class="mv-in" id="mv-sdexdesc" placeholder="예: 뱅글 눈 1, 눈물 1" data-k="SD 추가 표정"></div>
+        </div>
 
         <!-- 일정 및 공개 -->
         <div class="mv-fsec">■ 일정 및 공개</div>
@@ -1030,7 +1082,9 @@
       {span:2, pd:'12월', tag:'🎁 이벤트 할인 중', hot:true, slots:2, booked:0},
       {span:2, pd:'1월', slots:2, booked:0}
     ],
-    base: { half:{name:'흉상', price:320000}, halfplus:{name:'반신', price:420000}, full:{name:'전신', price:640000}, sd:{name:'SD', price:200000} },
+    base: { half:{name:'흉상', price:320000}, halfplus:{name:'반신', price:420000}, full:{name:'전신', price:640000}, sd:{name:'SD 리깅만', price:200000} },
+    sdIllust: 350000,         // SD 일러 포함 가격
+    sdExtra: 10000,           // SD 추가 표정 1개당
     sdAdd: 200000,            // 본 모델 + SD 동시 제작 시 SD 가격
     sdSet: { half:10000, halfplus:50000, full:100000 },   // 동시 제작 세트 할인
     opt: {
@@ -1113,7 +1167,7 @@
   });
 
   /* 계산기 */
-  var count = {exA:0,exB:0,hair:0,outfit:0,prop:0};
+  var count = {exA:0,exB:0,hair:0,outfit:0,prop:0,sdex:0};
   var radio = function(n){var r=root.querySelector('input[name="'+n+'"]:checked'); return r?r.value:'';};
   var radioText = function(n){var r=root.querySelector('input[name="'+n+'"]:checked'); return r?r.parentNode.textContent.trim():'';};
   var vb=$('#mv-vb'), iph=$('#mv-iph'), evc=$('#mv-ev'), rvc=$('#mv-rv');
@@ -1122,22 +1176,26 @@
 
   function calc(){
     var lines=[], total=0;
-    var sc=radio('mv-scope')||'half', b=CONFIG.base[sc];
-    lines.push({t:b.name+' 기본', v:b.price});
-    total+=b.price;
-    var sda=$('#mv-sdadd');
-    if(sc!=='sd' && sda && sda.checked){ lines.push({t:'SD 동시 제작', v:CONFIG.sdAdd}); total+=CONFIG.sdAdd; var sdd=CONFIG.sdSet[sc]||0; if(sdd){ lines.push({t:'SD 세트 할인 ('+b.name+' + SD)', v:-sdd, minus:true}); total-=sdd; } }
-
-    Object.keys(CONFIG.opt).forEach(function(k){
-      if(count[k]>0){var o=CONFIG.opt[k]; lines.push({t:o.name+' ×'+count[k], v:o.price*count[k]}); total+=o.price*count[k];}
-    });
-    if(iph&&iph.checked){lines.push({t:'아이폰 트래킹 (볼빵빵, 혀 내밀기)', v:CONFIG.iphone}); total+=CONFIG.iphone;}
-    if(vb.checked){lines.push({t:'VBridger (자연스러운 입)', v:CONFIG.vbridger}); total+=CONFIG.vbridger;}
-    $$('.mv-pose').forEach(function(c){ if(c.checked){var o=CONFIG.pose[c.value]; lines.push({t:o.name, v:o.price}); total+=o.price;} });
+    var sc=radio('mv-scope')||'half', b=CONFIG.base[sc], isSD=(sc==='sd');
+    if(isSD){
+      var il=(radio('mv-sdtype')||'illust')==='illust', bp=il?CONFIG.sdIllust:b.price;
+      lines.push({t:'SD 기본 ('+(il?'일러 포함':'리깅만')+')', v:bp}); total+=bp;
+      if(count.sdex>0){ lines.push({t:'SD 추가 표정 ×'+count.sdex, v:CONFIG.sdExtra*count.sdex}); total+=CONFIG.sdExtra*count.sdex; }
+    } else {
+      lines.push({t:b.name+' 기본', v:b.price}); total+=b.price;
+      var sda=$('#mv-sdadd');
+      if(sda && sda.checked){ lines.push({t:'SD 동시 제작 (리깅만)', v:CONFIG.sdAdd}); total+=CONFIG.sdAdd; var sdd=CONFIG.sdSet[sc]||0; if(sdd){ lines.push({t:'SD 세트 할인 ('+b.name+' + SD)', v:-sdd, minus:true}); total-=sdd; } }
+      Object.keys(CONFIG.opt).forEach(function(k){
+        if(count[k]>0){var o=CONFIG.opt[k]; lines.push({t:o.name+' ×'+count[k], v:o.price*count[k]}); total+=o.price*count[k];}
+      });
+      if(iph&&iph.checked){lines.push({t:'아이폰 트래킹 (볼빵빵, 혀 내밀기)', v:CONFIG.iphone}); total+=CONFIG.iphone;}
+      if(vb.checked){lines.push({t:'VBridger (자연스러운 입)', v:CONFIG.vbridger}); total+=CONFIG.vbridger;}
+      if(sc==='full') $$('.mv-pose').forEach(function(c){ if(c.checked){var o=CONFIG.pose[c.value]; lines.push({t:o.name, v:o.price}); total+=o.price;} });
+    }
 
     if(radio('mv-priv')==='over3'){lines.push({t:'비공개 3개월 이상', v:CONFIG.privacyOver3}); total+=CONFIG.privacyOver3;}
 
-    var c=CONFIG.collab[radio('mv-collab')||'none'];
+    var c=CONFIG.collab[isSD?'none':(radio('mv-collab')||'none')];
     if(c.discount){
       lines.push({t:c.name+' 협업 할인', v:-c.discount, minus:true}); total-=c.discount;
       // 무료 표정은 '애니메이션 없는 표정(exA)'만 해당
@@ -1149,13 +1207,16 @@
     // 12월 이벤트: 위 금액 전체에서 10% 할인
     if(CONFIG.eventOn && evc && evc.checked && total>0){ var ed=Math.round(total*CONFIG.eventRate); lines.push({t:CONFIG.eventLabel+' (전체 금액)', v:-ed, minus:true}); total-=ed; }
     if(CONFIG.reviewOn && rvc && rvc.checked){ lines.push({t:'리뷰 이벤트', v:-CONFIG.reviewDiscount, minus:true}); total-=CONFIG.reviewDiscount; }
-    if(radio('mv-psd')==='파츠 분리 전') lines.push({t:'파츠 분리 작업', ask:true, txt:'별도 견적'});
+    if(!(isSD&&radio('mv-sdtype')!=='rig') && radio('mv-psd')==='파츠 분리 전') lines.push({t:'파츠 분리 작업', ask:true, txt:'별도 견적'});
     if(total<0) total=0;
     return {lines:lines,total:total};
   }
 
   function render(){
-    var sdb=$('#mv-sdaddbox'); if(sdb) sdb.style.display=(radio('mv-scope')==='sd')?'none':'';
+    var sc=radio('mv-scope')||'half', st=(sc==='sd')?('sd-'+((radio('mv-sdtype')||'illust')==='illust'?'illust':'rig')):'';
+    var is=function(k){ return k===sc || (k==='sd-illust'||k==='sd-rig') && k===st; };
+    $$('[data-only]').forEach(function(e){ e.style.display=is(e.getAttribute('data-only'))?'':'none'; });
+    $$('[data-not]').forEach(function(e){ e.style.display=is(e.getAttribute('data-not'))?'none':''; });
     var ab=$('#mv-artistbox'); if(ab) ab.style.display=((radio('mv-collab')||'none')==='none')?'':'none';
     var r=calc();
     $('#mv-total').textContent = won(r.total)+(r.lines.some(function(l){return l.txt==='별도 견적';})?' +α':'');
@@ -1176,8 +1237,9 @@
   /* 신청서 텍스트 만들기 */
   function val(id){var el=$('#'+id); return el?el.value.trim():'';}
   function buildText(){
-    var r=calc(), c=CONFIG.collab[radio('mv-collab')||'none'];
-    var artist = (radio('mv-collab')||'none')==='none' ? val('mv-artist') : c.name;
+    var r=calc(), sc=radio('mv-scope')||'half', isSD=sc==='sd', sdIl=isSD&&(radio('mv-sdtype')||'illust')==='illust';
+    var c=CONFIG.collab[isSD?'none':(radio('mv-collab')||'none')];
+    var artist = isSD ? val('mv-sdartist') : ((radio('mv-collab')||'none')==='none' ? val('mv-artist') : c.name);
     var pvMap={none:'비공개 안 함',in3:'3개월 이내',over3:'3개월 이상'};
     var L=[];
     L.push('[Miove 리깅 신청서]','');
@@ -1187,15 +1249,15 @@
     L.push('방송 플랫폼 및 링크 : '+val('mv-plat'));
     L.push('상업적 이용 여부 : '+radioText('mv-com'),'');
     L.push('■ 일러스트 정보');
-    L.push('신청 범위 : '+radioText('mv-scope'));
+    L.push('신청 범위 : '+(isSD?'SD ('+(sdIl?'일러 포함':'리깅만')+')':CONFIG.base[sc].name+(($('#mv-sdadd')||{}).checked?' + SD 동시 제작':'')));
     if(CONFIG.eventOn) L.push(CONFIG.eventLabel+' : '+(evc&&evc.checked?'적용':'미적용'));
     if(CONFIG.reviewOn) L.push('리뷰 이벤트 : '+(rvc&&rvc.checked?'참여':'미참여'));
-    L.push('일러스트레이터 : '+artist+(c.name?' (협업 작가)':''));
-    L.push('일러스트 준비 상태 : '+radioText('mv-psd'));
+    if(sdIl) L.push('캐릭터 레퍼런스 : '+val('mv-ref'));
+    else { L.push('일러스트레이터 : '+artist+(c.name?' (협업 작가)':'')); L.push('일러스트 준비 상태 : '+radioText('mv-psd')); }
     L.push('캐릭터 타입 : '+radioText('mv-type'),'');
     L.push('■ 옵션');
-    L.push('추가 표정 : '+val('mv-exdesc'));
-    L.push('추가 파츠 : '+val('mv-partdesc'),'');
+    if(isSD) L.push('SD 추가 표정 : '+val('mv-sdexdesc'),'');
+    else { L.push('추가 표정 : '+val('mv-exdesc')); L.push('추가 파츠 : '+val('mv-partdesc'),''); }
     L.push('■ 일정 및 공개');
     L.push('희망 마감일 : '+val('mv-due'));
     L.push('작업 과정 SNS 공개 : '+radioText('mv-sns'));
@@ -1232,7 +1294,7 @@
   $('#mv-reset').addEventListener('click',function(){
     $$('.mv-in').forEach(function(i){i.value='';});
     $$('input[type=radio]').forEach(function(i){i.checked=false;});
-    ['mv-com','mv-scope','mv-collab','mv-priv'].forEach(function(n){var f=root.querySelector('input[name="'+n+'"]'); if(f) f.checked=true;});
+    ['mv-com','mv-scope','mv-collab','mv-priv','mv-sdtype'].forEach(function(n){var f=root.querySelector('input[name="'+n+'"]'); if(f) f.checked=true;});
     vb.checked=false; if(iph) iph.checked=false; var sda2=$('#mv-sdadd'); if(sda2) sda2.checked=false; if(agree){agree.checked=false; lockUpd();} if(evc) evc.checked=false; if(rvc) rvc.checked=false; $$('.mv-pose').forEach(function(c){c.checked=false;});
     Object.keys(count).forEach(function(k){count[k]=0;});
     $$('.mv-stp output').forEach(function(o){o.textContent='0';});
